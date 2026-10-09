@@ -925,6 +925,449 @@
     "source_file": "diffraction_3d.json"
   },
   {
+    "id": "am-bao-slm-alsi10mg-insitu-srct-250C",
+    "title": "SLM AlSi10Mg: in situ time-lapse synchrotron uCT of defect evolution during 250 C tension-tension fatigue",
+    "material_class": "Al alloy",
+    "material": "AlSi10Mg",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF (SLM)",
+      "parameters": "Not verified",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron SR-uCT (facility not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": true,
+      "notes": "Time-lapse over complete fatigue lives at 250 C."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Eutectic Si platelets (microvoid nucleation sites)"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Defects elongated plastically ~10x faster than lateral growth; near-surface defects rotate under shear."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Tension-tension at 250 C (ultra-low-cycle regime)",
+      "results": "Lives 180-38,000 cycles; failure when longitudinal strain exceeds ~0.9.",
+      "crack_initiation": "Failure via nucleation of dense secondary microvoids at eutectic Si and microvoid coalescence (~90% of life), some defect coalescence; tracked in 4D.",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://research.manchester.ac.uk/en/publications/19a907e7-2ebd-4346-8388-a0d4fef1e77c",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": ""
+    },
+    "references": [
+      {
+        "citation": "Bao J., Wu S., Withers P.J., Wu Z., Li F., Fu Y., Sun W., Defect evolution during high temperature tension-tension fatigue of SLM AlSi10Mg alloy by synchrotron tomography, Mater. Sci. Eng. A 792 (2020) 139809",
+        "doi": "10.1016/j.msea.2020.139809",
+        "url": "https://nottingham-repository.worktribe.com/output/4698936"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "additive-manufacturing",
+      "porosity",
+      "synchrotron",
+      "high-temperature",
+      "4D"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Ultra-low-cycle/ratcheting regime rather than classical HCF initiation.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-cz-alsi10mg-recycled-powder-lcf-xct",
+    "title": "L-PBF AlSi10Mg from recycled powder: XCT defect features (top-100 projected area, sphericity, surface distance) per LCF specimen + PINN life prediction",
+    "material_class": "Al alloy",
+    "material": "AlSi10Mg",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Recycled powder increased oxygen content."
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "Recycled powder; vertical and horizontal builds (parameters in paper; not verified)",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Lab XCT (details in paper; not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Defect tables for 8 specimens: 100 largest defects by projected area normal to loading."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Al cells with eutectic Si cell walls (Hall-Petch strengthening)"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Largest projected area e.g. 0.659 mm^2 (specimen 10, sphericity 0.09, 1.89 mm from surface). Horizontal specimens had more deposition defects."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "Strain-controlled tension-compression, various strain amplitudes",
+      "results": "Nf 417-2577 cycles for plastic strain ranges 2.04e-3 to 6.69e-3 (8 specimens).",
+      "crack_initiation": "Deposition defects controlled transgranular crack initiation and propagation; horizontally built specimens shorter lives.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Partially public",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/13828238",
+      "doi": "10.5281/zenodo.13828238",
+      "size": "<1 MB",
+      "format": "CSV (defect features, fatigue lives)",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Bartosak M., Jambor M., Halamka J., Pelikan L., Stransky O., Galcikova E., Slany M., Horvath J., Petrasek S., Sulak I., Low-cycle fatigue of laser powder bed fusion-processed AlSi10Mg using recycled powder: Experiments and machine learning-assisted lifetime prediction, Materials & Design (2025) 113926",
+        "doi": "10.1016/j.matdes.2025.113926",
+        "url": "https://doi.org/10.1016/j.matdes.2025.113926"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "porosity",
+      "LCF",
+      "machine-learning-ready",
+      "defect-features"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Only derived XCT defect features (not volumes) are public.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-qian-alsi10mg-insitu-xray-multi-defect",
+    "title": "L-PBF AlSi10Mg: in situ X-ray imaging of fatigue crack growth from multiple defects (Qian, Wu, Withers 2022)",
+    "material_class": "Al alloy",
+    "material": "AlSi10Mg",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "Not verified",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Not verified (lab vs synchrotron unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": true,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "gas pores"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "HCF inside X-ray imaging setup (details unverified)",
+      "results": "",
+      "crack_initiation": "Per a secondary citation (arXiv 2407.20245): higher stress amplitudes produced multiple initiations from sub-surface LOF defects that competed to form the primary crack (unverified in primary source).",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1016/j.ijfatigue.2021.106616",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Article CC-BY-NC-ND (hybrid OA per Semantic Scholar)"
+    },
+    "references": [
+      {
+        "citation": "Qian W., Wu S., Wu Z., Ahmed S., Zhang W., Qian G., Withers P.J., In situ X-ray imaging of fatigue crack growth from multiple defects in additively manufactured AlSi10Mg alloy, Int. J. Fatigue (2022) 106616",
+        "doi": "10.1016/j.ijfatigue.2021.106616",
+        "url": "https://doi.org/10.1016/j.ijfatigue.2021.106616"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "lack-of-fusion",
+      "multiple-cracks"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Full text not accessible here; most experimental details unverified.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-romano-alsi10mg-ct-defect-fatigue",
+    "title": "SLM AlSi10Mg three process generations: CT defect populations, killer-defect sqrt(area), defect-tolerant S-N prediction",
+    "material_class": "Al alloy",
+    "material": "AlSi10Mg",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF (SLM)",
+      "parameters": "EOS M400, 2015-2017; processes P1, P2 (same params, improved gas recirculation) and P3 (layer 60->30 um, platform preheat 200->165 C). Vertical and horizontal specimens.",
+      "heat_treatment": "None",
+      "surface_condition": "Machined, Ra 0.33 um, Rz 2.99 um (ASTM E606 geometry, gauge vol 201-452 mm^3)"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab GE Phoenix v|tome|x m at ESA ESTEC; VG Studio Max 2.2.1 analysis",
+      "voxel_size_um": 16.0,
+      "volume_dimensions": "Fatigue specimen gauge volumes",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "inclusions"
+      ],
+      "grain_size_um": "Melt pools 60-140 um deep, 70-230 um wide",
+      "texture": "",
+      "phases": "Al cells with eutectic Si"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion",
+        "inclusions"
+      ],
+      "statistics": "Defect density (def/mm^3): P1 10.8, P2 23.8, P3 1.9; density >100 um: P1 0.64, P2 0.20, P3 4.5e-3. Largest defects elongated (LOF). Al2O3 inclusions in P2. Gumbel/LEVD estimates of killer size."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 291.0,
+      "uts_MPa": 443.7,
+      "elongation_pct": 6.6,
+      "hardness": null,
+      "modulus_GPa": 70.2,
+      "other": "P3 horizontal: E 70.2 GPa, Rp0.2 291.0, Rm 443.7 MPa, A 6.6%. P1 horizontal: Rp0.2 224.9, Rm 365.3. P2 horizontal: 304.5 / 441.5."
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Axial force control, R = -1 (minus sign lost in text extraction; consistent with context), 30 Hz (ESTEC, Instron E10000) and 15 Hz (PoliMi, MTS 810); P1 18, P2 45, P3 42 HCF tests; some specimens with artificial micronotches at 97.5% percentile of max defect",
+      "results": "Life improved P1 -> P2 -> P3 with decreasing max defect size; vertical lower than horizontal (5-28%).",
+      "crack_initiation": "Failures from killer defects (mostly LOF) measured as sqrt(area) on SEM fractography; CT-based extreme-value estimates of killer size bracket observed values.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://re.public.polimi.it/handle/11311/1078133",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": ""
+    },
+    "references": [
+      {
+        "citation": "Romano S., Bruckner-Foit A., Brandao A., Gumpinger J., Ghidini T., Beretta S., Fatigue properties of AlSi10Mg obtained by additive manufacturing: Defect-based modelling and prediction of fatigue strength, Engineering Fracture Mechanics (2018)",
+        "doi": "10.1016/j.engfracmech.2017.11.002",
+        "url": "https://re.public.polimi.it/bitstream/11311/1078133/4/11311-1078133_Beretta.pdf"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "porosity",
+      "killer-defect",
+      "extreme-value-statistics",
+      "Murakami"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Journal volume/pages not verified; DOI verified via search result and repository PDF.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-psu-alsi10mg-lpbf-psp-xct-zenodo",
+    "title": "Penn State L-PBF AlSi10Mg process-structure-property dataset: 60 parameter sets with XCT porosity and tensile",
+    "material_class": "Al alloy",
+    "material": "AlSi10Mg (LaserForm AlSi10Mg (A))",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Si": "9-11",
+        "Mg": "0.2-0.45",
+        "Al": "bal."
+      },
+      "notes": "Powder specification ranges"
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "3D Systems ProX DMP 320; laser power 60-460 W, scan speed 250-3000 mm/s, hatch 100 or 150 um, layer 60 um; 60 parameter sets, 180 tensile samples (178 tested).",
+      "heat_treatment": "Not stated in summary",
+      "surface_condition": "Surface roughness measured"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab GE Phoenix v|tome|x L300, 200 kV, 50 uA",
+      "voxel_size_um": 10.0,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "grains"
+      ],
+      "grain_size_um": "EBSD grain and SEM cell data",
+      "texture": "",
+      "phases": "Al cells with Si-rich eutectic network"
+    },
+    "defects": {
+      "types": [
+        "keyhole pores",
+        "lack-of-fusion",
+        "gas pores"
+      ],
+      "statistics": "XCT porosity ~0.04-14.4%; Archimedes ~0.26-16.4% (set means)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": "78-140 HV",
+      "modulus_GPa": null,
+      "other": "Set-mean ranges: YS 150-240 MPa, UTS 184-388 MPa, elongation 0.87-4.52%, E 51-79 GPa."
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": "",
+      "loading": "",
+      "results": "",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/10008435",
+      "doi": "10.5281/zenodo.7702871 (concept DOI)",
+      "size": "~0.7 GB",
+      "format": "XLSX tables, zipped pore morphology, grain-cell morphology, stress-strain curves",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Luo Q., Huang N., Fu T., Wang J., Bartles D.L., Simpson T.W., Beese A.M., Dataset of process-structure-property feature relationships for AlSi10Mg fabricated using laser powder bed fusion, Data in Brief 53 (2024) 110130",
+        "doi": "10.1016/j.dib.2024.110130",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10859257/"
+      },
+      {
+        "citation": "Related article: Additive Manufacturing (2023) 103804",
+        "doi": "10.1016/j.addma.2023.103804",
+        "url": "https://doi.org/10.1016/j.addma.2023.103804"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "process-parameters",
+      "porosity",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "No fatigue data.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
     "id": "repo-figshare-alsi10mg-lpbf-microct-defocus",
     "title": "Raw micro-CT volumes of L-PBF AlSi10Mg cylinders: focused vs negatively defocused beam and steel vs carbon-fibre recoater (Stellenbosch)",
     "material_class": "Al alloy",
@@ -1006,6 +1449,91 @@
     "fatigue_initiation_relevance": "Low",
     "notes": "",
     "source_file": "repository_sweep.json"
+  },
+  {
+    "id": "am-baig-alsi10mg-scalmalloy-xct-critical-defect",
+    "title": "L-PBF AlSi10Mg and Scalmalloy: pre-test XCT vs fractography of critical defects; distance-criterion correction for webbed LOF",
+    "material_class": "Al alloy",
+    "material": "AlSi10Mg and Scalmalloy (Al-Mg-Sc-Zr)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "Specimens with varying defect populations (parameters not verified)",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Lab XCT (Auburn; not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Scanned before uniaxial fatigue; fracture-origin defects located in XCT data."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "Scalmalloy bimodal grain structure (companion study)",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "gas pores"
+      ],
+      "statistics": "Thin webbed LOF defects lose significant information in XCT -> critical defects missed or undersized."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Uniaxial fatigue (details not verified)",
+      "results": "Largest-XCT-defect models severely non-conservative; distance-based reconstruction + crack-growth model gave accurate, moderately conservative life estimates.",
+      "crack_initiation": "Critical defects identified on fracture surfaces and matched to XCT; frequently LOF.",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1016/j.addlet.2025.100320",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Article CC-BY-NC-ND"
+    },
+    "references": [
+      {
+        "citation": "Baig S., Jam A., Beretta S., Shao S., Shamsaei N., Fatigue assessment of laser powder bed fused aluminum alloys via non-destructive examination, Additive Manufacturing Letters (2025) 100320",
+        "doi": "10.1016/j.addlet.2025.100320",
+        "url": "https://re.public.polimi.it/handle/11311/1297030"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "lack-of-fusion",
+      "XCT-detectability",
+      "killer-defect"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "am_metals_ct.json"
   },
   {
     "id": "conv-alsi7cu3mg-lfc-hot-lcf-insitu",
@@ -1892,10 +2420,10 @@
     "source_file": "conventional_ct.json"
   },
   {
-    "id": "repo-nist-cocr-lpbf-xct-pores",
-    "title": "High-resolution XCT (2.5 um) of L-PBF cobalt-chrome cores built with varied scan speed/hatch spacing, raw and segmented",
+    "id": "am-nist-cocr-lpbf-xct-pores",
+    "title": "High-resolution XCT of L-PBF CoCr with unoptimized scan speed/hatch (lack-of-fusion pore structures)",
     "material_class": "Co alloy",
-    "material": "Cobalt-chrome (L-PBF)",
+    "material": "Cobalt-chromium (CoCr) alloy",
     "chemistry": {
       "basis": "nominal",
       "composition": {},
@@ -1903,7 +2431,7 @@
     },
     "processing": {
       "route": "L-PBF",
-      "parameters": "Constant 195 W laser power, 20 um layer; scan speed and hatch spacing varied (unoptimized parameters to create defects). Disks 40 mm dia x 10 mm; 5 mm cylinders cored out.",
+      "parameters": "Constant 195 W laser power, 20 um layer; scan speed and hatch spacing varied (unoptimized) to create defects. As-built 40 mm dia x 10 mm disks; 5 mm cylinders cored out.",
       "heat_treatment": "None (no HT or HIP)",
       "surface_condition": "Cored cylinders"
     },
@@ -1914,9 +2442,9 @@
     "acquisition": {
       "facility": "Lab XCT (NIST)",
       "voxel_size_um": 2.5,
-      "volume_dimensions": "~1000x1000x1000 voxels per ROI",
+      "volume_dimensions": "~1000 x 1000 x 1000 voxels per sample (~(pi/4) x (2.5 mm)^3)",
       "in_situ": false,
-      "notes": ""
+      "notes": "Raw 16-bit reconstructed slices and segmented slices for 5 samples."
     },
     "microstructure": {
       "features_resolved": [
@@ -1932,7 +2460,7 @@
         "lack-of-fusion",
         "gas pores"
       ],
-      "statistics": "Pore structure quantified in Kim et al. 2017 (3D image analysis)."
+      "statistics": "See Kim et al. 2017 (3D pore shape analysis); later used to train a 3D-GAN of LOF pores (NIST mds2-3963, 3503 synthetic+training pores)."
     },
     "mechanical_properties": {
       "yield_strength_MPa": null,
@@ -1956,10 +2484,20 @@
       "url": "https://data.nist.gov/od/id/mds2-2162",
       "doi": "10.18434/M32162",
       "size": "~6.3 GB",
-      "format": "Zipped 16-bit TIFF stacks (raw) + segmented TIFF",
+      "format": "Zipped 16-bit TIFF stacks (raw and segmented)",
       "license": "NIST open license"
     },
     "references": [
+      {
+        "citation": "Kim F.H., Moylan S.P., Garboczi E.J., Slotwinski J.A., Investigation of pore structure in cobalt chrome additively manufactured parts using X-ray computed tomography and three-dimensional image analysis, Additive Manufacturing 17 (2017) 23-38",
+        "doi": "10.1016/j.addma.2017.06.011",
+        "url": "https://doi.org/10.1016/j.addma.2017.06.011"
+      },
+      {
+        "citation": "Hoque M., Kim F.H., A dataset of synthetic AM lack-of-fusion pores generated using a 3D-GAN based on XCT images, NIST",
+        "doi": "10.18434/mds2-3963",
+        "url": "https://data.nist.gov/od/id/mds2-3963"
+      },
       {
         "citation": "Kim F.H., Moylan S.P., Garboczi E.J., Slotwinski J.A., Investigation of pore structure in cobalt chrome additively manufactured parts using X-ray computed tomography and three-dimensional image analysis, Additive Manufacturing 17 (2017) 23-38",
         "doi": "10.1016/j.addma.2017.06.011"
@@ -1967,14 +2505,19 @@
     ],
     "tags": [
       "additive-manufacturing",
-      "porosity",
       "lack-of-fusion",
-      "segmentation",
-      "machine-learning-ready"
+      "porosity",
+      "segmentation-benchmark",
+      "machine-learning-ready",
+      "public-3d-data",
+      "segmentation"
     ],
-    "fatigue_initiation_relevance": "Medium",
-    "notes": "Used as the training source of the NIST 3D-GAN synthetic LOF pore dataset (repo-nist-synthetic-lof-pores-3dgan).",
-    "source_file": "repository_sweep.json"
+    "fatigue_initiation_relevance": "Low",
+    "notes": "No mechanical testing; useful LOF-pore morphology library for defect-based fatigue modelling.",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-nist-cocr-lpbf-xct-pores"
+    ]
   },
   {
     "id": "repo-nist-synthetic-lof-pores-3dgan",
@@ -4664,109 +5207,6 @@
     "source_file": "ebsd_3d.json"
   },
   {
-    "chemistry": {
-      "basis": "nominal",
-      "composition": {},
-      "notes": ""
-    },
-    "processing": {
-      "route": "L-PBF",
-      "parameters": "AMB2022-01 3D build; ROI includes part of a 2.5 mm leg extending into the baseplate; registered with build file and in-situ thermography",
-      "heat_treatment": "As-built (AMB2022-01 measurements; unverified for this specimen)",
-      "surface_condition": "Mechanically polished serial sections"
-    },
-    "techniques": [
-      "3D EBSD",
-      "Serial sectioning",
-      "X-ray CT"
-    ],
-    "acquisition": {
-      "facility": "AFRL automated multi-modal serial sectioning (LEROY system, per file names) + XRCT",
-      "voxel_size_um": 1.0,
-      "volume_dimensions": "Reconstructed EBSD at 1 µm and 2 µm (build coordinates); BSE at 0.854 and 2 µm; optical at 0.345 and 2 µm; h5ebsd covers sections 13-524",
-      "in_situ": false,
-      "notes": "All modalities registered into build coordinate system; transformation JSONs provided."
-    },
-    "microstructure": {
-      "features_resolved": [
-        "grains",
-        "orientations",
-        "pores"
-      ],
-      "grain_size_um": "",
-      "texture": "",
-      "phases": "gamma"
-    },
-    "defects": {
-      "types": [
-        "gas pores",
-        "lack-of-fusion"
-      ],
-      "statistics": "Porosity observable via XCT + optical/BSE serial sections (not quantified on landing page)"
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": false,
-      "test_type": "",
-      "loading": "",
-      "results": "",
-      "crack_initiation": "",
-      "initiation_tracked_in_3d": false
-    },
-    "tags": [
-      "additive-manufacturing",
-      "porosity",
-      "grain-scale",
-      "multimodal",
-      "benchmark",
-      "machine-learning-ready",
-      "multi-modal",
-      "registered"
-    ],
-    "notes": "Slice thickness inferred ~1 µm from reconstruction resolution (unverified). No fatigue testing in this dataset, but AM Bench also hosts IN718 fatigue data on separate specimens.",
-    "id": "ebsd-in718-ambench2022-serial-sectioning",
-    "title": "AM Bench 2022 IN718 (L-PBF) automated serial-sectioning EBSD/BSE/optical + registered XCT (AFRL/NIST)",
-    "material_class": "Ni superalloy",
-    "material": "IN718 (nickel alloy 718), L-PBF AM Bench AMB2022-01 3D build",
-    "data_availability": {
-      "status": "Public download",
-      "repository": "NIST Public Data Repository",
-      "url": "https://data.nist.gov/od/id/mds2-2767",
-      "doi": "10.18434/mds2-2767",
-      "size": "~2.0 TB (8479 files)",
-      "format": "DREAM.3D (.dream3d/.xdmf), .h5ebsd, section images (TIFF), JSON transforms",
-      "license": "NIST open license (https://www.nist.gov/open/license)"
-    },
-    "references": [
-      {
-        "citation": "Schwalbach E.J., Chapman M.G., Shah M.N., Uchic M.D., Hrabe N., Kafka O., Moser N., Lane B., Carson R., Belak J., Levine L.E., AM Bench 2022: IN718 Serial Sectioning and X-ray Computed Tomography Measurement Data, NIST (dataset)",
-        "doi": "10.18434/mds2-2767",
-        "url": "https://data.nist.gov/od/id/mds2-2767"
-      },
-      {
-        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
-        "doi": "10.1007/s40192-024-00372-4",
-        "url": null
-      },
-      {
-        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
-        "doi": "10.1007/s40192-024-00372-4"
-      }
-    ],
-    "fatigue_initiation_relevance": "Medium",
-    "source_file": "ebsd_3d.json",
-    "merged_from": [
-      "repo-nist-ambench2022-in718-serial-sectioning-xct"
-    ]
-  },
-  {
     "id": "conv-cast-ni-in100-rene125-shrinkage-fatigue",
     "title": "Fatigue from spongy shrinkage clusters in cast IN100 and Rene 125 with XCT-based FE models",
     "material_class": "Ni superalloy",
@@ -5089,88 +5529,6 @@
     ]
   },
   {
-    "id": "repo-nist-in718-ded-insitu-tensile-xct-pores",
-    "title": "In-situ synchrotron XCT tensile tests of DED IN718 thin-wall specimens: pore deformation, DIC and stress-strain (69 specimens)",
-    "material_class": "Ni superalloy",
-    "material": "Inconel 718 (DED, thin wall)",
-    "chemistry": {
-      "basis": "nominal",
-      "composition": {},
-      "notes": ""
-    },
-    "processing": {
-      "route": "DED",
-      "parameters": "Coaxial powder-fed laser DED thin wall; specimens from spatially varying locations and two orientations relative to build direction.",
-      "heat_treatment": "",
-      "surface_condition": "Machined miniature tensile specimens"
-    },
-    "techniques": [
-      "Synchrotron CT",
-      "X-ray CT"
-    ],
-    "acquisition": {
-      "facility": "Synchrotron (Argonne APS; co-author X. Xiao) (beamline unverified)",
-      "voxel_size_um": null,
-      "volume_dimensions": "",
-      "in_situ": true,
-      "notes": "3D XCT of a portion of the gauge at a series of strain/stress levels; 5 example specimens highlighted."
-    },
-    "microstructure": {
-      "features_resolved": [
-        "pores"
-      ],
-      "grain_size_um": "",
-      "texture": "",
-      "phases": ""
-    },
-    "defects": {
-      "types": [
-        "gas pores"
-      ],
-      "statistics": "No lack-of-fusion defects (thin wall); pore deformation vs load measured."
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": false,
-      "test_type": "",
-      "loading": "",
-      "results": "",
-      "crack_initiation": "",
-      "initiation_tracked_in_3d": false
-    },
-    "data_availability": {
-      "status": "Public download",
-      "repository": "NIST Public Data Repository",
-      "url": "https://data.nist.gov/od/id/mds2-2512",
-      "doi": "10.18434/mds2-2512",
-      "size": "~160 GB (1042 files)",
-      "format": "TIFF image stacks, DIC (Vic-2D), MAT, MP4, CSV",
-      "license": "NIST open license"
-    },
-    "references": [
-      {
-        "citation": "Kafka O.L., Yu C., Cheng P., Wolff S.J., Bennett J.L., Garboczi E.J., Cao J., Xiao X., Liu W.K., X-ray computed tomography analysis of pore deformation in IN718 made with directed energy deposition via in-situ tensile testing, Int. J. Solids Struct. 256 (2022) 111943",
-        "doi": "10.1016/j.ijsolstr.2022.111943"
-      }
-    ],
-    "tags": [
-      "additive-manufacturing",
-      "in-situ",
-      "porosity",
-      "crystal-plasticity-validation"
-    ],
-    "fatigue_initiation_relevance": "Low",
-    "notes": "Monotonic tension only, but pore-scale 4D data useful for defect-sensitivity modelling.",
-    "source_file": "repository_sweep.json"
-  },
-  {
     "chemistry": null,
     "processing": {
       "route": "EBM",
@@ -5261,50 +5619,45 @@
     "source_file": "ebsd_3d.json"
   },
   {
-    "id": "repo-nist-in718-lpbf-psp-watring-microct",
-    "title": "Process-structure-properties of as-built L-PBF IN718 (25 parameter sets): HCF, surface roughness, micro-CT pore networks, EBSD, tensile and void-descriptor fracture data",
+    "id": "am-nist-ded-in718-insitu-tension-xct",
+    "title": "DED IN718 thin-wall: in situ tensile XCT of pore deformation, DIC, 69 specimens (NIST/Northwestern)",
     "material_class": "Ni superalloy",
-    "material": "Inconel 718 (L-PBF, as-built)",
+    "material": "Inconel 718 (IN718)",
     "chemistry": {
       "basis": "nominal",
       "composition": {},
       "notes": ""
     },
     "processing": {
-      "route": "L-PBF",
-      "parameters": "25 processing-parameter sets varying laser power, scan speed, layer thickness and build orientation; down-selected conditions 0 deg/38 J/mm3, 0 deg/62 J/mm3, 60 deg/62 J/mm3.",
-      "heat_treatment": "None (as-built)",
-      "surface_condition": "As-built rough surfaces (fatigue) and machined specimens"
+      "route": "DED (laser, coaxial powder)",
+      "parameters": "Thin-wall deposit (stated to have no lack-of-fusion defects); specimens from spatially varying locations and two orientations relative to build direction.",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
     },
     "techniques": [
       "X-ray CT",
-      "Micro-CT"
+      "Synchrotron CT"
     ],
     "acquisition": {
-      "facility": "Lab micro-CT",
+      "facility": "Not verified in source metadata (co-author X. Xiao suggests APS synchrotron; unverified)",
       "voxel_size_um": null,
-      "volume_dimensions": "",
-      "in_situ": false,
-      "notes": "Paper2 micro-CT (~7 GB) and Paper3 micro-CT before/after tensile deformation (~11.9 GB)."
+      "volume_dimensions": "Portion of gauge region imaged at several stress/strain levels; 5 demonstration specimens",
+      "in_situ": true,
+      "notes": "Full set including raw data 6.7 TB; ~148 GB excluding raw data. Includes DIC strain maps and force data."
     },
     "microstructure": {
       "features_resolved": [
-        "pores",
-        "lack-of-fusion",
-        "grains"
+        "pores"
       ],
       "grain_size_um": "",
-      "texture": "Predominantly <001> along build direction; elongated grains and sub-grain boundaries",
-      "phases": "gamma (as-built)"
+      "texture": "",
+      "phases": ""
     },
     "defects": {
       "types": [
-        "lack-of-fusion",
-        "keyhole pores",
-        "gas pores",
-        "surface roughness"
+        "gas pores"
       ],
-      "statistics": "Low energy density -> lack-of-fusion porosity; high energy density -> more spherical (keyhole) pores."
+      "statistics": "Pore deformation tracked vs load; per-specimen statistics in dataset (not extracted)."
     },
     "mechanical_properties": {
       "yield_strength_MPa": null,
@@ -5312,14 +5665,117 @@
       "elongation_pct": null,
       "hardness": null,
       "modulus_GPa": null,
-      "other": "Tensile and meso-scale load-strain data included; build orientation changed yield strength."
+      "other": "Stress-strain curves, E, UTS per specimen in dataset (values not extracted); anisotropy and spatial variability measurable."
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": "",
+      "loading": "Quasi-static in situ tension",
+      "results": "",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "NIST Public Data Repository",
+      "url": "https://data.nist.gov/od/id/mds2-2512",
+      "doi": "10.18434/mds2-2512",
+      "size": "6.7 TB total incl. raw; ~148 GB without raw",
+      "format": "3D image stacks, DIC (.z2d, .mat), CSV, MATLAB/Python scripts",
+      "license": "NIST open license"
+    },
+    "references": [
+      {
+        "citation": "Kafka O.L., Yu C., Cheng P., Wolff S.J., Bennett J.L., Garboczi E.J., Cao J., Xiao X., Liu W.K., X-ray computed tomography analysis of pore deformation in IN718 made with directed energy deposition via in-situ tensile testing, Int. J. Solids Struct. 256 (2022) 111943",
+        "doi": "10.1016/j.ijsolstr.2022.111943",
+        "url": "https://doi.org/10.1016/j.ijsolstr.2022.111943"
+      },
+      {
+        "citation": "NIST dataset mds2-2512",
+        "doi": "10.18434/mds2-2512",
+        "url": "https://data.nist.gov/od/id/mds2-2512"
+      },
+      {
+        "citation": "Kafka O.L., Yu C., Cheng P., Wolff S.J., Bennett J.L., Garboczi E.J., Cao J., Xiao X., Liu W.K., X-ray computed tomography analysis of pore deformation in IN718 made with directed energy deposition via in-situ tensile testing, Int. J. Solids Struct. 256 (2022) 111943",
+        "doi": "10.1016/j.ijsolstr.2022.111943"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "in-situ",
+      "porosity",
+      "pore-mechanics",
+      "public-3d-data",
+      "crystal-plasticity-validation"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Monotonic loading only; useful for pore-mechanics model validation.",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-nist-in718-ded-insitu-tensile-xct-pores"
+    ]
+  },
+  {
+    "id": "am-nist-in718-psp-watring-spear",
+    "title": "As-built L-PBF IN718 process-structure-property set: 25 parameter sets HCF, micro-CT pore structure, tensile, VDF fracture prediction",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (IN718), as-built",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "3D Systems IN718 powder (recycled within vendor standards); composition not extracted."
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "3D Systems ProX DMP 320. 25 parameter sets: laser power 115-465 W (11 values), scan speed 620-1770 mm/s (13 values), layer thickness 30 or 60 um, build orientation 0/60/90 deg; hatch 100 um, spot 50 um; energy density ~30-90 J/mm3. Contours 115 W/625 mm/s (30 um) or 165 W/625 mm/s (60 um). 3 fatigue specimens per set (75 total), ASTM E466 flat specimens (6.36 x 3.10 mm gauge).",
+      "heat_treatment": "None (as-built)",
+      "surface_condition": "As-built surfaces for HCF; some machined specimens for tensile/meso tests"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia Versa 520 (Paper 2) and Zeiss Xradia Versa 500 (Paper 3, pre/post deformation)",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "mini-tensile gauge regions",
+      "in_situ": false,
+      "notes": "Paper 2: 160 kV, 10 W, 1 um voxel. Paper 3: 130-160 kV, 10 W, ~2 um voxel (some 1 um 'vertical stitch' scans downsampled); XCT before and after tensile deformation of 6 meso-scale specimens (per Watring dissertation, Univ. Utah 2021)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "Elongated grains; EBSD in dataset",
+      "texture": "Predominantly <001> along build direction",
+      "phases": "gamma matrix with Nb/Mo-rich secondary precipitates (as-built)"
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "gas pores",
+        "keyhole pores",
+        "surface roughness"
+      ],
+      "statistics": "Porosity (micro-CT): ~6.91% for 0 deg/38 J/mm3; 0.23% for 0 deg/62 J/mm3; 0.07% for 60 deg/62 J/mm3 (Watring dissertation). Paper 3 meso specimens 0.01-0.08% porosity."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 798,
+      "uts_MPa": 1081,
+      "elongation_pct": 29,
+      "hardness": null,
+      "modulus_GPa": 195,
+      "other": "Condition 0 deg/62 J/mm3: YS 798, UTS 1081 MPa, E 195 GPa, uniform el. 22%, total el. 29%. 60 deg/62 J/mm3: YS 772, UTS 1070, E 194, total el. 28%. 0 deg/38 J/mm3: YS 639, UTS 774, total el. 6%."
     },
     "fatigue": {
       "tested": true,
       "test_type": "HCF",
-      "loading": "Standardized fatigue specimens, 25 parameter sets (details in Watring et al. 2019)",
-      "results": "Fatigue life decreased outside optimal energy-density window; surface roughness and increasing number of surface initiation sites reduced life.",
-      "crack_initiation": "Surface crack initiation sites (multiple); LOF pores at low energy density.",
+      "loading": "Axial tension-tension, sigma_max 600 MPa, R = 0.1, 20 Hz, MTS 810, as-built surfaces",
+      "results": "Bell-shaped life vs energy density for fixed orientation; max life at 60 deg / 62.15 J/mm3 / 30 um layer. Life decreased with surface roughness.",
+      "crack_initiation": "Surface-crack initiation sites increased with roughness (build orientation); low energy density -> lack-of-fusion pores, high energy density -> spherical (possibly keyhole) pores. Initiation identified by SEM fractography, not tracked in CT for HCF specimens; CT used for pore networks and VDF-based fracture-location prediction in tension (4/6 correct).",
       "initiation_tracked_in_3d": false
     },
     "data_availability": {
@@ -5327,11 +5783,31 @@
       "repository": "NIST Public Data Repository",
       "url": "https://data.nist.gov/od/id/mds2-3083",
       "doi": "10.18434/mds2-3083",
-      "size": "~48 GB (932 files)",
-      "format": "micro-CT image stacks, EBSD, CSV/XLSX, Abaqus .inp",
-      "license": "NIST open license"
+      "size": "not verified (includes 90 MB FE input and micro-CT folders)",
+      "format": "Micro-CT data folders, EBSD, SEM TIFF, CSV/XLSX, MATLAB, Abaqus .inp",
+      "license": "NIST open license (unverified for this record)"
     },
     "references": [
+      {
+        "citation": "Watring D.S., Carter K.C., Crouse D., Raeymaekers B., Spear A.D., Mechanisms driving high-cycle fatigue life of as-built Inconel 718 processed by laser powder bed fusion, Mater. Sci. Eng. A 761 (2019) 137993",
+        "doi": "10.1016/j.msea.2019.06.003",
+        "url": "https://doi.org/10.1016/j.msea.2019.06.003"
+      },
+      {
+        "citation": "Watring D.S., Benzing J.T., Hrabe N., Spear A.D., Effects of laser-energy density and build orientation on the structure-property relationships in as-built Inconel 718 manufactured by laser powder bed fusion, Additive Manufacturing 36 (2020) 101425",
+        "doi": "10.1016/j.addma.2020.101425",
+        "url": "https://doi.org/10.1016/j.addma.2020.101425"
+      },
+      {
+        "citation": "Watring D.S., Benzing J.T., Kafka O.L., Liew L.-A., Moser N.H., Erickson J., Hrabe N., Spear A.D., Evaluation of a modified void descriptor function..., Acta Materialia 223 (2022) 117464",
+        "doi": "10.1016/j.actamat.2021.117464",
+        "url": "https://doi.org/10.1016/j.actamat.2021.117464"
+      },
+      {
+        "citation": "NIST dataset mds2-3083",
+        "doi": "10.18434/mds2-3083",
+        "url": "https://data.nist.gov/od/id/mds2-3083"
+      },
       {
         "citation": "Watring D.S., Carter K.C., Crouse D., Raeymaekers B., Spear A.D., Mechanisms driving high-cycle fatigue life of as-built Inconel 718 processed by laser powder bed fusion, MSEA 761 (2019) 137993",
         "doi": "10.1016/j.msea.2019.06.003"
@@ -5348,13 +5824,20 @@
     "tags": [
       "additive-manufacturing",
       "porosity",
+      "lack-of-fusion",
+      "process-parameters",
+      "surface-roughness",
+      "public-3d-data",
       "fatigue-initiation",
       "process-structure-property",
       "machine-learning-ready"
     ],
-    "fatigue_initiation_relevance": "High",
-    "notes": "Micro-CT in this record is tied mainly to tensile/fracture-location prediction (Paper 3); HCF study (Paper 1) contains SEM fractography and roughness data.",
-    "source_file": "repository_sweep.json"
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "CT acquisition values from D.S. Watring PhD dissertation (Univ. of Utah, 2021), https://mmm.mech.utah.edu/wp-content/uploads/2021/10/Watring_Dissertation_final_format.pdf .",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-nist-in718-lpbf-psp-watring-microct"
+    ]
   },
   {
     "id": "dct-in718-twin-boundary-crack-jimenez-2019",
@@ -6362,31 +6845,146 @@
     "source_file": "repository_sweep.json"
   },
   {
-    "id": "repo-nist-in718-contour-passes-rbf-xct",
-    "title": "L-PBF IN718 as-built surfaces with 0-2 contour passes: XCT surface/porosity data and rotating beam HCF (NIST)",
+    "id": "am-nist-ambench2022-in718-xct-serial-sectioning",
+    "title": "AM Bench 2022 IN718 (AMB2022-01) spatially registered XCT + serial-sectioning EBSD/BSE/optical 3D data",
     "material_class": "Ni superalloy",
-    "material": "Nickel alloy 718 (L-PBF)",
+    "material": "Nickel alloy 718 (IN718)",
     "chemistry": {
       "basis": "nominal",
       "composition": {},
-      "notes": ""
+      "notes": "See AMB2022-01 documentation."
+    },
+    "processing": {
+      "route": "L-PBF (PBF-LB)",
+      "parameters": "AMB2022-01 3D build; ROI includes part of a 2.5 mm leg extending into the baseplate. Spatially registered to build file and in situ thermography (mds2-2715).",
+      "heat_treatment": "As-built (AMB2022-01 includes separate heat-treatment studies)",
+      "surface_condition": "As-built"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Serial sectioning",
+      "3D EBSD"
+    ],
+    "acquisition": {
+      "facility": "AFRL/NIST serial sectioning (Robo-Met style) and lab XCT; instrument not verified",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "DREAM.3D volumes: EBSD 1 and 2 um, BSE 0.854 and 2 um, optical 0.345 and 2 um, XRCT stack",
+      "in_situ": false,
+      "notes": "All modalities registered into build coordinate system; h5ebsd (~18 GB) and multiple .dream3d files (up to ~11 GB)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Not extracted."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": "",
+      "loading": "",
+      "results": "",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "NIST Public Data Repository",
+      "url": "https://data.nist.gov/od/id/mds2-2767",
+      "doi": "10.18434/mds2-2767",
+      "size": ">60 GB (multiple multi-GB DREAM.3D/h5ebsd files)",
+      "format": "DREAM.3D (.dream3d) + XDMF, h5ebsd, JSON registration transforms",
+      "license": "NIST open license"
+    },
+    "references": [
+      {
+        "citation": "Schwalbach E.J., Chapman M.G., Shah M.N., Uchic M.D., Hrabe N., Kafka O., Moser N., Lane B., Carson R., Belak J., Levine L.E., AM Bench 2022: IN718 Serial Sectioning and X-ray Computed Tomography Measurement Data, NIST (2024)",
+        "doi": "10.18434/mds2-2767",
+        "url": "https://data.nist.gov/od/id/mds2-2767"
+      },
+      {
+        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
+        "doi": "10.1007/s40192-024-00372-4",
+        "url": "https://doi.org/10.1007/s40192-024-00372-4"
+      },
+      {
+        "citation": "Schwalbach E.J., Chapman M.G., Shah M.N., Uchic M.D., Hrabe N., Kafka O., Moser N., Lane B., Carson R., Belak J., Levine L.E., AM Bench 2022: IN718 Serial Sectioning and X-ray Computed Tomography Measurement Data, NIST (dataset)",
+        "doi": "10.18434/mds2-2767",
+        "url": "https://data.nist.gov/od/id/mds2-2767"
+      },
+      {
+        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
+        "doi": "10.1007/s40192-024-00372-4",
+        "url": null
+      },
+      {
+        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
+        "doi": "10.1007/s40192-024-00372-4"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "grain-scale",
+      "multimodal",
+      "registered",
+      "porosity",
+      "public-3d-data",
+      "benchmark",
+      "machine-learning-ready",
+      "multi-modal"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "No fatigue; included as high-quality registered 3D microstructure+defect reference for AM IN718 (e.g., for defect-microstructure fatigue simulations).",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "ebsd-in718-ambench2022-serial-sectioning",
+      "repo-nist-ambench2022-in718-serial-sectioning-xct"
+    ]
+  },
+  {
+    "id": "am-nist-in718-contour-passes-rbf-xct",
+    "title": "L-PBF IN718 as-built surfaces with 0/1/2 contour passes: XCT surface/porosity + rotating-beam HCF (NIST)",
+    "material_class": "Ni superalloy",
+    "material": "Nickel alloy 718 (IN718)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Not extracted from source."
     },
     "processing": {
       "route": "L-PBF",
-      "parameters": "Vertical specimens; only the number of contour passes varied (giving three as-built roughness levels) vs. polished reference; build CAD and parameters in dataset.",
-      "heat_treatment": "",
-      "surface_condition": "As-built (three contour conditions) and polished"
+      "parameters": "Vertical specimens; only the number of contour passes varied (0, 1, 2) to give three as-built roughness levels; compared with polished specimens. Build CAD files and HIP cycle log provided in dataset. Data folders labelled '30um' (likely layer thickness; unverified).",
+      "heat_treatment": "HIP cycle documented in dataset (build_data/heat_treatment/HIP_cycles NIST In718 11292021.xlsx); details not extracted",
+      "surface_condition": "As-built (0, 1, 2 contours) vs polished"
     },
     "techniques": [
       "X-ray CT",
       "Micro-CT"
     ],
     "acquisition": {
-      "facility": "Lab XCT (NIST)",
+      "facility": "Lab XCT (NIST); instrument not verified",
       "voxel_size_um": null,
-      "volume_dimensions": "",
+      "volume_dimensions": "Full 16-bit TIFF stacks per specimen (e.g. ~5.8 GB zipped for specimen 1p1)",
       "in_situ": false,
-      "notes": "Analysis files labelled '30um' (e.g. *_30um_surf_roughness.csv, *_30um_sv3d.csv) suggest ~30 um effective voxel (unverified)."
+      "notes": "3D images, binary segmentations, scan settings files, and imppy3d Python scripts for segmentation, internal porosity and surface-roughness/notch extraction for 6 specimens of particular interest."
     },
     "microstructure": {
       "features_resolved": [
@@ -6402,7 +7000,7 @@
         "surface roughness",
         "gas pores"
       ],
-      "statistics": "Per-specimen 3D surface roughness point data and Sv-type 3D surface metrics from XCT."
+      "statistics": "Per-specimen surface-profile CSVs (0.46-0.78 GB each) and deepest-surface-notch (sv3d) tables. Roughness increased as contour passes decreased."
     },
     "mechanical_properties": {
       "yield_strength_MPa": null,
@@ -6416,8 +7014,8 @@
       "tested": true,
       "test_type": "HCF",
       "loading": "Rotating beam (bending) fatigue",
-      "results": "Roughness increases as contour passes decrease, but life not trivially related; one contour pass sufficient for peak as-built performance; zero vs two passes not statistically different.",
-      "crack_initiation": "Multiple surface initiation points; XCT-measured surface feature depth not strongly associated with failure location (grain orientation suggested as additional factor).",
+      "results": "One contour pass sufficient for peak as-built performance; zero passes not statistically different from two passes. S-N fits and confidence bands provided.",
+      "crack_initiation": "Multiple surface initiation points; deepest XCT-measured surface feature depth NOT strongly associated with failure location. Authors suggest other factors (e.g., grain orientation) matter.",
       "initiation_tracked_in_3d": true
     },
     "data_availability": {
@@ -6425,11 +7023,21 @@
       "repository": "NIST Public Data Repository",
       "url": "https://data.nist.gov/od/id/mds2-3044",
       "doi": "10.18434/mds2-3044",
-      "size": "~48.5 GB (148 files)",
-      "format": "XCT image data, CSV, CAD, SEM images",
+      "size": "tens of GB (TIFF stacks ~5.8 GB zipped per specimen; exact total not verified)",
+      "format": "16-bit TIFF stacks (zip), binary stacks, .rcp, CSV, XLSX, MATLAB, Python (imppy3d), SEM/optical images",
       "license": "NIST open license"
     },
     "references": [
+      {
+        "citation": "Kafka O.L., Benzing J., Derimow N., Schumacher P., Koepke L., Beamer C., Godfrey D., Hrabe N., Effects of as-built surface with varying number of contour passes on high-cycle fatigue behavior of additively manufactured nickel alloy 718, Int. J. Fatigue 176 (2023) 107872",
+        "doi": "10.1016/j.ijfatigue.2023.107872",
+        "url": "https://doi.org/10.1016/j.ijfatigue.2023.107872"
+      },
+      {
+        "citation": "NIST dataset mds2-3044",
+        "doi": "10.18434/mds2-3044",
+        "url": "https://data.nist.gov/od/id/mds2-3044"
+      },
       {
         "citation": "Kafka O.L., Benzing J., Derimow N., Schumacher P., Koepke L., Beamer C., Godfrey D., Hrabe N., Effects of as-built surface with varying number of contour passes on high-cycle fatigue behavior of additively manufactured nickel alloy 718, Int. J. Fatigue 176 (2023) 107872",
         "doi": "10.1016/j.ijfatigue.2023.107872"
@@ -6439,11 +7047,15 @@
       "fatigue-initiation",
       "additive-manufacturing",
       "surface-roughness",
+      "public-3d-data",
       "as-built-surface"
     ],
     "fatigue_initiation_relevance": "High",
-    "notes": "",
-    "source_file": "repository_sweep.json"
+    "notes": "Valuable negative result: deepest notch from XCT did not predict initiation site. Voxel size not verified (NIST file server timed out).",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-nist-in718-contour-passes-rbf-xct"
+    ]
   },
   {
     "id": "dct-ni-superalloy-fib-notch-messe-2014",
@@ -7029,6 +7641,101 @@
     "source_file": "ebsd_3d.json"
   },
   {
+    "id": "am-tum-316l-uct-fatigue-ml",
+    "title": "PBF-LB/M 316L: specimen-wise uCT (internal pores + surface topology) linked to fatigue lives, ML pore classification",
+    "material_class": "Steel",
+    "material": "316L austenitic stainless steel",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF (PBF-LB/M)",
+      "parameters": "Described in Diller et al. 2024 (not verified here)",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Includes as-built surface topology (surface defects analysed)"
+    },
+    "techniques": [
+      "Micro-CT",
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Lab micro-CT (TUM; instrument not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "All specimens scanned by uCT before fatigue testing."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "surface roughness"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion",
+        "surface roughness"
+      ],
+      "statistics": "ML classification of pores into gas vs lack-of-fusion; surface-defect features extracted."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Series 1: load levels 350 and 450 MPa (scans 1-20; some runouts stopped at ~6-10 million cycles). Series 2 (scans u1-u35): stress ranges 200-375 MPa.",
+      "results": "Cycles to failure per scan in readme, e.g., 450 MPa: 1.37e5 - 5.4e6; stress range 200 MPa: 2.52e6; 375 MPa: ~1.76e5-2.2e5.",
+      "crack_initiation": "Surface defects exerted higher influence on fatigue than internal defects; ML model predicts life from surface-defect features.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Partially public",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/21105346",
+      "doi": "10.5281/zenodo.21105346",
+      "size": "Only a readme with fatigue table visible in record at time of check",
+      "format": "TXT (fatigue table); uCT scans described but not verified as downloadable",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Diller J., Siebert L., Winkler M., Siebert D., Blankenhagen J., Wenzler D., Radlbeck C., Mensinger M., An integrated approach for detecting and classifying pores and surface topology for fatigue assessment 316L manufactured by PBF-LB/M using uCT and machine learning algorithms, Fatigue Fract. Eng. Mater. Struct. 47(9) (2024) 3392-3407",
+        "doi": "10.1111/ffe.14375",
+        "url": "https://doi.org/10.1111/ffe.14375"
+      },
+      {
+        "citation": "Diller J., Siebert L., Winkler M., et al., An integrated approach for detecting and classifying pores and surface topology for fatigue assessment 316L manufactured by PBF-LB/M using muCT and machine learning algorithms, Fatigue Fract. Eng. Mater. Struct. 47(9) (2024) 3392-3407",
+        "doi": "10.1111/ffe.14375"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "surface-roughness",
+      "porosity",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Record description claims uCT scans are included; at check time only 'read me.txt' was listed (scans may be restricted/pending).",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-zenodo-316l-pbflb-uct-fatigue-diller"
+    ]
+  },
+  {
     "chemistry": null,
     "processing": {
       "route": "L-PBF",
@@ -7104,93 +7811,6 @@
     ],
     "fatigue_initiation_relevance": "Low",
     "source_file": "ebsd_3d.json"
-  },
-  {
-    "id": "repo-zenodo-316l-pbflb-uct-fatigue-diller",
-    "title": "316L PBF-LB/M specimens: per-specimen micro-CT scans linked to fatigue lives, pore classification (gas vs LOF) and surface topology (TUM)",
-    "material_class": "Steel",
-    "material": "316L stainless steel (PBF-LB/M)",
-    "chemistry": {
-      "basis": "nominal",
-      "composition": {},
-      "notes": ""
-    },
-    "processing": {
-      "route": "L-PBF",
-      "parameters": "",
-      "heat_treatment": "",
-      "surface_condition": "As-built surfaces (surface topology analysed)"
-    },
-    "techniques": [
-      "Micro-CT",
-      "X-ray CT"
-    ],
-    "acquisition": {
-      "facility": "Lab micro-CT (TUM; unverified)",
-      "voxel_size_um": null,
-      "volume_dimensions": "",
-      "in_situ": false,
-      "notes": ""
-    },
-    "microstructure": {
-      "features_resolved": [
-        "pores",
-        "lack-of-fusion",
-        "surface roughness"
-      ],
-      "grain_size_um": "",
-      "texture": "",
-      "phases": ""
-    },
-    "defects": {
-      "types": [
-        "gas pores",
-        "lack-of-fusion",
-        "surface roughness"
-      ],
-      "statistics": "ML classification of pores into gas pores and LOF pores; surface defect features."
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": true,
-      "test_type": "HCF",
-      "loading": "Two specimen series: load levels 350/450 MPa (20 scans, several runouts) and stress ranges 200-375 MPa (micro-specimens 'mu1-mu34')",
-      "results": "Cycles to failure per scan listed in readme (e.g. 136,921 to 10,100,143 cycles); internal defects had smaller effect than surface defects; ML fatigue-life model using surface-defect features.",
-      "crack_initiation": "Surface defects dominate fatigue behavior.",
-      "initiation_tracked_in_3d": false
-    },
-    "data_availability": {
-      "status": "Partially public",
-      "repository": "Zenodo",
-      "url": "https://zenodo.org/records/21105346",
-      "doi": "10.5281/zenodo.21105346",
-      "size": "",
-      "format": "TXT readme with fatigue table; micro-CT scans described but only readme visible in record at time of check",
-      "license": "CC BY 4.0"
-    },
-    "references": [
-      {
-        "citation": "Diller J., Siebert L., Winkler M., et al., An integrated approach for detecting and classifying pores and surface topology for fatigue assessment 316L manufactured by PBF-LB/M using muCT and machine learning algorithms, Fatigue Fract. Eng. Mater. Struct. 47(9) (2024) 3392-3407",
-        "doi": "10.1111/ffe.14375"
-      }
-    ],
-    "tags": [
-      "additive-manufacturing",
-      "porosity",
-      "surface-roughness",
-      "machine-learning-ready",
-      "fatigue-initiation"
-    ],
-    "fatigue_initiation_relevance": "High",
-    "notes": "Zenodo API listed only 'read me.txt' (Oct 2026); CT volumes may be pending or in a separate version - verify before use.",
-    "source_file": "repository_sweep.json"
   },
   {
     "chemistry": null,
@@ -8870,6 +9490,894 @@
     "source_file": "ebsd_3d.json"
   },
   {
+    "id": "am-auburn-poudel-ti64-xct-defect-classification",
+    "title": "L-PBF Ti-6Al-4V 1 um XCT: 2156 volumetric defects labelled LoF / gas / keyhole with ML classifiers",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "EOS M290; baseline 280 W, 1300 mm/s, 40 um layer, 120 um hatch, 67 deg rotation, 10 mm stripes; Set 1 varied power+speed, Set 2 power+hatch, each +/-30% in 10% steps; 49 coupons per set (98 total)",
+      "heat_treatment": "Not verified",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia 620 Versa, 160 kV, 25 W, HE1 filter, 1601 projections",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Dragonfly Pro post-processing; nine morphological parameters per defect."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "gas pores",
+        "keyhole pores"
+      ],
+      "statistics": "2156 defects (max axis >10 um); 1970 labelled: 1717 LoF, 181 gas-entrapped, 72 keyhole. Decision tree >98%, ANN >99% classification accuracy."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": "",
+      "loading": "",
+      "results": "",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "On request",
+      "repository": "Zenodo (code only)",
+      "url": "https://doi.org/10.5281/zenodo.6869455",
+      "doi": "10.5281/zenodo.6869455",
+      "size": "XCT data terabyte-scale, on request",
+      "format": "MATLAB code",
+      "license": ""
+    },
+    "references": [
+      {
+        "citation": "Poudel A., Yasin M.S., Ye J., Liu J., Vinel A., Shao S., Shamsaei N., Feature-based volumetric defect classification in metal additive manufacturing, Nature Communications 13 (2022)",
+        "doi": "10.1038/s41467-022-34122-x",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9606371/"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "keyhole",
+      "lack-of-fusion",
+      "machine-learning-ready",
+      "defect-classification"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Not fatigue-tested; defect taxonomy relevant to defect-type-specific fatigue models.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-bam-hejazi-ebm-ti64-cavity-vhcf-xct",
+    "title": "PBF-EB Ti-6Al-4V with artificial internal cavity: HCF/VHCF (ultrasonic) and XCT crack segmentation by deep learning (BAM)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "EBM (PBF-EB/M)",
+      "parameters": "Samples built with an internal artificial cavity to control initiation (parameters not verified)",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Machined (machining exposed some LoF defects)"
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Lab XCT (BAM; not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Follow-up (SSRN preprint 2026) uses time-resolved (interrupted) lab XCT with registration and DL segmentation."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "gas pores"
+      ],
+      "statistics": "Crack and defect characteristics via deep-learning segmentation; initiation at high-curvature regions on defect surfaces (preprint)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "VHCF",
+      "loading": "Ultrasonic fatigue, HCF and VHCF regimes (details not verified)",
+      "results": "",
+      "crack_initiation": "Initiation at internal artificial cavity or at LoF defects exposed to/near the surface; surface-exposed LoF as detrimental as internal artificial defects and initiate earlier.",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1111/ffe.14489",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Article CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Hejazi B., Compart A., Fritsch T., Wagner R., Weidner A., Biermann H., Benz C., Sander M., Bruno G., Fatigue Crack Segmentation and Characterization of Additively Manufactured Ti-6Al-4V Using X-Ray Computed Tomography, Fatigue Fract. Eng. Mater. Struct. (2024)",
+        "doi": "10.1111/ffe.14489",
+        "url": "https://doi.org/10.1111/ffe.14489"
+      },
+      {
+        "citation": "Hejazi B., Hebrard L., Eddah M., Benz C., Radtke L., Serrano-Munoz I., Crack initiation statistics and propagation dynamics of additively manufactured Ti-6Al-4V under very-high-cycle-fatigue using time-resolved X-ray computed tomography, SSRN preprint (2026)",
+        "doi": "10.2139/ssrn.6954097",
+        "url": "https://doi.org/10.2139/ssrn.6954097"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "VHCF",
+      "deep-learning-segmentation",
+      "artificial-defect"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-cmu-cunningham-ebm-ti64-srct-hip",
+    "title": "EBM Ti-6Al-4V from two powders: synchrotron uCT porosity as-built, after HIP and after subsequent heat treatment",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "EBM + HIP",
+      "parameters": "Two different powders (details not verified)",
+      "heat_treatment": "HIP, then subsequent heat treatment",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron uSXCT (APS beamline not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores"
+      ],
+      "statistics": "Gas porosity in powder correlated with as-built porosity; pores shrank after HIP but grew after subsequent heat treatment (gas detected in as-HIPed state)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Crystal plasticity simulations of pore-size effects."
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": "",
+      "loading": "",
+      "results": "",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1080/21663831.2017.1340911",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Article CC-BY"
+    },
+    "references": [
+      {
+        "citation": "Cunningham R., Nicolas A., Madsen J., Fodran E., Anagnostou E., Sangid M.D., Rollett A.D., Analyzing the effects of powder and post-processing on porosity and properties of electron beam melted Ti-6Al-4V, Materials Research Letters 5(7) (2017) 516-525",
+        "doi": "10.1080/21663831.2017.1340911",
+        "url": "https://doi.org/10.1080/21663831.2017.1340911"
+      },
+      {
+        "citation": "Cunningham R., Narra S.P., Ozturk T., Beuth J., Rollett A.D., Evaluating the Effect of Processing Parameters on Porosity in Electron Beam Melted Ti-6Al-4V via Synchrotron X-ray Microtomography, JOM 68 (2016) 765-771",
+        "doi": "10.1007/s11837-015-1802-0",
+        "url": "https://doi.org/10.1007/s11837-015-1802-0"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "HIP",
+      "porosity",
+      "synchrotron",
+      "entrapped-gas"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Relevant to HIP pore regrowth risk for fatigue.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-cz-ded-ti64-gradient-uct-fatigue",
+    "title": "DED-L Ti-6Al-4V across build height: raw uCT pore volumes, S-N, FCGR and microstructure (Zenodo)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "ICP-MS data in dataset"
+    },
+    "processing": {
+      "route": "DED (laser, DED-L)",
+      "parameters": "Spot size, layer thickness, hatch, speed, power, powder flow listed in dataset Tab. 1 (values not extracted); contour-fill strategies; DMT closed-loop regime",
+      "heat_treatment": "As-deposited (alpha' martensite); HIP/HT suggested as future step",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "Micro-CT",
+      "X-ray CT",
+      "3D EBSD"
+    ],
+    "acquisition": {
+      "facility": "Lab micro-CT (not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Raw uCT images (TIFF) for 3D pore distribution included."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "phases",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "No pronounced crystallographic texture (EBSD)",
+      "phases": "Predominantly alpha' martensite; deformation twins in alpha' (TEM)"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Porosity mainly oriented perpendicular to the build direction (planar)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Low ductility attributed to martensite + pores; tensile and hardness data in dataset."
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "S-N (stress levels incl. 150 and 500 MPa shown); FCGR on 3x4x32 mm specimens with Hartmann-Schijve fit",
+      "results": "S-N vs rolled reference; FCGR thresholds and KIC in dataset Tab. 2",
+      "crack_initiation": "Pores acted as crack initiation sites; planar pore orientation limited effect on propagation.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/20815437",
+      "doi": "10.5281/zenodo.20815437",
+      "size": "~3.1 GB",
+      "format": "TIFF (uCT), CSV, ODT, JPG, .xy",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Skolakova A., Pinc J., et al., Microstructural gradients and associated mechanical and fatigue behavior in DED Ti-6Al-4V across the build height, Materials Science in Additive Manufacturing (2026)",
+        "doi": "10.36922/MSAM026210047",
+        "url": "https://doi.org/10.36922/msam026210047"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "DED",
+      "porosity",
+      "public-3d-data",
+      "fatigue-crack-growth"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-hornas-ti64-uct-ml-fatigue",
+    "title": "AM Ti-6Al-4V: pre-test uCT defect parameters + fatigue lives with augmented ML dataset",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Additive manufacturing (process not verified)",
+      "parameters": "Not verified",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "Micro-CT",
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Lab uCT (FH Upper Austria group; not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Defect parameters from uCT before fatigue (not extracted)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Not verified",
+      "results": "ML (with inverse-transform sampling + RBF interpolation augmentation) reached R^2 up to 0.953 for life prediction.",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "Zenodo (article PDF)",
+      "url": "https://zenodo.org/records/13269984",
+      "doi": "",
+      "size": "",
+      "format": "PDF",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Hornas J., Behal J., Homola P., Doubrava R., Holzleitner M., Senck S., A machine learning based approach with an augmented dataset for fatigue life prediction of additively manufactured Ti-6Al-4V samples, Eng. Fract. Mech. (2023) 109709",
+        "doi": "10.1016/j.engfracmech.2023.109709",
+        "url": "https://doi.org/10.1016/j.engfracmech.2023.109709"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "machine-learning",
+      "porosity",
+      "fatigue-life-prediction"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-hu-slm-ti64-srct-murakami-kt",
+    "title": "SLM Ti-6Al-4V: synchrotron CT defect population, extreme values + Murakami fatigue strength, extended Kitagawa-Takahashi diagram",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF (SLM)",
+      "parameters": "Not verified",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "3D EBSD"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (beamline not verified; co-author X.H. Xiao)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "High-resolution SR-CT for defect population; EBSD (2D) for grains."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion",
+        "grains"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "alpha/alpha'"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Population, morphology and dimensions quantified; defects larger than alpha grains dominate initiation."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Not verified",
+      "results": "Fatigue strength via statistics of extremes + Murakami sqrt(area); extended K-T diagram with defect-determined finite-life region.",
+      "crack_initiation": "Defects (pores/LOF) larger than alpha grains are the initiation sites.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1016/j.ijfatigue.2020.105584",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": ""
+    },
+    "references": [
+      {
+        "citation": "Hu Y.N., Wu S.C., Wu Z.K., Zhong X.L., Ahmed S., Karabal S., Xiao X.H., Zhang H.O., Withers P.J., A new approach to correlate the defect population with the fatigue life of selective laser melted Ti-6Al-4V alloy, Int. J. Fatigue 136 (2020) 105584",
+        "doi": "10.1016/j.ijfatigue.2020.105584",
+        "url": "https://doi.org/10.1016/j.ijfatigue.2020.105584"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "porosity",
+      "Murakami",
+      "extreme-value-statistics",
+      "synchrotron"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Details from abstract only.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-hu-slm-ti64-uct-nasgro",
+    "title": "SLM Ti-6Al-4V: uCT defect population/location + NASGRO life prediction and eXtended Defect Zone (Hu, Wu, Withers 2020)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF (SLM)",
+      "parameters": "Not verified",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "Micro-CT",
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Not verified",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Population, morphology, dimension and location characterized by uCT."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Not verified",
+      "results": "NASGRO with effective initial crack length (cyclic plastic zone + defect radius) predicts life.",
+      "crack_initiation": "Defect threat maximal just beneath the surface; pronounced when center within 2r0 of surface (XDZ concept).",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1016/j.matdes.2020.108708",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Open access article"
+    },
+    "references": [
+      {
+        "citation": "Hu Y., Wu S., Withers P.J., Zhang J., Bao H., Fu Y., Kang G., The effect of manufacturing defects on the fatigue life of selective laser melted Ti-6Al-4V structures, Materials & Design 192 (2020) 108708",
+        "doi": "10.1016/j.matdes.2020.108708",
+        "url": "https://doi.org/10.1016/j.matdes.2020.108708"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "porosity",
+      "near-surface-defects"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Full text not accessible here; experimental details unverified.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-mdf-ti64-correlative-xct-serial-sectioning",
+    "title": "Correlative multi-instrument XCT (5 scans) and optical serial sectioning of AM Ti-6Al-4V with external fiducials (AFRL)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Additive manufacturing (process not stated in metadata)",
+      "parameters": "Not stated",
+      "heat_treatment": "Not stated",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "X-ray CT",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Five different XCT systems/parameter sets (scans A-E); mechanical-polish serial sectioning optical microscopy",
+      "voxel_size_um": 2.8,
+      "volume_dimensions": "Common VOI; serial sections 2.8 um in-plane, 2.01 um average slice thickness",
+      "in_situ": false,
+      "notes": "Raw projections (32-bit float or 16-bit) with angles/shift files plus registered reconstructions as TIFF stacks; z-height map for SS slices. Scan E missing 1812 projections."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Ground-truth (serial sectioning) vs XCT detectability of the same pores at different voxel sizes."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": "",
+      "loading": "",
+      "results": "",
+      "crack_initiation": "",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Materials Data Facility",
+      "url": "https://doi.org/10.18126/t27t-9iao",
+      "doi": "10.18126/t27t-9iao",
+      "size": "not verified",
+      "format": "TIFF stacks, raw projections, text metadata",
+      "license": "not verified"
+    },
+    "references": [
+      {
+        "citation": "Jolley B.R., Uchic M.D., Sparkman D., Chapman M., Schwalbach E., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V using External Fiducial Markers, Materials Data Facility (2024)",
+        "doi": "10.18126/t27t-9iao",
+        "url": "https://petreldata.net/mdf/detail/jolley_correlative_v1.2"
+      },
+      {
+        "citation": "Jolley B.R., Sparkman D.M., Chapman M.G., Schwalbach E.J., Uchic M.D., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V, IMMI 13 (2024) 746-757",
+        "doi": "10.1007/s40192-024-00367-1",
+        "url": null
+      },
+      {
+        "citation": "Sparkman D., Jolley B., Schwalbach E., Knott C., Uchic M., Chapman M., Spatial Registration of X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data, ASNT Research Symposium 2023",
+        "doi": "10.32548/rs.2023.084",
+        "url": null
+      },
+      {
+        "citation": "Jolley B.R., Uchic M.D., Sparkman D., Chapman M., Schwalbach E., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V..., IMMI (2024)",
+        "doi": "10.1007/s40192-024-00367-1"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "porosity",
+      "XCT-validation",
+      "segmentation-benchmark",
+      "public-3d-data",
+      "ground-truth",
+      "machine-learning-ready",
+      "registered"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Ideal for quantifying XCT pore-size underestimation that drives non-conservative sqrt(area) fatigue predictions.",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "ebsd-ti64-am-robomet-xct-jolley",
+      "repo-mdf-jolley-ti64-xct-optical-serial-sectioning"
+    ]
+  },
+  {
+    "id": "am-schulz-lpbf-ti64-vhcf-ct-critical-defects",
+    "title": "L-PBF Ti-6Al-4V VHCF: CT-based identification of critical defects and fatigue failure analysis (TU Dresden / Fraunhofer IWU)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "Not verified",
+      "heat_treatment": "Not verified",
+      "surface_condition": "Not verified"
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Not verified",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Murakami sqrt(area) used to predict crack-initiating defects (per web search summary; unverified)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "VHCF",
+      "loading": "Not verified",
+      "results": "",
+      "crack_initiation": "Critical (crack-initiating) defects identified from CT (details unverified).",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "",
+      "url": "https://doi.org/10.1016/j.ijfatigue.2026.109625",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Article CC-BY (hybrid OA per Semantic Scholar)"
+    },
+    "references": [
+      {
+        "citation": "Schulz P., Toppel T., Stampa L., Kuhne R., Schettler S., Koch I., Zimmermann M., Drossel W.-G., Gude M., Computed tomography based investigation of critical defects and fatigue failure analysis of very high cycle fatigued Ti-6Al-4V produced by laser powder bed fusion, Int. J. Fatigue (2026) 109625",
+        "doi": "10.1016/j.ijfatigue.2026.109625",
+        "url": "https://doi.org/10.1016/j.ijfatigue.2026.109625"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "VHCF",
+      "killer-defect",
+      "Murakami"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Only bibliographic metadata verified; experimental details need follow-up.",
+    "source_file": "am_metals_ct.json"
+  },
+  {
+    "id": "am-tammas-williams-ebm-ti64-ct-initiation",
+    "title": "EBM Ti-6Al-4V: interrupted lab XCT during fatigue tracking crack initiation at pores (Tammas-Williams et al. 2017)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Pre-alloyed gas-atomised powder"
+    },
+    "processing": {
+      "route": "EBM",
+      "parameters": "Arcam S12, 70 um layers, standard settings, hatch lengths <100 mm; cylindrical samples built along z, square-section along x (rake direction)",
+      "heat_treatment": "None reported (no HIP)",
+      "surface_condition": "Machined (surface-affected region removed); gauge 4.5 mm dia x 12 mm"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Nikon Metrology 225/320 kV (Manchester), 95 kV, 130 uA, Mo target",
+      "voxel_size_um": 10.4,
+      "volume_dimensions": "~16.6 mm scanned length; ~270 mm^3 gauge volume",
+      "in_situ": false,
+      "notes": "x-600 series scanned interrupted every 10k cycles; reliable pore detection >~26 um equivalent diameter."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "alpha+beta"
+    },
+    "defects": {
+      "types": [
+        "gas pores"
+      ],
+      "statistics": "203-298 pores (>26 um) per x-600 sample; initiating pores sqrt(area) ~50-170 um; never the largest pore."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Axial load control (ASTM E466-07), R = 0, 0.25 Hz trapezoidal; z-series at several max stresses (incl. 575, 600, 760 MPa); x-series at 600 MPa",
+      "results": "Cracks first detected by CT at ~70k, 100k, 120k cycles; initiation >70% of life overall (75-98% in CT-monitored samples).",
+      "crack_initiation": "z-series: 11/13 at pores (10 near-surface), 2 at facets. x-600: 4/4 at CT-detected pores; with surface proximity and aspect ratio, initiating pore ranked within top 3% of most harmful defects.",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "On request",
+      "repository": "",
+      "url": "https://doi.org/10.1038/s41598-017-06504-5",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Article CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Tammas-Williams S., Withers P.J., Todd I., Prangnell P.B., The Influence of Porosity on Fatigue Crack Initiation in Additively Manufactured Titanium Components, Scientific Reports 7 (2017) 7308",
+        "doi": "10.1038/s41598-017-06504-5",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5544733/"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "porosity",
+      "interrupted-CT",
+      "killer-defect"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Seminal pore-ranking study (size, Murakami, stress concentration, plastic criteria).",
+    "source_file": "am_metals_ct.json"
+  },
+  {
     "id": "conv-ti64-short-crack-closure-toda",
     "title": "3D short fatigue crack closure in Ti-6Al-4V by ultra-high-resolution X-ray microtomography",
     "material_class": "Ti alloy",
@@ -8958,6 +10466,250 @@
     "source_file": "conventional_ct.json"
   },
   {
+    "id": "am-nist-ambench2025-03-ti64-rbf-xct",
+    "title": "AM Bench 2025 AMB2025-03: PBF-L Ti-6Al-4V rotating-bending HCF with pre-test XCT of gauge sections and killer-pore registration",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (ASTM F3001)",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Al": 6.3,
+        "V": 3.89,
+        "O": 0.1,
+        "C": 0.01,
+        "N": 0.02,
+        "H": 0.003,
+        "Fe": 0.16,
+        "Ti": "bal."
+      },
+      "notes": "Solid chemistry of specimen 800HIP-106 after heat treatment; 800VAC-85: Al 6.30, V 3.76, O 0.10, C 0.01, N 0.02, H 0.003, Fe 0.17. Both meet ASTM F3001."
+    },
+    "processing": {
+      "route": "L-PBF (PBF-L/PBF-LB)",
+      "parameters": "3D Systems DMP Flex 350 (software 36.15.13); 245 W laser power, 1250 mm/s scan speed, 60 um layer, 80 um beam spot, 245 deg scan rotation between layers, no baseplate preheat, 99.999% Ar. Plasma-atomized powder 10-45 um (D10 21, D50 35, D90 47 um). All fatigue specimens built vertically.",
+      "heat_treatment": "Two conditions from one build: 800HIP = 800 C, 2 h, 200 MPa Ar, ~12 C/min cooling; 800VAC = same thermal cycle in vacuum furnace with ~75 mTorr Ar partial pressure (no pressure; porosity not closed).",
+      "surface_condition": "Machined and polished per ISO 1143 (Ra <= 0.2 um; measured avg Ra ~0.09-0.13 um)"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia Versa XRM-500 (NIST)",
+      "voxel_size_um": 5.5,
+      "volume_dimensions": "Entire RBF gauge section from 4 stitched FOVs; typically >3200 slices of ~1004 x 1024 pixels",
+      "in_situ": false,
+      "notes": "140 kV, 71 uA, 4.0 s exposure, 1601 projections/360 deg, HE2 filter, 16-bit, beam hardening factor 0.25; reconstructed with Zeiss Scout-and-Scan 14.0.1. XCT on five RBF specimens prior to fatigue. Pores segmented with IMPPY3D (non-local-means denoise, hysteresis threshold, convex-hull closure for near-surface features). Lead-particle fiducial used to register fracture-origin (killer) pore to XCT."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "lack-of-fusion"
+      ],
+      "grain_size_um": "alpha lath mean area ~25.06 um^2 (800VAC) and ~24.13 um^2 (800HIP) from EBSD (2D)",
+      "texture": "EBSD texture provided in calibration data",
+      "phases": "alpha + beta (alpha-Ti indexed in EBSD)"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion",
+        "surface roughness"
+      ],
+      "statistics": "Per-specimen CSVs of labelled pores (centroid, volume, equivalent spherical diameter, sphericity, rotated bounding box extents), porosity of scanned region, cross-sectional area vs gauge length; sqrt(area) measurements of killer defects provided in answers data. 800HIP sealed internal porosity."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 1004.8,
+      "uts_MPa": 1089.5,
+      "elongation_pct": 19.4,
+      "hardness": null,
+      "modulus_GPa": 153,
+      "other": "800HIP avg (n=3): YS 1004.8 MPa, UTS 1089.5 MPa, E 153 GPa, uniform el. 5.2%, total el. 19.4%. 800VAC avg: YS 999.6, UTS 1082.6, E 150 GPa, uniform 6.2%, total 15.6%. ASTM E8, strain rate 0.001/s. No statistically significant differences."
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Four-point rotating bending (ISO 1143), R = -1, 100 Hz, ADMET eXpert 9313; ~24-25 specimens per condition",
+      "results": "Full S-N data for 800HIP (calibration) and both conditions (answers_data/fatigue_both_conditions.xlsx). Challenge asked for 800VAC S-N, specimen-specific fatigue strength and failure location.",
+      "crack_initiation": "800VAC specimens initiated at internal/near-surface pores; killer pores identified on fracture surfaces by SEM/optical fractography and registered to labelled XCT pore IDs (xct_fractography_registration). HIP specimens showed surface-based initiation (SEM confirmation).",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "NIST Public Data Repository",
+      "url": "https://data.nist.gov/od/id/mds2-3734",
+      "doi": "10.18434/mds2-3734",
+      "size": "~239 GB (438 files)",
+      "format": "Zeiss .xrm/.txrm radiographs, 16-bit/8-bit TIFF stacks, segmented and labelled stacks, VTK, CSV, XLSX, EBSD data",
+      "license": "NIST open license (https://www.nist.gov/open/license)"
+    },
+    "references": [
+      {
+        "citation": "NIST AM Bench, AMB2025-03 Measurements and Challenge Problems description (2025)",
+        "doi": "",
+        "url": "https://www.nist.gov/document/am-bench-amb2025-03-measurements-and-challenge-problems"
+      },
+      {
+        "citation": "Benzing J., Moser N., Derimow N., Kafka O., Saville A., et al., AMB2025-03 High-Cycle Rotating Bending Fatigue Tests of PBF-L Ti-6Al-4V (dataset), NIST",
+        "doi": "10.18434/mds2-3734",
+        "url": "https://data.nist.gov/od/id/mds2-3734"
+      },
+      {
+        "citation": "Miner J., Narra S.P., Hobdari M., Stanton H., Dataset of Processed X-ray Computed Tomography Scans Comparing Segmentation Methods from AMBench 2025-03 Rotating Bending Fatigue Challenge, CMU KiltHub 2026",
+        "doi": "10.1184/R1/31378690.v1",
+        "url": "https://kilthub.cmu.edu/articles/dataset/Dataset_of_Processed_X-ray_Computed_Tomography_Scans_Comparing_Segmentation_Methods_from_AMBench_2025-03_Rotating_Bending_Fatigue_Challenge/31378690"
+      },
+      {
+        "citation": "Hrabe N., Benzing J., Moser N., Derimow N., Kafka O., Saville A., et al., AMB2025-03 High-Cycle Rotating Bending Fatigue Tests of PBF-L Ti-6Al-4V (dataset/challenge description), NIST 2025",
+        "doi": "10.18434/mds2-3734",
+        "url": "https://www.nist.gov/document/am-bench-amb2025-03-measurements-and-challenge-problems"
+      },
+      {
+        "citation": "Moser N.H., Kafka O.L., Landauer A.K., IMPPY3D: 3D X-ray Computed Tomography Image Processing in Python, NIST 2023",
+        "doi": "10.18434/mds2-2806",
+        "url": "https://github.com/usnistgov/imppy3d"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "porosity",
+      "killer-defect",
+      "benchmark",
+      "HIP",
+      "machine-learning-ready",
+      "public-3d-data"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Best-in-class public benchmark: raw radiographs to labelled pore volumes, with fracture-origin pore IDs (answers) for specimen-specific initiation prediction. A derived CC-BY dataset comparing U-Net/adaptive/binary segmentations of these scans exists on CMU KiltHub (doi 10.1184/R1/31378690.v1). Challenge winners (failure-location track): The Aerospace Corporation and CMU (per web summary; unverified in primary source).",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-nist-ambench2025-03-ti64-rbf-xct"
+    ]
+  },
+  {
+    "id": "am-nist-ti64-lpbf-hip-treatments-rbf",
+    "title": "PBF-L Ti-6Al-4V with 15 novel HIP/heat treatments: XCT porosity (8.5 and 1.25 um), 300 mini-tensile tests, RBF S-N (NIST)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (ASTM F3001)",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "O": 0.104
+      },
+      "notes": "Builds conformed to ASTM F3001; measured oxygen 0.104 wt% (NIST IR 8551). Full chemistry in dataset."
+    },
+    "processing": {
+      "route": "L-PBF + HIP",
+      "parameters": "3D Systems DMP Flex 350; 245 W, 1250 mm/s, 60 um layer, Ar at 150 mbar, O2 < 10 ppm; powder 10-45 um (D50 30-36 um). 94 blocks (tensile) + cylinders for RBF.",
+      "heat_treatment": "15 conditions HT0 (as-built) to HT14: stress relief, new/classic sub-beta HIP, super-beta HIP, with furnace/fast/rapid-quench cooling, ageing and tempering steps (e.g., HT4 nsHIP+FC, HT10 csHIP+FC, HT14 SHIP+RQ+T3+FC). 800 C HIP steps at 200 MPa.",
+      "surface_condition": "RBF specimens machined and longitudinally polished (240/320/600 grit)"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab North Star X50 (8.5 um voxel; 160 kV, 55 uA, ~3200 projections) and Zeiss Xradia Versa XRM-500 (1.2525 um voxel; 160 kV, 62 uA, ~1000 projections)",
+      "voxel_size_um": 8.5,
+      "volume_dimensions": "Blocks for all 15 HTs at 8.5 um; sub-volumes of HT0/1/2/3/13 at 1.2525 um",
+      "in_situ": false,
+      "notes": "16-bit TIFF stacks exported; analyzed with NIST open-source Python (imppy3d)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "phases",
+        "orientations",
+        "precipitates",
+        "grains"
+      ],
+      "grain_size_um": "",
+      "texture": "EBSD (stitched .osc/.ang) per condition",
+      "phases": "alpha' (as-built) to alpha+beta with varying morphology; Ti3Al (alpha2) precipitation after ageing (Derimow et al. 2025)"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "XCT porosity (vol%): HT0 as-built 0.00089 (8.5 um) / 0.00130 (1.25 um); HT1 SR 0.00238 / 0.00760; all HIP conditions 0.00000 at both resolutions."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "300 mini-tensile tests (15 conditions x 2 orientations). Avg YS (both orientations): HT4 982 MPa, HT10 883 MPa, HT14 823 MPa."
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Four-point rotating bending, R = -1, 6000 rpm (100 Hz), ADMET eXpert 9300, runout 1e7 cycles",
+      "results": "Runout stress (N=3 runouts): HT4 662 MPa (67% YS), HT10 637 MPa (72% YS), HT14 462 MPa (56% YS). S-N data in S-N_data.xlsx.",
+      "crack_initiation": "Porosity closed by HIP, so fatigue isolates microstructure; RBF fractography images provided. Initiation not linked to CT defects.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "NIST Public Data Repository",
+      "url": "https://data.nist.gov/od/id/mds2-3402",
+      "doi": "10.18434/mds2-3402",
+      "size": "~123 GB (3071 files)",
+      "format": "16-bit TIFF XCT stacks, EBSD .osc/.ang, TEM, SEM TIFF, XLSX",
+      "license": "NIST open license"
+    },
+    "references": [
+      {
+        "citation": "Derimow N., Benzing J.T., Moser N., Kafka O.L., Joress H., McDannald A., Newton D., Koepke L., Hrabe N., High pressure heat treatment development for laser powder bed fusion Ti-6Al-4V alloy, NIST IR 8551 (2024)",
+        "doi": "10.6028/NIST.IR.8551",
+        "url": "https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8551.pdf"
+      },
+      {
+        "citation": "Derimow N. et al., Microstructure and mechanical properties of laser powder bed fusion Ti-6Al-4V after HIP treatments with varied temperatures and cooling rates, Materials & Design 247 (2024) 113388",
+        "doi": "10.1016/j.matdes.2024.113388",
+        "url": "https://doi.org/10.1016/j.matdes.2024.113388"
+      },
+      {
+        "citation": "Derimow N. et al., Precipitation hardening of laser powder bed fusion Ti-6Al-4V, Mater. Sci. Eng. A 921 (2025) 147549",
+        "doi": "10.1016/j.msea.2024.147549",
+        "url": "https://doi.org/10.1016/j.msea.2024.147549"
+      },
+      {
+        "citation": "Derimow N. et al., Microstructure and mechanical properties of laser powder bed fusion Ti-6Al-4V after HIP treatments with varied temperatures and cooling rates, Materials & Design 247 (2024) 113388",
+        "doi": "10.1016/j.matdes.2024.113388"
+      },
+      {
+        "citation": "Derimow N. et al., Microstructural effects on the rotating bending fatigue behavior of Ti-6Al-4V produced via laser powder bed fusion, Int. J. Fatigue (2024) 108362",
+        "doi": "10.1016/j.ijfatigue.2024.108362"
+      },
+      {
+        "citation": "Derimow N. et al., Precipitation hardening of laser powder bed fusion Ti-6Al-4V, MSEA 921 (2025) 147549",
+        "doi": "10.1016/j.msea.2024.147549"
+      },
+      {
+        "citation": "Derimow N. et al., High pressure heat treatment development for laser powder bed fusion Ti-6Al-4V alloy, NIST IR 8551 (2024)",
+        "doi": "10.6028/NIST.IR.8551"
+      }
+    ],
+    "tags": [
+      "additive-manufacturing",
+      "HIP",
+      "porosity",
+      "microstructure-controlled-fatigue",
+      "public-3d-data",
+      "fatigue-initiation",
+      "process-structure-property"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Useful control dataset: same build as AM Bench style Ti64 with porosity eliminated; fatigue differences attributed to microstructure.",
+    "source_file": "am_metals_ct.json",
+    "merged_from": [
+      "repo-nist-ti64-lpbf-novel-hip-xct-rbf"
+    ]
+  },
+  {
     "id": "repo-mendeley-hornas-ml-fatigue-lpbf-ti64-uct",
     "title": "ML-ready fatigue life dataset for L-PBF Ti-6Al-4V with micro-CT defect features (baseline and augmented train/test splits; Hornas PhD)",
     "material_class": "Ti alloy",
@@ -9041,102 +10793,99 @@
     "source_file": "repository_sweep.json"
   },
   {
-    "id": "repo-nist-ti64-lpbf-novel-hip-xct-rbf",
-    "title": "NIST PBF-L Ti-6Al-4V subjected to 14 novel HIP/heat treatments: XCT tiff stacks, EBSD, tensile (300 tests) and rotating bending fatigue",
+    "id": "am-psu-ti64-lpbf-psp-xct-zenodo",
+    "title": "Penn State L-PBF Ti-6Al-4V process-structure-property dataset: 42 power/speed sets with XCT pore morphology (keyhole, LOF, beading)",
     "material_class": "Ti alloy",
-    "material": "Ti-6Al-4V (PBF-L)",
+    "material": "Ti-6Al-4V (LaserForm Ti Gr23(A) powder)",
     "chemistry": {
       "basis": "nominal",
       "composition": {},
-      "notes": ""
+      "notes": "Grade 23 powder"
     },
     "processing": {
-      "route": "L-PBF + HIP / heat treatments",
-      "parameters": "Identical blocks from one PBF-L build; mini-tensile specimens in horizontal and vertical orientations; build details in dataset.",
-      "heat_treatment": "As-built plus 14 heat treatments (stress relief, sub- and super-transus HIP variants with different cooling rates, rapid quench, tempering; e.g. HT2 nsHIP, HT3 csHIP, HT10 csHIP+FC, HT13 SHIP); three conditions down-selected for RBF (HT4, HT10, HT14 per fractography folders).",
-      "surface_condition": "Machined (RBF and mini-tensile specimens)"
+      "route": "L-PBF",
+      "parameters": "3D Systems ProX DMP 320; laser power 75-500 W, scan speed 400-1600 mm/s, hatch 82 um, layer 60 um; 42 parameter sets spanning keyhole, lack-of-fusion and beading regimes.",
+      "heat_treatment": "Not stated in summary",
+      "surface_condition": "Surface roughness measured (table provided)"
     },
     "techniques": [
       "X-ray CT",
       "Micro-CT"
     ],
     "acquisition": {
-      "facility": "Lab XCT (instrument per README; unverified)",
-      "voxel_size_um": null,
+      "facility": "Lab GE Phoenix v|tome|x L300 nano/micro-CT, 170 kV, 55 mA (as reported)",
+      "voxel_size_um": 10.0,
       "volume_dimensions": "",
       "in_situ": false,
-      "notes": "Dataset folder 'X-ray Computed Tomography/XCT tiff stacks' (~88 GB) plus reconstruction images."
+      "notes": ""
     },
     "microstructure": {
       "features_resolved": [
         "pores",
-        "grains",
-        "phases"
+        "lack-of-fusion",
+        "grains"
       ],
-      "grain_size_um": "",
-      "texture": "Stitched EBSD (ANG/OSC) provided",
-      "phases": "alpha/beta; prior-beta grains and grain-boundary alpha after super-transus HIP"
+      "grain_size_um": "Prior-beta grain morphology data provided",
+      "texture": "",
+      "phases": ""
     },
     "defects": {
       "types": [
+        "keyhole pores",
+        "lack-of-fusion",
         "gas pores",
-        "lack-of-fusion"
+        "surface roughness"
       ],
-      "statistics": "See XCT stacks / papers."
+      "statistics": "XCT porosity 0.0097-4.69%; Archimedes 0.34-5.17% across sets; pore morphology data per set."
     },
     "mechanical_properties": {
       "yield_strength_MPa": null,
       "uts_MPa": null,
       "elongation_pct": null,
-      "hardness": null,
+      "hardness": "350-420 HV",
       "modulus_GPa": null,
-      "other": ""
+      "other": "Set-mean ranges reported in Data in Brief summary: YS 849-1113 MPa, UTS 829-1048 MPa (as summarized; check source), elongation to fracture 1.26-15.38%, E 101-128 GPa."
     },
     "fatigue": {
-      "tested": true,
-      "test_type": "HCF",
-      "loading": "Rotating bending fatigue (RBF) on three down-selected conditions; S-N_data.xlsx",
-      "results": "Highest runout stress for the lowest-temperature sub-transus HIP (800 C, 2 h, 200 MPa); super-transus treatment reduced fatigue strength (IJF 2024).",
-      "crack_initiation": "RBF fractography (SEM) provided for HT4, HT10, HT14; initiation linked to microstructure (large prior-beta grains, GB alpha) after porosity closure.",
+      "tested": false,
+      "test_type": "",
+      "loading": "",
+      "results": "",
+      "crack_initiation": "",
       "initiation_tracked_in_3d": false
     },
     "data_availability": {
       "status": "Public download",
-      "repository": "NIST Public Data Repository",
-      "url": "https://data.nist.gov/od/id/mds2-3402",
-      "doi": "10.18434/mds2-3402",
-      "size": "~123 GB (3071 files; XCT ~88 GB, EBSD ~30 GB)",
-      "format": "TIFF stacks, ANG/OSC, XLSX, TIF images",
-      "license": "NIST open license"
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/6587905",
+      "doi": "",
+      "size": "~4.5 GB",
+      "format": "XLSX tables, zipped pore-morphology and prior-beta data, stress-strain curves",
+      "license": "CC-BY 4.0"
     },
     "references": [
       {
-        "citation": "Derimow N. et al., Microstructure and mechanical properties of laser powder bed fusion Ti-6Al-4V after HIP treatments with varied temperatures and cooling rates, Materials & Design 247 (2024) 113388",
-        "doi": "10.1016/j.matdes.2024.113388"
+        "citation": "Luo Q., Yin L., Simpson T.W., Beese A.M., Dataset of process-structure-property feature relationship for laser powder bed fusion additive manufactured Ti-6Al-4V material, Data in Brief 46 (2023) 108911",
+        "doi": "10.1016/j.dib.2023.108911",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9880387/"
       },
       {
-        "citation": "Derimow N. et al., Microstructural effects on the rotating bending fatigue behavior of Ti-6Al-4V produced via laser powder bed fusion, Int. J. Fatigue (2024) 108362",
-        "doi": "10.1016/j.ijfatigue.2024.108362"
-      },
-      {
-        "citation": "Derimow N. et al., Precipitation hardening of laser powder bed fusion Ti-6Al-4V, MSEA 921 (2025) 147549",
-        "doi": "10.1016/j.msea.2024.147549"
-      },
-      {
-        "citation": "Derimow N. et al., High pressure heat treatment development for laser powder bed fusion Ti-6Al-4V alloy, NIST IR 8551 (2024)",
-        "doi": "10.6028/NIST.IR.8551"
+        "citation": "Luo Q. et al., Additive Manufacturing (2022) 102915",
+        "doi": "10.1016/j.addma.2022.102915",
+        "url": "https://doi.org/10.1016/j.addma.2022.102915"
       }
     ],
     "tags": [
       "additive-manufacturing",
-      "HIP",
+      "process-parameters",
       "porosity",
-      "fatigue-initiation",
-      "process-structure-property"
+      "keyhole",
+      "lack-of-fusion",
+      "machine-learning-ready"
     ],
-    "fatigue_initiation_relevance": "High",
-    "notes": "Precursor study to AMB2025-03 from the same NIST group. XCT instrument/voxel not confirmed from metadata.",
-    "source_file": "repository_sweep.json"
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Zenodo record carries the paper DOI as identifier; no separate 10.5281 DOI verified. No fatigue, but strong for process-defect maps feeding defect-based fatigue models.",
+    "source_file": "am_metals_ct.json"
   },
   {
     "id": "repo-cmu-ambench2025-03-xct-segmentation",
@@ -9317,105 +11066,6 @@
     "fatigue_initiation_relevance": "Medium",
     "notes": "EVS of max pore size is the standard input for sqrt(area)-based fatigue limit estimation; no fatigue tests in this record.",
     "source_file": "repository_sweep.json"
-  },
-  {
-    "chemistry": {
-      "basis": "nominal",
-      "composition": {},
-      "notes": ""
-    },
-    "processing": {
-      "route": "L-PBF (unverified)",
-      "parameters": "AM Ti cylinder with attached 1 mm Ti-ball fiducials",
-      "heat_treatment": "",
-      "surface_condition": ""
-    },
-    "techniques": [
-      "X-ray CT",
-      "Serial sectioning"
-    ],
-    "acquisition": {
-      "facility": "AFRL mechanical-polish serial sectioning (optical) + 5 different XCT scans/systems",
-      "voxel_size_um": 2.8,
-      "volume_dimensions": "SS in-plane 2.8 µm, average slice 2.01 µm (z-height map provided)",
-      "in_situ": false,
-      "notes": "Registered TIF stacks of VOI for all XCT scans + SS; raw projections provided (scan E partly lost: 1329 of 3141 projections)."
-    },
-    "microstructure": {
-      "features_resolved": [
-        "pores",
-        "lack-of-fusion"
-      ],
-      "grain_size_um": "",
-      "texture": "",
-      "phases": ""
-    },
-    "defects": {
-      "types": [
-        "gas pores",
-        "lack-of-fusion"
-      ],
-      "statistics": "Largest-pore centroids registered within 20-60 µm (1-3 voxels) between modalities; serial sectioning used as ground truth for XCT pore detection limits"
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": false,
-      "test_type": "",
-      "loading": "",
-      "results": "",
-      "crack_initiation": "",
-      "initiation_tracked_in_3d": false
-    },
-    "tags": [
-      "additive-manufacturing",
-      "porosity",
-      "XCT-validation",
-      "ground-truth",
-      "machine-learning-ready",
-      "registered"
-    ],
-    "notes": "No EBSD (optical serial sectioning); included as serial-sectioning ground truth for pore detection that controls AM fatigue initiation.",
-    "id": "ebsd-ti64-am-robomet-xct-jolley",
-    "title": "AM Ti-6Al-4V: correlative multi-system XCT + optical-microscopy mechanical serial sectioning of porosity (fiducial-registered)",
-    "material_class": "Ti alloy",
-    "material": "Ti-6Al-4V (additively manufactured cylinder)",
-    "data_availability": {
-      "status": "Public download",
-      "repository": "Materials Data Facility",
-      "url": "https://doi.org/10.18126/t27t-9iao",
-      "doi": "10.18126/t27t-9iao",
-      "size": "",
-      "format": "TIFF stacks, raw projections (32-bit float / 16-bit), text metadata",
-      "license": ""
-    },
-    "references": [
-      {
-        "citation": "Jolley B.R., Sparkman D.M., Chapman M.G., Schwalbach E.J., Uchic M.D., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V, IMMI 13 (2024) 746-757",
-        "doi": "10.1007/s40192-024-00367-1",
-        "url": null
-      },
-      {
-        "citation": "Sparkman D., Jolley B., Schwalbach E., Knott C., Uchic M., Chapman M., Spatial Registration of X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data, ASNT Research Symposium 2023",
-        "doi": "10.32548/rs.2023.084",
-        "url": null
-      },
-      {
-        "citation": "Jolley B.R., Uchic M.D., Sparkman D., Chapman M., Schwalbach E., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V..., IMMI (2024)",
-        "doi": "10.1007/s40192-024-00367-1"
-      }
-    ],
-    "fatigue_initiation_relevance": "Medium",
-    "source_file": "ebsd_3d.json",
-    "merged_from": [
-      "repo-mdf-jolley-ti64-xct-optical-serial-sectioning"
-    ]
   },
   {
     "id": "conv-ti64-forged-vhcf-internal-cracks-spring8",
@@ -9684,108 +11334,6 @@
     "source_file": "ebsd_3d.json"
   },
   {
-    "id": "repo-nist-ambench2025-03-ti64-rbf-xct",
-    "title": "AM Bench 2025 AMB2025-03: high-cycle rotating bending fatigue of PBF-L Ti-6Al-4V with pre-test XCT of whole gauge sections and killer-pore registration",
-    "material_class": "Ti alloy",
-    "material": "Ti-6Al-4V (meets ASTM F3001)",
-    "chemistry": {
-      "basis": "wt%",
-      "composition": {
-        "Al": 6.3,
-        "V": 3.76,
-        "O": 0.1,
-        "C": 0.01,
-        "N": 0.02,
-        "H": 0.003,
-        "Fe": 0.17,
-        "Ti": "bal."
-      },
-      "notes": "Measured solid chemistry of 800VAC-85 specimen; 800HIP-106 measured Al 6.30, V 3.89, O 0.10, Fe 0.16 (AMB2025-03 description document)."
-    },
-    "processing": {
-      "route": "L-PBF (PBF-L) + HIP or vacuum heat treatment",
-      "parameters": "3D Systems DMP Flex 350; 60 um layer, 80 um spot, 245 W, 1250 mm/s, 245 deg scan rotation between layers, no baseplate preheat, 99.999% Ar; plasma-atomized powder 10-45 um (D10 21, D50 35, D90 47 um). Vertically built cylinders ~15 mm dia x 105 mm.",
-      "heat_treatment": "800HIP: 800 C / 2 h / 200 MPa Ar, ~12 C/min cooling. 800VAC: same thermal cycle in vacuum furnace with ~75 mTorr Ar partial pressure (porosity retained).",
-      "surface_condition": "Machined and polished per ISO 1143 (Ra ~0.09-0.13 um, all < 0.2 um)."
-    },
-    "techniques": [
-      "X-ray CT",
-      "Micro-CT"
-    ],
-    "acquisition": {
-      "facility": "Lab Zeiss Xradia Versa XRM-500 (140 kV, 71 uA, 4 s exposure, 1601 projections, HE2 filter)",
-      "voxel_size_um": 5.5,
-      "volume_dimensions": "Entire RBF gauge section, 4 stitched FOVs; typically >3200 slices of ~1004x1024 px per specimen",
-      "in_situ": false,
-      "notes": "XCT done before fatigue on five RBF specimens; lead-particle lacquer fiducial used to register XCT to fractography and identify the killer pore. Raw .txrm/.xrm, 16-bit stitched reconstructions, denoised 8-bit stacks, segmentations, labelled pore stacks, VTK models and per-pore CSV (centroid, volume, ESD, sphericity, bounding box) provided; processed with IMPPY3D."
-    },
-    "microstructure": {
-      "features_resolved": [
-        "pores",
-        "lack-of-fusion"
-      ],
-      "grain_size_um": "alpha-lath area avg 25.06 um^2 (800VAC) and 24.13 um^2 (800HIP) from 2D EBSD",
-      "texture": "2D EBSD texture maps provided (build-direction influence still evident)",
-      "phases": "alpha (HCP) laths + beta (BCC)"
-    },
-    "defects": {
-      "types": [
-        "gas pores",
-        "lack-of-fusion"
-      ],
-      "statistics": "Per-pore CSV metrics and porosity CSV per specimen; sqrt(area) measurements of killer defects in answer data (sqrt_area_measurements.pdf)."
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": 999.6,
-      "uts_MPa": 1082.6,
-      "elongation_pct": 15.6,
-      "hardness": null,
-      "modulus_GPa": 150,
-      "other": "Averages of 3 ASTM E8 tests, 800VAC. 800HIP: YS 1004.8, UTS 1089.5 MPa, E 153 GPa, total elong. 19.4%, uniform elong. 5.2%. No statistically significant difference between conditions."
-    },
-    "fatigue": {
-      "tested": true,
-      "test_type": "HCF",
-      "loading": "Four-point rotating bending (ISO 1143), R = -1, 100 Hz, ADMET eXpert 9313; 24 specimens per condition",
-      "results": "S-N data for both conditions provided (800HIP as calibration data, 800VAC released in answers_data).",
-      "crack_initiation": "800HIP: no initiation at pores (surface initiation confirmed by SEM fractography). 800VAC: pore-initiated failures; killer pores identified in XCT via fiducial registration and SEM/optical fractography (challenge CHAL-AMB2025-03-FL asked participants to predict killer-pore feature IDs).",
-      "initiation_tracked_in_3d": true
-    },
-    "data_availability": {
-      "status": "Public download",
-      "repository": "NIST Public Data Repository (AM Bench)",
-      "url": "https://data.nist.gov/od/id/mds2-3734",
-      "doi": "10.18434/mds2-3734",
-      "size": "~239 GB total (raw XCT ~166 GB, XCT analysis ~30 GB, EBSD ~36 GB, answers XCT/fractography registration ~5.8 GB)",
-      "format": "Zeiss .txrm/.xrm, TIFF stacks, VTK, CSV, XLSX, ANG/OSC EBSD",
-      "license": "NIST open license (https://www.nist.gov/open/license)"
-    },
-    "references": [
-      {
-        "citation": "Hrabe N., Benzing J., Moser N., Derimow N., Kafka O., Saville A., et al., AMB2025-03 High-Cycle Rotating Bending Fatigue Tests of PBF-L Ti-6Al-4V (dataset/challenge description), NIST 2025",
-        "doi": "10.18434/mds2-3734",
-        "url": "https://www.nist.gov/document/am-bench-amb2025-03-measurements-and-challenge-problems"
-      },
-      {
-        "citation": "Moser N.H., Kafka O.L., Landauer A.K., IMPPY3D: 3D X-ray Computed Tomography Image Processing in Python, NIST 2023",
-        "doi": "10.18434/mds2-2806",
-        "url": "https://github.com/usnistgov/imppy3d"
-      }
-    ],
-    "tags": [
-      "fatigue-initiation",
-      "additive-manufacturing",
-      "porosity",
-      "benchmark",
-      "killer-defect",
-      "machine-learning-ready",
-      "HIP"
-    ],
-    "fatigue_initiation_relevance": "High",
-    "notes": "Benchmark explicitly designed for specimen-specific fatigue strength and crack-initiation-location prediction from XCT pore data. Answer key (fatigue for both conditions, residual stress, XCT-fractography registration) now published in the same record.",
-    "source_file": "repository_sweep.json"
-  },
-  {
     "chemistry": null,
     "processing": {
       "route": "Rolled",
@@ -9862,6 +11410,90 @@
     ],
     "fatigue_initiation_relevance": "Medium",
     "source_file": "ebsd_3d.json"
+  },
+  {
+    "id": "am-sandell-ebm-ti64-xct-extreme-value",
+    "title": "EBM Ti-6Al-4V (Arcam Q20plus): XCT of fatigue specimens + extreme value statistics life prediction (GKN/LTU)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V ELI (ASTM F3001 powder)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "EBM",
+      "parameters": "Arcam Q20plus. Build A: 50 um layers, 67.5 deg hatch rotation (~0.11 kg/h). Build B: 90 um layers, speed function 35->60 (~0.15 kg/h). Vertical 15x15x180 mm bars.",
+      "heat_treatment": "None (no HIP); blasting only",
+      "surface_condition": "Machined fatigue specimens"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia 510 Versa, 140 kV, 10 W, 1601 projections, 9 s exposure",
+      "voxel_size_um": 8.5,
+      "volume_dimensions": "17.4 mm field of view; ~2769 mm^3 analysed per build",
+      "in_situ": false,
+      "notes": "Dragonfly PRO 4.1 segmentation, volumes <81 voxels excluded."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "alpha+beta"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "2704-5214 defects per specimen; max equivalent diameter 209 um. Build A 20,486 defects, porosity 0.0672%; Build B 22,803 defects, 0.0844%. POT/GPD fits: Build A u=70 um, x(T=1000)=192.2 um; Build B u=85 um, 211.4 um. LOF not detected by XCT."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "Strain control R=-1, 1% strain, 0.5 Hz (12 XCT-scanned specimens); load control R=0, 500 MPa max, 10 Hz (4 specimens); MTS 810",
+      "results": "Strain-controlled lives ~12,300-20,800 cycles; load-controlled ~45,500-151,100 cycles.",
+      "crack_initiation": "Most initiated at near-surface pores; 3 at LOF (build A); 4 specimens multiple sites. Probabilistic bands captured all R=-1 pore-initiated failures.",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "On request",
+      "repository": "",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7866540/",
+      "doi": "",
+      "size": "",
+      "format": "",
+      "license": "Data partly proprietary (GKN Aerospace Sweden)"
+    },
+    "references": [
+      {
+        "citation": "Sandell V., Hansson T., Roychowdhury S., Mansson T., Delin M., Akerfeldt P., Antti M.-L., Defects in Electron Beam Melted Ti-6Al-4V: Fatigue Life Prediction Using Experimental Data and Extreme Value Statistics, Materials 14(3) (2021) 640",
+        "doi": "10.3390/ma14030640",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7866540/"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "additive-manufacturing",
+      "porosity",
+      "extreme-value-statistics"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "am_metals_ct.json"
   },
   {
     "id": "hedm-ti7al-midas-benchmark-sharma-2026",
