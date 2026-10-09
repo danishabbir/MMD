@@ -62,6 +62,13 @@ python3 scripts/build.py          # add --strict to fail on validation warnings
 open site/index.html              # or serve the site/ folder, e.g. via GitHub Pages
 ```
 
+### GitHub Pages
+
+`.github/workflows/pages.yml` rebuilds the catalog and deploys the gallery to GitHub Pages on every
+push to `main` (it can also be run manually from the Actions tab). One-time setup: in the repository's
+**Settings → Pages**, set **Source** to **GitHub Actions**. The site is then served at
+`https://danishabbir.github.io/MMD/`, with the catalog downloadable at `data/mmd.json` and `data/mmd.csv`.
+
 The gallery offers:
 
 - **Filters:** material class, technique, processing route and fatigue-initiation relevance; free-text search; and toggles for downloadable data, fatigue tested, initiation tracked in 3D, and in-situ loading.

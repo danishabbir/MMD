@@ -105,6 +105,12 @@ def flat(rec):
     }
 
 
+DOWNLOADS = (
+    '<br>Download the catalog: <a href="data/mmd.json">JSON</a> · <a href="data/mmd.csv">CSV</a> · '
+    '<a href="https://github.com/danishabbir/MMD">source on GitHub</a>'
+)
+
+
 def write_pages(payload):
     tpl = (ROOT / "site" / "gallery.template.html").read_text()
     head, body = tpl.split('<div class="wrap">', 1)
@@ -112,7 +118,8 @@ def write_pages(payload):
         '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
         + head + "</head>\n<body>\n"
-        + '<script src="data/mmd.js"></script>\n<div class="wrap">' + body + "</body>\n</html>\n"
+        + '<script src="data/mmd.js"></script>\n<div class="wrap">'
+        + body.replace("<!--downloads-->", DOWNLOADS) + "</body>\n</html>\n"
     )
     (ROOT / "site" / "mmd-gallery.html").write_text(
         head + "<script>window.MMD_DATA = " + payload + ";</script>\n" + '<div class="wrap">' + body
