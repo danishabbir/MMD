@@ -181,6 +181,2170 @@
     "source_file": "diffraction_3d.json"
   },
   {
+    "id": "comp-asu-hruby-sicp-al2080-fatigue-crack-growth-insitu-ct",
+    "title": "In situ synchrotron tomography of fatigue crack growth in SiC particle reinforced 2080 Al at R=0.1 and 0.6",
+    "material_class": "Composite",
+    "material": "2080 Al alloy / SiC particle metal matrix composite",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "reinforcement": "SiC particles",
+        "matrix": "2080 Al alloy"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (APS, Argonne; beamline unverified - co-authors Xiao & De Carlo)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "SiC particles",
+        "fatigue crack"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fatigue crack",
+        "particle fracture",
+        "particle-matrix interface damage"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "In situ fatigue crack growth at R=0.1 and R=0.6",
+      "results": "3D/4D renderings of particles and crack; quantification of crack-particle interactions",
+      "crack_initiation": "Crack growth path/particle interaction quantified in 3D (details per paper)",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Hruby P, Singh SS, Williams JJ, Xiao X, De Carlo F, Chawla N. Fatigue crack growth in SiC particle reinforced Al alloy matrix composites at high and low R-ratios by in situ X-ray synchrotron tomography. Int J Fatigue 68 (2014) 136-143",
+        "doi": "10.1016/j.ijfatigue.2014.05.010"
+      }
+    ],
+    "tags": [
+      "MMC",
+      "fatigue-crack-growth",
+      "in-situ",
+      "synchrotron",
+      "4D"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-mit-kopp-cfrp-nanostitch-srct-deeplearning",
+    "title": "In situ SRCT of multiclass microdamage in aerospace CFRP laminates (baseline, thin-ply, CNT-nanostitched) with deep-learning segmentation",
+    "material_class": "Composite",
+    "material": "Aerospace-grade carbon fibre/epoxy laminates, baseline and aligned-CNT nanostitched, conventional and thin-ply",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "carbon fibre (aerospace grade; system per paper, unverified)",
+        "matrix": "epoxy",
+        "interlaminar": "aligned carbon nanotube 'nanostitch' (some laminates)",
+        "layup": "quasi-isotropic and cross-ply; double-edge-notched tension"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (beamline not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "~65,000 human-segmented tomograms used for CNN training; damage classes <<1% of volume."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "intralaminar matrix cracks",
+        "delaminations",
+        "fibre breaks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "matrix cracks",
+        "delamination",
+        "fibre breaks"
+      ],
+      "statistics": "Thin-ply laminates ~6.5x less intralaminar matrix damage surface area than conventional ply (Kopp thesis)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Nanostitched thick-ply cross-ply laminates ~15% higher UTS than baseline (thesis)"
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Monotonic DENT loading; progressive damage segmentation",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Dryad",
+      "url": "https://doi.org/10.5061/dryad.ffbg79cwb",
+      "doi": "10.5061/dryad.ffbg79cwb",
+      "size": "~216 GB",
+      "format": null,
+      "license": "CC0"
+    },
+    "references": [
+      {
+        "citation": "Kopp R, Joseph J, Ni X, Roy N, Wardle BL. Deep Learning Unlocks X-ray Microtomography Segmentation of Multiclass Microdamage in Heterogeneous Materials. Adv Mater (2022)",
+        "doi": "10.1002/adma.202107817"
+      },
+      {
+        "citation": "Ni X, Kopp R, Kalfon-Cohen E, Furtado C, Lee J, Arteiro A, Borstnar G, Mavrogordato M, et al. In situ synchrotron computed tomography study of nanoscale interlaminar reinforcement and thin-ply effects on damage progression in composite laminates. Compos Part B 217 (2021) 108623",
+        "doi": "10.1016/j.compositesb.2021.108623"
+      },
+      {
+        "citation": "Kopp RA. X-ray Micro-Computed Tomography and Deep Learning Segmentation of Progressive Damage in Hierarchical Nanoengineered Carbon Fiber Composites. PhD thesis, MIT (2021)",
+        "url": "https://hdl.handle.net/1721.1/138357"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "CFRP",
+      "delamination",
+      "matrix-cracks",
+      "machine-learning-ready",
+      "segmentation-labels",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-southampton-lee-cfrp-holotomography-fibre-breaks",
+    "title": "In situ 150 nm holotomography of fibre-break development vs. fibre misalignment and resin-rich pockets in CFRP",
+    "material_class": "Composite",
+    "material": "Carbon fibre/epoxy laminate with 0 deg plies (specific system per paper; unverified)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "carbon fibre",
+        "matrix": "epoxy"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT",
+      "Nano-CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID16B (holotomography, 150 nm) and ESRF ID19 (650 nm propagation phase contrast)",
+      "voxel_size_um": 0.15,
+      "volume_dimensions": "e.g. 2020x141x3846 8-bit raw crops",
+      "in_situ": true,
+      "notes": "150 nm scans of 3 regions at 67, 86, 91, 94-96% UTS; 650 nm scans at 5, 89, 94, 99% UTS."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "individual fibres",
+        "misplaced/misoriented fibres",
+        "resin-rich pockets",
+        "fibre breaks",
+        "matrix microcracks",
+        "interfacial debonds"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre breaks",
+        "co-planar and non-coplanar clusters",
+        "resin-rich pockets",
+        "fibre misorientation",
+        "matrix microcracks",
+        "debonds",
+        "microvoids"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Monotonic tension: misplaced fibres in 0/0 interply trigger single breaks and co-planar clusters at intersections; resin-rich pockets drive non-coplanar clusters with matrix microcracks and debonds",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/17099577",
+      "doi": "10.5281/zenodo.17099577",
+      "size": "4.9 GB",
+      "format": "8-bit RAW volumes + PDF readme",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Lee Y, Chatziathanasiou T, Breite C, Mehdikhani M, Swolfs Y, Mavrogordato M, Spearing SM, Sinclair I. Correlating fibre break development with fibre misalignment and resin-rich pockets using in situ holotomography. Compos Part A (2026) 109361",
+        "doi": "10.1016/j.compositesa.2025.109361"
+      }
+    ],
+    "tags": [
+      "fibre-breaks",
+      "fibre-misalignment",
+      "in-situ",
+      "CFRP",
+      "nano-scale",
+      "synchrotron",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-southampton-lee-cfrp-dvc-fibre-breaks",
+    "title": "In situ synchrotron CT (650 nm) volumes for digital volume correlation strain mapping around fibre breaks in CFRP",
+    "material_class": "Composite",
+    "material": "Carbon fibre/epoxy, high interfacial shear strength variant, matrix doped with SiO2 fiducial particles",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "carbon fibre (high-IFS surface treatment)",
+        "matrix": "epoxy with SiO2 particles as DVC fiducials"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19 (proposal MA5711)",
+      "voxel_size_um": 0.65,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Load levels ~7, 87, 92, 97% of failure load; 4 DVC sets of VOIs from different regions; reference before/after unload-reload."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "fibre breaks",
+        "fiducial particles",
+        "strain fields (via DVC)"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre breaks",
+        "clustered breaks"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Monotonic tension; 3D strain disturbance (ineffective length) around single fibre breaks",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/18959885",
+      "doi": "10.5281/zenodo.18959885",
+      "size": "2.1 GB",
+      "format": "8-bit RAW volumes + PDF info",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Lee Y, Swolfs Y, Paul P, Margini M, Alvarez-Borges F, Thibault P, et al. CT datasets for 3D strain mapping around fibre breaks using Digital Volume Correlation (Zenodo 2026); associated manuscript '3D strain mapping around fibre breaks using in situ synchrotron computed tomography and digital volume correlation'",
+        "doi": "10.5281/zenodo.18959885",
+        "url": "https://zenodo.org/records/18959885"
+      }
+    ],
+    "tags": [
+      "fibre-breaks",
+      "DVC",
+      "in-situ",
+      "CFRP",
+      "synchrotron",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Journal DOI of associated manuscript not verified.",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-southampton-rosini-cfrp-fibre-break-morphology-srct",
+    "title": "In situ SRCT statistics of local fibre misorientation/packing around fibre breaks in carbon/epoxy",
+    "material_class": "Composite",
+    "material": "Carbon/epoxy cross-ply laminates, (90_2/0_2)s (five fibre/sizing/surface-treatment configurations in 2022 study)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "carbon fibre (different sizing types, surface treatments, diameters)",
+        "matrix": "epoxy",
+        "layup": "(90_2/0_2)s"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Prepreg laminate",
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": null,
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Automated segmentation of individual fibres from loaded coupons; facility and voxel not verified."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "individual fibres",
+        "fibre misorientation",
+        "fibre packing",
+        "fibre breaks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre breaks",
+        "fibre misorientation",
+        "multiplets/clusters"
+      ],
+      "statistics": "Surroundings of damaged sites statistically differ from non-damaged sites in local misorientation; separation distances of adjacent coupled breaks reported"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Monotonic tension; fibre-break initiation linked statistically to local fibre misorientation; weaker fibre-matrix adhesion suggested to increase defect tolerance",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Partially public",
+      "repository": "University of Southampton ePrints",
+      "url": "https://doi.org/10.5258/SOTON/D1101",
+      "doi": "10.5258/SOTON/D1101",
+      "size": null,
+      "format": "MATLAB scripts for CT data assessment (no CT volumes)",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Rosini S, Mavrogordato MN, Egorova OA, Matthews ES, Jackson SE, Spearing SM, Sinclair I. In situ statistical measurement of local morphology in carbon-epoxy composites using synchrotron X-ray computed tomography. Compos Part A 125 (2019) 105543",
+        "doi": "10.1016/j.compositesa.2019.105543"
+      },
+      {
+        "citation": "Rosini S, Mavrogordato M, Takano T, Sugiura N, Spearing SM, Sinclair I. Fibre failure assessment in carbon fibre reinforced polymers under tensile loading using in situ synchrotron X-ray computed tomography. J Compos Mater (2022)",
+        "doi": "10.1177/00219983211061900"
+      }
+    ],
+    "tags": [
+      "fibre-breaks",
+      "fibre-misalignment",
+      "in-situ",
+      "CFRP",
+      "statistics"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-manchester-prajapati-benchmark-gfrp-cfrp-ct",
+    "title": "Benchmark lab XCT datasets of NCF glass and carbon fibre composites at varying resolution, noise and contrast",
+    "material_class": "Composite",
+    "material": "E-glass NCF/epoxy (VARTM) and carbon NCF/epoxy with glass backing bundles (VARTM)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "E-glass UD bundles (600 tex) with low-tex 90 deg backing; carbon UD with glass backing",
+        "matrix": "epoxy"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "VARTM",
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Zeiss Xradia Versa 520, Henry Moseley X-ray Imaging Facility",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Glass 1-4 and Carbon 1 full and sub-volumes at different resolutions/noise levels."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "individual fibres",
+        "bundles"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/12743155",
+      "doi": "10.5281/zenodo.12743155",
+      "size": "13.9 GB",
+      "format": "TIFF",
+      "license": "CC-BY-NC-ND 4.0"
+    },
+    "references": [
+      {
+        "citation": "Prajapati A. Benchmark x-ray computed tomography datasets of glass and carbon fibre-reinforced composites at varying resolution, noise and contrast levels (Zenodo 2024); supplement to Manchester thesis",
+        "doi": "10.5281/zenodo.12743155",
+        "url": "https://pure.manchester.ac.uk/ws/portalfiles/portal/283097871/FULL_TEXT.PDF"
+      }
+    ],
+    "tags": [
+      "benchmark",
+      "fibre-segmentation",
+      "GFRP",
+      "CFRP",
+      "public-data",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-manchester-yu-3d-woven-gfrp-fatigue-timelapse-ct",
+    "title": "Time-lapse X-ray CT of tension-tension fatigue damage in 3D woven glass fibre composite",
+    "material_class": "Composite",
+    "material": "Glass fibre modified layer-to-layer 3D woven composite",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre 3D woven (layer-to-layer)",
+        "matrix": "polymer (resin per paper)"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": null,
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Time-lapse (interrupted) CT; facility/voxel not verified."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "weft/warp/binder tows",
+        "resin pockets",
+        "cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "transverse cracks in weft",
+        "longitudinal debonding",
+        "weft/binder debonding",
+        "resin pocket damage"
+      ],
+      "statistics": "Damage segmented and quantified vs. cycles; transverse crack spacing and weft/binder debonding saturate at ~60% of life"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Tension-tension (parameters per paper)",
+      "results": "Damage distributed regularly per repeating unit even at large fractions of life",
+      "crack_initiation": "Transverse cracks initiate within weft tows after ~0.1% of life, longitudinal debonding by ~1% of life; resin pocket damage only just before failure",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Yu B, Blanc R, Soutis C, Withers PJ. Evolution of damage during the fatigue of 3D woven glass-fibre reinforced composites subjected to tension-tension loading observed by time-lapse X-ray tomography. Compos Part A (2015)",
+        "doi": "10.1016/j.compositesa.2015.09.001"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "time-lapse",
+      "3D-woven",
+      "GFRP"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-dtu-jespersen-ncf-gfrp-exsitu-fatigue-ct-2017",
+    "title": "Ex-situ time-lapse X-ray CT of fibre-fracture evolution in NCF glass fibre/polyester under tension-tension fatigue",
+    "material_class": "Composite",
+    "material": "Glass fibre non-crimp fabric reinforced polyester, layup [b/biaxial,b/0,b/0]s",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre NCF; UD bundles stitched to backing layer of 45/90/-45 bundles",
+        "matrix": "polyester",
+        "layup": "[b/biaxial,b/0,b/0]s (b = backing layer)"
+      },
+      "notes": "Vf not verified."
+    },
+    "processing": {
+      "route": "Composite laminate (NCF)",
+      "parameters": "410 mm long butterfly-shaped specimen optimised for UD composites, 15 mm wide gauge section",
+      "heat_treatment": null,
+      "surface_condition": "Machined coupon"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia Versa 520 (DTU, Roskilde)",
+      "voxel_size_um": 3.0,
+      "volume_dimensions": "1000x1000 pixel projections (2000x2000 detector, binning 2); plus large-field-of-view scan",
+      "in_situ": false,
+      "notes": "4x optical magnification, source-sample 28 mm, detector-sample 35 mm, 70 kV; specimen remounted in custom holder and re-registered at each interruption."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibre bundles",
+        "backing bundles",
+        "fibre breaks",
+        "matrix cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "UD fibre fractures",
+        "off-axis backing bundle cracks"
+      ],
+      "statistics": "Number of fibre fractures increases with cycles; crack-face separation of broken fibres widens with cycles."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Tension-tension, load control, R=0.1, 5 Hz, initial max strain 1%",
+      "results": "Interrupted after 47,300, 57,300, 67,300 and 77,300 cycles for CT of the same region where UD fibre fractures first became visible",
+      "crack_initiation": "UD fibre fractures initiate from matrix cracks in the thin off-axis backing bundles at triple cross-over regions, then spread mainly through the thickness of UD bundles; path depends on local backing bundle arrangement",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/845707",
+      "doi": "10.5281/zenodo.845707",
+      "size": "47.1 GB",
+      "format": "Zeiss TXRM raw + reconstructed TIFF",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Jespersen KM, Mikkelsen LP. Ex-situ X-ray computed tomography data for a non-crimp fabric based glass fibre composite under fatigue loading. Data in Brief (2017)",
+        "doi": "10.1016/j.dib.2017.10.074",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5684534"
+      },
+      {
+        "citation": "Jespersen KM, Mikkelsen LP. Three dimensional fatigue damage evolution in non-crimp glass fibre fabric based composites used for wind turbine blades. Compos Sci Technol 153 (2017) 261-272",
+        "doi": "10.1016/j.compscitech.2017.10.004"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "fibre-breaks",
+      "ex-situ",
+      "time-lapse",
+      "GFRP",
+      "wind-energy",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "A related CT-to-FEM dataset (Avizo/Geomagic/Abaqus workflow) for NCF composite is at 10.5281/zenodo.1244332 (Jespersen et al., ECCM18 2018).",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-soleil-bertoldo-gf-pa66-srct-segmentation",
+    "title": "Synchrotron CT of short glass fibre-reinforced PA66 with labelled fibre/porosity/crack segmentation",
+    "material_class": "Composite",
+    "material": "Glass fibre-reinforced polyamide 66 (GF-PA66)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "short glass fibre",
+        "matrix": "polyamide 66"
+      },
+      "notes": "Fibre content not reported; segmented voxel fractions: matrix 82.3%, fibre 17.2%, porosity 0.5%."
+    },
+    "processing": {
+      "route": null,
+      "parameters": "2 mm x 2 mm cross-section specimens",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "SOLEIL PSICHE (pink beam ~25 keV)",
+      "voxel_size_um": 1.3,
+      "volume_dimensions": "Train/val/test volume 1300x1040 slices (2048^3 scan); crack volume 1579x1845x2002",
+      "in_situ": false,
+      "notes": "1500 projections over 180 deg; PyHST2 with Paganin filter."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "pores",
+        "cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "porosity",
+        "cracks"
+      ],
+      "statistics": "Porosity class 0.5% of voxels (includes pores and damage)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/4587827",
+      "doi": "10.5281/zenodo.4587827",
+      "size": "~14 GB",
+      "format": "HDF5 + XDMF",
+      "license": "CC-BY-SA 4.0"
+    },
+    "references": [
+      {
+        "citation": "Bertoldo JPC, Decenciere E, Ryckelynck D, Proudhon H. A Modular U-Net for Automated Segmentation of X-Ray Tomography Images in Composite Materials. Front Mater 8 (2021) 761229",
+        "doi": "10.3389/fmats.2021.761229"
+      }
+    ],
+    "tags": [
+      "short-fibre",
+      "segmentation-labels",
+      "machine-learning-ready",
+      "porosity",
+      "cracks",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "How the crack in the 'Crack' volume was produced is not stated.",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-kuleuven-breite-cfrp-fibre-break-benchmark-srct",
+    "title": "SRCT benchmark of fibre-break and cluster development in two cross-ply carbon/epoxy composites (tensile failure model validation)",
+    "material_class": "Composite",
+    "material": "Grafil 34-700WD / NTPT ThinPreg 736LT (thin-ply) and Toray T700SC-12K / Sicomin SR8500-KTA315 carbon/epoxy",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "Grafil 34-700WD-24K carbon (Mitsubishi Chemical); T700SC-12K-50C carbon (Toray)",
+        "matrix": "736LT epoxy (tensile modulus 3.15 GPa); SR8500-KTA315 epoxy (3.36 GPa)",
+        "layup": "[90_4/0_4]s (34-700) and [90/0]s (T700SC) micro-specimens",
+        "ply_thickness_um": "44 (34-700), 191 (T700SC)",
+        "fibre_areal_density_gsm": "~38 (34-700), ~172 (T700SC)"
+      },
+      "notes": "Vf measured by fibre counting with InSegt; values in related paper Table 5 (not transcribed)."
+    },
+    "processing": {
+      "route": "Prepreg, hand lay-up, autoclave cure (KU Leuven)",
+      "parameters": "Manufacturer cure cycle; T700SC prepreg drum-wound at KU Leuven; double-edge-notched micro-specimens; water-jet cut; Al tabs bonded with 3M EC-9323",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "SLS TOMCAT (PSI), GigaFRoST camera, INSA Lyon tension-compression rig",
+      "voxel_size_um": 1.1,
+      "volume_dimensions": "e.g. 458x1850x1596 and 513x1737x1570 8-bit raw volumes",
+      "in_situ": true,
+      "notes": "Continuous scanning during monotonic tension (failure in ~7-10 min); 1.1 um voxel for 34-700, 0.8 um for T700SC; 16-19 volumes per test."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "individual fibres",
+        "fibre breaks",
+        "break clusters"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre breaks",
+        "clusters",
+        "transverse cracks",
+        "delaminations"
+      ],
+      "statistics": "Fibre-break locations in all reconstructed volumes provided (Excel)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Macroscale hybrid tests ([0_16 EG/90_4 C/0_4 C]s etc.) for failure strain; results spreadsheets (strength, failure strain, break density) included."
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Monotonic tension; fibre-break and cluster development tracked to failure",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Mendeley Data",
+      "url": "https://data.mendeley.com/datasets/6f2cv54ym8/3",
+      "doi": "10.17632/6f2cv54ym8.3",
+      "size": "~3 GB (approx.)",
+      "format": "8-bit RAW volumes, XLSX break tracking, PDF datasheets",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Breite C, Melnikov A, Turon A, de Morais AB, Le Bourlot C, Maire E, Schoberl E, Otero F, et al. A synchrotron computed tomography dataset for validation of longitudinal tensile failure models based on fibre break and cluster development. Data in Brief 39 (2021) 107590",
+        "doi": "10.1016/j.dib.2021.107590",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8627998"
+      }
+    ],
+    "tags": [
+      "fibre-breaks",
+      "in-situ",
+      "CFRP",
+      "benchmark",
+      "synchrotron",
+      "public-data",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-kuleuven-mehdikhani-gfrp-cfrp-insitu-tension-srct",
+    "title": "Synchrotron tomograms of UD glass/epoxy and carbon/epoxy cross-ply laminates during in situ tensile loading",
+    "material_class": "Composite",
+    "material": "HYBON 2026 E-glass/736LT epoxy [90_9/0_9]s and Mitsubishi 34-700WD carbon/736LT epoxy [90_4/0_5]s",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "PPG HYBON 2026 glass (15 um nominal) ; Mitsubishi 34-700WD carbon",
+        "matrix": "NTPT 736LT epoxy",
+        "Vf_pct": "~48 (carbon/epoxy, used for estimate)"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "NTPT thin-ply prepreg, autoclave",
+      "parameters": "Cured 70 C/60 min then 120 C, 0.5 MPa, 45 min under -0.7 bar vacuum; laminate thickness 0.9 mm (glass) and 1 mm (carbon); double-edge-notched miniature specimens",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "SLS TOMCAT (PSI), INSA Lyon rig, GigaFRoST",
+      "voxel_size_um": 1.1,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "20 keV, 60 mm propagation, 1000 projections x 9 ms; ~60 volumes per material during continuous loading (~1.5 um/s); 4 load steps (~0, 40, 73, 95% failure load) provided as cropped VOIs in middle 0 deg ply; raw and NLM-filtered 8-bit TIFF."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres (glass)",
+        "fibre orientation",
+        "fibre distribution",
+        "fibre breaks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre breaks",
+        "fibre misalignment"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Monotonic tension; real-time formation of fibre breaks",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Mendeley Data",
+      "url": "https://data.mendeley.com/datasets/jn63c55y32/1",
+      "doi": "10.17632/jn63c55y32.1",
+      "size": "~2.0 GB",
+      "format": "8-bit TIFF",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Mehdikhani M, Breite C, Swolfs Y, Wevers M, Lomov SV, Gorbatikh L. A dataset of micro-scale tomograms of unidirectional glass fiber/epoxy and carbon fiber/epoxy composites acquired via synchrotron computed tomography during in-situ tensile loading. Data in Brief (2021) 106672",
+        "doi": "10.1016/j.dib.2020.106672",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7806803"
+      }
+    ],
+    "tags": [
+      "fibre-breaks",
+      "fibre-orientation",
+      "in-situ",
+      "GFRP",
+      "CFRP",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-manchester-prajapati-ncf-gfrp-fatigue-xct-dic",
+    "title": "Correlative time-lapse XCT + DIC of fatigue damage in quasi-UD non-crimp glass/epoxy composite",
+    "material_class": "Composite",
+    "material": "Non-crimp E-glass fabric / epoxy, layup [[0/90]/[90/0]s] with outer cross-woven layers",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "E-glass UD bundles stitched to 90 deg backing bundles",
+        "matrix": "epoxy",
+        "layup": "[[0/90]/[90/0]s], backing bundles adjacent, sandwiched between 100 um cross-woven fabric layers"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Composite laminate (NCF); specimens cut by abrasive waterjet (80 mesh garnet)",
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Henry Moseley X-ray Imaging Facility, Manchester: Zeiss Xradia Versa 520 (ROI) and Thermo Fisher Heliscan Mk1 (full field)",
+      "voxel_size_um": 0.7,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "ROI scans at 0.7 um pixel (4x objective, 70 kV, 20 s/projection) after 0, 70k, 80k, 120k cycles, registered across time steps; one full-field scan at 5.8 um voxel (80 kV) at 0 cycles. DIC strain maps acquired during fatigue."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibre bundles",
+        "backing bundles",
+        "fibre breaks",
+        "matrix cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre breaks",
+        "matrix micro-cracks",
+        "axial macro-cracks"
+      ],
+      "statistics": "Localised cluster of fibre breaks and matrix cracks near backing bundles"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Tension-tension, load control, 1% max strain, 4 Hz, R=0.1",
+      "results": "Major stiffness drops correlated with number/location of fibre breaks (XCT) and surface strain localisation (DIC)",
+      "crack_initiation": "Fibre-break clusters and matrix cracks near backing bundles; DIC shows backing bundles cause regions of higher strain",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/4541235",
+      "doi": "10.5281/zenodo.4541235",
+      "size": "~40 GB",
+      "format": "2D TIFF stacks (zip); DIC .vc7 raw + metadata; MP4",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Prajapati A, Morse S, Chirazi A, Burnett T, Withers PJ. Complementary time-lapse datasets of x-ray computed tomography and real-time strain mapping for an ex-situ study of non-crimp glass fibre composites under fatigue loading. Data in Brief (2021)",
+        "doi": "10.1016/j.dib.2021.107157",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8167186"
+      },
+      {
+        "citation": "Prajapati AJ, Chirazi A, Mikkelsen LP, Burnett TL, Withers PJ. Observing the evolution of fatigue damage and associated strain fields in a correlative, multiscale 3D time-lapse study of quasi-unidirectional glass fibre composites. IOP Conf Ser Mater Sci Eng 942 (2020) 012039",
+        "doi": "10.1088/1757-899X/942/1/012039"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "fibre-breaks",
+      "time-lapse",
+      "correlative",
+      "DIC",
+      "GFRP",
+      "wind-energy",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-dtu-jeppesen-ncf-gfrp-fibre-orientation",
+    "title": "Lab CT of non-crimp glass fibre composite for structure-tensor fibre orientation analysis",
+    "material_class": "Composite",
+    "material": "Non-crimp glass fibre reinforced composite (sample HF401TT-13)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre NCF",
+        "matrix": "polymer (unverified)"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia (TXM format; model unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Stitched scan, FoV 16.5 mm (from file name)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibre orientation distribution",
+        "bundles"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre misalignment"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/3877522",
+      "doi": "10.5281/zenodo.3877522",
+      "size": "33.8 GB",
+      "format": "TXM, NIfTI, Jupyter notebooks",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Jeppesen N, Dahl VA, Christensen AN, Dahl AB, Mikkelsen LP. Characterization of the fiber orientations in non-crimp glass fiber reinforced composites using structure tensor. IOP Conf Ser Mater Sci Eng 942 (2020) 012037",
+        "doi": "10.1088/1757-899X/942/1/012037"
+      }
+    ],
+    "tags": [
+      "fibre-orientation",
+      "GFRP",
+      "wind-energy",
+      "public-data",
+      "code"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Companion dataset on manufacturing effects on UD fibre orientation: 10.5281/zenodo.4446499.",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-southampton-garcea-cfrp-insitu-fatigue-srct",
+    "title": "In situ synchrotron CT of fatigue micromechanisms and fibre failure in double-edge-notched cross-ply carbon/epoxy",
+    "material_class": "Composite",
+    "material": "Particle-toughened aerospace carbon/epoxy (T700/M21 reported for the related 2017 fast-CT study; untoughened and intrinsically toughened systems also compared)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "carbon fibre (T700 per related 2017 paper; unverified for each fatigue paper)",
+        "matrix": "epoxy: particle-toughened (M21), untoughened, and intrinsically toughened systems",
+        "layup": "[90/0]s cross-ply"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Prepreg laminate",
+      "parameters": "Double-edge-notched coupons; in 2017 study: 1 mm central cross-section between notches, 66 mm long, 4 mm wide",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (beamline not verified from accessible sources; Southampton mu-VIS group)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Sub-micron resolution in situ SRCT; voxel size not verified."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "toughening particles",
+        "0 deg splits",
+        "transverse ply cracks",
+        "delamination",
+        "fibre breaks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "0 deg ply splits",
+        "transverse ply cracks",
+        "delaminations",
+        "fibre breaks",
+        "particle debonding"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Related monotonic fast SRCT (2017): fewer than 8% of 0 deg fibres fractured at 99.9% of failure load; clusters formed as singular burst events."
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Tension-tension fatigue of notched coupons, interrupted for in situ SRCT; peak loads up to >70% UTS (R, frequency not verified)",
+      "results": "Fatigue produced significantly more fibre breaks than quasi-static loading at the same peak load; clusters of adjacent breaks above ~70% UTS peak load",
+      "crack_initiation": "Fibre breaks along 0 deg ply splits associated with bridging fibres and in bulk 0 deg plies; particle de-bonding ahead of crack tips and crack bridging by unfailed ligaments (toughened system); resin-rich regions constrain crack propagation in toughened systems; degradation of bridging ligaments in crack wake is critical",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://doi.org/10.1016/j.compscitech.2016.07.030",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Garcea SC, Mavrogordato MN, Scott AE, Sinclair I, Spearing SM. Fatigue micromechanism characterisation in carbon fibre reinforced polymers using synchrotron radiation computed tomography. Compos Sci Technol 99 (2014) 23-30",
+        "doi": "10.1016/j.compscitech.2014.05.006"
+      },
+      {
+        "citation": "Garcea SC, Sinclair I, Spearing SM. In situ synchrotron tomographic evaluation of the effect of toughening strategies on fatigue micromechanisms in carbon fibre reinforced polymers. Compos Sci Technol 109 (2015) 32-39",
+        "doi": "10.1016/j.compscitech.2015.01.012"
+      },
+      {
+        "citation": "Garcea SC, Sinclair I, Spearing SM. Fibre failure assessment in carbon fibre reinforced polymers under fatigue loading by synchrotron X-ray computed tomography. Compos Sci Technol 133 (2016) 157-164",
+        "doi": "10.1016/j.compscitech.2016.07.030"
+      },
+      {
+        "citation": "Garcea SC, Sinclair I, Spearing SM, Withers PJ. Mapping fibre failure in situ in carbon fibre reinforced polymers by fast synchrotron X-ray computed tomography. Compos Sci Technol (2017)",
+        "doi": "10.1016/j.compscitech.2017.06.006"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "fibre-breaks",
+      "CFRP",
+      "notched",
+      "synchrotron"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Core in-situ fatigue CT series from Southampton (Garcea PhD 2015). No public data deposit found.",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-solvay-rolland-sfr-pa66-insitu-fatigue-srct",
+    "title": "In situ synchrotron microtomography of fatigue damage mechanisms in short glass fibre reinforced PA66",
+    "material_class": "Composite",
+    "material": "Short glass fibre reinforced polyamide 66",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "short glass fibre",
+        "matrix": "polyamide 66"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron SOLEIL (beamline unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "fibre orientation",
+        "cavities",
+        "micro-cracks",
+        "meso-cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "matrix cavitation",
+        "micro-cracks",
+        "meso-cracks"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Cyclic loading with in situ SRCT (parameters per paper)",
+      "results": "Elementary damage mechanisms, sequence and kinetics determined in 3D",
+      "crack_initiation": "Matrix cavitation triggers all elementary damage mechanisms; characteristic damage length ~ spherulite size; local fibre configuration/orientation controls micro- and meso-crack orientation",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Rolland H, Saintier N, Raphael I, Lenoir N, King A, Robert G. Fatigue damage mechanisms of short fiber reinforced PA66 as observed by in-situ synchrotron X-ray microtomography. Compos Part B 143 (2018) 217-229",
+        "doi": "10.1016/j.compositesb.2017.12.051",
+        "url": "https://hal.archives-ouvertes.fr/hal-02279832"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "short-fibre",
+      "thermoplastic",
+      "synchrotron"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-lbnl-bale-sic-cmc-high-temperature-insitu-ct",
+    "title": "Real-time in situ synchrotron micro-CT of crack damage in SiC-fibre ceramic matrix composites under load up to 1750 C",
+    "material_class": "Composite",
+    "material": "SiC-fibre ceramic matrix composite (textile/hybrid microstructure; precise system per paper)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "SiC fibre",
+        "matrix": "ceramic (SiC-based; unverified)"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "ALS Beamline 8.3.2 (LBNL) with custom high-temperature tensile cell",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Spatial resolution below 1 um under load at temperature; tests up to 1750 C."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "tows",
+        "matrix cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "matrix microcracks",
+        "fibre-matrix debonding",
+        "fibre fracture"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Sequences of microcrack damage resolved as cracks grew under load at high temperature; microstructure contains and impedes many small cracks",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Bale HA, Haboub A, MacDowell AA, Nasiatka JR, Parkinson DY, Cox BN, Marshall DB, Ritchie RO. Real-time quantitative imaging of failure events in materials under load at temperatures above 1,600 C. Nature Materials 12 (2013) 40-46",
+        "doi": "10.1038/nmat3497"
+      },
+      {
+        "citation": "ALS News: ALS ceramics materials research advances engine performance (2012)",
+        "url": "https://als.lbl.gov/als-ceramics-materials-research-advances-engine-performance/"
+      }
+    ],
+    "tags": [
+      "CMC",
+      "high-temperature",
+      "in-situ",
+      "synchrotron",
+      "crack-growth"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-cea-chateau-sicf-sic-minicomposite-insitu-ct",
+    "title": "In situ synchrotron microtomography tensile test of a SiCf/SiC minicomposite: matrix cracking and fibre breaks",
+    "material_class": "Composite",
+    "material": "SiCf/SiC minicomposite (single tow)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "SiC fibre",
+        "matrix": "SiC (CVI; unverified)"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "3D images at six successive load levels; plus radiographs of full 14 mm length under load and after failure."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "matrix cracks",
+        "fibre breaks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "matrix cracks",
+        "fibre breaks"
+      ],
+      "statistics": "Few fibre breaks before ultimate failure, homogeneously distributed; break density increases near the fatal matrix crack"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Matrix cracks propagate slowly and discontinuously even after crack saturation",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Chateau C, Gelebart L, Bornert M, Crepin J, Boller E, Sauder C, Ludwig W. In situ X-ray microtomography characterization of damage in SiCf/SiC minicomposites. Compos Sci Technol 71 (2011) 916-924",
+        "doi": "10.1016/j.compscitech.2011.02.008"
+      }
+    ],
+    "tags": [
+      "CMC",
+      "in-situ",
+      "synchrotron",
+      "matrix-cracks",
+      "fibre-breaks"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-manchester-sinclair-ti6al4v-scs6-fatigue-bridging",
+    "title": "Synchrotron tomography and strain mapping of bridging fibres in fatigue-cracked Ti-6Al-4V/SCS-6 SiC fibre composite",
+    "material_class": "Composite",
+    "material": "Ti-6Al-4V matrix / SCS-6 SiC monofilament composite",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "SCS-6 SiC monofilament",
+        "matrix": "Ti-6Al-4V"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (ESRF likely; unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "High-resolution tomography combined with ply-by-ply diffraction strain mapping."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibres",
+        "fatigue crack",
+        "broken fibres in bridging zone"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fatigue crack",
+        "fibre fractures",
+        "interface debonding"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Fatigue pre-cracked specimens, loaded/unloaded for strain mapping",
+      "results": "Stress partitioning between bridging and broken fibres; interfacial frictional sliding stress decreases ~linearly towards crack plane; reverse sliding on unloading",
+      "crack_initiation": "Matrix fatigue crack bridged by intact fibres; fibre fractures in ply 1 of one sample",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Sinclair R, Preuss M, Maire E, Buffiere JY, Bowen P, Withers PJ. The effect of fibre fractures in the bridging zone of fatigue cracked Ti-6Al-4V/SiC fibre composites. Acta Mater 52 (2004)",
+        "doi": "10.1016/j.actamat.2003.11.024"
+      },
+      {
+        "citation": "Sinclair R, Preuss M, Withers PJ. Imaging and strain mapping fibre by fibre in the vicinity of a fatigue crack in a Ti/SiC fibre composite. Mater Sci Technol (2005)",
+        "doi": "10.1179/174328005x14375"
+      }
+    ],
+    "tags": [
+      "MMC",
+      "fatigue-crack-growth",
+      "fibre-bridging",
+      "synchrotron",
+      "strain-mapping"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-kaiserslautern-klingler-cfrp-impact-ct",
+    "title": "Lab XCT of low-velocity impact damage in thin, toughened woven CFRP",
+    "material_class": "Composite",
+    "material": "Toho Tenax HTA40 E13 carbon fabric (ECC style 763, 140 g/m2) / DGEBA epoxy (Sika CR144 + Huntsman Aradur 917 + 1-methylimidazole)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "HTA40 E13 carbon fabric, 140 g/m2",
+        "matrix": "DGEBA epoxy, anhydride-cured (toughened variants studied; see paper)",
+        "Vf_pct": "52.5 +/- 1.8",
+        "layup": "13 plies (45/-45/45/-45/90/0/90)s",
+        "ply_thickness_um": 126.1,
+        "thickness_mm": "~1.65"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Autoclave",
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab XCT (Zeiss TXRM format)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "plies",
+        "delaminations",
+        "matrix cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "barely visible impact damage",
+        "delamination",
+        "matrix cracks",
+        "fibre breaks"
+      ],
+      "statistics": "Impact energies 1, 3, 7, 9, 13 J"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/10886884",
+      "doi": "10.5281/zenodo.10886884",
+      "size": "46.2 GB",
+      "format": "TXRM and TIFF stacks (7z)",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Klingler A, He Q, Wetzel B, Allen TD, Ye L, Breuer UP. Low velocity impact resistance of thin and toughened carbon fibre reinforced epoxy. Compos Sci Technol (2022) 109362",
+        "doi": "10.1016/j.compscitech.2022.109362"
+      }
+    ],
+    "tags": [
+      "impact",
+      "delamination",
+      "CFRP",
+      "damage-tolerance",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-dtu-jespersen-ncf-gfrp-polyester-fatigue-ct-2016",
+    "title": "Lab X-ray CT of fatigue damage in UD non-crimp glass fibre/polyester composite (wind turbine blade material)",
+    "material_class": "Composite",
+    "material": "Uni-directional E-glass non-crimp fabric (NCF) / polyester composite",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre, uni-directional non-crimp fabric with off-axis backing bundles",
+        "matrix": "polyester"
+      },
+      "notes": "Fibre volume fraction not verified from accessible sources."
+    },
+    "processing": {
+      "route": "Liquid moulding of NCF (details in paper; unverified)",
+      "parameters": "Wind-turbine-blade type UD NCF laminate",
+      "heat_treatment": null,
+      "surface_condition": "Machined coupon"
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia Versa 520",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Interrupted (ex-situ) scans at two damage levels; medium (MR) and high (HR) resolution tiff stacks; voxel size not verified from accessible text."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibre bundles",
+        "backing bundles",
+        "fibre breaks",
+        "matrix cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre fractures",
+        "off-axis (backing bundle) cracks",
+        "debonding"
+      ],
+      "statistics": "Damage appeared as local UD fibre-fracture regions close to the supporting backing layer, as 3D clusters and chains of fibre fractures (group summary)."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Tension-tension fatigue, interrupted for CT (parameters in paper)",
+      "results": "Damage progression at two interruption levels (see paper)",
+      "crack_initiation": "Fibre-fracture regions grow from cross-over regions of the backing bundles; backing layer controls location of damage initiation",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/154714",
+      "doi": "10.5281/zenodo.154714",
+      "size": "17.2 GB",
+      "format": "8-bit TIFF stacks (zip), AVI videos",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Jespersen KM, Zangenberg J, Lowe T, Withers PJ, Mikkelsen LP. Fatigue damage assessment of uni-directional non-crimp fabric reinforced polyester composite using X-ray computed tomography. Compos Sci Technol 136 (2016) 94-103",
+        "doi": "10.1016/j.compscitech.2016.10.006",
+        "url": "https://doi.org/10.1016/j.compscitech.2016.10.006"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "fibre-breaks",
+      "ex-situ",
+      "wind-energy",
+      "GFRP",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "DTU Wind Energy / Manchester. Files: MR3 Scan1-3 and HR2-4 tiff stacks plus figure videos.",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-dtu-jespersen-ncf-gfrp-fatigue-exsitu-tensionclamp-twli-2018",
+    "title": "NCF glass/polyester fatigue: ex-situ CT of two regions, tension-clamp CT (loaded/unloaded) and in-situ white-light imaging",
+    "material_class": "Composite",
+    "material": "Uni-directional non-crimp glass fabric reinforced polyester",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre UD NCF with backing bundles",
+        "matrix": "polyester"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Composite laminate (NCF)",
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Zeiss Xradia Versa 520",
+      "voxel_size_um": 2.25,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "High-resolution ex-situ and tension-clamp scans at 2.25 um pixel (5201 projections for tension clamp, ~2 GB each); large-field-of-view scans of all 12 specimens at 19.5 um pixel (1601 projections). Tension-clamp scans taken with and without load applied to open cracks."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "fibre bundles",
+        "backing bundles",
+        "fibre breaks",
+        "matrix cracks"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre fractures",
+        "backing-bundle cracks",
+        "debonds"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Tension-tension, R=0.1, 5 Hz; 12 tests at strain levels stated as 0.025% to 0.8% max strain (as written in Data in Brief; verify)",
+      "results": "Ex-situ CT region I at 0, 100k, 150k, 200k, 500k cycles; region II at 150k, 200k, 500k cycles; tension-clamp CT on specimens at 100k and 1M cycles",
+      "crack_initiation": "Fatigue damage initiation and progression studied from backing bundle cracks to UD fibre fractures (Compos Part A 2018)",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/1146125",
+      "doi": "10.5281/zenodo.1146125",
+      "size": "~16 GB (ex-situ) + ~15.8 GB (tension clamp, 10.5281/zenodo.1146138) + TWLI photos (10.5281/zenodo.1146146)",
+      "format": "TIFF reconstructed volumes, PNG settings, photo zips, MP4/AVI",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Jespersen KM, Glud JA, Zangenberg J, Hosoi A, Kawada H, Mikkelsen LP. Ex-situ X-ray computed tomography, tension clamp and in-situ transilluminated white light imaging data of non-crimp fabric based fibre composite under fatigue loading. Data in Brief (2018)",
+        "doi": "10.1016/j.dib.2018.09.109",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6197955"
+      },
+      {
+        "citation": "Jespersen KM et al. Uncovering the fatigue damage initiation and progression in uni-directional non-crimp fabric reinforced polyester composite. Compos Part A (2018)",
+        "doi": "10.1016/j.compositesa.2018.03.002"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "fibre-breaks",
+      "ex-situ",
+      "time-lapse",
+      "GFRP",
+      "wind-energy",
+      "public-data",
+      "multimodal"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-dtu-emerson-multimodal-ud-gfrp",
+    "title": "Multimodal (lab XCT x3, synchrotron CT, SEM, OM) dataset of the same region of a UD glass fibre composite for individual-fibre segmentation",
+    "material_class": "Composite",
+    "material": "Unidirectional glass fibre reinforced polymer",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre UD",
+        "matrix": "polymer"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT",
+      "Synchrotron CT",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Lab XCT (DTU Roskilde) and synchrotron (Grenoble; PCO.edge 5.5, 10x optics, 26.3 keV)",
+      "voxel_size_um": 0.65,
+      "volume_dimensions": "SRCT 2.82x2.82x0.63 mm (61 slices); XCT-H 1.04 um, XCT-M 1.69 um, XCT-L 2.81 um",
+      "in_situ": false,
+      "notes": "SEM 0.19 um and OM 0.29 um surface images of same region."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "individual fibres",
+        "fibre diameters",
+        "fibre orientation",
+        "local Vf"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre misalignment"
+      ],
+      "statistics": null
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/1195879",
+      "doi": "10.5281/zenodo.1195879",
+      "size": "4.3 GB",
+      "format": null,
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Emerson MJ, Dahl VA, Conradsen K, Mikkelsen LP, Dahl AB. A multimodal data-set of a unidirectional glass fibre reinforced polymer composite. Data in Brief 18 (2018) 1388-1393",
+        "doi": "10.1016/j.dib.2018.04.039",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6060273"
+      }
+    ],
+    "tags": [
+      "fibre-segmentation",
+      "multimodal",
+      "GFRP",
+      "benchmark",
+      "public-data",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
+    "id": "comp-manchester-wang-ud-gfrp-kinkband-compression-srct",
+    "title": "Ultra-fast in situ SRCT of compressive kink-band failure in notched UD glass fibre/epoxy",
+    "material_class": "Composite",
+    "material": "Unidirectional glass fibre/epoxy",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "fibre": "glass fibre UD",
+        "matrix": "epoxy"
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": null,
+      "parameters": null,
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "SLS TOMCAT, INSA-Lyon tension/compression rig",
+      "voxel_size_um": 1.1,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "1 tomogram per second streaming near failure; scans at initial, 200 N, 600 N (static), 876, 893, 895 N (continuous) and post-collapse; trajectories of 5229 fibres over 1264 slices provided."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "individual fibre trajectories",
+        "fibre waviness",
+        "kink bands",
+        "fibre fractures"
+      ],
+      "grain_size_um": null,
+      "texture": null,
+      "phases": null
+    },
+    "defects": {
+      "types": [
+        "fibre misalignment/waviness",
+        "micro-buckle band",
+        "kink band",
+        "fibre fractures"
+      ],
+      "statistics": "Micro-buckle band ~150 um wide, ~8 deg at 99.9% failure load vs. final kink band 300-400 um wide, 25-30 deg"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Compression: kink-band nucleation preceded by local fibre tilting (micro-buckle band); kink-band boundaries delineated by wedge-shaped multiple fibre fractures",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/13348028",
+      "doi": "10.5281/zenodo.13348028",
+      "size": "~78 GB",
+      "format": "zipped reconstructed volumes, MAT fibre tracks",
+      "license": "CC-BY-NC-SA 4.0"
+    },
+    "references": [
+      {
+        "citation": "Wang Y, Emerson MJ, Conradsen K, Dahl AB, Dahl VA, Maire E, Withers PJ. Evolution of fibre deflection leading to kink-band formation in unidirectional glass fibre/epoxy composite under axial compression. Compos Sci Technol 213 (2021) 108929",
+        "doi": "10.1016/j.compscitech.2021.108929"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "compression",
+      "fibre-misalignment",
+      "GFRP",
+      "synchrotron",
+      "public-data"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "",
+    "source_file": "composites_ct.json"
+  },
+  {
     "id": "dct-elektron21-mg-short-crack-king-2011",
     "title": "3D in-situ short fatigue crack growth in cast Mg alloy Elektron 21 with DCT grain mapping",
     "material_class": "Mg alloy",
@@ -361,6 +2525,185 @@
     "source_file": "diffraction_3d.json"
   },
   {
+    "chemistry": null,
+    "processing": {
+      "route": "Powder metallurgy (unverified)",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "AFRL (Wright-Patterson), FIB-SEM serial sectioning EBSD, collected circa 2002",
+      "voxel_size_um": null,
+      "volume_dimensions": "Small subvolume distributed with DREAM.3D; 0.25 µm in-plane step reported in derived INL/MOOSE example (unverified for full set)",
+      "in_situ": false,
+      "notes": "Canonical tutorial dataset for DREAM.3D EBSD reconstruction pipelines."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma (FCC)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "benchmark",
+      "grain-scale",
+      "DREAM.3D",
+      "machine-learning-ready"
+    ],
+    "notes": "Link between Small IN100 and the Groeber 2008 IN100 FIB-EBSD study is likely but (unverified); slice count/thickness not verified.",
+    "id": "ebsd-in100-dream3d-smallin100",
+    "title": "AFRL IN100 serial-sectioning EBSD dataset ('Small IN100' DREAM.3D example)",
+    "material_class": "Ni superalloy",
+    "material": "IN100 (powder-metallurgy Ni-base superalloy)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "DREAM.3D example data (BlueQuartz); copy of SmallIN100 .dream3d on Zenodo (NOMAD example set)",
+      "url": "https://zenodo.org/records/7885531",
+      "doi": "10.5281/zenodo.7885531",
+      "size": "117.4 MB zip (em_om_sprint14_02.zip containing SmallIN100 .dream3d)",
+      "format": "DREAM.3D (.dream3d / HDF5), original .ang slices in DREAM.3D data bundle",
+      "license": "CC BY 4.0 (Zenodo record)"
+    },
+    "references": [
+      {
+        "citation": "Groeber M., Ghosh S., Uchic M.D., Dimiduk D.M., A framework for automated analysis and simulation of 3D polycrystalline microstructures. Part 1: Statistical characterization, Acta Materialia 56 (2008) 1257-1273",
+        "doi": "10.1016/j.actamat.2007.11.041",
+        "url": null
+      },
+      {
+        "citation": "Kitware blog: Visualizing the Microstructure: How DREAM3D-NX and VTK Empower Materials Science Research (describes IN100 EBSD serial sectioning set collected at AFRL circa 2002)",
+        "doi": null,
+        "url": "https://www.kitware.com/visualizing-the-microstructure-how-dream3d-nx-and-vtk-empower-materials-science-research/"
+      },
+      {
+        "citation": "Kühbach M., Smith J., Hielscher R., Pinard P., Nomad-FAIR North-Remote-Tool Example Dataset Orientation Microscopy, Zenodo (2023)",
+        "doi": "10.5281/zenodo.7885531",
+        "url": "https://zenodo.org/records/7885531"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "AMB2022-01 3D build; ROI includes part of a 2.5 mm leg extending into the baseplate; registered with build file and in-situ thermography",
+      "heat_treatment": "As-built (AMB2022-01 measurements; unverified for this specimen)",
+      "surface_condition": "Mechanically polished serial sections"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "AFRL automated multi-modal serial sectioning (LEROY system, per file names) + XRCT",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "Reconstructed EBSD at 1 µm and 2 µm (build coordinates); BSE at 0.854 and 2 µm; optical at 0.345 and 2 µm; h5ebsd covers sections 13-524",
+      "in_situ": false,
+      "notes": "All modalities registered into build coordinate system; transformation JSONs provided."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Porosity observable via XCT + optical/BSE serial sections (not quantified on landing page)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "porosity",
+      "grain-scale",
+      "multimodal",
+      "benchmark",
+      "machine-learning-ready"
+    ],
+    "notes": "Slice thickness inferred ~1 µm from reconstruction resolution (unverified). No fatigue testing in this dataset, but AM Bench also hosts IN718 fatigue data on separate specimens.",
+    "id": "ebsd-in718-ambench2022-serial-sectioning",
+    "title": "AM Bench 2022 IN718 (L-PBF) automated serial-sectioning EBSD/BSE/optical + registered XCT (AFRL/NIST)",
+    "material_class": "Ni superalloy",
+    "material": "IN718 (nickel alloy 718), L-PBF AM Bench AMB2022-01 3D build",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "NIST Public Data Repository",
+      "url": "https://data.nist.gov/od/id/mds2-2767",
+      "doi": "10.18434/mds2-2767",
+      "size": "~2.0 TB (8479 files)",
+      "format": "DREAM.3D (.dream3d/.xdmf), .h5ebsd, section images (TIFF), JSON transforms",
+      "license": "NIST open license (https://www.nist.gov/open/license)"
+    },
+    "references": [
+      {
+        "citation": "Schwalbach E.J., Chapman M.G., Shah M.N., Uchic M.D., Hrabe N., Kafka O., Moser N., Lane B., Carson R., Belak J., Levine L.E., AM Bench 2022: IN718 Serial Sectioning and X-ray Computed Tomography Measurement Data, NIST (dataset)",
+        "doi": "10.18434/mds2-2767",
+        "url": "https://data.nist.gov/od/id/mds2-2767"
+      },
+      {
+        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
+        "doi": "10.1007/s40192-024-00372-4",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "source_file": "ebsd_3d.json"
+  },
+  {
     "id": "hedm-afrl-am-challenge4-in625",
     "title": "AFRL AM Modeling Challenge 4: in-situ tensile NF/FF-HEDM + micro-CT of L-PBF IN625 with serial-sectioning ground truth",
     "material_class": "Ni superalloy",
@@ -394,15 +2737,18 @@
       "features_resolved": [
         "grains",
         "orientations",
-        "twins"
+        "twins",
+        "pores"
       ],
       "grain_size_um": "",
       "texture": "",
       "phases": "gamma (fcc)"
     },
     "defects": {
-      "types": [],
-      "statistics": ""
+      "types": [
+        "gas pores"
+      ],
+      "statistics": "Pores present in voxelized microstructure (not quantified here)"
     },
     "mechanical_properties": {
       "yield_strength_MPa": null,
@@ -414,10 +2760,10 @@
     },
     "fatigue": {
       "tested": false,
-      "test_type": "",
+      "test_type": null,
       "loading": "Uniaxial tension, displacement control",
       "results": "28 grains' grain-averaged elastic strain tensors used as modeling challenge targets.",
-      "crack_initiation": "",
+      "crack_initiation": null,
       "initiation_tracked_in_3d": false
     },
     "data_availability": {
@@ -425,9 +2771,9 @@
       "repository": "Materials Data Facility",
       "url": "https://doi.org/10.18126/k5r2-32iu",
       "doi": "10.18126/k5r2-32iu",
-      "size": "",
+      "size": null,
       "format": "HEDM reductions, CT, serial-sectioning reconstructions (DREAM.3D/HDF5, unverified)",
-      "license": ""
+      "license": null
     },
     "references": [
       {
@@ -439,6 +2785,21 @@
         "citation": "M.G. Chapman et al., AFRL AM Modeling Series: Challenge 4, 3D reconstruction of an IN625 HEDM sample using multi-modal serial sectioning, IMMI (2021)",
         "doi": "10.1007/s40192-021-00212-9",
         "url": ""
+      },
+      {
+        "citation": "Chapman M.G., Shah M.N., Donegan S.P., Scott J.M., Shade P.A., Menasche D., Uchic M.D., AFRL Additive Manufacturing Modeling Series: Challenge 4, 3D Reconstruction of an IN625 High-Energy Diffraction Microscopy Sample Using Multi-modal Serial Sectioning, IMMI 10 (2021) 129-141",
+        "doi": "10.1007/s40192-021-00212-9",
+        "url": null
+      },
+      {
+        "citation": "Shade P.A. et al., AFRL AM Modeling Challenge Series: Challenge 4 Data Package, Materials Data Facility",
+        "doi": "10.18126/k5r2-32iu",
+        "url": "https://doi.org/10.18126/k5r2-32iu"
+      },
+      {
+        "citation": "Saha S. et al., Microscale Structure to Property Prediction for Additively Manufactured IN625 through Advanced Material Model Parameter Identification, IMMI (2021)",
+        "doi": "10.1007/s40192-021-00208-5",
+        "url": "https://par.nsf.gov/servlets/purl/10247259"
       }
     ],
     "tags": [
@@ -447,11 +2808,107 @@
       "benchmark",
       "machine-learning-ready",
       "AFRL",
-      "grain-scale"
+      "grain-scale",
+      "multimodal",
+      "crystal-plasticity-ready",
+      "twins"
     ],
     "fatigue_initiation_relevance": "Low",
     "notes": "Not a fatigue test but a key public AM HEDM validation dataset.",
-    "source_file": "diffraction_3d.json"
+    "source_file": "diffraction_3d.json",
+    "merged_from": [
+      "ebsd-in625-afrl-challenge4-serial-sectioning"
+    ]
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "EBM",
+      "parameters": "Electron beam melting, 50 µm build layers; per 2021 corrigendum: material from a 30 x 50 x 40 mm build volume, beam-on time 0.10 ms, spot spacing 0.2 mm (ORNL)",
+      "heat_treatment": "As-built (unverified)",
+      "surface_condition": "Polished section"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam (femtosecond laser serial sectioning)",
+      "voxel_size_um": 1.5,
+      "volume_dimensions": "952.5 x 501.0 x 306.0 µm; 204 slices of 1.5 µm; 1.5 µm in-plane EBSD step (cubic voxels); ~25 GB",
+      "in_situ": false,
+      "notes": "Hough transforms saved (not raw patterns); grain segmentation at 2° tolerance in DREAM.3D/BisQue; multimodal (EBSD, BSE, EDS) from sub-micron to mm scale."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "lack-of-fusion",
+        "inclusions",
+        "precipitates"
+      ],
+      "grain_size_um": "Columnar + clusters of equiaxed grains; LOF disrupts grain morphology several layers above",
+      "texture": "Build-direction columnar texture (qualitative)",
+      "phases": "gamma matrix, carbides, nitrides"
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "inclusions"
+      ],
+      "statistics": "Nitrides and carbides 1.25-10 µm throughout volume, pronounced nitride clustering; LOF defects create grain-morphology discontinuities extending several build layers"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Not tested; LOF defects + nitride clusters identified as likely detrimental to mechanical performance",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "lack-of-fusion",
+      "inclusions",
+      "grain-scale",
+      "multimodal"
+    ],
+    "notes": "Acquisition numbers from Polonsky et al. 2019 (BisQue paper), which describes the same EBM 718 TriBeam dataset 'as described previously' (ref. to 2018 paper).",
+    "id": "ebsd-in718-ebm-tribeam-polonsky",
+    "title": "Electron-beam-melted IN718: TriBeam 3D EBSD/BSE/EDS of lack-of-fusion defects, carbides/nitrides and grain inhomogeneity",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (EBM / E-PBF)",
+    "data_availability": {
+      "status": "On request",
+      "repository": "BisQue (UCSB) - public availability not confirmed",
+      "url": "https://doi.org/10.1016/j.matchar.2018.02.020",
+      "doi": null,
+      "size": "~25 GB (collected)",
+      "format": "EBSD Hough/ang, DREAM.3D",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Polonsky A.T., Echlin M.P., Lenthe W.C., Dehoff R.R., Kirka M.M., Pollock T.M., Defects and 3D structural inhomogeneity in electron beam additively manufactured Inconel 718, Materials Characterization 143 (2018) 171-181 (corrigendum 2021)",
+        "doi": "10.1016/j.matchar.2018.02.020",
+        "url": "https://labs.materials.ucsb.edu/pollock/tresa/node/1326"
+      },
+      {
+        "citation": "Polonsky A.T., Lang C.A., Kvilekval K.G., Latypov M.I., Echlin M.P., Manjunath B.S., Pollock T.M., Three-dimensional Analysis and Reconstruction of Additively Manufactured Materials in the Cloud-Based BisQue Infrastructure, IMMI 8 (2019) 37-51",
+        "doi": "10.1007/s40192-019-00126-7",
+        "url": "https://par.nsf.gov/servlets/purl/10113961"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "source_file": "ebsd_3d.json"
   },
   {
     "id": "dct-in718-twin-boundary-crack-jimenez-2019",
@@ -542,6 +2999,193 @@
     "fatigue_initiation_relevance": "High",
     "notes": "",
     "source_file": "diffraction_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Wrought (unverified)",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "HEDM/3DXRD"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam (post-test) + synchrotron HEDM (facility not stated in abstract)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": true,
+      "notes": "HEDM gives time-resolved grain-scale strain/orientation during cycling; post-test TriBeam reconstruction meshed directly into CPFE model."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "FCC"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF (cyclic loading, details unverified)",
+      "loading": "Cyclic loading in situ during HEDM (details not in abstract)",
+      "results": "CPFE identifies intragranular regions of slip accumulation and their proximity to microstructural features",
+      "crack_initiation": "Focus on irreversible slip as precursor to fatigue crack initiation; relation of slip-accumulation regions to grain neighborhood",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "grain-scale",
+      "crystal-plasticity",
+      "multimodal",
+      "cyclic-loading"
+    ],
+    "notes": "Conference abstract only (TMS 2026); no journal paper or dataset located yet - watch for publication.",
+    "id": "ebsd-in718-cyclic-tribeam-hedm-schulte",
+    "title": "Cyclically loaded IN718: post-test TriBeam tomography + HEDM + CPFE slip-accumulation study (conference abstract)",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (polycrystalline)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/FEA1F5484AA80C2785258CBA0074EC59",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Schulte J., Shadle D., Nygren K., Miller M., Pollock T., Beyerlein I., Insights Into the Evolution of Slip in Cyclically Loaded IN718 Using Crystal Plasticity Finite Element, High Energy X-Ray Diffraction Microscopy and TriBeam Tomography, TMS 2026 Annual Meeting abstract",
+        "doi": null,
+        "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/FEA1F5484AA80C2785258CBA0074EC59"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Al": 0.56,
+        "Fe": 17.31,
+        "Co": 0.14,
+        "Cr": 17.97,
+        "Nb": 5.4,
+        "Ti": 1.0,
+        "C": 0.023,
+        "N": 0.0062,
+        "Ni": "bal."
+      },
+      "notes": "Nominal composition as listed in Stinville et al. Sci. Data 2022 (Ta listed without value)."
+    },
+    "processing": {
+      "route": "Wrought",
+      "parameters": "Wrought IN718 bar/plate (details per paper); flat dogbone specimen, gauge 1 x 3 mm^2",
+      "heat_treatment": "Solution 1050 °C / 30 min, water quench; aging 720 °C / 8 h + 620 °C / 8 h (gamma' + gamma'')",
+      "surface_condition": "Polished; gold nanoparticle speckle (~60 nm) for HR-DIC"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam (femtosecond-laser serial sectioning in FIB-SEM), EDAX/OIM detector; HR-DIC in ThermoFisher Versa3D SEM",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "~0.5 mm^3; 526 serial slices of 1 µm, 1 µm EBSD step (cubic voxels)",
+      "in_situ": true,
+      "notes": "In-situ SEM tension with HR-DIC (33.45 nm pixel; Heaviside-DIC, step 100 nm) at 4 strain levels on ~1x1 mm^2 regions; surface EBSD 0.7 µm step; DREAM.3D reconstruction (5° tolerance); twin-related parent IDs tracked; XtalMesh (~19.9 M tets) and Simmetrix (~16.7 M tets) FE meshes supplied."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "distribution centered at ~62 µm",
+      "texture": "nearly random",
+      "phases": "FCC gamma (gamma'/gamma'' not resolved by EBSD)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Monotonic tension interrupted at 0.17, 0.32, 0.61, 1.26% macroscopic plastic strain (paper Table 1 lists total strains 0.69-1.83%)."
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": "Monotonic tension only (no cyclic loading in this dataset)",
+      "results": null,
+      "crack_initiation": "Not fatigue-tested, but companion analyses (Charpagne et al. 2021; Hestroffer et al. 2023) used this 3D volume + HR-DIC: >500 slip bands analysed; >50% emanate from triple junction lines and the most intense, longest bands lie near/parallel to specific annealing twin boundaries - argued to be the critical fatigue crack nucleation configurations in IN718.",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "grain-scale",
+      "twins",
+      "slip-localization",
+      "HR-DIC",
+      "crystal-plasticity-ready",
+      "meshed",
+      "machine-learning-ready",
+      "in-situ"
+    ],
+    "notes": "Best publicly available 3D EBSD + strain-field benchmark for twin/triple-junction slip localization in a Ni superalloy; FE meshes ready for CPFE/FIP studies. Dryad landing page did not show a license itself; CC BY 4.0 stated in the Sci. Data paper.",
+    "id": "ebsd-in718-stinville-tribeam-multimodal",
+    "title": "Multi-modal IN718 dataset: TriBeam 3D EBSD (526 slices, 1 µm voxels) + HR-DIC slip localization fields",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (wrought, precipitation hardened)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Dryad (also BisQue)",
+      "url": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.83bk3j9sj",
+      "doi": "10.5061/dryad.83bk3j9sj",
+      "size": "~55 GB on Dryad (raw .up2 patterns ~1.7 TB total, only 2 slices included)",
+      "format": ".h5 / .dream3d / .xdmf volumes; EMsoft .h5 and .up2 patterns; .ang/.osc surface EBSD; 16/32-bit TIFF SEM and HR-DIC maps; .inp/.vtk/APDL meshes",
+      "license": "CC BY 4.0 (per Sci. Data article)"
+    },
+    "references": [
+      {
+        "citation": "Stinville J.C., Hestroffer J.M., Charpagne M.A., Polonsky A.T., Echlin M.P., Torbet C.J., Valle V., Nygren K.E., Miller M.P., Klaas O., Loghin A., Beyerlein I.J., Pollock T.M., Multi-modal dataset of a polycrystalline metallic material: 3D microstructure and deformation fields, Scientific Data 9:460 (2022)",
+        "doi": "10.1038/s41597-022-01525-w",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9343453"
+      },
+      {
+        "citation": "Charpagne M.-A., Hestroffer J., Polonsky A., Echlin M.P., Texier D., Valle V., Beyerlein I.J., Pollock T.M., Stinville J.-C., Slip localization in Inconel 718: A three-dimensional and statistical perspective, Acta Materialia 215 (2021) 117037",
+        "doi": "10.1016/j.actamat.2021.117037",
+        "url": "https://labs.materials.ucsb.edu/pollock/tresa/node/2106"
+      },
+      {
+        "citation": "Hestroffer J.M., Stinville J.-C., Charpagne M.-A., Miller M.P., Pollock T.M., Beyerlein I.J., Slip localization behavior at triple junctions in nickel-base superalloys, Acta Materialia 249 (2023) 118801",
+        "doi": "10.1016/j.actamat.2023.118801",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "High",
+    "source_file": "ebsd_3d.json"
   },
   {
     "id": "hedm-am-in718-crack-closure-ravi-2021",
@@ -930,9 +3574,9 @@
     "acquisition": {
       "facility": "APS (HEDM; beamline unverified) + AFRL serial sectioning",
       "voxel_size_um": null,
-      "volume_dimensions": "",
+      "volume_dimensions": "Full HEDM-interrogated volume",
       "in_situ": false,
-      "notes": ""
+      "notes": "Custom data fusion aligning surface modalities with HEDM; quantifies HEDM misses of small grains/twins."
     },
     "microstructure": {
       "features_resolved": [
@@ -942,7 +3586,7 @@
       ],
       "grain_size_um": "",
       "texture": "",
-      "phases": ""
+      "phases": "gamma/gamma'"
     },
     "defects": {
       "types": [],
@@ -958,10 +3602,10 @@
     },
     "fatigue": {
       "tested": false,
-      "test_type": "",
-      "loading": "",
-      "results": "",
-      "crack_initiation": "",
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
       "initiation_tracked_in_3d": false
     },
     "data_availability": {
@@ -969,7 +3613,7 @@
       "repository": "Materials Data Facility",
       "url": "https://doi.org/10.18126/4y0p-v604",
       "doi": "10.18126/4y0p-v604",
-      "size": "",
+      "size": null,
       "format": "Raw and processed HEDM and serial-sectioning data",
       "license": "CC-BY 4.0"
     },
@@ -978,6 +3622,11 @@
         "citation": "G. Sparks, S. Mason, M.G. Chapman, J.-S. Park, H. Sharma, P. Kenesei, S.R. Niezgoda, M.J. Mills, M.D. Uchic, P.A. Shade, M. Obstalecki, Data set for '3D Reconstruction of a High-Energy Diffraction Microscopy Sample Using Multi-Modal Serial Sectioning with High-Precision EBSD and Surface Profilometry' (MDF, 2024)",
         "doi": "10.18126/4y0p-v604",
         "url": "https://doi.org/10.18126/4y0p-v604"
+      },
+      {
+        "citation": "Sparks G., Mason S.A., Chapman M.G., Park J.-S., Sharma H., Kenesei P., Niezgoda S.R., Mills M.J., Uchic M.D., Shade P.A., Obstalecki M., 3D Reconstruction of a High-Energy Diffraction Microscopy Sample Using Multi-modal Serial Sectioning with High-Precision EBSD and Surface Profilometry, IMMI 13 (2024) 773-803",
+        "doi": "10.1007/s40192-024-00370-6",
+        "url": "https://acdc.alcf.anl.gov/mdf/detail/8f586539-f397-4af1-9c52-3c2e0da796c8-1.0/"
       }
     ],
     "tags": [
@@ -985,11 +3634,17 @@
       "benchmark",
       "AFRL",
       "machine-learning-ready",
-      "twins"
+      "twins",
+      "multimodal",
+      "HEDM-validation",
+      "grain-scale"
     ],
     "fatigue_initiation_relevance": "Low",
     "notes": "Useful for assessing HEDM fidelity on twinned superalloy microstructures (same alloy family as AFRL LSHR fatigue studies).",
-    "source_file": "diffraction_3d.json"
+    "source_file": "diffraction_3d.json",
+    "merged_from": [
+      "ebsd-lshr-hedm-serial-sectioning-mdf"
+    ]
   },
   {
     "id": "hedm-ni-superalloy-small-crack-naragani-2019",
@@ -1251,6 +3906,492 @@
     "source_file": "diffraction_3d.json"
   },
   {
+    "chemistry": null,
+    "processing": {
+      "route": "Forged",
+      "parameters": "Turbine-disc Ni-Co alloy, gamma' strengthened",
+      "heat_treatment": "",
+      "surface_condition": "Flat observation face; 60 µm FIB notch introduced as crack starter"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "NIMS Xe plasma FIB-SEM with CMOS EBSD detector",
+      "voxel_size_um": 0.1,
+      "volume_dimensions": "~200 x 80 x 70 µm; 1000 SIM images at 100 nm slices, EBSD every 5 slices (0.5 µm)",
+      "in_situ": false,
+      "notes": "Crack segmented from ion-induced SE images; crack-face normals combined with stacked Euler maps (misalignment <2°); KAM maps."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins",
+        "cracks"
+      ],
+      "grain_size_um": "Fine-grained (crack ~100-200 µm spans many grains)",
+      "texture": "",
+      "phases": "gamma + gamma'"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": "Crack length 150 µm at stop; ~15 MPa√m ΔK region"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 1165,
+      "uts_MPa": 1615,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Room temperature"
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Fully reversed (R=-1) tension-compression axial, servo-hydraulic, RT; specimen ~4.5 mm wide x 3 mm thick",
+      "results": "Small-crack growth in Paris (Stage II) regime; test stopped at 150 µm crack length",
+      "crack_initiation": "Crack started from FIB notch; most of the 3D crack surface lies close to {111} slip planes even in Stage II, with some {100} facets - local Mode II (shear) growth dominates",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-crack",
+      "plasma-FIB",
+      "small-crack",
+      "crystallography",
+      "grain-scale"
+    ],
+    "notes": "Raw 3D EBSD volume not released; only manuscript + video.",
+    "id": "ebsd-tmw4m3-pfib-fatigue-crack-nishikawa",
+    "title": "Ni-Co superalloy TMW-4M3: PFIB-SEM 3D EBSD of an entire microstructurally small fatigue crack",
+    "material_class": "Ni superalloy",
+    "material": "TMW-4M3 forged Ni-Co-based disk superalloy",
+    "data_availability": {
+      "status": "Partially public",
+      "repository": "NIMS Materials Data Repository (MDR)",
+      "url": "https://mdr.nims.go.jp/datasets/a89c8169-b6e5-49fa-bfb7-d66d9b237680",
+      "doi": "10.48505/nims.4288",
+      "size": "42.4 MB (accepted manuscript + 3D crack video; no raw volume)",
+      "format": "PDF, MOV",
+      "license": "CC BY-NC-ND 4.0"
+    },
+    "references": [
+      {
+        "citation": "Nishikawa H., Furuya Y., Osada T., Kawagishi K., Hara T., Three-dimensional high-resolution crystallographic observation of the entire volume of microstructurally small fatigue cracks in Ni-Co based superalloy, Scripta Materialia 222 (2022) 115026",
+        "doi": "10.1016/j.scriptamat.2022.115026",
+        "url": "https://mdr.nims.go.jp/datasets/a89c8169-b6e5-49fa-bfb7-d66d9b237680"
+      }
+    ],
+    "fatigue_initiation_relevance": "High",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Nb": 7.0,
+        "Zr": "bal."
+      },
+      "notes": "Zircaloy-4 base + 7 wt% Nb (model alloy)"
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Hot rolled at 725 °C to 75% reduction",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Thermo Scientific Helios Xe+ PFIB-SEM (Univ. Manchester)",
+      "voxel_size_um": null,
+      "volume_dimensions": "441 sequential slices, 0.1 µm slice thickness",
+      "in_situ": false,
+      "notes": "Custom DREAM.3D pipeline; both alpha and beta indexed."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "Rolling texture (co-deformation of alpha/beta)",
+      "phases": "alpha (HCP) + beta (BCC)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "plasma-FIB",
+      "two-phase",
+      "texture"
+    ],
+    "notes": "Not a fatigue study; included as openly downloadable PFIB 3D EBSD of an HCP/BCC two-phase alloy analogous to alpha/beta Ti.",
+    "id": "ebsd-zry4-7nb-pfib-zenodo",
+    "title": "Hot-rolled Zircaloy-4 + 7 wt% Nb: PFIB 3D EBSD of alpha and beta (441 slices, 0.1 µm)",
+    "material_class": "Other",
+    "material": "Model Zircaloy-4 with 7 wt% Nb (Zr alloy)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/3785085",
+      "doi": "10.5281/zenodo.3785085",
+      "size": "13.8 GB",
+      "format": "CTF, DREAM.3D, images, .oip",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Daniel C.S., Garner A., Honniball P.D., Bradley L., Preuss M., Prangnell P.B., Quinta da Fonseca J., Co-deformation and dynamic annealing effects on the texture development during alpha-beta processing of a model Zr-Nb alloy, Acta Materialia 205 (2021) 116538",
+        "doi": "10.1016/j.actamat.2020.116538",
+        "url": "https://zenodo.org/record/3785085"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "DED",
+      "parameters": "Laser Engineered Net Shaping (LENS) blown-powder DED",
+      "heat_treatment": "As-deposited (unverified)",
+      "surface_condition": "fs-laser ablated slices cleaned by glancing-angle FIB"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam",
+      "voxel_size_um": 3.0,
+      "volume_dimensions": "816 x 834 x 240 µm; 80 slices of 3 µm; 3 µm in-plane step; ~200 GB incl. raw EBSD patterns",
+      "in_situ": false,
+      "notes": "Raw patterns saved (~90% of data); CI>0.1 mask; grains <64 voxels removed; reconstruction in DREAM.3D within BisQue with misorientation-tolerance parameter sweep."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "Large, highly convoluted grains; 2D slices of a single grain fragmented (only 6.85% of 467 slices retained one feature); Z-normal slice median equivalent diameter 267 µm for the large grain studied",
+      "texture": "",
+      "phases": "FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "grain-scale",
+      "2D-vs-3D"
+    ],
+    "notes": "Demonstrates large 2D-vs-3D grain size discrepancies in AM steel - relevant when calibrating grain-size-based fatigue models.",
+    "id": "ebsd-304l-lens-tribeam-polonsky",
+    "title": "LENS (DED) 304L stainless steel: TriBeam 3D EBSD volume (816 x 834 x 240 µm, 3 µm voxels)",
+    "material_class": "Steel",
+    "material": "304L austenitic stainless steel (LENS directed energy deposition)",
+    "data_availability": {
+      "status": "On request",
+      "repository": "BisQue (UCSB) - public status not confirmed",
+      "url": "https://doi.org/10.1007/s40192-019-00126-7",
+      "doi": null,
+      "size": "~200 GB raw",
+      "format": "EBSD patterns, DREAM.3D",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Polonsky A.T. et al., Three-dimensional Analysis and Reconstruction of Additively Manufactured Materials in the Cloud-Based BisQue Infrastructure, IMMI 8 (2019) 37-51",
+        "doi": "10.1007/s40192-019-00126-7",
+        "url": "https://par.nsf.gov/servlets/purl/10113961"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Naval Research Laboratory serial sectioning (BSE + EBSD per slice)",
+      "voxel_size_um": null,
+      "volume_dimensions": "ROI > 1 mm; alignment error ~0-3 µm",
+      "in_situ": false,
+      "notes": "Distorted EBSD maps warped onto high-fidelity BSE stack."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "FCC"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "multimodal",
+      "methods"
+    ],
+    "notes": "",
+    "id": "ebsd-316l-lpbf-nguyen-rowenhorst-fusion",
+    "title": "L-PBF 316L: NRL multimodal (BSE + EBSD) mechanical serial sectioning with warping-based data fusion",
+    "material_class": "Steel",
+    "material": "316L stainless steel (L-PBF)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://link.springer.com/10.1007/s11837-021-04865-x",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Nguyen L.T., Rowenhorst D.J., The Alignment and Fusion of Multimodal 3D Serial Sectioning Datasets, JOM 73 (2021) 3272-3284",
+        "doi": "10.1007/s11837-021-04865-x",
+        "url": "https://link.springer.com/10.1007/s11837-021-04865-x"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF (unverified)",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "MPIE ELAVO 3D (SEM + automated mechanical serial polishing + EBSD)",
+      "voxel_size_um": null,
+      "volume_dimensions": "Large volume (exact size not verified)",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "Textures associated with 'tree-like' grain morphologies not visible in 2D",
+      "phases": "FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "grain-scale",
+      "stainless-steel",
+      "mechanical-serial-sectioning"
+    ],
+    "notes": "Process parameters and volume not verified (full text not accessible).",
+    "id": "ebsd-316l-am-elavo-sun",
+    "title": "L-PBF 316L: large-volume automated serial-polishing 3D EBSD (MPIE ELAVO 3D) revealing tree-like grains",
+    "material_class": "Steel",
+    "material": "316L stainless steel (additively manufactured)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://oar.a-star.edu.sg/communities-collections/articles/20083",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": "Article CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Sun Z., Tsai S.-P., Konijnenberg P., Wang J.-Y., Zaefferer S., A large-volume 3D EBSD study on additively manufactured 316L stainless steel, Scripta Materialia 238 (2024) 115723",
+        "doi": "10.1016/j.scriptamat.2023.115723",
+        "url": "https://oar.a-star.edu.sg/communities-collections/articles/20083"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Wrought",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": "Polished"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Institut Pprime (Univ. Poitiers): serial sectioning + SEM/EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "Region around observed cracks; 3D mesh of 386 grains",
+      "in_situ": false,
+      "notes": "Real 3D microstructure meshed for crystal plasticity FE."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "Tension-compression at constant plastic strain amplitude, RT, air; stopped at 5000 cycles (~20% of life)",
+      "results": "Microcracks characterized at ~20% life",
+      "crack_initiation": "Surface microcracks at slip bands; CPFE on the reconstructed 3D aggregate shows more intense plastic slip in grains where cracks were observed; role of local crystallographic configuration (neighbour grains, twins) assessed",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-initiation",
+      "crystal-plasticity",
+      "grain-scale",
+      "stainless-steel",
+      "LCF"
+    ],
+    "notes": "Plastic strain amplitude value and sectioning parameters not verified from full text.",
+    "id": "ebsd-316ln-lcf-signor-serial-sectioning-cpfe",
+    "title": "316LN/316L LCF microcrack initiation: serial-sectioning 3D EBSD of crack sites (386 grains) + CPFE",
+    "material_class": "Steel",
+    "material": "316LN austenitic stainless steel (also 316L in 2014 proceedings)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://researchportal.ip-paris.fr/en/publications/influence-of-local-crystallographic-configuration-on-microcrack-i/",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Signor L., Villechaise P., Ghidossi T., Lacoste E., Gueguen M., Courtin S., Influence of local crystallographic configuration on microcrack initiation in fatigued 316LN stainless steel: Experiments and crystal plasticity finite elements simulations, Mater. Sci. Eng. A 649 (2016) 239-249",
+        "doi": "10.1016/j.msea.2015.09.119",
+        "url": "https://researchportal.ip-paris.fr/en/publications/influence-of-local-crystallographic-configuration-on-microcrack-i/"
+      },
+      {
+        "citation": "Signor L., Lacoste E., Villechaise P., Ghidossi T., Courtin S., Plastic slip and early stage of fatigue damage in polycrystals: Comparison between experiments and crystal plasticity finite elements simulations, Advanced Materials Research 891-892 (2014) 1711-1716",
+        "doi": "10.4028/www.scientific.net/AMR.891-892.1711",
+        "url": "https://researchportal.ip-paris.fr/en/publications/plastic-slip-and-early-stage-of-fatigue-damage-in-polycrystals-co/"
+      }
+    ],
+    "fatigue_initiation_relevance": "High",
+    "source_file": "ebsd_3d.json"
+  },
+  {
     "id": "dct-austenitic-ss-spring8-nakai-2018",
     "title": "Fatigue damage (grain misorientation) and crack initiation in austenitic stainless steel tracked by DCT at SPring-8",
     "material_class": "Steel",
@@ -1423,6 +4564,160 @@
     "source_file": "diffraction_3d.json"
   },
   {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "FIB-SEM 3D EBSD (Nippon Steel group; instrument not stated)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "BCC ferrite"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Cyclic loading to produce non-propagating crack (details not given)",
+      "results": "Non-propagating crack at fatigue limit-type condition",
+      "crack_initiation": "Crack grew on three equivalent {101} slip planes; crack tip arrested inside a grain, not at a grain boundary",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-crack",
+      "crack-arrest",
+      "steel",
+      "FIB"
+    ],
+    "notes": "Conference abstract only; no journal version located.",
+    "id": "ebsd-ferritic-steel-fatigue-crack-tip-kikuzuki",
+    "title": "Ferritic model steel: FIB-SEM 3D EBSD around a non-propagating fatigue crack tip",
+    "material_class": "Steel",
+    "material": "Ferritic model steel",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/D8CC78D3AF033287852584AB0030ABAA",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Kikuzuki M., Kato T., Makino T., Kimura Y., Three-dimensional Electron Backscatter Diffraction Analysis of Fatigue Crack Propagation in Steel, 3DMS 2021 abstract",
+        "doi": null,
+        "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/D8CC78D3AF033287852584AB0030ABAA"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Cast",
+      "parameters": "E309L chill-cast; Fe fully recrystallized",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "DCT"
+    ],
+    "acquisition": {
+      "facility": "McMaster University; lab-based DCT + serial-section 3D EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Processed 3D label volumes from both methods, DREAM.3D v6 pipelines, 5-DOF grain boundary datasets."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "BCC ferrite; FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "benchmark",
+      "grain-boundary-character",
+      "cross-validation"
+    ],
+    "notes": "Acquisition parameters not given on dataset page; associated manuscript not yet identified.",
+    "id": "ebsd-fe-e309l-3debsd-labdct-mendeley",
+    "title": "Pure Fe (BCC) and chill-cast modified E309L (FCC): serial-section 3D EBSD vs. lab DCT benchmark",
+    "material_class": "Steel",
+    "material": "Fully recrystallized pure Fe; chill-cast modified E309L austenitic stainless steel",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Mendeley Data",
+      "url": "https://data.mendeley.com/datasets/5vg72jgbcs",
+      "doi": "10.17632/5vg72jgbcs.2",
+      "size": null,
+      "format": "HDF5 label volumes, DREAM.3D JSON pipelines",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Mosayebi M., Mohammadpour P., Deschênes P.-A., Tôn-Thât L., Paquet D., Phillion A.B., Bassim N., 3D-EBSD and DCT datasets of a fully recrystallized pure Fe (BCC) and a chill-cast, modified E309L austenitic stainless steel (FCC), Mendeley Data v2 (2026)",
+        "doi": "10.17632/5vg72jgbcs.2",
+        "url": "https://data.mendeley.com/datasets/5vg72jgbcs"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
     "id": "dct-304ss-igscc-grain-mapped-king-2008",
     "title": "Intergranular stress corrosion crack grown through a DCT grain-mapped sensitized austenitic stainless steel",
     "material_class": "Steel",
@@ -1512,6 +4807,98 @@
     "fatigue_initiation_relevance": "Low",
     "notes": "Environmental cracking rather than fatigue; included as a canonical DCT + in-situ crack/grain-boundary dataset in a structural steel.",
     "source_file": "diffraction_3d.json"
+  },
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "C": 0.17,
+        "Mn": 1.63,
+        "Si": 0.28,
+        "Al": 0.036,
+        "P": 0.0021,
+        "S": 0.0038,
+        "N": 0.0025,
+        "Fe": "bal."
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Hot press austenitization + deformation; large-strain warm flat compression at 550 °C (total strain 1.6) -> UFG ferrite/cementite",
+      "heat_treatment": "2 h at 550 °C; short intercritical anneal at 730 °C (24 vol% martensite) or 750 °C (38 vol% martensite) + quench",
+      "surface_condition": "Polished"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "MPIE Zeiss CrossBeam XB1540 FIB-SEM + EDAX-TSL EBSD",
+      "voxel_size_um": 0.1,
+      "volume_dimensions": "20 x 20 µm scans, 42 slices at 100 nm (100 nm step), ~23 h",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "Ferrite 1.4 µm (730-DP), 1.2 µm (750-DP)",
+      "texture": "",
+      "phases": "ferrite + martensite (24 or 38 vol%)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": 1003,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "UTS 1003 MPa for 750-DP, ~100 MPa above 730-DP"
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "dual-phase",
+      "GND",
+      "grain-scale",
+      "FIB"
+    ],
+    "notes": "Not a fatigue study; GND fields relevant to ferrite/martensite interface damage.",
+    "id": "ebsd-dp-steel-calcagnotto-fib-3debsd",
+    "title": "Ultrafine-grained dual-phase steel: FIB 3D EBSD of GND/orientation gradients at ferrite-martensite interfaces",
+    "material_class": "Steel",
+    "material": "Ultrafine-grained ferrite/martensite dual-phase steel (0.17C-1.63Mn)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.dierk-raabe.com/app/download/5803583940/Mater_Science_Engin_A+527+%282010%29+2738.pdf",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Calcagnotto M., Ponge D., Demir E., Raabe D., Orientation gradients and geometrically necessary dislocations in ultrafine grained dual-phase steels studied by 2D and 3D EBSD, Mater. Sci. Eng. A 527 (2010) 2738-2746",
+        "doi": "10.1016/j.msea.2010.01.004",
+        "url": "https://www.dierk-raabe.com/app/download/5803583940/Mater_Science_Engin_A+527+%282010%29+2738.pdf"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
   },
   {
     "id": "dct-ti21s-short-fatigue-crack-herbig-2011",
@@ -1608,6 +4995,83 @@
     "source_file": "diffraction_3d.json"
   },
   {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Naval Research Laboratory serial sectioning + EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "BCC beta"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "titanium",
+      "grain-topology",
+      "image-based-FE"
+    ],
+    "notes": "Sectioning parameters not verified.",
+    "id": "ebsd-ti21s-rowenhorst-beta-grains",
+    "title": "Beta-Ti alloy Ti-21S: NRL mechanical serial-sectioning 3D EBSD of recrystallized beta grains (topology, curvature, image-based FE)",
+    "material_class": "Ti alloy",
+    "material": "Ti-21S (beta-stabilized Ti alloy, fully recrystallized)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Rowenhorst D.J., Lewis A.C., Spanos G., Three-dimensional analysis of grain topology and interface curvature in a beta-titanium alloy, Acta Materialia 58 (2010) 5511-5519",
+        "doi": "10.1016/j.actamat.2010.06.030",
+        "url": null
+      },
+      {
+        "citation": "Rowenhorst D., Lewis A., Spanos G., Grain Boundary Curvature Analysis of beta-Grains in Ti-21S, Microscopy and Microanalysis 15 (2009) 640-641",
+        "doi": "10.1017/s1431927609094082",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
     "id": "dct-ti55531-short-crack-ml-rovinelli-2018",
     "title": "Short fatigue crack in beta-metastable Ti-55531 with DCT grain map and in-situ PCT, used for ML crack-driving-force study",
     "material_class": "Ti alloy",
@@ -1699,6 +5163,409 @@
     "fatigue_initiation_relevance": "High",
     "notes": "Proudhon et al. 2017 (AEM) performed CPFE crack-growth simulation in a DCT-measured microstructure of several hundred grains; whether it is the same Ti-55531 specimen is (unverified).",
     "source_file": "diffraction_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT",
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19 (in-situ fatigue microtomography) + subsequent 3D EBSD volume",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": true,
+      "notes": "Phase + absorption contrast to see two-phase microstructure and crack chronology."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "alpha lamellae + beta; prior beta grains"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "In-situ fatigue at ESRF ID19 (loading details not verified)",
+      "results": "3D crack-front evolution recorded",
+      "crack_initiation": "Near-surface crack crossing prior-beta GB is diverted/bifurcated (local retardation, first-order crack-front undulation); large misorientation between alpha lamellae favourable for prismatic <a> or pyramidal <c+a> slip deflects the crack (second-order undulation)",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-crack",
+      "in-situ",
+      "titanium",
+      "correlative",
+      "short-crack"
+    ],
+    "notes": "3D EBSD sectioning method (FIB vs mechanical) not verified.",
+    "id": "ebsd-ti6246-fatigue-crack-birosca",
+    "title": "Ti-6246 short fatigue crack: in-situ synchrotron microtomography (ESRF ID19) + post-mortem 3D EBSD of crack path",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-2Sn-4Zr-6Mo (Ti-6246), lamellar/duplex",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://cronfa.swansea.ac.uk/Record/cronfa11870/Details",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Birosca S., Buffiere J.Y., Garcia-Pastor F.A., Karadge M., Babout L., Preuss M., Three-dimensional characterization of fatigue cracks in Ti-6246 using X-ray tomography and electron backscatter diffraction, Acta Materialia 57 (2009) 5834-5847",
+        "doi": "10.1016/j.actamat.2009.08.009",
+        "url": "https://cronfa.swansea.ac.uk/Record/cronfa11870/Details"
+      }
+    ],
+    "fatigue_initiation_relevance": "High",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF (unverified)",
+      "parameters": "AM Ti cylinder with attached 1 mm Ti-ball fiducials",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "X-ray CT",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "AFRL mechanical-polish serial sectioning (optical) + 5 different XCT scans/systems",
+      "voxel_size_um": 2.8,
+      "volume_dimensions": "SS in-plane 2.8 µm, average slice 2.01 µm (z-height map provided)",
+      "in_situ": false,
+      "notes": "Registered TIF stacks of VOI for all XCT scans + SS; raw projections provided (scan E partly lost: 1329 of 3141 projections)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Largest-pore centroids registered within 20-60 µm (1-3 voxels) between modalities; serial sectioning used as ground truth for XCT pore detection limits"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "porosity",
+      "XCT-validation",
+      "ground-truth",
+      "machine-learning-ready"
+    ],
+    "notes": "No EBSD (optical serial sectioning); included as serial-sectioning ground truth for pore detection that controls AM fatigue initiation.",
+    "id": "ebsd-ti64-am-robomet-xct-jolley",
+    "title": "AM Ti-6Al-4V: correlative multi-system XCT + optical-microscopy mechanical serial sectioning of porosity (fiducial-registered)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (additively manufactured cylinder)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Materials Data Facility",
+      "url": "https://doi.org/10.18126/t27t-9iao",
+      "doi": "10.18126/t27t-9iao",
+      "size": null,
+      "format": "TIFF stacks, raw projections (32-bit float / 16-bit), text metadata",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Jolley B.R., Sparkman D.M., Chapman M.G., Schwalbach E.J., Uchic M.D., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V, IMMI 13 (2024) 746-757",
+        "doi": "10.1007/s40192-024-00367-1",
+        "url": null
+      },
+      {
+        "citation": "Sparkman D., Jolley B., Schwalbach E., Knott C., Uchic M., Chapman M., Spatial Registration of X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data, ASNT Research Symposium 2023",
+        "doi": "10.32548/rs.2023.084",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Experimental 3D datasets from UCSB TriBeam group (unverified) + synthetic volumes",
+      "voxel_size_um": null,
+      "volume_dimensions": "mm^3-scale",
+      "in_situ": false,
+      "notes": "Both experimentally captured and synthetically generated 3D microstructures used as CPFE inputs."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "Microtextured regions (MTRs/macrozones)",
+      "phases": "alpha + beta"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": "CPFE monotonic loading; implications discussed for fatigue and dwell fatigue",
+      "results": "MTRs with dominant [0001] orientation produce stress and plastic strain hotspots early in straining",
+      "crack_initiation": "Hotspots at [0001]-oriented MTRs proposed as fatigue/dwell initiation precursors; compared with prior DIC strain localization",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "microtexture",
+      "crystal-plasticity",
+      "titanium",
+      "dwell-fatigue",
+      "grain-scale"
+    ],
+    "notes": "Use of TriBeam for the experimental volume inferred from author list (Polonsky, Echlin) - not confirmed from full text.",
+    "id": "ebsd-ti64-hemery-microtexture-slip-3d",
+    "title": "Ti-6Al-4V microtextured regions: mm^3-scale 3D datasets + CPFE onset of slip (fatigue/dwell implications)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (bimodal/equiaxed with microtextured regions)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://labs.materials.ucsb.edu/pollock/tresa/publications/1511",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Hémery S., Naït-Ali A., Guéguen M., Wendorf J., Polonsky A.T., Echlin M.P., Stinville J.C., Pollock T.M., Villechaise P., A 3D analysis of the onset of slip activity in relation to the degree of micro-texture in Ti-6Al-4V, Acta Materialia 181 (2019) 36-48",
+        "doi": "10.1016/j.actamat.2019.09.028",
+        "url": "https://labs.materials.ucsb.edu/pollock/tresa/publications/1511"
+      },
+      {
+        "citation": "Echlin M.P., Stinville J.C., Miller V.M., Lenthe W.C., Pollock T.M., Incipient slip and long range plastic strain localization in microtextured Ti-6Al-4V titanium, Acta Materialia 114 (2016) 164-175",
+        "doi": null,
+        "url": "https://experts.illinois.edu/en/publications/incipient-slip-and-long-range-plastic-strain-localization-in-micr/"
+      }
+    ],
+    "fatigue_initiation_relevance": "High",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "EBM",
+      "parameters": "Random scan strategy (R3), 50 µm layers, 470 °C build temperature, powder 105 ± 45 µm",
+      "heat_treatment": "As-built",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Thermo Fisher Helios G4 Xe plasma FIB dual beam + Oxford Symmetry EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Raw .ctf library, DREAM.3D pipelines (ImportCTFLibrary, FullReconstruction) and MTEX scripts provided."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "Fine alpha laths",
+      "texture": "",
+      "phases": "alpha + beta (prior-beta reconstruction, variant selection)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "titanium",
+      "plasma-FIB",
+      "variant-selection"
+    ],
+    "notes": "Slice thickness/step/volume not stated on dataset page.",
+    "id": "ebsd-ti64-ebm-pfib-demott",
+    "title": "E-PBF Ti-6Al-4V (random scan strategy) Xe-plasma FIB 3D EBSD: alpha variant selection",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (electron powder bed fusion)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Mendeley Data",
+      "url": "https://data.mendeley.com/datasets/c5x7ckcfsp",
+      "doi": "10.17632/c5x7ckcfsp.1",
+      "size": null,
+      "format": "CTF, DREAM.3D JSON pipelines, MATLAB/MTEX code",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "DeMott R., Haghdadi N., Liao X., Ringer S.P., Primig S., 3D characterization of microstructural evolution and variant selection in additively manufactured Ti-6Al-4V, J. Mater. Sci. 56 (2021) 14763-14782",
+        "doi": "10.1007/s10853-021-06216-2",
+        "url": "https://data.mendeley.com/datasets/c5x7ckcfsp"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Double-melt plate, ~0.5 in (1.25 cm) thick",
+      "heat_treatment": "Heat treated to equiaxed microstructure (schedule not given)",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam",
+      "voxel_size_um": null,
+      "volume_dimensions": "190 x 241 x 106 µm = 318 x 377 x 121 voxels; 0.6 µm in-plane step, 1 µm slice",
+      "in_situ": false,
+      "notes": "Stored as HDF5/.dream3d with EulerAngles, Quaternions, FeatureIds, IPFColor arrays."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "8893 grains (6645 fully contained)",
+      "texture": "",
+      "phases": "alpha (+beta)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "machine-learning-ready",
+      "grain-scale",
+      "titanium",
+      "microtexture"
+    ],
+    "notes": "Possibly related to the TriBeam Ti-6Al-4V volumes used by Hemery et al. 2019 (unverified). Short-link URL as given in the paper.",
+    "id": "ebsd-ti64-tribeam-bisque-equiaxed",
+    "title": "Ti-6Al-4V equiaxed 3D microstructure (TriBeam, 8893 grains) released for ML/generative modelling",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (standard grade, double-melt plate)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "BisQue (UCSB)",
+      "url": "https://bit.ly/Ti6Al4Vmicrostructure",
+      "doi": null,
+      "size": null,
+      "format": "HDF5 / DREAM.3D (.dream3d)",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Jangid D.K., Brodnik N.R., Echlin M.P., Daly S.H., Pollock T.M., Manjunath B.S., Titanium 3D Microstructure for Physics-based Generative Models: A Dataset and Primer, ICML 2023 Workshop SynS&ML",
+        "doi": null,
+        "url": "https://par.nsf.gov/servlets/purl/10487552"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "source_file": "ebsd_3d.json"
   },
   {
     "id": "hedm-ti7al-midas-benchmark-sharma-2026",
