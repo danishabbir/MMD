@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Material Microstructure Dataset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: specimen-catalogue tool — filter rail on the left, specimen cards right, detail sheet slides over. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #15202b;
+  --muted: #5b6876;
+  --rule: #d7dde4;
+  --accent: #1f4fd1;
+  --accent-soft: #e3e9fb;
+  --hot: #b4235a;
+  --hot-soft: #f8e1ea;
+  --ok: #1d7a4c;
+  --ok-soft: #dff1e7;
+  --warn: #8a5a00;
+  --warn-soft: #f6ecd4;
+  --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f151b; --surface: #17202a; --ink: #e4eaf0; --muted: #94a3b2; --rule: #2a3643;
+    --accent: #86a6ff; --accent-soft: #1d2a4d; --hot: #f07aa6; --hot-soft: #3d1a29;
+    --ok: #6fd3a0; --ok-soft: #133024; --warn: #e6b65c; --warn-soft: #3a2c10;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f151b; --surface: #17202a; --ink: #e4eaf0; --muted: #94a3b2; --rule: #2a3643;
+  --accent: #86a6ff; --accent-soft: #1d2a4d; --hot: #f07aa6; --hot-soft: #3d1a29;
+  --ok: #6fd3a0; --ok-soft: #133024; --warn: #e6b65c; --warn-soft: #3a2c10;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.wrap { max-width: 1400px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 48px; }
+header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+.brand h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1; letter-spacing: .01em; margin: 0; text-wrap: balance; }
+.brand p { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
+.tally { display: flex; gap: 22px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.tally div { display: grid; }
+.tally b { font-family: var(--font-display); font-size: 28px; line-height: 1; font-weight: 600; }
+.tally span { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+
+.mix { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 16px 0 4px; background: var(--rule); }
+.mix i { display: block; height: 100%; }
+.mix-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); }
+.mix-legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; background: var(--c); }
+
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 28px; margin-top: 22px; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+aside.filters { display: grid; gap: 18px; align-content: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+@media (max-width: 860px) { aside.filters { position: static; } }
+#fwrap > summary { display: none; }
+.fbody { display: grid; gap: 18px; }
+@media (max-width: 860px) {
+  #fwrap > summary { display: list-item; cursor: pointer; font-weight: 700; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  #fwrap[open] > summary { margin-bottom: 14px; }
+}
+.fgroup h2 { font-family: var(--font-body); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 7px; }
+#q { width: 100%; padding: 9px 11px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--rule); background: var(--surface); border-radius: 999px; padding: 3px 10px; font-size: 13px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip small { color: inherit; opacity: .65; font-variant-numeric: tabular-nums; margin-left: 3px; }
+.toggle { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.reset { justify-self: start; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; text-decoration: underline; font-size: 13px; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.bar .count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar select { padding: 6px 8px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface); padding: 6px 12px; cursor: pointer; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; cursor: pointer; text-align: left; padding: 0; transition: border-color .15s, transform .15s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .card, .card:hover { transition: none; transform: none; } }
+.thumb { position: relative; aspect-ratio: 16 / 7; max-width: 100%; background: var(--rule); }
+.thumb canvas { width: 100%; height: 100%; display: block; }
+.thumb .tech { position: absolute; left: 8px; bottom: 8px; font-family: var(--font-data); font-size: 11px; background: rgba(10, 14, 20, .72); color: #f2f5f8; padding: 2px 7px; border-radius: 3px; }
+.body { padding: 12px 14px 14px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 21px; line-height: 1.1; margin: 0; text-wrap: balance; }
+.card .sub { font-size: 13.5px; color: var(--muted); margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.props { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; font-family: var(--font-data); font-size: 12px; font-variant-numeric: tabular-nums; border-top: 1px solid var(--rule); padding-top: 8px; }
+.props div { display: grid; }
+.props span { font-family: var(--font-body); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.badges { display: flex; flex-wrap: wrap; gap: 5px; }
+.badge { font-size: 11.5px; padding: 1px 8px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.badge.hot { background: var(--hot-soft); color: var(--hot); }
+.badge.ok { background: var(--ok-soft); color: var(--ok); }
+.badge.warn { background: var(--warn-soft); color: var(--warn); }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); position: sticky; top: 0; background: var(--surface); white-space: nowrap; }
+td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--accent-soft); }
+
+.empty { padding: 40px; text-align: center; color: var(--muted); border: 1px dashed var(--rule); border-radius: 8px; }
+
+/* Detail sheet */
+.sheet-bg { position: fixed; inset: 0; background: rgba(8, 12, 18, .45); z-index: 10; }
+.sheet { position: fixed; top: 0; right: 0; bottom: 0; width: min(760px, 100%); background: var(--bg); z-index: 11; overflow-y: auto; padding: calc(env(safe-area-inset-top, 0px) + 20px) 24px calc(env(safe-area-inset-bottom, 0px) + 40px); box-shadow: -8px 0 30px rgba(0, 0, 0, .2); }
+.sheet .close { float: right; border: 1px solid var(--rule); background: var(--surface); border-radius: 6px; padding: 4px 12px; cursor: pointer; }
+.sheet h2 { font-family: var(--font-display); font-size: 32px; line-height: 1.05; margin: 6px 0 8px; text-wrap: balance; }
+.sheet section { margin-top: 20px; }
+.sheet h4 { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--rule); }
+dl.kv { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr); gap: 6px 16px; margin: 0; }
+dl.kv dt { color: var(--muted); font-size: 13.5px; }
+dl.kv dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) { dl.kv { grid-template-columns: minmax(0, 1fr); } dl.kv dd { margin-bottom: 6px; } }
+.chem { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--font-data); font-size: 13px; }
+.chem span { border: 1px solid var(--rule); background: var(--surface); padding: 2px 8px; border-radius: 4px; }
+.chem b { font-weight: 500; color: var(--accent); margin-right: 4px; }
+.callout { background: var(--hot-soft); border-radius: 6px; padding: 10px 14px; }
+.callout strong { color: var(--hot); }
+.refs { padding-left: 18px; margin: 0; display: grid; gap: 6px; }
+.note { font-size: 12.5px; color: var(--muted); }
+footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+</style>
+
+</head>
+<body>
+<script src="data/mmd.js"></script>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Material Microstructure Dataset</h1>
+      <p>3D reconstructions of structural materials (CT, DCT, HEDM, 3D EBSD) with chemistry, processing, mechanical properties and fatigue crack initiation data, collected from the literature.</p>
+    </div>
+    <div class="tally" id="tally"></div>
+  </header>
+  <div class="mix" id="mix" role="img" aria-label="Records by material class"></div>
+  <div class="mix-legend" id="mixLegend"></div>
+
+  <div class="layout">
+    <aside class="filters" aria-label="Filters"><details id="fwrap" open><summary>Filters</summary><div class="fbody">
+      <div class="fgroup">
+        <h2><label for="q">Search</label></h2>
+        <input id="q" type="search" placeholder="alloy, author, beamline, defect…" autocomplete="off">
+      </div>
+      <div class="fgroup"><h2>Material class</h2><div class="chips" id="fClass"></div></div>
+      <div class="fgroup"><h2>Technique</h2><div class="chips" id="fTech"></div></div>
+      <div class="fgroup"><h2>Processing route</h2><div class="chips" id="fRoute"></div></div>
+      <div class="fgroup"><h2>Fatigue initiation relevance</h2><div class="chips" id="fRel"></div></div>
+      <div class="fgroup" style="display:grid;gap:6px">
+        <h2>Must have</h2>
+        <label class="toggle"><input type="checkbox" id="fPublic"> Downloadable 3D data</label>
+        <label class="toggle"><input type="checkbox" id="fFatigue"> Fatigue tested</label>
+        <label class="toggle"><input type="checkbox" id="fTracked"> Initiation tracked in 3D</label>
+        <label class="toggle"><input type="checkbox" id="fInsitu"> In-situ loading</label>
+      </div>
+      <button class="reset" id="reset" type="button">Clear all filters</button>
+    </div></details></aside>
+
+    <main>
+      <div class="bar">
+        <span class="count" id="count"></span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <label for="sort" class="count">Sort</label>
+          <select id="sort">
+            <option value="relevance">Fatigue relevance</option>
+            <option value="material">Material</option>
+            <option value="uts">UTS (high to low)</option>
+            <option value="voxel">Voxel size (fine first)</option>
+          </select>
+          <div class="seg" role="group" aria-label="View">
+            <button type="button" id="vGrid" aria-pressed="true">Cards</button>
+            <button type="button" id="vTable" aria-pressed="false">Table</button>
+          </div>
+        </div>
+      </div>
+      <div id="results"></div>
+    </main>
+  </div>
+  <footer>
+    Card thumbnails are schematic renderings keyed to each record's technique and defect types, not images of the actual data. Values come from the cited papers and dataset pages; check the original source before using any number.
+    <br>Download the catalog: <a href="data/mmd.json">JSON</a> · <a href="data/mmd.csv">CSV</a> · <a href="https://github.com/danishabbir/MMD">source on GitHub</a>
+  </footer>
+</div>
+
+<div class="sheet-bg" id="sheetBg" hidden></div>
+<aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></aside>
+
+<script>
+(function () {
+  const DATA = (window.MMD_DATA || []).slice();
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const CLASS_COLORS = {
+    "Ti alloy": "#4f7cac", "Ni superalloy": "#b0533c", "Steel": "#5c6670", "Al alloy": "#5aa0a8",
+    "Mg alloy": "#9b8a3c", "Cu alloy": "#c07a3a", "Co alloy": "#6b5fa8", "Zr alloy": "#7a8f3c", "Cast iron": "#4a4a52", "HEA/MPEA": "#a05a8c",
+    "Composite": "#3f8a5a", "Other": "#8a8a8a",
+  };
+
+  // Group raw technique strings into filter families.
+  function techFamily(t) {
+    const s = t.toLowerCase();
+    if (/dct|diffraction contrast/.test(s)) return "DCT";
+    if (/hedm|3dxrd|daxm|dark-field|diffraction/.test(s)) return "HEDM / 3DXRD";
+    if (/ebsd|tkd/.test(s)) return "3D EBSD";
+    if (/serial|robo-met|tribeam|fib/.test(s)) return "Serial sectioning";
+    if (/laminograph/.test(s)) return "Laminography";
+    if (/synchrotron|phase-contrast|pct/.test(s)) return "Synchrotron CT";
+    if (/nano/.test(s)) return "Nano-CT";
+    if (/ct|tomograph/.test(s)) return "X-ray / Micro-CT";
+    return "Other";
+  }
+  function routeFamily(r) {
+    const s = (r || "").toLowerCase();
+    if (/l-pbf|lpbf|slm|selective laser|laser powder/.test(s)) return "L-PBF";
+    if (/ebm|electron beam melt|eb-pbf|pbf-eb/.test(s)) return "EBM";
+    if (/ded|directed energy|wire arc|waam|lens/.test(s)) return "DED / WAAM";
+    if (/cast/.test(s)) return "Cast";
+    if (/weld|friction stir/.test(s)) return "Weld";
+    if (/autoclave|prepreg|rtm|infusion|layup|cure|composite/.test(s)) return "Composite layup";
+    if (/wrought|rolled|forg|extru|drawn|plate|bar/.test(s)) return "Wrought";
+    if (/powder|sinter|hip/.test(s)) return "Powder / HIP";
+    return r ? "Other" : "Unknown";
+  }
+  const num = (v) => (typeof v === "number" && isFinite(v) ? v : (typeof v === "string" && /^\s*[\d.]+\s*$/.test(v) ? parseFloat(v) : null));
+  const relRank = { High: 0, Medium: 1, Low: 2 };
+
+  DATA.forEach((r) => {
+    r._tech = [...new Set((r.techniques || []).map(techFamily))];
+    r._route = routeFamily(r.processing && r.processing.route);
+    const da = r.data_availability || {};
+    r._public = /public|partial/i.test(da.status || "") && !/paper only/i.test(da.status || "");
+    const f = r.fatigue || {};
+    r._fatigue = f.tested === true;
+    r._tracked = f.initiation_tracked_in_3d === true;
+    r._insitu = (r.acquisition || {}).in_situ === true;
+    r._uts = num((r.mechanical_properties || {}).uts_MPa);
+    r._ys = num((r.mechanical_properties || {}).yield_strength_MPa);
+    r._el = num((r.mechanical_properties || {}).elongation_pct);
+    r._vox = num((r.acquisition || {}).voxel_size_um);
+    r._text = JSON.stringify(r).toLowerCase();
+  });
+
+  const state = { q: "", cls: new Set(), tech: new Set(), route: new Set(), rel: new Set(), view: "grid", sort: "relevance" };
+  try { const v = localStorage.getItem("mmd-view"); if (v) state.view = v; } catch (e) {}
+
+  function counts(key) {
+    const m = new Map();
+    DATA.forEach((r) => [].concat(r[key]).forEach((v) => v && m.set(v, (m.get(v) || 0) + 1)));
+    return [...m.entries()].sort((a, b) => b[1] - a[1]);
+  }
+  function chips(el, entries, set) {
+    el.innerHTML = entries.map(([k, n]) => `<button type="button" class="chip" aria-pressed="false" data-k="${esc(k)}">${esc(k)}<small>${n}</small></button>`).join("");
+    el.addEventListener("click", (e) => {
+      const b = e.target.closest(".chip"); if (!b) return;
+      const k = b.dataset.k; set.has(k) ? set.delete(k) : set.add(k);
+      b.setAttribute("aria-pressed", set.has(k)); render();
+    });
+  }
+  DATA.forEach((r) => { r._cls = r.material_class || "Other"; r._rel = r.fatigue_initiation_relevance || "Unrated"; });
+  chips($("fClass"), counts("_cls"), state.cls);
+  chips($("fTech"), counts("_tech"), state.tech);
+  chips($("fRoute"), counts("_route"), state.route);
+  chips($("fRel"), counts("_rel").sort((a, b) => (relRank[a[0]] ?? 9) - (relRank[b[0]] ?? 9)), state.rel);
+
+  // Header summary
+  const nPublic = DATA.filter((r) => r._public).length, nFat = DATA.filter((r) => r._fatigue).length, nTr = DATA.filter((r) => r._tracked).length;
+  $("tally").innerHTML = [[DATA.length, "datasets"], [nPublic, "downloadable"], [nFat, "fatigue tested"], [nTr, "initiation in 3D"]]
+    .map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join("");
+  const cc = counts("_cls");
+  $("mix").innerHTML = cc.map(([k, n]) => `<i style="width:${(100 * n) / DATA.length}%;background:${CLASS_COLORS[k] || "#888"}" title="${esc(k)}: ${n}"></i>`).join("");
+  $("mixLegend").innerHTML = cc.map(([k, n]) => `<span style="--c:${CLASS_COLORS[k] || "#888"}">${esc(k)} ${n}</span>`).join("");
+
+  function filtered() {
+    const q = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let out = DATA.filter((r) =>
+      (!state.cls.size || state.cls.has(r._cls)) &&
+      (!state.tech.size || r._tech.some((t) => state.tech.has(t))) &&
+      (!state.route.size || state.route.has(r._route)) &&
+      (!state.rel.size || state.rel.has(r._rel)) &&
+      (!$("fPublic").checked || r._public) && (!$("fFatigue").checked || r._fatigue) &&
+      (!$("fTracked").checked || r._tracked) && (!$("fInsitu").checked || r._insitu) &&
+      q.every((w) => r._text.includes(w)));
+    const s = state.sort;
+    out.sort((a, b) => {
+      if (s === "uts") return (b._uts ?? -1) - (a._uts ?? -1);
+      if (s === "voxel") return (a._vox ?? 1e9) - (b._vox ?? 1e9);
+      if (s === "material") return (a.material || "").localeCompare(b.material || "");
+      return (relRank[a._rel] ?? 9) - (relRank[b._rel] ?? 9) || (b._tracked - a._tracked) || (b._public - a._public);
+    });
+    return out;
+  }
+
+  // Deterministic schematic thumbnail: grain map for diffraction/EBSD, grey CT slice with pores otherwise.
+  function seeded(str) { let h = 2166136261; for (const c of str) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
+  function drawThumb(cv, r) {
+    const W = 320, H = 140; cv.width = W; cv.height = H;
+    const g = cv.getContext("2d"), rnd = seeded(r.id);
+    const grainy = r._tech.some((t) => /DCT|HEDM|EBSD|Serial/.test(t));
+    if (grainy) {
+      const n = 26 + Math.floor(rnd() * 30), pts = [];
+      for (let i = 0; i < n; i++) {
+        const a = rnd(), b = rnd(), c = rnd(), s = a + b + c; // IPF-like RGB triple
+        pts.push([rnd() * W, rnd() * H, `rgb(${60 + 190 * a / s * 1.4 | 0},${60 + 190 * b / s * 1.4 | 0},${60 + 190 * c / s * 1.4 | 0})`]);
+      }
+      const img = g.createImageData(W, H);
+      for (let y = 0; y < H; y += 2) for (let x = 0; x < W; x += 2) {
+        let best = 0, bd = 1e12, sec = 1e12;
+        for (let i = 0; i < n; i++) { const d = (pts[i][0] - x) ** 2 + (pts[i][1] - y) ** 2; if (d < bd) { sec = bd; bd = d; best = i; } else if (d < sec) sec = d; }
+        const m = pts[best][2].match(/\d+/g).map(Number), edge = Math.sqrt(sec) - Math.sqrt(bd) < 1.6;
+        for (let dy = 0; dy < 2; dy++) for (let dx = 0; dx < 2; dx++) {
+          const o = ((y + dy) * W + x + dx) * 4;
+          img.data[o] = edge ? 25 : m[0]; img.data[o + 1] = edge ? 25 : m[1]; img.data[o + 2] = edge ? 30 : m[2]; img.data[o + 3] = 255;
+        }
+      }
+      g.putImageData(img, 0, 0);
+    } else {
+      const comp = r._cls === "Composite";
+      g.fillStyle = "#3a3f45"; g.fillRect(0, 0, W, H);
+      if (comp) {
+        for (let i = 0; i < 900; i++) { g.fillStyle = `rgba(200,205,210,${.35 + rnd() * .4})`; g.beginPath(); g.arc(rnd() * W, rnd() * H, 2.2, 0, 7); g.fill(); }
+      } else {
+        for (let i = 0; i < 2600; i++) { const v = 120 + rnd() * 60 | 0; g.fillStyle = `rgb(${v},${v},${v + 4})`; g.fillRect(rnd() * W, rnd() * H, 3, 3); }
+        g.fillStyle = "rgba(150,152,158,.55)"; g.fillRect(0, 0, W, H);
+      }
+      const defects = JSON.stringify(r.defects || {}).toLowerCase();
+      const lof = /lack|lof|irregular|void|delamin|shrink/.test(defects);
+      const np = 6 + Math.floor(rnd() * 22);
+      g.fillStyle = "#101418";
+      for (let i = 0; i < np; i++) {
+        const x = rnd() * W, y = rnd() * H, rad = 1.5 + rnd() * (lof ? 9 : 5);
+        g.beginPath();
+        if (lof && rnd() > .4) g.ellipse(x, y, rad * 2.2, rad * .6, rnd() * 3, 0, 7); else g.arc(x, y, rad, 0, 7);
+        g.fill();
+      }
+      if (r._fatigue) { g.strokeStyle = "#ff5c8a"; g.lineWidth = 1.5; g.beginPath(); let x = W * .3, y = H * .5; g.moveTo(x, y); for (let i = 0; i < 9; i++) { x += 8 + rnd() * 6; y += (rnd() - .5) * 12; g.lineTo(x, y); } g.stroke(); }
+    }
+  }
+
+  const fmt = (v, u) => (v == null ? "—" : `${v}${u || ""}`);
+  function card(r) {
+    const rel = r._rel;
+    const badges = [
+      rel !== "Unrated" ? `<span class="badge ${rel === "High" ? "hot" : ""}">${esc(rel)} relevance</span>` : "",
+      r._public ? `<span class="badge ok">Data public</span>` : `<span class="badge warn">${esc((r.data_availability || {}).status || "Availability unknown")}</span>`,
+      r._tracked ? `<span class="badge hot">Initiation in 3D</span>` : "",
+      r._insitu ? `<span class="badge">In-situ</span>` : "",
+    ].join("");
+    return `<button type="button" class="card" data-id="${esc(r.id)}">
+      <div class="thumb"><canvas aria-hidden="true"></canvas><span class="tech">${esc(r._tech.join(" · "))}</span></div>
+      <div class="body">
+        <div class="eyebrow"><span>${esc(r._cls)}</span><span>${esc(r._route)}</span></div>
+        <h3>${esc(r.material)}</h3>
+        <p class="sub">${esc(r.title)}</p>
+        <div class="props">
+          <div><span>YS</span>${fmt(r._ys, " MPa")}</div>
+          <div><span>UTS</span>${fmt(r._uts, " MPa")}</div>
+          <div><span>Voxel</span>${fmt(r._vox, " µm")}</div>
+        </div>
+        <div class="badges">${badges}</div>
+      </div></button>`;
+  }
+  function table(rows) {
+    return `<div class="tablewrap"><table><thead><tr>
+      <th>Material</th><th>Class</th><th>Route</th><th>Technique</th><th>Voxel µm</th><th>YS MPa</th><th>UTS MPa</th><th>El. %</th><th>Fatigue</th><th>Init. 3D</th><th>Data</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr data-id="${esc(r.id)}"><td><strong>${esc(r.material)}</strong><br><span class="note">${esc(r.title)}</span></td>
+        <td>${esc(r._cls)}</td><td>${esc(r._route)}</td><td>${esc(r._tech.join(", "))}</td>
+        <td class="num">${fmt(r._vox)}</td><td class="num">${fmt(r._ys)}</td><td class="num">${fmt(r._uts)}</td><td class="num">${fmt(r._el)}</td>
+        <td>${r._fatigue ? esc((r.fatigue || {}).test_type || "yes") : "—"}</td><td>${r._tracked ? "yes" : "—"}</td>
+        <td>${r._public ? "public" : esc((r.data_availability || {}).status || "—")}</td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  function render() {
+    const rows = filtered();
+    $("count").textContent = `${rows.length} of ${DATA.length} datasets`;
+    $("vGrid").setAttribute("aria-pressed", state.view === "grid");
+    $("vTable").setAttribute("aria-pressed", state.view === "table");
+    const res = $("results");
+    if (!rows.length) { res.innerHTML = `<div class="empty">No datasets match these filters. Clear a filter or broaden the search.</div>`; return; }
+    if (state.view === "table") { res.innerHTML = table(rows); return; }
+    res.innerHTML = `<div class="grid">${rows.map(card).join("")}</div>`;
+    res.querySelectorAll(".card").forEach((el) => drawThumb(el.querySelector("canvas"), DATA.find((r) => r.id === el.dataset.id)));
+  }
+
+  // Detail sheet
+  function kv(pairs) {
+    const items = pairs.filter(([, v]) => v != null && v !== "" && !(Array.isArray(v) && !v.length));
+    if (!items.length) return `<p class="note">Not reported.</p>`;
+    return `<dl class="kv">${items.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${Array.isArray(v) ? esc(v.join(", ")) : typeof v === "boolean" ? (v ? "Yes" : "No") : esc(v)}</dd>`).join("")}</dl>`;
+  }
+  const link = (u) => (u && /^https?:/.test(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>` : esc(u || ""));
+  const doiLink = (d) => (d ? link(/^https?:/.test(d) ? d : `https://doi.org/${d}`) : "");
+  function openSheet(id) {
+    const r = DATA.find((x) => x.id === id); if (!r) return;
+    const c = r.chemistry || {}, p = r.processing || {}, a = r.acquisition || {}, m = r.microstructure || {}, d = r.defects || {}, mp = r.mechanical_properties || {}, f = r.fatigue || {}, da = r.data_availability || {};
+    const comp = c.composition || {};
+    $("sheet").innerHTML = `
+      <button class="close" id="closeSheet" type="button">Close</button>
+      <div class="eyebrow"><span>${esc(r._cls)} · ${esc(r.material)}</span></div>
+      <h2 id="sheetTitle">${esc(r.title)}</h2>
+      <div class="badges">${(r.tags || []).map((t) => `<span class="badge">${esc(t)}</span>`).join("")}</div>
+      ${f.crack_initiation ? `<section><div class="callout"><strong>Crack initiation.</strong> ${esc(f.crack_initiation)}</div></section>` : ""}
+      <section><h4>Chemistry ${c.basis ? `(${esc(c.basis)})` : ""}</h4>
+        ${Object.keys(comp).length ? `<div class="chem">${Object.entries(comp).map(([k, v]) => `<span><b>${esc(k)}</b>${esc(typeof v === "object" ? JSON.stringify(v) : v)}</span>`).join("")}</div>` : `<p class="note">Not reported.</p>`}
+        ${c.notes ? `<p class="note">${esc(c.notes)}</p>` : ""}</section>
+      <section><h4>Processing</h4>${kv([["Route", p.route], ["Parameters", p.parameters], ["Heat treatment", p.heat_treatment], ["Surface", p.surface_condition]])}</section>
+      <section><h4>3D acquisition</h4>${kv([["Techniques", r.techniques], ["Facility", a.facility], ["Voxel size (µm)", a.voxel_size_um], ["Volume", a.volume_dimensions], ["In-situ", a.in_situ], ["Notes", a.notes]])}</section>
+      <section><h4>Microstructure</h4>${kv([["Features resolved", m.features_resolved], ["Grain size", m.grain_size_um], ["Texture", m.texture], ["Phases", m.phases]])}</section>
+      <section><h4>Defects</h4>${kv([["Types", d.types], ["Statistics", d.statistics]])}</section>
+      <section><h4>Mechanical properties</h4>${kv([["Yield strength (MPa)", mp.yield_strength_MPa], ["UTS (MPa)", mp.uts_MPa], ["Elongation (%)", mp.elongation_pct], ["Hardness", mp.hardness], ["Modulus (GPa)", mp.modulus_GPa], ["Other", mp.other]])}</section>
+      <section><h4>Fatigue</h4>${kv([["Tested", f.tested], ["Test type", f.test_type], ["Loading", f.loading], ["Results", f.results], ["Initiation tracked in 3D", f.initiation_tracked_in_3d]])}</section>
+      <section><h4>Data availability</h4>${kv([["Status", da.status], ["Repository", da.repository], ["Size", da.size], ["Format", da.format], ["License", da.license]])}
+        ${da.url ? `<p>${link(da.url)}</p>` : ""}${da.doi ? `<p>Dataset DOI: ${doiLink(da.doi)}</p>` : ""}</section>
+      <section><h4>References</h4><ol class="refs">${(r.references || []).map((x) => `<li>${esc(x.citation)}${x.doi ? `<br>${doiLink(x.doi)}` : x.url ? `<br>${link(x.url)}` : ""}</li>`).join("")}</ol></section>
+      ${r.notes ? `<section><h4>Notes</h4><p>${esc(r.notes)}</p></section>` : ""}
+      <p class="note">Record id <code>${esc(r.id)}</code></p>`;
+    $("sheet").hidden = false; $("sheetBg").hidden = false;
+    $("sheet").scrollTop = 0; $("closeSheet").focus();
+  }
+  function closeSheet() { $("sheet").hidden = true; $("sheetBg").hidden = true; }
+
+  $("results").addEventListener("click", (e) => { const el = e.target.closest("[data-id]"); if (el) openSheet(el.dataset.id); });
+  $("sheetBg").addEventListener("click", closeSheet);
+  $("sheet").addEventListener("click", (e) => { if (e.target.id === "closeSheet") closeSheet(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
+  $("q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+  $("sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+  ["fPublic", "fFatigue", "fTracked", "fInsitu"].forEach((id) => $(id).addEventListener("change", render));
+  const setView = (v) => { state.view = v; try { localStorage.setItem("mmd-view", v); } catch (e) {} render(); };
+  $("vGrid").addEventListener("click", () => setView("grid"));
+  $("vTable").addEventListener("click", () => setView("table"));
+  $("reset").addEventListener("click", () => {
+    [state.cls, state.tech, state.route, state.rel].forEach((s) => s.clear());
+    document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
+    ["fPublic", "fFatigue", "fTracked", "fInsitu"].forEach((id) => ($(id).checked = false));
+    $("q").value = ""; state.q = ""; render();
+  });
+  if (window.matchMedia("(max-width: 860px)").matches) $("fwrap").open = false;
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2270 @@
+[
+  {
+    "id": "conv-a357-t6-internal-vs-surface-pores-sls",
+    "title": "In situ synchrotron CT fatigue of A357-T6 cast Al with controlled internal shrinkage pores (SLS TOMCAT)",
+    "material_class": "Al alloy",
+    "material": "A357-T6 cast aluminium (AlSi7Mg0.6)",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Si": 6.94,
+        "Mg": 0.56,
+        "Fe": 0.097,
+        "Ti": 0.13,
+        "Cu": "<0.015",
+        "Mn": "<0.03",
+        "Pb": "<0.003",
+        "Al": "bal."
+      },
+      "notes": "From Methods of Serrano-Munoz et al. 2017"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Cast rods phi30 x 250 mm supplied by CTIF; SDAS 38 um; specimens EDM-cut around pores pre-located by lab CT (gauge 4 mm high, ~2x2 mm cross-section)",
+      "heat_treatment": "T6: solution 540 C/10 h, water quench, aged 160 C/8 h (peak age)",
+      "surface_condition": "~300 um ground off after EDM, polished to 0.02 um"
+    },
+    "techniques": [
+      "Micro-CT",
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "Swiss Light Source (PSI) TOMCAT beamline (in situ); lab Phoenix Vtome for pre-screening",
+      "voxel_size_um": 1.7,
+      "volume_dimensions": "gauge ~2x2x4 mm (FOV partial)",
+      "in_situ": true,
+      "notes": "Synchrotron: 25 keV monochromatic, 70 mm propagation distance, 1.7 um effective pixel. Lab CT screening: 90 kV, 240 uA, 4 um voxel; ~100 specimens screened, 20-25% suitable."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks",
+        "phases"
+      ],
+      "grain_size_um": "~500 (equivalent diameter)",
+      "texture": "",
+      "phases": "Al dendrites + eutectic Si"
+    },
+    "defects": {
+      "types": [
+        "shrinkage pores",
+        "cracks"
+      ],
+      "statistics": "Pore volume fraction 0.002% (bulk). Largest internal pore per specimen sqrt(area) 300-386 um; surface initiating pores sqrt(area) 80-154 um. SLS-14: Pore1 (surface) 120 um, Pore2 210 um, Pore3 340 um, Pore4 300 um."
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 275,
+      "uts_MPa": 335,
+      "elongation_pct": 6,
+      "hardness": null,
+      "modulus_GPa": 73.5,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Uniaxial tension-tension, R=0.1, 10 Hz, sigma_max 200-240 MPa (5 specimens)",
+      "results": "Nf / stopped at 73,000-355,000 cycles; internal crack growth slower than surface crack growth; CT-specimen da/dN vs Kmax in air and vacuum for reference",
+      "crack_initiation": "All specimens failed/were dominated by surface cracks from casting defects up to 10x smaller than internal pores; internal pores (sqrt(area) ~340-386 um) nucleated faceted internal cracks later. Initiation and growth tracked in 3D; FE on real pore geometry (yielded volume).",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.nature.com/articles/srep45239",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": "Article CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Serrano-Munoz I., Buffiere J.-Y., Mokso R., Verdu C., Nadot Y., Location, location & size: defects close to surfaces dominate fatigue crack initiation, Scientific Reports 7 (2017) 45239",
+        "doi": "10.1038/srep45239",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5366922/"
+      },
+      {
+        "citation": "Serrano-Munoz I., Buffiere J.-Y., Verdu C., Gaillard Y., Mu P., Nadot Y., Influence of surface and internal casting defects on the fatigue behaviour of A357-T6 cast aluminium alloy, Int. J. Fatigue 82 (2016) 361-370",
+        "doi": "10.1016/j.ijfatigue.2015.07.032",
+        "url": null
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "porosity",
+      "cast",
+      "synchrotron",
+      "crack-growth"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Key benchmark for internal vs surface pore criticality in cast Al."
+  },
+  {
+    "id": "conv-a357-t6-pore-size-crystallography",
+    "title": "A357-T6 small-crack HCF from subsurface shrinkage pores of controlled size, with crystallography",
+    "material_class": "Al alloy",
+    "material": "A357-T6 cast aluminium",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Same A357-T6 material family as Serrano-Munoz et al. 2017 (composition not re-verified for this paper)"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Flat specimens each containing one subsurface shrinkage pore located by X-ray micro-CT",
+      "heat_treatment": "T6",
+      "surface_condition": null
+    },
+    "techniques": [
+      "Micro-CT",
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": null,
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": null,
+      "notes": "Abstract states X-ray micro-CT used to produce specimens with controlled pores; acquisition details not verified."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks",
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "shrinkage pores"
+      ],
+      "statistics": "Two specimens: Pore 1 sqrt(area)=522 um, Pore 2 sqrt(area)=280 um"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Not verified",
+      "results": "Larger pore reduced fatigue life by about 500,000 cycles relative to the smaller one; crystallography slightly slowed small-crack growth and changed crack-path topography",
+      "crack_initiation": "Subsurface shrinkage pores; local grain boundaries perpendicular to loading favoured nucleation (per abstract summary)",
+      "initiation_tracked_in_3d": null
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://opus4.kobv.de/opus4-bam/frontdoor/index/index/year/2020/docId/50206",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Serrano-Munoz I., Dancette S., Verdu C., Buffiere J.-Y., Influence of Pore Size and Crystallography on the Small Crack HCF Behavior of an A357-T6 Cast Aluminum Alloy, Metall. Mater. Trans. A 51 (2020) 1416-1427",
+        "doi": "10.1007/s11661-019-05590-6",
+        "url": "https://opus4.kobv.de/opus4-bam/frontdoor/index/index/year/2020/docId/50206"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "porosity",
+      "cast",
+      "small-crack"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Details beyond the abstract (beamline, stresses) unverified."
+  },
+  {
+    "id": "conv-a357-t6-torsion-insitu-ct",
+    "title": "Torsional fatigue of A357-T6 cast Al: interrupted in situ synchrotron tomography of crack propagation",
+    "material_class": "Al alloy",
+    "material": "A357-T6 cast aluminium",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Composition not re-verified for this paper"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Coarse-grained cast A357 (grain size ~500 um)",
+      "heat_treatment": "T6",
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19 (per Shiozawa et al. 2015 conference paper)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Interrupted in situ cyclic torsion; surface crack monitoring + EBSD for initiation"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks",
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "~500",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Cyclic torsion; S-N curve determination plus interrupted in situ tests",
+      "results": "S-N curve in torsion (values not extracted)",
+      "crack_initiation": "At intermediate-low stress, grain structure controls initiation: multi-site mode II nucleation on {111} slip planes with highest slip activity, near/perpendicular to specimen axis; shallow surface cracks spread along periphery before reaching centre (mode III inward growth decelerates).",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://opus4.kobv.de/opus4-bam/frontdoor/index/index/year/2020/docId/51461",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Serrano-Munoz I., Shiozawa D., Dancette S., Verdu C., Buffiere J.-Y., Torsional fatigue mechanisms of an A357-T6 cast aluminium alloy, Acta Materialia 201 (2020) 435-447",
+        "doi": "10.1016/j.actamat.2020.09.046",
+        "url": null
+      },
+      {
+        "citation": "Shiozawa D., Serrano-Munoz I., Dancette S., Verdu C., Lachambre J., Buffiere J.-Y., 3D analyses of crack propagation in torsion, Frattura ed Integrita Strutturale 33 (2015) 56-60",
+        "doi": "10.3221/igf-esis.33.07",
+        "url": "https://fracturae.com/index.php/fis/article/view/1473"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "torsion",
+      "cast",
+      "crystallographic"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": ""
+  },
+  {
+    "id": "conv-alsi7cu3mg-lfc-hot-lcf-insitu",
+    "title": "In situ synchrotron CT of high-temperature (250 C) LCF damage in lost-foam-cast AlSi7Cu3Mg (A319-type)",
+    "material_class": "Al alloy",
+    "material": "AlSi7Cu3Mg (close to ASTM A319), lost foam cast",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "Si": 7,
+        "Cu": 3,
+        "Mg": "(minor)",
+        "Al": "bal."
+      },
+      "notes": "Nominal from designation only; exact analysis not verified"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Lost Foam Casting (automotive engine parts; coarse microstructure)",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": null,
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "In situ LCF at 250 C monitored by synchrotron X-ray tomography; beamline/voxel not verified. FE meshes generated directly from 3D volumes (pores only)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Al dendrites, eutectic Si, Fe- and Cu-rich intermetallics (hard eutectic network)"
+    },
+    "defects": {
+      "types": [
+        "shrinkage pores",
+        "gas pores",
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "Low cycle fatigue at 250 C, in situ",
+      "results": "",
+      "crack_initiation": "Main crack initiated at coarse internal shrinkage pores (sites of maximum inelastic strain in FE); propagation followed the interconnected hard-particle eutectic network and high stress triaxiality regions. Tracked in 3D.",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://hal.science/hal-03971030",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Dezecot S., Maurel V., Buffiere J.-Y., Szmytka F., Koster A., 3D characterization and modeling of low cycle fatigue damage mechanisms at high temperature in a cast aluminum alloy, Acta Materialia 123 (2017) 24-34",
+        "doi": "10.1016/j.actamat.2016.10.028",
+        "url": "https://hal.science/hal-03971030"
+      },
+      {
+        "citation": "Dezecot S., Buffiere J.-Y., Koster A., Maurel V., Szmytka F., Charkaluk E., Dahdah N., El Bartali A., Limodin N., Witz J.-F., In situ 3D characterization of high temperature fatigue damage mechanisms in a cast aluminum alloy using synchrotron X-ray tomography, Scripta Materialia (2016)",
+        "doi": "10.1016/j.scriptamat.2015.11.017",
+        "url": "https://hal.science/hal-01255815"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "porosity",
+      "cast",
+      "high-temperature",
+      "image-based-FE"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Follow-on DVC work: Limodin et al. (MMTA 2020; IJF 2023)."
+  },
+  {
+    "id": "conv-alsi7mg03-lfc-porosity-hcf-ct",
+    "title": "Porosity effect on HCF of lost-foam-cast AlSi7Mg0.3 characterised by X-ray micro-tomography",
+    "material_class": "Al alloy",
+    "material": "AlSi7Mg0.3 (A356-type), lost foam cast",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "Si": 7,
+        "Mg": 0.3,
+        "Al": "bal."
+      },
+      "notes": "Nominal from designation"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Lost Foam Casting giving high pore volume fraction",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Laboratory micro-CT (details not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Specimens with fatigue cracks scanned; FE models of real 3D pores with elasto-plastic matrix"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "shrinkage pores"
+      ],
+      "statistics": "Pore size and population analysed (values not extracted)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Not verified",
+      "results": "Fatigue limit predicted with Dang Van-based critical-volume approach on real pore geometries, good agreement with experiments",
+      "crack_initiation": "Pores; pore distance to free surface as well as size controls criticality",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://sam.ensam.eu/handle/10985/16578",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Le V.-D., Saintier N., Morel F., Bellett D., Osmond P., Investigation of the effect of porosity on the high cycle fatigue behaviour of cast Al-Si alloy by X-ray micro-tomography, Int. J. Fatigue 106 (2018) 24-37",
+        "doi": "10.1016/j.ijfatigue.2017.09.012",
+        "url": "https://sam.ensam.eu/handle/10985/16578"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "porosity",
+      "cast",
+      "Kitagawa",
+      "image-based-FE"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Related: Le et al. SSRN preprint 10.2139/ssrn.4956787 on synchrotron 3D characterisation of initiation during in situ cyclic torsion (with Ludwig, Majkut, Buffiere) - not reviewed in detail."
+  },
+  {
+    "id": "conv-a356-hpdc-porosity-microct-evs",
+    "title": "Pore characterisation in HPDC A356 by metallography, radiography and micro-CT with extreme value statistics",
+    "material_class": "Al alloy",
+    "material": "A356 aluminium, high pressure die cast",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Composition not given in extracted text"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "High pressure die casting; specimens with 5 mm and 10 mm gauge diameter; sorted into four porosity levels by X-ray radiography",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Laboratory micro-CT; analysis in VG Studio Max 3.3",
+      "voxel_size_um": 12.0,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "2-5 specimens per porosity level scanned"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "shrinkage pores"
+      ],
+      "statistics": "Max Feret diameter, volume, projected area (sqrt area) per pore; extreme value statistics (2D and 3D) vs fatal defects on fatigue fracture surfaces; critical defect size 50-100 um cited"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Uniaxial fatigue (details in companion papers)",
+      "results": "",
+      "crack_initiation": "Fatal pores on fracture surfaces compared with EVS-estimated maximum pore size",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7412358/",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": "Article CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Nourian-Avval A., Fatemi A., Characterization and Analysis of Porosities in High Pressure Die Cast Aluminum by Using Metallography, X-Ray Radiography, and Micro-Computed Tomography, Materials 13 (2020) 3068",
+        "doi": "10.3390/ma13143068",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7412358/"
+      }
+    ],
+    "tags": [
+      "porosity",
+      "cast",
+      "HPDC",
+      "extreme-value-statistics"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": ""
+  },
+  {
+    "id": "conv-alsi9cu3-hpdc-lcf-microct",
+    "title": "LCF of HPDC AlSi9Cu3 with significant porosity, post-test micro-CT of pores",
+    "material_class": "Al alloy",
+    "material": "AlSi9Cu3 high pressure die cast",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "Si": 9,
+        "Cu": 3,
+        "Al": "bal."
+      },
+      "notes": "Nominal from designation"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "High-pressure die casting",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Laboratory micro-CT (not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Specimens CT-scanned after fatigue rupture to obtain 3D pore representation"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "shrinkage pores"
+      ],
+      "statistics": "Significant / clustered macro-porosity (values not extracted)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "R=-1 until rupture",
+      "results": "Life predicted via notch-strain + Coffin-Manson and via porosity-adapted Coffin-Manson on homogenised model",
+      "crack_initiation": "Pores (life reduction due to pore effects)",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://plus.cobiss.net/cobiss/si/en/bib/46594307",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Tomazincic D., Borovinsek M., Ren Z., Klemenc J., Improved prediction of low-cycle fatigue life for high-pressure die-cast aluminium alloy AlSi9Cu3 with significant porosity, Int. J. Fatigue 144 (2021) 106061",
+        "doi": "10.1016/j.ijfatigue.2020.106061",
+        "url": null
+      }
+    ],
+    "tags": [
+      "porosity",
+      "cast",
+      "HPDC",
+      "LCF"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Abstract-level verification only."
+  },
+  {
+    "id": "conv-cast-al-ga-grain-short-crack",
+    "title": "Short fatigue crack vs grain boundaries in cast Al visualised by synchrotron microtomography with Ga grain-boundary decoration",
+    "material_class": "Al alloy",
+    "material": "Cast Al-Si alloy (designation not verified)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19 (setup referenced by Proudhon et al. 2012; unverified for this exact study)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Liquid Ga infiltration after fatigue to reveal grains in 3D; EBSD on surface"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "cracks",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "pores",
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Not verified",
+      "results": "",
+      "crack_initiation": "3D short-crack shape and crack stops correlated with grain structure; companion Ferrie et al. 2005 paper characterises 3D nucleation of a short crack at a pore in a cast Al alloy",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Ludwig W., Buffiere J.-Y., Savelli S., Cloetens P., Study of the interaction of a short fatigue crack with grain boundaries in a cast Al alloy using X-ray microtomography, Acta Materialia 51 (2003) 585-598",
+        "doi": "10.1016/S1359-6454(02)00320-8",
+        "url": null
+      },
+      {
+        "citation": "Ferrie E., Buffiere J.-Y., Ludwig W., 3D characterisation of the nucleation of a short fatigue crack at a pore in a cast Al alloy using high resolution synchrotron microtomography, Int. J. Fatigue 27 (2005) 1215-1220",
+        "doi": "10.1016/j.ijfatigue.2005.07.015",
+        "url": "https://hal.science/hal-01668819"
+      },
+      {
+        "citation": "Buffiere J.-Y. et al., 3D visualisation of short crack propagation in Al alloy using high resolution synchrotron X-ray microtomography, Materials Science Forum 482 (2005) 227",
+        "doi": "10.4028/www.scientific.net/MSF.482.227",
+        "url": "https://hal.science/hal-01669987"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "grain-scale",
+      "cast",
+      "porosity"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Early foundational ESRF in situ fatigue tomography of cast Al; alloy/beamline details not verified."
+  },
+  {
+    "id": "conv-al-mg-si-spring8-crack-closure",
+    "title": "In situ SPring-8 BL20XU microtomography of 3D fatigue crack growth and closure in a cast + hot-rolled Al-Mg-Si (T6)",
+    "material_class": "Al alloy",
+    "material": "Al-Mg-Si (6xxx-type), cast then hot rolled, T6",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Mg": 0.42,
+        "Si": 0.35,
+        "Fe": 0.12,
+        "Cu": "<0.01",
+        "Mn": "<0.01",
+        "Ti": "<0.01",
+        "Zn": "<0.01",
+        "Cr": "<0.01",
+        "Al": "bal."
+      },
+      "notes": "Table 1, mass%"
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "As-cast ingot multi-pass hot rolled (140 C preheat, ~1 mm/pass) from 20 to 4 mm thickness; TPB precrack near threshold (1e-10 m/cycle), then 0.6x0.6 mm match-stick specimen EDM-cut containing crack tip",
+      "heat_treatment": "T6: 530 C/5 h, cold water quench, aged 170 C/8 h",
+      "surface_condition": "EDM"
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "SPring-8 BL20XU",
+      "voxel_size_um": 0.474,
+      "volume_dimensions": "full 0.6x0.6 mm cross-section x 622 um height",
+      "in_situ": true,
+      "notes": "20 keV, 50 mm sample-detector distance, 1500 projections/180 deg, 4000x2624 CCD (2x2 binning); scans every 30,000 cycles and at 6 load levels"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks",
+        "pores",
+        "precipitates",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "AlFeSi and Mg2Si particles (nearest-neighbour distances 13.6 and 17.06 um)"
+    },
+    "defects": {
+      "types": [
+        "cracks",
+        "micropores",
+        "intermetallics"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Axial, R=0.1, 20 Hz, Pmax 18 N / Pmin 1.8 N, 120,000 cycles",
+      "results": "Local through-thickness da/dN of order 4.4-4.7e-10 m/cycle; retardation in overlapping branched-crack regions; local CTOD and closure levels measured",
+      "crack_initiation": "Pre-existing crack (growth study, not initiation)",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://hdl.handle.net/2324/1807813",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Zhang H., Toda H., Qu P.C., Sakaguchi Y., Kobayashi M., Uesugi K., Suzuki Y., Three-dimensional fatigue crack growth behavior in an aluminum alloy investigated with in situ high-resolution synchrotron X-ray microtomography, Acta Materialia 57 (2009) 3287-3300",
+        "doi": "10.1016/j.actamat.2009.03.036",
+        "url": "https://hdl.handle.net/2324/1807813"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "crack-growth",
+      "crack-closure",
+      "synchrotron",
+      "SPring-8"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": ""
+  },
+  {
+    "id": "conv-aa2027-t351-corner-cracks-id19",
+    "title": "Small corner fatigue cracks in DC-cast/wrought AA2027-T351 plate (and PM AA5091) by in situ ESRF ID19 tomography",
+    "material_class": "Al alloy",
+    "material": "AA2027-T351 (high-purity AA2024 variant); comparison AA5091 (mechanically alloyed Al-Mg-Li)",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Cu": 4.3,
+        "Mg": 1.3,
+        "Mn": 0.65,
+        "Zr": 0.1,
+        "Fe": 0.09,
+        "Si": 0.05,
+        "Al": "bal."
+      },
+      "notes": "AA2027 per Table 1. AA5091: Mg 4.0, Li 1.3, O 0.8, C 1.1."
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "DC cast, 40 mm gauge plate; 8% recrystallised; grain mean linear intercepts L/T/S 592/223/40 um; strong rolling texture",
+      "heat_treatment": "T351",
+      "surface_condition": "Polished to 1 um; FIB corner notches 20-50 um deep"
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19",
+      "voxel_size_um": 0.7,
+      "volume_dimensions": "1x1 mm cross-section samples, 2048x2048 FReLoN",
+      "in_situ": true,
+      "notes": "20.5 keV, 15 cm propagation distance, in situ fatigue machine at 50 Hz; 7 samples"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks",
+        "grains"
+      ],
+      "grain_size_um": "592 x 223 x 40 (L,T,S)",
+      "texture": "Strong rolling texture",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": "FIB starter notches"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 370,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "AA5091 yield 430 MPa"
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Tension-tension; baseline Delta K 2-3 MPa sqrt(m); R=0.1 and 0.5-0.7; constant amplitude and single peak overloads",
+      "results": "3D crack front growth and closure under CA and OL; closure-based model",
+      "crack_initiation": "From FIB notches (not natural)",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://comptes-rendus.academie-sciences.fr/physique/articles/10.1016/j.crhy.2011.12.005/",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Proudhon H., Moffat A., Sinclair I., Buffiere J.-Y., Three-dimensional characterisation and modelling of small fatigue corner cracks in high strength Al-alloys, Comptes Rendus Physique 13 (2012) 316-327",
+        "doi": "10.1016/j.crhy.2011.12.005",
+        "url": "https://comptes-rendus.academie-sciences.fr/physique/articles/10.1016/j.crhy.2011.12.005/"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "small-crack",
+      "wrought",
+      "overload",
+      "synchrotron"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": ""
+  },
+  {
+    "id": "conv-al-li-ufg-ferrie-xfem",
+    "title": "3D in situ microtomography of semi-elliptical fatigue crack in ultrafine-grained Al-Li alloy with X-FEM simulation",
+    "material_class": "Al alloy",
+    "material": "Ultrafine-grained Al-Li alloy",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Grade not verified (possibly mechanically alloyed AA5091 as in Proudhon 2012 - unverified)"
+    },
+    "processing": {
+      "route": "Powder metallurgy",
+      "parameters": "Ultrafine-grained (unverified route)",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (ESRF, unverified beamline)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks"
+      ],
+      "grain_size_um": "ultrafine",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Not verified",
+      "results": "Bulk crack growth faster than at surface for same nominal Delta K, attributed to closure variation; X-FEM 3D growth law with linear closure variation matches",
+      "crack_initiation": "Microstructurally long crack; growth study",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Ferrie E., Buffiere J.-Y., Ludwig W., Gravouil A., Edwards L., Fatigue crack propagation: In situ visualization using X-ray microtomography and 3D simulation using the extended finite element method, Acta Materialia 54 (2006) 1111-1122",
+        "doi": "10.1016/j.actamat.2005.10.053",
+        "url": null
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "crack-growth",
+      "crack-closure",
+      "X-FEM"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": ""
+  },
+  {
+    "id": "conv-al7075-corrosion-fatigue-aps-2bm-tomobank",
+    "title": "4D corrosion-fatigue crack initiation from pits in peak-aged Al 7075 (APS 2-BM, TomoBank tomo_00032-00056)",
+    "material_class": "Al alloy",
+    "material": "AA7075 peak-aged (T6-type)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Not extracted"
+    },
+    "processing": {
+      "route": "Wrought",
+      "parameters": "Pre-pitted 360 h (15 days) in 3.5 wt% NaCl, then fatigued in same solution",
+      "heat_treatment": "Peak aged",
+      "surface_condition": "Corroded / pitted"
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "APS 2-BM-A (fast tomography)",
+      "voxel_size_um": 0.65,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "27.4 keV, 1500 projections/180 deg fly-scan, LuAG scintillator + PCO Edge; 25 scans from 750 to 14,346 cycles; rotation axis 1235"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks",
+        "pores",
+        "inclusions"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Fe-rich impurity (constituent) particles"
+    },
+    "defects": {
+      "types": [
+        "corrosion pits",
+        "cracks",
+        "hydrogen bubbles",
+        "inclusions"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Corrosion fatigue in 3.5 wt% NaCl (loading details not extracted)",
+      "results": "Time-resolved crack growth from pits; hydrogen bubbles inside intergranular corrosion-fatigue cracks, growing preferentially near impurity particles",
+      "crack_initiation": "Corrosion pits; tracked in 4D",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "TomoBank (APS) via Globus",
+      "url": "https://tomobank.readthedocs.io/en/latest/source/data/docs.data.insitu.html",
+      "doi": "10.17038/XSD/1373575",
+      "size": null,
+      "format": "HDF5 (raw projections, DXfile; reconstruct with TomoPy)",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Stannard T.J., Williams J.J., Singh S.S., Sundaram Singaravelu A.S., Xiao X., Chawla N., 3D time-resolved observations of corrosion and corrosion-fatigue crack initiation and growth in peak-aged Al 7075 using synchrotron X-ray tomography, Corrosion Science 138 (2018) 340-352",
+        "doi": "10.1016/j.corsci.2018.04.029",
+        "url": null
+      },
+      {
+        "citation": "Singaravelu A.S.S., Williams J.J., Goyal H.D., Niverty S., Singh S.S., Stannard T.J., Xiao X., Chawla N., 3D Time-Resolved Observations of Fatigue Crack Initiation and Growth from Corrosion Pits in Al 7XXX Alloys Using In Situ Synchrotron X-ray Tomography, Metall. Mater. Trans. A 51 (2020) 28-41",
+        "doi": "10.1007/s11661-019-05519-z",
+        "url": null
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "corrosion-fatigue",
+      "public-data",
+      "machine-learning-ready",
+      "APS"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Raw projection data public; corrosion-pit (not casting defect) initiation."
+  },
+  {
+    "id": "conv-ti21s-dct-pct-short-crack",
+    "title": "3D short fatigue crack growth in beta-Ti 21S combining DCT (ID11) grain map and in situ PCT (ID19)",
+    "material_class": "Ti alloy",
+    "material": "Ti 21S metastable beta (Ti-15Mo-3Nb-3Al-0.2Si)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "Mo": 15,
+        "Nb": 3,
+        "Al": 3,
+        "Si": 0.2,
+        "Ti": "bal."
+      },
+      "notes": "Nominal"
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Timet 1.6 mm sheet; 600 um diameter gauge, 2 mm long, spark-eroded",
+      "heat_treatment": "850 C/2 h in evacuated quartz, water quench (single beta phase)",
+      "surface_condition": "Polished (2400 SiC + 17 um SiC paste); FIB wedge notch 150x2x40 um"
+    },
+    "techniques": [
+      "DCT",
+      "Phase-contrast CT",
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID11 (DCT), ESRF ID19 (PCT)",
+      "voxel_size_um": 0.7,
+      "volume_dimensions": "~100 grains around notch",
+      "in_situ": true,
+      "notes": "DCT: 40 keV, 1.4 um pixel, 7200 images/360 deg, ~80,000 spots, 20 h. PCT: 38 keV, 0.7 um voxel, 44 mm distance, 26 propagation stages 45k-75.5k cycles under max load"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "cracks"
+      ],
+      "grain_size_um": "55 (from DCT)",
+      "texture": "",
+      "phases": "bcc beta"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": "FIB notch starter"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "Uniaxial, 10-320 MPa (R=0.03), 25 Hz, room temperature",
+      "results": "Local 3D growth rates mapped vs crystallography of fracture surface",
+      "crack_initiation": "From FIB notch; first growth detected at 45,000 cycles; growth correlated with grain orientations",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.esrf.fr/UsersAndScience/Publications/Highlights/2011/materials/mat4",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Herbig M., King A., Reischig P., Proudhon H., Lauridsen E.M., Marrow J., Buffiere J.-Y., Ludwig W., 3-D growth of a short fatigue crack within a polycrystalline microstructure studied using combined diffraction and phase-contrast X-ray tomography, Acta Materialia 59 (2011) 590-601",
+        "doi": "10.1016/j.actamat.2010.09.063",
+        "url": "https://hereon.de/imperia/md/content/gkss/zentrale_einrichtungen/bibliothek/journals/2010/Herbig-actmat.pdf"
+      }
+    ],
+    "tags": [
+      "grain-scale",
+      "in-situ",
+      "DCT",
+      "short-crack",
+      "crystallographic"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Benchmark grain-resolved short crack dataset."
+  },
+  {
+    "id": "conv-ti64-forged-vhcf-internal-cracks-spring8",
+    "title": "Internal VHCF crack initiation and growth in forged Ti-6Al-4V tracked by SPring-8 BL20XU micro/nano-CT",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (alpha+beta), forged bar",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Al": 6.12,
+        "V": 4.27,
+        "O": 0.16,
+        "N": 0.002,
+        "C": 0.02,
+        "Fe": 0.15,
+        "H": 0.0029,
+        "Ti": "bal."
+      },
+      "notes": "Daido Steel material (Xue et al. 2022)"
+    },
+    "processing": {
+      "route": "Forged",
+      "parameters": "phi780 mm ingot forged to phi440 mm then gyratory forged to phi20 mm bars",
+      "heat_treatment": "Solution 1203 K/1 h (3.6 ks), air cool; age 978 K/2 h (7.2 ks), air cool",
+      "surface_condition": "Machined/polished small specimens (phi0.7 and phi1.8 mm)"
+    },
+    "techniques": [
+      "Synchrotron CT",
+      "Nano-CT",
+      "Phase-contrast CT"
+    ],
+    "acquisition": {
+      "facility": "SPring-8 BL20XU",
+      "voxel_size_um": 0.51,
+      "volume_dimensions": "micro-CT FOV 1.0x1.0 mm (Xue 2022) / 3x2.5 mm with 1.45 um pixel (Yoshinaka 2023); nano-CT FOV ~57 um",
+      "in_situ": false,
+      "notes": "Interrupted ex situ (fatigue machine off-beam). Micro-CT 30 keV, 1800 projections; nano-CT (Zernike phase contrast) 65.4 nm voxel (Xue 2022) / 32.7 nm pixel (Yoshinaka 2023)"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks",
+        "phases",
+        "grains"
+      ],
+      "grain_size_um": "~10 (primary alpha 9.8, alpha/beta colonies 9.3)",
+      "texture": "",
+      "phases": "Equiaxed alpha + lamellar alpha/beta"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": "Yoshinaka 2023: 28 cracks (27 internal, 1 surface) in phi1.8x2.5 mm volume; initial crack lengths 8.0-31.5 um (mean 16.4 um)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 860,
+      "uts_MPa": 943,
+      "elongation_pct": 17,
+      "hardness": "316 HV",
+      "modulus_GPa": null,
+      "other": "Reduction of area 40%"
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "VHCF",
+      "loading": "Uniaxial, R=0.1, sigma_max 650 MPa (800 MPa for nano-CT specimen), 140-400 Hz",
+      "results": "Average Nf ~2-3e7 at 650 MPa (phi1.8 mm); internal crack initiation life 5.0e6-1.8e7 cycles (20-70% of life); internal crack growth <1e-10 m/cycle, vacuum-like",
+      "crack_initiation": "Internal alpha-phase facets distributed throughout the volume; internal cracks initiate as early as surface cracks but grow far slower; blunt crack tip and load-independent CTOD for internal cracks. Tracked in 3D.",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": "NIMS MDR (manuscript only, no CT data)",
+      "url": "https://mdr.nims.go.jp/datasets/38d6a014-951a-46e0-b1ed-2b064de95723",
+      "doi": "10.48505/nims.4753",
+      "size": null,
+      "format": null,
+      "license": "In Copyright (Wiley self-archiving)"
+    },
+    "references": [
+      {
+        "citation": "Yoshinaka F., Nakamura T., Takeuchi A., Uesugi M., Uesugi K., Initiation and growth behaviour of small internal fatigue cracks in Ti-6Al-4V via synchrotron radiation microcomputed tomography, Fatigue Fract. Eng. Mater. Struct. 42 (2019) 2093-2105",
+        "doi": "10.1111/ffe.13085",
+        "url": null
+      },
+      {
+        "citation": "Xue G., Tomoda Y., Nakamura T., et al., Detection of small internal fatigue cracks in Ti-6Al-4V via synchrotron radiation nanocomputed tomography, Fatigue Fract. Eng. Mater. Struct. 45 (2022) 2693-2702",
+        "doi": "10.1111/ffe.13765",
+        "url": "https://hdl.handle.net/2115/90221"
+      },
+      {
+        "citation": "Yoshinaka F., Nakamura T., Oguma H., Fujimura N., Takeuchi A., Uesugi M., Uesugi K., Characterization of internal fatigue crack initiation in Ti-6Al-4V alloy via synchrotron radiation X-ray computed tomography, Fatigue Fract. Eng. Mater. Struct. 46 (2023) 2338-2347",
+        "doi": "10.1111/ffe.13957",
+        "url": "https://mdr.nims.go.jp/datasets/38d6a014-951a-46e0-b1ed-2b064de95723"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "VHCF",
+      "internal-crack",
+      "SPring-8",
+      "nano-CT",
+      "wrought"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Natural (defect-free) microstructural initiation in conventional Ti64."
+  },
+  {
+    "id": "conv-ti64-short-crack-closure-toda",
+    "title": "3D short fatigue crack closure in Ti-6Al-4V by ultra-high-resolution X-ray microtomography",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "Al": 6,
+        "V": 4,
+        "Ti": "bal."
+      },
+      "notes": "Nominal"
+    },
+    "processing": {
+      "route": "Wrought",
+      "parameters": "Not verified",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (SPring-8 likely given authors; unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Ultra-high-resolution XMT"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks",
+        "phases",
+        "grains"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "alpha + beta"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Not verified",
+      "results": "Inhomogeneous plasticity- and roughness-induced closure along 3D front; Schmid factor strongest influence on local growth rate (surrogate statistical analysis)",
+      "crack_initiation": "Short crack interacting with alpha/alpha and alpha/alpha+beta boundaries (tilt/twist)",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": "Article open access (per OpenAlex)"
+    },
+    "references": [
+      {
+        "citation": "Tubei V., Toda H., Ketanond W., Fujihara H., Takakuwa O., Takeuchi A., Uesugi M., Direct observation of three-dimensional short fatigue crack closure behavior in Ti-6Al-4V alloy using ultra-high-resolution X-ray microtomography, Int. J. Fatigue 168 (2023) 107428",
+        "doi": "10.1016/j.ijfatigue.2022.107428",
+        "url": null
+      }
+    ],
+    "tags": [
+      "short-crack",
+      "crack-closure",
+      "in-situ",
+      "grain-scale"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Abstract-level verification only; processing route of Ti64 not verified."
+  },
+  {
+    "id": "conv-nodular-cast-iron-crack-closure-dvc",
+    "title": "In situ synchrotron CT + DVC of 3D fatigue crack propagation and closure in nodular graphite cast iron",
+    "material_class": "Cast iron",
+    "material": "Nodular (spheroidal graphite) cast iron",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Grade not verified"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Two small-size specimens",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF (beamline unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Graphite nodules used as natural DVC markers"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "phases",
+        "cracks",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Ferritic/pearlitic matrix + graphite nodules (matrix not verified)"
+    },
+    "defects": {
+      "types": [
+        "cracks",
+        "graphite nodules"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "In situ fatigue crack propagation",
+      "results": "SIFs extracted from DVC displacement fields agree with literature; non-uniform closure along front causes asymmetric arrest/growth",
+      "crack_initiation": "Growth study (closure); not initiation",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://hal.science/hal-00453971",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Limodin N., Rethore J., Buffiere J.-Y., Hild F., Roux S., Ludwig W., Rannou J., Gravouil A., Influence of closure on the 3D propagation of fatigue cracks in a nodular cast iron investigated by X-ray tomography and 3D volume correlation, Acta Materialia 58 (2010) 2957-2967",
+        "doi": "10.1016/j.actamat.2010.01.024",
+        "url": "https://hal.science/hal-00453971"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "DVC",
+      "cast-iron",
+      "crack-closure"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "material_class 'Other' = cast iron. Follow-up: Liu & Hild, Eng. Fract. Mech. 296 (2024) 109824, doi 10.1016/j.engfracmech.2023.109824."
+  },
+  {
+    "id": "conv-ggg40-nodular-cast-iron-microct-zenodo",
+    "title": "Nodular cast iron GGG40 lab micro-CT at 1, 3 and 11 um voxel (raw projections + reconstructions)",
+    "material_class": "Cast iron",
+    "material": "Nodular cast iron GGG40 (EN-GJS-400)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Zeiss Xradia Versa 510, UFF micro-CT facility (Brazil)",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "1024^3 reconstructions at 1, 3 and 11 um voxel",
+      "in_situ": false,
+      "notes": "160 kV, 10 W; 1600 projections (1 um) / 3200 projections (3 and 11 um)"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "phases",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Graphite nodules in iron matrix"
+    },
+    "defects": {
+      "types": [
+        "graphite nodules",
+        "pores"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/3858516",
+      "doi": "10.5281/zenodo.3858516",
+      "size": "~25 GB total (8-bit zips ~0.4-0.6 GB each; .txrm/.txm raw)",
+      "format": "8-bit image zips, Zeiss .txrm projections, .txm reconstructions",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Pereira A., Anflor C., Betancur A., Leiderman R., ds-uct-001: Cast Iron GGG40: X-Ray micro-CT of a nodular cast iron sample class GGG40, Zenodo (2020)",
+        "doi": "10.5281/zenodo.3858516",
+        "url": "https://zenodo.org/records/3858516"
+      }
+    ],
+    "tags": [
+      "public-data",
+      "cast-iron",
+      "multi-resolution",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Useful for graphite/pore segmentation and image-based modelling; no fatigue data."
+  },
+  {
+    "id": "conv-am60-hpdc-porosity-fatigue-xct",
+    "title": "Porosity and strain-controlled fatigue of HPDC AM60 magnesium shock towers with XCT",
+    "material_class": "Mg alloy",
+    "material": "AM60 (Mg-Al-Mn) high pressure die cast",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {
+        "Al": 6,
+        "Mn": "(minor)",
+        "Mg": "bal."
+      },
+      "notes": "Nominal from designation"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "HPDC prototype shock tower components",
+      "heat_treatment": null,
+      "surface_condition": "Machined"
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Laboratory XCT (not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "shrinkage pores"
+      ],
+      "statistics": "Pore size, shape and orientation analysed (values not extracted)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "Strain-controlled fatigue",
+      "results": "Fatigue life inversely related to size of crack-initiating pore",
+      "crack_initiation": "Near-surface pores at machined surface; XCT linked pores to initiation (confirmed by SEM)",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://experts.mcmaster.ca/scholarly-works/96679",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Yang Z., Kang J., Wilkinson D.S., The Effect of Porosity on Fatigue of Die Cast AM60, Metall. Mater. Trans. A 47 (2016) 3464-3472",
+        "doi": "10.1007/s11661-016-3511-x",
+        "url": "https://experts.mcmaster.ca/scholarly-works/96679"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "porosity",
+      "cast",
+      "HPDC",
+      "magnesium"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Details from abstract; also M.A.Sc. thesis Z. Yang (McMaster 2015), handle 11375/18425."
+  },
+  {
+    "id": "conv-cast-ni-in100-rene125-shrinkage-fatigue",
+    "title": "Fatigue from spongy shrinkage clusters in cast IN100 and Rene 125 with XCT-based FE models",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 100 (IN100) and Rene 125, as-cast",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "IN100": {
+          "Al": 4.9,
+          "B": 0.02,
+          "C": 0.07,
+          "Co": 18.2,
+          "Cr": 12.1,
+          "Mo": 3.22,
+          "Ti": 4.2,
+          "V": 0.7,
+          "Zr": 0.07,
+          "Ni": "bal."
+        },
+        "Rene125": {
+          "Al": 5.0,
+          "B": 0.02,
+          "C": 0.1,
+          "Co": 10.0,
+          "Cr": 9.0,
+          "Mo": 2.0,
+          "Ti": 2.5,
+          "V": 0.7,
+          "Zr": 0.05,
+          "Ta": 4.0,
+          "Hf": 1.5,
+          "W": 7,
+          "Ni": "bal."
+        }
+      },
+      "notes": "Two alloys; per Table 1 of arXiv 2407.19519"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Casting route (equiaxed/DS) not stated in extracted text; cylindrical (3.7/4.37 mm gauge) and flat (2 mm) specimens",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Lab Nikon XT H 450 (150 kV)",
+      "voxel_size_um": 20.0,
+      "volume_dimensions": "gauge volumes ~130-570 mm3",
+      "in_situ": false,
+      "notes": "~25 um voxel for IN100, ~20 um for Rene 125; image-based FE meshes of all real defects"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma/gamma-prime"
+    },
+    "defects": {
+      "types": [
+        "shrinkage pores",
+        "defect clusters",
+        "oxide inclusions"
+      ],
+      "statistics": "IN100: porosity 0.36-0.69%, largest defect 0.89-1.50 mm. R125 cylinders: 0.08-1.71%, largest 0.69-3.13 mm; validation 0.02-0.09%, 0.25-0.72 mm; flats 0.007-0.038%, 0.12-0.16 mm. ASTM E2660 grades 5-8"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Force-controlled, R=0, 80 Hz (20 Hz for validation), IN100 at 750 C (175-240 MPa amplitude), R125 at 700 C (120-250 MPa); 19 specimens",
+      "results": "IN100 lives 8e3-7.7e4; R125 338 to ~1.9e6 cycles; energy-based non-local model predicts within factor 3",
+      "crack_initiation": "Multiple cracks from spongy shrinkage clusters; ligaments break early but do not control life; one flat specimen failed from oxide inclusion linked to pore",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://arxiv.org/abs/2407.19519",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Kalkur Matpadi Raghavendra A., Maurel V., Marcin L., Proudhon H., Fatigue life prediction at mesoscopic scale of samples containing casting defects: A novel energy based non-local model, Int. J. Fatigue (2024) 108485",
+        "doi": "10.1016/j.ijfatigue.2024.108485",
+        "url": "https://arxiv.org/abs/2407.19519"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "porosity",
+      "cast",
+      "high-temperature",
+      "image-based-FE"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Text mentions lives up to 2e7 while table max ~2e6 (inconsistency noted)."
+  },
+  {
+    "id": "conv-ni-superalloy-casting-voids-tensile-zenodo",
+    "title": "Casting voids in a 2nd-generation Ni superalloy before/after tensile deformation (Xradia Versa 520 XCT, Zenodo)",
+    "material_class": "Ni superalloy",
+    "material": "Second-generation Ni-base superalloy, as-cast",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Grade not verified"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Notched tensile samples",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "Zeiss Xradia Versa 520, Henry Moseley X-ray Imaging Facility (Univ. Manchester)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Pre- and post-deformation scans"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "interdendritic casting voids"
+      ],
+      "statistics": "Void fraction 0.15 (+/-0.001) vol% as-cast, 0.21 vol% after tensile deformation"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Room temperature tensile; crystal plasticity triaxiality study"
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/4432446",
+      "doi": "10.5281/zenodo.4432446",
+      "size": "~4 GB",
+      "format": "Zeiss .txm reconstructions + .mat figure data",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Xu Z., Britton T.B., Guo Y., Casting voids in nickel superalloy and the mechanical behaviour under room temperature tensile deformation, Mater. Sci. Eng. A 806 (2021) 140800",
+        "doi": "10.1016/j.msea.2021.140800",
+        "url": "http://hdl.handle.net/10044/1/87983"
+      }
+    ],
+    "tags": [
+      "public-data",
+      "porosity",
+      "cast",
+      "void-growth"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Tensile, not fatigue; useful pore-population data."
+  },
+  {
+    "id": "conv-rcf-bidisc-crack-ct-zenodo",
+    "title": "3D lab and synchrotron CT of rolling-contact-fatigue cracks from artificial defects in bi-disc steel specimens (IDERPLANE)",
+    "material_class": "Steel",
+    "material": "Steel (grade not verified), heat treated and untreated conditions",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Wrought",
+      "parameters": "Bi-disc RCF; two cylindrical artificial defects of various depth and diameter machined on rolling track",
+      "heat_treatment": "Two conditions: heat treated and untreated (details unverified)",
+      "surface_condition": "Machined"
+    },
+    "techniques": [
+      "Micro-CT",
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Lab CT (INSA Lyon) + synchrotron (beamline not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Thin slabs containing the rolling surface near defects cut from discs and scanned"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "artificial defects",
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Rolling contact fatigue (bi-disc), several normal pressures; stopped at spalling or 1e6/1e7 cycles",
+      "results": "Mode II shear-driven crack growth dominant (Zani et al.)",
+      "crack_initiation": "Subsurface cracks at bottom of artificial holes; sizes measured in 3D along two directions",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/6424223",
+      "doi": "10.5281/zenodo.6424223",
+      "size": "~27 GB (v. 6424223, 28 TIFF stacks); earlier version 10.5281/zenodo.6351387 ~16 GB",
+      "format": "TIFF stacks (Lab and Syn per specimen)",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Xiao C., Buffiere J.-Y., Mazzu A., Results of the 3D detection of cracks in tested disc-shaped specimens, Zenodo (2022)",
+        "doi": "10.5281/zenodo.6424223",
+        "url": "https://zenodo.org/records/6424223"
+      },
+      {
+        "citation": "Zani N., Rao P.M., Foletti S., Buffiere J.-Y., Mazzu A., Beretta S., Threshold and propagation of defects under RCF: an experimental approach, Procedia Structural Integrity 76 (2026) 59-66",
+        "doi": "10.1016/j.prostr.2025.12.287",
+        "url": null
+      },
+      {
+        "citation": "Xiao C., Buffiere J.-Y., Neural network segmentation methods for fatigue crack images obtained with X-ray tomography, Eng. Fract. Mech. 252 (2021) 107823",
+        "doi": "10.1016/j.engfracmech.2021.107823",
+        "url": null
+      }
+    ],
+    "tags": [
+      "public-data",
+      "rolling-contact-fatigue",
+      "cracks",
+      "machine-learning-ready",
+      "steel"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "Steel grade not verified; link between EFM 2021 segmentation paper and this exact dataset not confirmed."
+  },
+  {
+    "id": "conv-suj2-mns-rcf-laminography-spring8",
+    "title": "4D rolling contact fatigue flaking from MnS inclusions in high-S bearing steel by synchrotron laminography (SPring-8)",
+    "material_class": "Steel",
+    "material": "Modified JIS SUJ2 high-carbon chromium bearing steel, high sulfur",
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "S": "0.020 or 0.049"
+      },
+      "notes": "Intentionally high S to promote MnS inclusions; other elements per SUJ2 nominal (not extracted)"
+    },
+    "processing": {
+      "route": "Forged",
+      "parameters": "Forged bar; MnS aligned in forging direction; S-type (perpendicular to surface) and T-type (parallel) inclusion orientations",
+      "heat_treatment": "Not extracted",
+      "surface_condition": "Plate specimens"
+    },
+    "techniques": [
+      "Laminography",
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "SPring-8 undulator beamline (laminography)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": false,
+      "notes": "Interrupted RCF tests next to experimental hatch; 37 keV, tilt angle 30 deg"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "inclusions",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "MnS inclusions",
+        "cracks"
+      ],
+      "statistics": "Stringer MnS of various length/width; e.g. 30 um inclusion initiation"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "HCF",
+      "loading": "Rolling contact fatigue, max Hertz pressure 5.39 GPa",
+      "results": "Flaking lives ~2.95e6 to 1.295e7 cycles depending on inclusion length/width/orientation and S content",
+      "crack_initiation": "Vertical cracks from MnS stringers first, then horizontal cracks at nearly constant depth after vertical crack reaches critical length; tracked in 3D",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://hdl.handle.net/20.500.14094/90004785",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": "Accepted manuscript CC-BY-NC-ND 4.0"
+    },
+    "references": [
+      {
+        "citation": "Nakai Y., Shiozawa D., Kikuchi S., Obama T., Saito H., Makino T., Neishi Y., 4D observations of rolling contact fatigue processes by laminography using ultra-bright synchrotron radiation, Eng. Fract. Mech. 183 (2017) 180-189",
+        "doi": "10.1016/j.engfracmech.2017.03.021",
+        "url": "https://hdl.handle.net/20.500.14094/90004785"
+      },
+      {
+        "citation": "Nakai Y. et al., Observation of flaking process in rolling contact fatigue of bearing steel with spheroidal inclusions by laminography using ultrabright synchrotron radiation X-rays, Fatigue Fract. Eng. Mater. Struct. 46 (2023) 4541-4557",
+        "doi": "10.1111/ffe.14148",
+        "url": "https://hdl.handle.net/20.500.14094/0100485211"
+      },
+      {
+        "citation": "Nakai Y. et al., Observation of Flaking Process in Rolling Contact Fatigue by Laminography Using Ultra-bright Synchrotron Radiation, MATEC Web Conf. 165 (2018) 11002",
+        "doi": "10.1051/matecconf/201816511002",
+        "url": "https://hdl.handle.net/20.500.14094/90006290"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "inclusions",
+      "laminography",
+      "bearing-steel",
+      "rolling-contact-fatigue"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": ""
+  },
+  {
+    "id": "conv-x100-linepipe-steel-insitu-srct-zenodo",
+    "title": "In situ synchrotron tomography of anisotropic ductile damage in X100 line pipe steel (notched bars, HDF5)",
+    "material_class": "Steel",
+    "material": "API X100 line pipe steel",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Line pipe; notched round bars loaded along rolling (L) and transverse (T) directions",
+      "heat_treatment": null,
+      "surface_condition": "Machined"
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (beamline not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "In situ tensile SRCT; porosity, void shape and orientation quantified"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "inclusions"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "voids",
+        "inclusions"
+      ],
+      "statistics": "Void volume fraction, shape and orientation vs strain (in data)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Anisotropic ductility"
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/3528199",
+      "doi": "10.5281/zenodo.3528199",
+      "size": "~32 GB",
+      "format": "HDF5 + XDMF; rawdata.tar.gz",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Madi Y., Garcia J.M., Proudhon H., Helfen L., Shinohara Y., Besson J., Morgeneyer T.F., A Dataset for In-situ synchrotron tomography experiments to investigate anisotropic damage of line pipe steel, Zenodo (2019)",
+        "doi": "10.5281/zenodo.3528199",
+        "url": "https://zenodo.org/records/3528199"
+      },
+      {
+        "citation": "Madi Y. et al., On the origin of the anisotropic damage of X100 line pipe steel, Part I: in-situ synchrotron tomography experiments, Integrating Materials and Manufacturing Innovation (2019/2020; DOI not verified)",
+        "doi": null,
+        "url": "https://zenodo.org/records/3528199"
+      }
+    ],
+    "tags": [
+      "public-data",
+      "in-situ",
+      "ductile-damage",
+      "steel",
+      "inclusions"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Monotonic ductile damage, not fatigue."
+  },
+  {
+    "id": "conv-al-li-dct-tension-zenodo",
+    "title": "DCT grain map of an Al-Li alloy tension specimen (ESRF ID11, DREAM.3D/HDF5)",
+    "material_class": "Al alloy",
+    "material": "Aluminium-lithium alloy (wrought; grade not verified)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Wrought",
+      "parameters": "Small tension specimen ~0.5 mm cross-section",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "DCT"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID11",
+      "voxel_size_um": 1.4,
+      "volume_dimensions": "3 merged DCT scans",
+      "in_situ": null,
+      "notes": "Reconstructed with ESRF DCT software"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/1412401",
+      "doi": "10.5281/zenodo.1412401",
+      "size": "~1.6 GB",
+      "format": "DREAM.3D (.dream3d) + XDMF",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Proudhon H., Gueninchault N., Forest S., Ludwig W., Diffraction Contrast Tomography reconstruction of an Aluminium-Lithium tension specimen, Zenodo (2018)",
+        "doi": "10.5281/zenodo.1412401",
+        "url": "https://zenodo.org/records/1412401"
+      }
+    ],
+    "tags": [
+      "public-data",
+      "grain-scale",
+      "DCT",
+      "crystal-plasticity-input",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Grain-scale input for CP/short-crack simulations; no fatigue."
+  },
+  {
+    "id": "conv-cast-al-ultrasonic-insitu-internal-crack",
+    "title": "In situ synchrotron ultrasonic (VHCF) fatigue device for internal crack initiation from casting defects in Al alloy",
+    "material_class": "Al alloy",
+    "material": "Cast aluminium alloy (grade not verified)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Specimens containing internal casting defects",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "Synchrotron (authors from ESRF/SOLEIL/PSI; beamline not verified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Ultrasonic (~20 kHz) fatigue machine on beamline; automatic detection of crack initiation"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "shrinkage pores",
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "ultrasonic",
+      "loading": "Ultrasonic fatigue, 1e7-1e9 cycles",
+      "results": "Device initiated an internal microstructurally short crack in reasonable time and monitored growth",
+      "crack_initiation": "Internal casting defects; tracked in 3D",
+      "initiation_tracked_in_3d": true
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://oskar-bordeaux.fr/handle/20.500.12278/76237",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Messager A., Junet A., Palin-Luc T., Buffiere J.-Y., Saintier N., Ranc N., El May M., Gaillard Y., King A., Bonnin A., Nadot Y., In situ synchrotron ultrasonic fatigue testing device for 3D characterisation of internal crack initiation and growth, Fatigue Fract. Eng. Mater. Struct. 43 (2020) 558-567",
+        "doi": "10.1111/ffe.13140",
+        "url": "https://oskar-bordeaux.fr/handle/20.500.12278/76237"
+      }
+    ],
+    "tags": [
+      "fatigue-initiation",
+      "in-situ",
+      "VHCF",
+      "ultrasonic",
+      "porosity",
+      "cast"
+    ],
+    "fatigue_initiation_relevance": "High",
+    "notes": "Related: Hebrard et al., MSEA 2023 (doi 10.1016/j.msea.2023.145462), internal crack growth in air vs vacuum; Junet et al., IJF 2023 (doi 10.1016/j.ijfatigue.2022.107450), Ti-6Al-4V with internal artificial defects (processing route not verified)."
+  }
+]

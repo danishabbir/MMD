@@ -1,0 +1,1820 @@
+[
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Al": 0.56,
+        "Fe": 17.31,
+        "Co": 0.14,
+        "Cr": 17.97,
+        "Nb": 5.4,
+        "Ti": 1.0,
+        "C": 0.023,
+        "N": 0.0062,
+        "Ni": "bal."
+      },
+      "notes": "Nominal composition as listed in Stinville et al. Sci. Data 2022 (Ta listed without value)."
+    },
+    "processing": {
+      "route": "Wrought",
+      "parameters": "Wrought IN718 bar/plate (details per paper); flat dogbone specimen, gauge 1 x 3 mm^2",
+      "heat_treatment": "Solution 1050 °C / 30 min, water quench; aging 720 °C / 8 h + 620 °C / 8 h (gamma' + gamma'')",
+      "surface_condition": "Polished; gold nanoparticle speckle (~60 nm) for HR-DIC"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam (femtosecond-laser serial sectioning in FIB-SEM), EDAX/OIM detector; HR-DIC in ThermoFisher Versa3D SEM",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "~0.5 mm^3; 526 serial slices of 1 µm, 1 µm EBSD step (cubic voxels)",
+      "in_situ": true,
+      "notes": "In-situ SEM tension with HR-DIC (33.45 nm pixel; Heaviside-DIC, step 100 nm) at 4 strain levels on ~1x1 mm^2 regions; surface EBSD 0.7 µm step; DREAM.3D reconstruction (5° tolerance); twin-related parent IDs tracked; XtalMesh (~19.9 M tets) and Simmetrix (~16.7 M tets) FE meshes supplied."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "distribution centered at ~62 µm",
+      "texture": "nearly random",
+      "phases": "FCC gamma (gamma'/gamma'' not resolved by EBSD)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Monotonic tension interrupted at 0.17, 0.32, 0.61, 1.26% macroscopic plastic strain (paper Table 1 lists total strains 0.69-1.83%)."
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": "Monotonic tension only (no cyclic loading in this dataset)",
+      "results": null,
+      "crack_initiation": "Not fatigue-tested, but companion analyses (Charpagne et al. 2021; Hestroffer et al. 2023) used this 3D volume + HR-DIC: >500 slip bands analysed; >50% emanate from triple junction lines and the most intense, longest bands lie near/parallel to specific annealing twin boundaries - argued to be the critical fatigue crack nucleation configurations in IN718.",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "grain-scale",
+      "twins",
+      "slip-localization",
+      "HR-DIC",
+      "crystal-plasticity-ready",
+      "meshed",
+      "machine-learning-ready",
+      "in-situ"
+    ],
+    "notes": "Best publicly available 3D EBSD + strain-field benchmark for twin/triple-junction slip localization in a Ni superalloy; FE meshes ready for CPFE/FIP studies. Dryad landing page did not show a license itself; CC BY 4.0 stated in the Sci. Data paper.",
+    "id": "ebsd-in718-stinville-tribeam-multimodal",
+    "title": "Multi-modal IN718 dataset: TriBeam 3D EBSD (526 slices, 1 µm voxels) + HR-DIC slip localization fields",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (wrought, precipitation hardened)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Dryad (also BisQue)",
+      "url": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.83bk3j9sj",
+      "doi": "10.5061/dryad.83bk3j9sj",
+      "size": "~55 GB on Dryad (raw .up2 patterns ~1.7 TB total, only 2 slices included)",
+      "format": ".h5 / .dream3d / .xdmf volumes; EMsoft .h5 and .up2 patterns; .ang/.osc surface EBSD; 16/32-bit TIFF SEM and HR-DIC maps; .inp/.vtk/APDL meshes",
+      "license": "CC BY 4.0 (per Sci. Data article)"
+    },
+    "references": [
+      {
+        "citation": "Stinville J.C., Hestroffer J.M., Charpagne M.A., Polonsky A.T., Echlin M.P., Torbet C.J., Valle V., Nygren K.E., Miller M.P., Klaas O., Loghin A., Beyerlein I.J., Pollock T.M., Multi-modal dataset of a polycrystalline metallic material: 3D microstructure and deformation fields, Scientific Data 9:460 (2022)",
+        "doi": "10.1038/s41597-022-01525-w",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9343453"
+      },
+      {
+        "citation": "Charpagne M.-A., Hestroffer J., Polonsky A., Echlin M.P., Texier D., Valle V., Beyerlein I.J., Pollock T.M., Stinville J.-C., Slip localization in Inconel 718: A three-dimensional and statistical perspective, Acta Materialia 215 (2021) 117037",
+        "doi": "10.1016/j.actamat.2021.117037",
+        "url": "https://labs.materials.ucsb.edu/pollock/tresa/node/2106"
+      },
+      {
+        "citation": "Hestroffer J.M., Stinville J.-C., Charpagne M.-A., Miller M.P., Pollock T.M., Beyerlein I.J., Slip localization behavior at triple junctions in nickel-base superalloys, Acta Materialia 249 (2023) 118801",
+        "doi": "10.1016/j.actamat.2023.118801",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "High"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Wrought (unverified)",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "HEDM/3DXRD"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam (post-test) + synchrotron HEDM (facility not stated in abstract)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": true,
+      "notes": "HEDM gives time-resolved grain-scale strain/orientation during cycling; post-test TriBeam reconstruction meshed directly into CPFE model."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "FCC"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF (cyclic loading, details unverified)",
+      "loading": "Cyclic loading in situ during HEDM (details not in abstract)",
+      "results": "CPFE identifies intragranular regions of slip accumulation and their proximity to microstructural features",
+      "crack_initiation": "Focus on irreversible slip as precursor to fatigue crack initiation; relation of slip-accumulation regions to grain neighborhood",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "grain-scale",
+      "crystal-plasticity",
+      "multimodal",
+      "cyclic-loading"
+    ],
+    "notes": "Conference abstract only (TMS 2026); no journal paper or dataset located yet - watch for publication.",
+    "id": "ebsd-in718-cyclic-tribeam-hedm-schulte",
+    "title": "Cyclically loaded IN718: post-test TriBeam tomography + HEDM + CPFE slip-accumulation study (conference abstract)",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (polycrystalline)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/FEA1F5484AA80C2785258CBA0074EC59",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Schulte J., Shadle D., Nygren K., Miller M., Pollock T., Beyerlein I., Insights Into the Evolution of Slip in Cyclically Loaded IN718 Using Crystal Plasticity Finite Element, High Energy X-Ray Diffraction Microscopy and TriBeam Tomography, TMS 2026 Annual Meeting abstract",
+        "doi": null,
+        "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/FEA1F5484AA80C2785258CBA0074EC59"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "EBM",
+      "parameters": "Electron beam melting, 50 µm build layers; per 2021 corrigendum: material from a 30 x 50 x 40 mm build volume, beam-on time 0.10 ms, spot spacing 0.2 mm (ORNL)",
+      "heat_treatment": "As-built (unverified)",
+      "surface_condition": "Polished section"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam (femtosecond laser serial sectioning)",
+      "voxel_size_um": 1.5,
+      "volume_dimensions": "952.5 x 501.0 x 306.0 µm; 204 slices of 1.5 µm; 1.5 µm in-plane EBSD step (cubic voxels); ~25 GB",
+      "in_situ": false,
+      "notes": "Hough transforms saved (not raw patterns); grain segmentation at 2° tolerance in DREAM.3D/BisQue; multimodal (EBSD, BSE, EDS) from sub-micron to mm scale."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "lack-of-fusion",
+        "inclusions",
+        "precipitates"
+      ],
+      "grain_size_um": "Columnar + clusters of equiaxed grains; LOF disrupts grain morphology several layers above",
+      "texture": "Build-direction columnar texture (qualitative)",
+      "phases": "gamma matrix, carbides, nitrides"
+    },
+    "defects": {
+      "types": [
+        "lack-of-fusion",
+        "inclusions"
+      ],
+      "statistics": "Nitrides and carbides 1.25-10 µm throughout volume, pronounced nitride clustering; LOF defects create grain-morphology discontinuities extending several build layers"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": "Not tested; LOF defects + nitride clusters identified as likely detrimental to mechanical performance",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "lack-of-fusion",
+      "inclusions",
+      "grain-scale",
+      "multimodal"
+    ],
+    "notes": "Acquisition numbers from Polonsky et al. 2019 (BisQue paper), which describes the same EBM 718 TriBeam dataset 'as described previously' (ref. to 2018 paper).",
+    "id": "ebsd-in718-ebm-tribeam-polonsky",
+    "title": "Electron-beam-melted IN718: TriBeam 3D EBSD/BSE/EDS of lack-of-fusion defects, carbides/nitrides and grain inhomogeneity",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 718 (EBM / E-PBF)",
+    "data_availability": {
+      "status": "On request",
+      "repository": "BisQue (UCSB) - public availability not confirmed",
+      "url": "https://doi.org/10.1016/j.matchar.2018.02.020",
+      "doi": null,
+      "size": "~25 GB (collected)",
+      "format": "EBSD Hough/ang, DREAM.3D",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Polonsky A.T., Echlin M.P., Lenthe W.C., Dehoff R.R., Kirka M.M., Pollock T.M., Defects and 3D structural inhomogeneity in electron beam additively manufactured Inconel 718, Materials Characterization 143 (2018) 171-181 (corrigendum 2021)",
+        "doi": "10.1016/j.matchar.2018.02.020",
+        "url": "https://labs.materials.ucsb.edu/pollock/tresa/node/1326"
+      },
+      {
+        "citation": "Polonsky A.T., Lang C.A., Kvilekval K.G., Latypov M.I., Echlin M.P., Manjunath B.S., Pollock T.M., Three-dimensional Analysis and Reconstruction of Additively Manufactured Materials in the Cloud-Based BisQue Infrastructure, IMMI 8 (2019) 37-51",
+        "doi": "10.1007/s40192-019-00126-7",
+        "url": "https://par.nsf.gov/servlets/purl/10113961"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "DED",
+      "parameters": "Laser Engineered Net Shaping (LENS) blown-powder DED",
+      "heat_treatment": "As-deposited (unverified)",
+      "surface_condition": "fs-laser ablated slices cleaned by glancing-angle FIB"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam",
+      "voxel_size_um": 3.0,
+      "volume_dimensions": "816 x 834 x 240 µm; 80 slices of 3 µm; 3 µm in-plane step; ~200 GB incl. raw EBSD patterns",
+      "in_situ": false,
+      "notes": "Raw patterns saved (~90% of data); CI>0.1 mask; grains <64 voxels removed; reconstruction in DREAM.3D within BisQue with misorientation-tolerance parameter sweep."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "Large, highly convoluted grains; 2D slices of a single grain fragmented (only 6.85% of 467 slices retained one feature); Z-normal slice median equivalent diameter 267 µm for the large grain studied",
+      "texture": "",
+      "phases": "FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "grain-scale",
+      "2D-vs-3D"
+    ],
+    "notes": "Demonstrates large 2D-vs-3D grain size discrepancies in AM steel - relevant when calibrating grain-size-based fatigue models.",
+    "id": "ebsd-304l-lens-tribeam-polonsky",
+    "title": "LENS (DED) 304L stainless steel: TriBeam 3D EBSD volume (816 x 834 x 240 µm, 3 µm voxels)",
+    "material_class": "Steel",
+    "material": "304L austenitic stainless steel (LENS directed energy deposition)",
+    "data_availability": {
+      "status": "On request",
+      "repository": "BisQue (UCSB) - public status not confirmed",
+      "url": "https://doi.org/10.1007/s40192-019-00126-7",
+      "doi": null,
+      "size": "~200 GB raw",
+      "format": "EBSD patterns, DREAM.3D",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Polonsky A.T. et al., Three-dimensional Analysis and Reconstruction of Additively Manufactured Materials in the Cloud-Based BisQue Infrastructure, IMMI 8 (2019) 37-51",
+        "doi": "10.1007/s40192-019-00126-7",
+        "url": "https://par.nsf.gov/servlets/purl/10113961"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Double-melt plate, ~0.5 in (1.25 cm) thick",
+      "heat_treatment": "Heat treated to equiaxed microstructure (schedule not given)",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "UCSB TriBeam",
+      "voxel_size_um": null,
+      "volume_dimensions": "190 x 241 x 106 µm = 318 x 377 x 121 voxels; 0.6 µm in-plane step, 1 µm slice",
+      "in_situ": false,
+      "notes": "Stored as HDF5/.dream3d with EulerAngles, Quaternions, FeatureIds, IPFColor arrays."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "8893 grains (6645 fully contained)",
+      "texture": "",
+      "phases": "alpha (+beta)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "machine-learning-ready",
+      "grain-scale",
+      "titanium",
+      "microtexture"
+    ],
+    "notes": "Possibly related to the TriBeam Ti-6Al-4V volumes used by Hemery et al. 2019 (unverified). Short-link URL as given in the paper.",
+    "id": "ebsd-ti64-tribeam-bisque-equiaxed",
+    "title": "Ti-6Al-4V equiaxed 3D microstructure (TriBeam, 8893 grains) released for ML/generative modelling",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (standard grade, double-melt plate)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "BisQue (UCSB)",
+      "url": "https://bit.ly/Ti6Al4Vmicrostructure",
+      "doi": null,
+      "size": null,
+      "format": "HDF5 / DREAM.3D (.dream3d)",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Jangid D.K., Brodnik N.R., Echlin M.P., Daly S.H., Pollock T.M., Manjunath B.S., Titanium 3D Microstructure for Physics-based Generative Models: A Dataset and Primer, ICML 2023 Workshop SynS&ML",
+        "doi": null,
+        "url": "https://par.nsf.gov/servlets/purl/10487552"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Experimental 3D datasets from UCSB TriBeam group (unverified) + synthetic volumes",
+      "voxel_size_um": null,
+      "volume_dimensions": "mm^3-scale",
+      "in_situ": false,
+      "notes": "Both experimentally captured and synthetically generated 3D microstructures used as CPFE inputs."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "Microtextured regions (MTRs/macrozones)",
+      "phases": "alpha + beta"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": "CPFE monotonic loading; implications discussed for fatigue and dwell fatigue",
+      "results": "MTRs with dominant [0001] orientation produce stress and plastic strain hotspots early in straining",
+      "crack_initiation": "Hotspots at [0001]-oriented MTRs proposed as fatigue/dwell initiation precursors; compared with prior DIC strain localization",
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "microtexture",
+      "crystal-plasticity",
+      "titanium",
+      "dwell-fatigue",
+      "grain-scale"
+    ],
+    "notes": "Use of TriBeam for the experimental volume inferred from author list (Polonsky, Echlin) - not confirmed from full text.",
+    "id": "ebsd-ti64-hemery-microtexture-slip-3d",
+    "title": "Ti-6Al-4V microtextured regions: mm^3-scale 3D datasets + CPFE onset of slip (fatigue/dwell implications)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (bimodal/equiaxed with microtextured regions)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://labs.materials.ucsb.edu/pollock/tresa/publications/1511",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Hémery S., Naït-Ali A., Guéguen M., Wendorf J., Polonsky A.T., Echlin M.P., Stinville J.C., Pollock T.M., Villechaise P., A 3D analysis of the onset of slip activity in relation to the degree of micro-texture in Ti-6Al-4V, Acta Materialia 181 (2019) 36-48",
+        "doi": "10.1016/j.actamat.2019.09.028",
+        "url": "https://labs.materials.ucsb.edu/pollock/tresa/publications/1511"
+      },
+      {
+        "citation": "Echlin M.P., Stinville J.C., Miller V.M., Lenthe W.C., Pollock T.M., Incipient slip and long range plastic strain localization in microtextured Ti-6Al-4V titanium, Acta Materialia 114 (2016) 164-175",
+        "doi": null,
+        "url": "https://experts.illinois.edu/en/publications/incipient-slip-and-long-range-plastic-strain-localization-in-micr/"
+      }
+    ],
+    "fatigue_initiation_relevance": "High"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Powder metallurgy (unverified)",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "AFRL (Wright-Patterson), FIB-SEM serial sectioning EBSD, collected circa 2002",
+      "voxel_size_um": null,
+      "volume_dimensions": "Small subvolume distributed with DREAM.3D; 0.25 µm in-plane step reported in derived INL/MOOSE example (unverified for full set)",
+      "in_situ": false,
+      "notes": "Canonical tutorial dataset for DREAM.3D EBSD reconstruction pipelines."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma (FCC)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "benchmark",
+      "grain-scale",
+      "DREAM.3D",
+      "machine-learning-ready"
+    ],
+    "notes": "Link between Small IN100 and the Groeber 2008 IN100 FIB-EBSD study is likely but (unverified); slice count/thickness not verified.",
+    "id": "ebsd-in100-dream3d-smallin100",
+    "title": "AFRL IN100 serial-sectioning EBSD dataset ('Small IN100' DREAM.3D example)",
+    "material_class": "Ni superalloy",
+    "material": "IN100 (powder-metallurgy Ni-base superalloy)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "DREAM.3D example data (BlueQuartz); copy of SmallIN100 .dream3d on Zenodo (NOMAD example set)",
+      "url": "https://zenodo.org/records/7885531",
+      "doi": "10.5281/zenodo.7885531",
+      "size": "117.4 MB zip (em_om_sprint14_02.zip containing SmallIN100 .dream3d)",
+      "format": "DREAM.3D (.dream3d / HDF5), original .ang slices in DREAM.3D data bundle",
+      "license": "CC BY 4.0 (Zenodo record)"
+    },
+    "references": [
+      {
+        "citation": "Groeber M., Ghosh S., Uchic M.D., Dimiduk D.M., A framework for automated analysis and simulation of 3D polycrystalline microstructures. Part 1: Statistical characterization, Acta Materialia 56 (2008) 1257-1273",
+        "doi": "10.1016/j.actamat.2007.11.041",
+        "url": null
+      },
+      {
+        "citation": "Kitware blog: Visualizing the Microstructure: How DREAM3D-NX and VTK Empower Materials Science Research (describes IN100 EBSD serial sectioning set collected at AFRL circa 2002)",
+        "doi": null,
+        "url": "https://www.kitware.com/visualizing-the-microstructure-how-dream3d-nx-and-vtk-empower-materials-science-research/"
+      },
+      {
+        "citation": "Kühbach M., Smith J., Hielscher R., Pinard P., Nomad-FAIR North-Remote-Tool Example Dataset Orientation Microscopy, Zenodo (2023)",
+        "doi": "10.5281/zenodo.7885531",
+        "url": "https://zenodo.org/records/7885531"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "AMB2022-01 3D build; ROI includes part of a 2.5 mm leg extending into the baseplate; registered with build file and in-situ thermography",
+      "heat_treatment": "As-built (AMB2022-01 measurements; unverified for this specimen)",
+      "surface_condition": "Mechanically polished serial sections"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "X-ray CT"
+    ],
+    "acquisition": {
+      "facility": "AFRL automated multi-modal serial sectioning (LEROY system, per file names) + XRCT",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "Reconstructed EBSD at 1 µm and 2 µm (build coordinates); BSE at 0.854 and 2 µm; optical at 0.345 and 2 µm; h5ebsd covers sections 13-524",
+      "in_situ": false,
+      "notes": "All modalities registered into build coordinate system; transformation JSONs provided."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma"
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Porosity observable via XCT + optical/BSE serial sections (not quantified on landing page)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "porosity",
+      "grain-scale",
+      "multimodal",
+      "benchmark",
+      "machine-learning-ready"
+    ],
+    "notes": "Slice thickness inferred ~1 µm from reconstruction resolution (unverified). No fatigue testing in this dataset, but AM Bench also hosts IN718 fatigue data on separate specimens.",
+    "id": "ebsd-in718-ambench2022-serial-sectioning",
+    "title": "AM Bench 2022 IN718 (L-PBF) automated serial-sectioning EBSD/BSE/optical + registered XCT (AFRL/NIST)",
+    "material_class": "Ni superalloy",
+    "material": "IN718 (nickel alloy 718), L-PBF AM Bench AMB2022-01 3D build",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "NIST Public Data Repository",
+      "url": "https://data.nist.gov/od/id/mds2-2767",
+      "doi": "10.18434/mds2-2767",
+      "size": "~2.0 TB (8479 files)",
+      "format": "DREAM.3D (.dream3d/.xdmf), .h5ebsd, section images (TIFF), JSON transforms",
+      "license": "NIST open license (https://www.nist.gov/open/license)"
+    },
+    "references": [
+      {
+        "citation": "Schwalbach E.J., Chapman M.G., Shah M.N., Uchic M.D., Hrabe N., Kafka O., Moser N., Lane B., Carson R., Belak J., Levine L.E., AM Bench 2022: IN718 Serial Sectioning and X-ray Computed Tomography Measurement Data, NIST (dataset)",
+        "doi": "10.18434/mds2-2767",
+        "url": "https://data.nist.gov/od/id/mds2-2767"
+      },
+      {
+        "citation": "Levine L. et al., Outcomes and Conclusions from the 2022 AM Bench Measurements, Challenge Problems, Modeling Submissions, and Conference, IMMI 13 (2024) 598-621",
+        "doi": "10.1007/s40192-024-00372-4",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "HEDM/3DXRD"
+    ],
+    "acquisition": {
+      "facility": "APS (HEDM) + AFRL automated multi-modal serial sectioning (optical, SE/BSE, scanning white light interferometry, high-precision EBSD)",
+      "voxel_size_um": null,
+      "volume_dimensions": "Full HEDM-interrogated volume",
+      "in_situ": false,
+      "notes": "Custom data fusion aligning surface modalities with HEDM; quantifies HEDM misses of small grains/twins."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma/gamma'"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "multimodal",
+      "HEDM-validation",
+      "twins",
+      "grain-scale",
+      "benchmark"
+    ],
+    "notes": "Baseline (undeformed) workflow-validation sample ahead of deformed/fatigued superalloy studies; slice thickness/step not verified.",
+    "id": "ebsd-lshr-hedm-serial-sectioning-mdf",
+    "title": "LSHR Ni superalloy HEDM volume re-characterized by multi-modal serial sectioning with high-precision EBSD and white-light interferometry",
+    "material_class": "Ni superalloy",
+    "material": "LSHR (low solvus, high refractory) NASA disk superalloy, recrystallized, undeformed",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Materials Data Facility",
+      "url": "https://doi.org/10.18126/4y0p-v604",
+      "doi": "10.18126/4y0p-v604",
+      "size": null,
+      "format": "Raw and processed HEDM + serial sectioning data",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Sparks G., Mason S.A., Chapman M.G., Park J.-S., Sharma H., Kenesei P., Niezgoda S.R., Mills M.J., Uchic M.D., Shade P.A., Obstalecki M., 3D Reconstruction of a High-Energy Diffraction Microscopy Sample Using Multi-modal Serial Sectioning with High-Precision EBSD and Surface Profilometry, IMMI 13 (2024) 773-803",
+        "doi": "10.1007/s40192-024-00370-6",
+        "url": "https://acdc.alcf.anl.gov/mdf/detail/8f586539-f397-4af1-9c52-3c2e0da796c8-1.0/"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "EOS M280 L-PBF from gas-atomized powder; tensile axis along build direction; wire-EDM machined",
+      "heat_treatment": "Stress relieved + HIP + heat treated (details withheld from challenge participants)",
+      "surface_condition": "Wire-EDM, no further finishing"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "HEDM/3DXRD",
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "APS (RAMS3 load frame; nf/ff-HEDM, µCT) + AFRL automated serial sectioning (LEROY)",
+      "voxel_size_um": 2.0,
+      "volume_dimensions": "~1 µm slice thickness and in-plane step; homogenized input microstructure 305 x 351 x 312 voxels at 2 µm (29,662 features incl. pores, Au/Pt fiducials)",
+      "in_situ": true,
+      "notes": "HEDM in-situ tension to ~0.7% plastic strain, then serial sectioning of whole test volume; gold fiducials used for registration."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "gamma"
+    },
+    "defects": {
+      "types": [
+        "gas pores"
+      ],
+      "statistics": "Pores present in voxelized microstructure (not quantified here)"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Quasi-static (1e-4 /s) stress-strain data provided in challenge package; 28 challenge grains with grain-averaged elastic strain tensors"
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "HEDM",
+      "multimodal",
+      "crystal-plasticity-ready",
+      "benchmark",
+      "twins"
+    ],
+    "notes": "Monotonic (not fatigue) but an excellent CP-validation dataset with registered grain-resolved stresses.",
+    "id": "ebsd-in625-afrl-challenge4-serial-sectioning",
+    "title": "AFRL AM Modeling Challenge 4: AM IN625 HEDM tensile sample, post-test serial sectioning (EBSD/BSE/optical, ~1 µm)",
+    "material_class": "Ni superalloy",
+    "material": "Inconel 625 (L-PBF, EOS M280)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Materials Data Facility",
+      "url": "https://doi.org/10.18126/k5r2-32iu",
+      "doi": "10.18126/k5r2-32iu",
+      "size": null,
+      "format": "DREAM.3D / HDF5 (challenge package)",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Chapman M.G., Shah M.N., Donegan S.P., Scott J.M., Shade P.A., Menasche D., Uchic M.D., AFRL Additive Manufacturing Modeling Series: Challenge 4, 3D Reconstruction of an IN625 High-Energy Diffraction Microscopy Sample Using Multi-modal Serial Sectioning, IMMI 10 (2021) 129-141",
+        "doi": "10.1007/s40192-021-00212-9",
+        "url": null
+      },
+      {
+        "citation": "Shade P.A. et al., AFRL AM Modeling Challenge Series: Challenge 4 Data Package, Materials Data Facility",
+        "doi": "10.18126/k5r2-32iu",
+        "url": "https://doi.org/10.18126/k5r2-32iu"
+      },
+      {
+        "citation": "Saha S. et al., Microscale Structure to Property Prediction for Additively Manufactured IN625 through Advanced Material Model Parameter Identification, IMMI (2021)",
+        "doi": "10.1007/s40192-021-00208-5",
+        "url": "https://par.nsf.gov/servlets/purl/10247259"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "EBM",
+      "parameters": "Random scan strategy (R3), 50 µm layers, 470 °C build temperature, powder 105 ± 45 µm",
+      "heat_treatment": "As-built",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Thermo Fisher Helios G4 Xe plasma FIB dual beam + Oxford Symmetry EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Raw .ctf library, DREAM.3D pipelines (ImportCTFLibrary, FullReconstruction) and MTEX scripts provided."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "Fine alpha laths",
+      "texture": "",
+      "phases": "alpha + beta (prior-beta reconstruction, variant selection)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "titanium",
+      "plasma-FIB",
+      "variant-selection"
+    ],
+    "notes": "Slice thickness/step/volume not stated on dataset page.",
+    "id": "ebsd-ti64-ebm-pfib-demott",
+    "title": "E-PBF Ti-6Al-4V (random scan strategy) Xe-plasma FIB 3D EBSD: alpha variant selection",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (electron powder bed fusion)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Mendeley Data",
+      "url": "https://data.mendeley.com/datasets/c5x7ckcfsp",
+      "doi": "10.17632/c5x7ckcfsp.1",
+      "size": null,
+      "format": "CTF, DREAM.3D JSON pipelines, MATLAB/MTEX code",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "DeMott R., Haghdadi N., Liao X., Ringer S.P., Primig S., 3D characterization of microstructural evolution and variant selection in additively manufactured Ti-6Al-4V, J. Mater. Sci. 56 (2021) 14763-14782",
+        "doi": "10.1007/s10853-021-06216-2",
+        "url": "https://data.mendeley.com/datasets/c5x7ckcfsp"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Nb": 7.0,
+        "Zr": "bal."
+      },
+      "notes": "Zircaloy-4 base + 7 wt% Nb (model alloy)"
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Hot rolled at 725 °C to 75% reduction",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Thermo Scientific Helios Xe+ PFIB-SEM (Univ. Manchester)",
+      "voxel_size_um": null,
+      "volume_dimensions": "441 sequential slices, 0.1 µm slice thickness",
+      "in_situ": false,
+      "notes": "Custom DREAM.3D pipeline; both alpha and beta indexed."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "Rolling texture (co-deformation of alpha/beta)",
+      "phases": "alpha (HCP) + beta (BCC)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "plasma-FIB",
+      "two-phase",
+      "texture"
+    ],
+    "notes": "Not a fatigue study; included as openly downloadable PFIB 3D EBSD of an HCP/BCC two-phase alloy analogous to alpha/beta Ti.",
+    "id": "ebsd-zry4-7nb-pfib-zenodo",
+    "title": "Hot-rolled Zircaloy-4 + 7 wt% Nb: PFIB 3D EBSD of alpha and beta (441 slices, 0.1 µm)",
+    "material_class": "Zr alloy",
+    "material": "Model Zircaloy-4 with 7 wt% Nb (Zr alloy)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/3785085",
+      "doi": "10.5281/zenodo.3785085",
+      "size": "13.8 GB",
+      "format": "CTF, DREAM.3D, images, .oip",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Daniel C.S., Garner A., Honniball P.D., Bradley L., Preuss M., Prangnell P.B., Quinta da Fonseca J., Co-deformation and dynamic annealing effects on the texture development during alpha-beta processing of a model Zr-Nb alloy, Acta Materialia 205 (2021) 116538",
+        "doi": "10.1016/j.actamat.2020.116538",
+        "url": "https://zenodo.org/record/3785085"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Cast",
+      "parameters": "E309L chill-cast; Fe fully recrystallized",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning",
+      "DCT"
+    ],
+    "acquisition": {
+      "facility": "McMaster University; lab-based DCT + serial-section 3D EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": "Processed 3D label volumes from both methods, DREAM.3D v6 pipelines, 5-DOF grain boundary datasets."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "BCC ferrite; FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "benchmark",
+      "grain-boundary-character",
+      "cross-validation"
+    ],
+    "notes": "Acquisition parameters not given on dataset page; associated manuscript not yet identified.",
+    "id": "ebsd-fe-e309l-3debsd-labdct-mendeley",
+    "title": "Pure Fe (BCC) and chill-cast modified E309L (FCC): serial-section 3D EBSD vs. lab DCT benchmark",
+    "material_class": "Steel",
+    "material": "Fully recrystallized pure Fe; chill-cast modified E309L austenitic stainless steel",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Mendeley Data",
+      "url": "https://data.mendeley.com/datasets/5vg72jgbcs",
+      "doi": "10.17632/5vg72jgbcs.2",
+      "size": null,
+      "format": "HDF5 label volumes, DREAM.3D JSON pipelines",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Mosayebi M., Mohammadpour P., Deschênes P.-A., Tôn-Thât L., Paquet D., Phillion A.B., Bassim N., 3D-EBSD and DCT datasets of a fully recrystallized pure Fe (BCC) and a chill-cast, modified E309L austenitic stainless steel (FCC), Mendeley Data v2 (2026)",
+        "doi": "10.17632/5vg72jgbcs.2",
+        "url": "https://data.mendeley.com/datasets/5vg72jgbcs"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Forged",
+      "parameters": "Turbine-disc Ni-Co alloy, gamma' strengthened",
+      "heat_treatment": "",
+      "surface_condition": "Flat observation face; 60 µm FIB notch introduced as crack starter"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "NIMS Xe plasma FIB-SEM with CMOS EBSD detector",
+      "voxel_size_um": 0.1,
+      "volume_dimensions": "~200 x 80 x 70 µm; 1000 SIM images at 100 nm slices, EBSD every 5 slices (0.5 µm)",
+      "in_situ": false,
+      "notes": "Crack segmented from ion-induced SE images; crack-face normals combined with stacked Euler maps (misalignment <2°); KAM maps."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins",
+        "cracks"
+      ],
+      "grain_size_um": "Fine-grained (crack ~100-200 µm spans many grains)",
+      "texture": "",
+      "phases": "gamma + gamma'"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": "Crack length 150 µm at stop; ~15 MPa√m ΔK region"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": 1165,
+      "uts_MPa": 1615,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "Room temperature"
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Fully reversed (R=-1) tension-compression axial, servo-hydraulic, RT; specimen ~4.5 mm wide x 3 mm thick",
+      "results": "Small-crack growth in Paris (Stage II) regime; test stopped at 150 µm crack length",
+      "crack_initiation": "Crack started from FIB notch; most of the 3D crack surface lies close to {111} slip planes even in Stage II, with some {100} facets - local Mode II (shear) growth dominates",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-crack",
+      "plasma-FIB",
+      "small-crack",
+      "crystallography",
+      "grain-scale"
+    ],
+    "notes": "Raw 3D EBSD volume not released; only manuscript + video.",
+    "id": "ebsd-tmw4m3-pfib-fatigue-crack-nishikawa",
+    "title": "Ni-Co superalloy TMW-4M3: PFIB-SEM 3D EBSD of an entire microstructurally small fatigue crack",
+    "material_class": "Ni superalloy",
+    "material": "TMW-4M3 forged Ni-Co-based disk superalloy",
+    "data_availability": {
+      "status": "Partially public",
+      "repository": "NIMS Materials Data Repository (MDR)",
+      "url": "https://mdr.nims.go.jp/datasets/a89c8169-b6e5-49fa-bfb7-d66d9b237680",
+      "doi": "10.48505/nims.4288",
+      "size": "42.4 MB (accepted manuscript + 3D crack video; no raw volume)",
+      "format": "PDF, MOV",
+      "license": "CC BY-NC-ND 4.0"
+    },
+    "references": [
+      {
+        "citation": "Nishikawa H., Furuya Y., Osada T., Kawagishi K., Hara T., Three-dimensional high-resolution crystallographic observation of the entire volume of microstructurally small fatigue cracks in Ni-Co based superalloy, Scripta Materialia 222 (2022) 115026",
+        "doi": "10.1016/j.scriptamat.2022.115026",
+        "url": "https://mdr.nims.go.jp/datasets/a89c8169-b6e5-49fa-bfb7-d66d9b237680"
+      }
+    ],
+    "fatigue_initiation_relevance": "High"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "Wrought",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": "Polished"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Institut Pprime (Univ. Poitiers): serial sectioning + SEM/EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "Region around observed cracks; 3D mesh of 386 grains",
+      "in_situ": false,
+      "notes": "Real 3D microstructure meshed for crystal plasticity FE."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "twins",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "LCF",
+      "loading": "Tension-compression at constant plastic strain amplitude, RT, air; stopped at 5000 cycles (~20% of life)",
+      "results": "Microcracks characterized at ~20% life",
+      "crack_initiation": "Surface microcracks at slip bands; CPFE on the reconstructed 3D aggregate shows more intense plastic slip in grains where cracks were observed; role of local crystallographic configuration (neighbour grains, twins) assessed",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-initiation",
+      "crystal-plasticity",
+      "grain-scale",
+      "stainless-steel",
+      "LCF"
+    ],
+    "notes": "Plastic strain amplitude value and sectioning parameters not verified from full text.",
+    "id": "ebsd-316ln-lcf-signor-serial-sectioning-cpfe",
+    "title": "316LN/316L LCF microcrack initiation: serial-sectioning 3D EBSD of crack sites (386 grains) + CPFE",
+    "material_class": "Steel",
+    "material": "316LN austenitic stainless steel (also 316L in 2014 proceedings)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://researchportal.ip-paris.fr/en/publications/influence-of-local-crystallographic-configuration-on-microcrack-i/",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Signor L., Villechaise P., Ghidossi T., Lacoste E., Gueguen M., Courtin S., Influence of local crystallographic configuration on microcrack initiation in fatigued 316LN stainless steel: Experiments and crystal plasticity finite elements simulations, Mater. Sci. Eng. A 649 (2016) 239-249",
+        "doi": "10.1016/j.msea.2015.09.119",
+        "url": "https://researchportal.ip-paris.fr/en/publications/influence-of-local-crystallographic-configuration-on-microcrack-i/"
+      },
+      {
+        "citation": "Signor L., Lacoste E., Villechaise P., Ghidossi T., Courtin S., Plastic slip and early stage of fatigue damage in polycrystals: Comparison between experiments and crystal plasticity finite elements simulations, Advanced Materials Research 891-892 (2014) 1711-1716",
+        "doi": "10.4028/www.scientific.net/AMR.891-892.1711",
+        "url": "https://researchportal.ip-paris.fr/en/publications/plastic-slip-and-early-stage-of-fatigue-damage-in-polycrystals-co/"
+      }
+    ],
+    "fatigue_initiation_relevance": "High"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "Synchrotron CT",
+      "Phase-contrast CT",
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "ESRF ID19 (in-situ fatigue microtomography) + subsequent 3D EBSD volume",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": true,
+      "notes": "Phase + absorption contrast to see two-phase microstructure and crack chronology."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "alpha lamellae + beta; prior beta grains"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "in-situ",
+      "loading": "In-situ fatigue at ESRF ID19 (loading details not verified)",
+      "results": "3D crack-front evolution recorded",
+      "crack_initiation": "Near-surface crack crossing prior-beta GB is diverted/bifurcated (local retardation, first-order crack-front undulation); large misorientation between alpha lamellae favourable for prismatic <a> or pyramidal <c+a> slip deflects the crack (second-order undulation)",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-crack",
+      "in-situ",
+      "titanium",
+      "correlative",
+      "short-crack"
+    ],
+    "notes": "3D EBSD sectioning method (FIB vs mechanical) not verified.",
+    "id": "ebsd-ti6246-fatigue-crack-birosca",
+    "title": "Ti-6246 short fatigue crack: in-situ synchrotron microtomography (ESRF ID19) + post-mortem 3D EBSD of crack path",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-2Sn-4Zr-6Mo (Ti-6246), lamellar/duplex",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://cronfa.swansea.ac.uk/Record/cronfa11870/Details",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Birosca S., Buffiere J.Y., Garcia-Pastor F.A., Karadge M., Babout L., Preuss M., Three-dimensional characterization of fatigue cracks in Ti-6246 using X-ray tomography and electron backscatter diffraction, Acta Materialia 57 (2009) 5834-5847",
+        "doi": "10.1016/j.actamat.2009.08.009",
+        "url": "https://cronfa.swansea.ac.uk/Record/cronfa11870/Details"
+      }
+    ],
+    "fatigue_initiation_relevance": "High"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "FIB-SEM 3D EBSD (Nippon Steel group; instrument not stated)",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "cracks"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "BCC ferrite"
+    },
+    "defects": {
+      "types": [
+        "cracks"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "Cyclic loading to produce non-propagating crack (details not given)",
+      "results": "Non-propagating crack at fatigue limit-type condition",
+      "crack_initiation": "Crack grew on three equivalent {101} slip planes; crack tip arrested inside a grain, not at a grain boundary",
+      "initiation_tracked_in_3d": true
+    },
+    "tags": [
+      "fatigue-crack",
+      "crack-arrest",
+      "steel",
+      "FIB"
+    ],
+    "notes": "Conference abstract only; no journal version located.",
+    "id": "ebsd-ferritic-steel-fatigue-crack-tip-kikuzuki",
+    "title": "Ferritic model steel: FIB-SEM 3D EBSD around a non-propagating fatigue crack tip",
+    "material_class": "Steel",
+    "material": "Ferritic model steel",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/D8CC78D3AF033287852584AB0030ABAA",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Kikuzuki M., Kato T., Makino T., Kimura Y., Three-dimensional Electron Backscatter Diffraction Analysis of Fatigue Crack Propagation in Steel, 3DMS 2021 abstract",
+        "doi": null,
+        "url": "https://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/D8CC78D3AF033287852584AB0030ABAA"
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  },
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "C": 0.17,
+        "Mn": 1.63,
+        "Si": 0.28,
+        "Al": 0.036,
+        "P": 0.0021,
+        "S": 0.0038,
+        "N": 0.0025,
+        "Fe": "bal."
+      },
+      "notes": ""
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Hot press austenitization + deformation; large-strain warm flat compression at 550 °C (total strain 1.6) -> UFG ferrite/cementite",
+      "heat_treatment": "2 h at 550 °C; short intercritical anneal at 730 °C (24 vol% martensite) or 750 °C (38 vol% martensite) + quench",
+      "surface_condition": "Polished"
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "MPIE Zeiss CrossBeam XB1540 FIB-SEM + EDAX-TSL EBSD",
+      "voxel_size_um": 0.1,
+      "volume_dimensions": "20 x 20 µm scans, 42 slices at 100 nm (100 nm step), ~23 h",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "Ferrite 1.4 µm (730-DP), 1.2 µm (750-DP)",
+      "texture": "",
+      "phases": "ferrite + martensite (24 or 38 vol%)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": 1003,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": "UTS 1003 MPa for 750-DP, ~100 MPa above 730-DP"
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "dual-phase",
+      "GND",
+      "grain-scale",
+      "FIB"
+    ],
+    "notes": "Not a fatigue study; GND fields relevant to ferrite/martensite interface damage.",
+    "id": "ebsd-dp-steel-calcagnotto-fib-3debsd",
+    "title": "Ultrafine-grained dual-phase steel: FIB 3D EBSD of GND/orientation gradients at ferrite-martensite interfaces",
+    "material_class": "Steel",
+    "material": "Ultrafine-grained ferrite/martensite dual-phase steel (0.17C-1.63Mn)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://www.dierk-raabe.com/app/download/5803583940/Mater_Science_Engin_A+527+%282010%29+2738.pdf",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Calcagnotto M., Ponge D., Demir E., Raabe D., Orientation gradients and geometrically necessary dislocations in ultrafine grained dual-phase steels studied by 2D and 3D EBSD, Mater. Sci. Eng. A 527 (2010) 2738-2746",
+        "doi": "10.1016/j.msea.2010.01.004",
+        "url": "https://www.dierk-raabe.com/app/download/5803583940/Mater_Science_Engin_A+527+%282010%29+2738.pdf"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF (unverified)",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "MPIE ELAVO 3D (SEM + automated mechanical serial polishing + EBSD)",
+      "voxel_size_um": null,
+      "volume_dimensions": "Large volume (exact size not verified)",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "Textures associated with 'tree-like' grain morphologies not visible in 2D",
+      "phases": "FCC austenite"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "grain-scale",
+      "stainless-steel",
+      "mechanical-serial-sectioning"
+    ],
+    "notes": "Process parameters and volume not verified (full text not accessible).",
+    "id": "ebsd-316l-am-elavo-sun",
+    "title": "L-PBF 316L: large-volume automated serial-polishing 3D EBSD (MPIE ELAVO 3D) revealing tree-like grains",
+    "material_class": "Steel",
+    "material": "316L stainless steel (additively manufactured)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://oar.a-star.edu.sg/communities-collections/articles/20083",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": "Article CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Sun Z., Tsai S.-P., Konijnenberg P., Wang J.-Y., Zaefferer S., A large-volume 3D EBSD study on additively manufactured 316L stainless steel, Scripta Materialia 238 (2024) 115723",
+        "doi": "10.1016/j.scriptamat.2023.115723",
+        "url": "https://oar.a-star.edu.sg/communities-collections/articles/20083"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF",
+      "parameters": "",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Naval Research Laboratory serial sectioning (BSE + EBSD per slice)",
+      "voxel_size_um": null,
+      "volume_dimensions": "ROI > 1 mm; alignment error ~0-3 µm",
+      "in_situ": false,
+      "notes": "Distorted EBSD maps warped onto high-fidelity BSE stack."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "FCC"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "multimodal",
+      "methods"
+    ],
+    "notes": "",
+    "id": "ebsd-316l-lpbf-nguyen-rowenhorst-fusion",
+    "title": "L-PBF 316L: NRL multimodal (BSE + EBSD) mechanical serial sectioning with warping-based data fusion",
+    "material_class": "Steel",
+    "material": "316L stainless steel (L-PBF)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://link.springer.com/10.1007/s11837-021-04865-x",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Nguyen L.T., Rowenhorst D.J., The Alignment and Fusion of Multimodal 3D Serial Sectioning Datasets, JOM 73 (2021) 3272-3284",
+        "doi": "10.1007/s11837-021-04865-x",
+        "url": "https://link.springer.com/10.1007/s11837-021-04865-x"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": null,
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Naval Research Laboratory serial sectioning + EBSD",
+      "voxel_size_um": null,
+      "volume_dimensions": "",
+      "in_situ": false,
+      "notes": ""
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "BCC beta"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "titanium",
+      "grain-topology",
+      "image-based-FE"
+    ],
+    "notes": "Sectioning parameters not verified.",
+    "id": "ebsd-ti21s-rowenhorst-beta-grains",
+    "title": "Beta-Ti alloy Ti-21S: NRL mechanical serial-sectioning 3D EBSD of recrystallized beta grains (topology, curvature, image-based FE)",
+    "material_class": "Ti alloy",
+    "material": "Ti-21S (beta-stabilized Ti alloy, fully recrystallized)",
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": null,
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Rowenhorst D.J., Lewis A.C., Spanos G., Three-dimensional analysis of grain topology and interface curvature in a beta-titanium alloy, Acta Materialia 58 (2010) 5511-5519",
+        "doi": "10.1016/j.actamat.2010.06.030",
+        "url": null
+      },
+      {
+        "citation": "Rowenhorst D., Lewis A., Spanos G., Grain Boundary Curvature Analysis of beta-Grains in Ti-21S, Microscopy and Microanalysis 15 (2009) 640-641",
+        "doi": "10.1017/s1431927609094082",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "Low"
+  },
+  {
+    "chemistry": null,
+    "processing": {
+      "route": "L-PBF (unverified)",
+      "parameters": "AM Ti cylinder with attached 1 mm Ti-ball fiducials",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "X-ray CT",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "AFRL mechanical-polish serial sectioning (optical) + 5 different XCT scans/systems",
+      "voxel_size_um": 2.8,
+      "volume_dimensions": "SS in-plane 2.8 µm, average slice 2.01 µm (z-height map provided)",
+      "in_situ": false,
+      "notes": "Registered TIF stacks of VOI for all XCT scans + SS; raw projections provided (scan E partly lost: 1329 of 3141 projections)."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": ""
+    },
+    "defects": {
+      "types": [
+        "gas pores",
+        "lack-of-fusion"
+      ],
+      "statistics": "Largest-pore centroids registered within 20-60 µm (1-3 voxels) between modalities; serial sectioning used as ground truth for XCT pore detection limits"
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "additive-manufacturing",
+      "porosity",
+      "XCT-validation",
+      "ground-truth",
+      "machine-learning-ready"
+    ],
+    "notes": "No EBSD (optical serial sectioning); included as serial-sectioning ground truth for pore detection that controls AM fatigue initiation.",
+    "id": "ebsd-ti64-am-robomet-xct-jolley",
+    "title": "AM Ti-6Al-4V: correlative multi-system XCT + optical-microscopy mechanical serial sectioning of porosity (fiducial-registered)",
+    "material_class": "Ti alloy",
+    "material": "Ti-6Al-4V (additively manufactured cylinder)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Materials Data Facility",
+      "url": "https://doi.org/10.18126/t27t-9iao",
+      "doi": "10.18126/t27t-9iao",
+      "size": null,
+      "format": "TIFF stacks, raw projections (32-bit float / 16-bit), text metadata",
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Jolley B.R., Sparkman D.M., Chapman M.G., Schwalbach E.J., Uchic M.D., Correlative X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data of Additive Manufactured Ti-6Al-4V, IMMI 13 (2024) 746-757",
+        "doi": "10.1007/s40192-024-00367-1",
+        "url": null
+      },
+      {
+        "citation": "Sparkman D., Jolley B., Schwalbach E., Knott C., Uchic M., Chapman M., Spatial Registration of X-ray Computed Tomography and Optical Microscopy Serial Sectioning Data, ASNT Research Symposium 2023",
+        "doi": "10.32548/rs.2023.084",
+        "url": null
+      }
+    ],
+    "fatigue_initiation_relevance": "Medium"
+  }
+]
