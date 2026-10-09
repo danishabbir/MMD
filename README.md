@@ -85,6 +85,8 @@ Card thumbnails are schematic renderings (grain maps for diffraction/EBSD record
 
 ## Data quality notes
 
+- `docs/ACCESS.md` (regenerate with `python3 scripts/access_report.py`) lists which records need a data request from the authors and which cite paywalled papers. Paper access is taken from OpenAlex.
+
 - Every value was taken from a source the curator opened: a paper, abstract, dataset landing page or repository API. Unknown values are `null`. Values that could not be confirmed are marked `(unverified)`.
 - Many publisher full texts were paywalled. Those records rest on abstracts and metadata only, so their acquisition or loading details may be incomplete. Check the original paper before using any number.
 - "Paper only (figures)" means no public 3D volume was found. The authors may still share data on request.
