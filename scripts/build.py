@@ -21,7 +21,7 @@ RECORDS = ROOT / "data" / "records"
 REQUIRED = ["id", "title", "material_class", "material", "techniques", "references"]
 CLASSES = {
     "Ti alloy", "Ni superalloy", "Steel", "Al alloy", "Mg alloy", "Cu alloy",
-    "Co alloy", "HEA/MPEA", "Composite", "Other",
+    "Co alloy", "Zr alloy", "Cast iron", "HEA/MPEA", "Composite", "Other",
 }
 RELEVANCE = {"High", "Medium", "Low"}
 
@@ -70,8 +70,8 @@ def validate(rec, src):
     if rel and rel not in RELEVANCE:
         problems.append(f"fatigue_initiation_relevance '{rel}' invalid")
     refs = rec.get("references") or []
-    if not any(r.get("doi") or r.get("url") for r in refs):
-        problems.append("no reference with DOI/URL")
+    if not any(r.get("doi") or r.get("url") for r in refs) and not (rec.get("data_availability") or {}).get("doi"):
+        problems.append("no reference or dataset DOI/URL")
     return [f"{src}:{rec.get('id', '?')}: {p}" for p in problems]
 
 

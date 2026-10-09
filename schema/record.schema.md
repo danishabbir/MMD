@@ -4,7 +4,7 @@
 {
   "id": "kebab-case-unique-id",
   "title": "Short descriptive title",
-  "material_class": "one of: Ti alloy | Ni superalloy | Steel | Al alloy | Mg alloy | Cu alloy | Co alloy | HEA/MPEA | Composite | Other",
+  "material_class": "one of: Ti alloy | Ni superalloy | Steel | Al alloy | Mg alloy | Cu alloy | Co alloy | Zr alloy | Cast iron | HEA/MPEA | Composite | Other",
   "material": "Alloy designation, e.g. Ti-6Al-4V (Grade 5)",
   "chemistry": {"basis": "wt% | at% | nominal", "composition": {"Al": 6.1, "V": 4.0, "Ti": "bal."}, "notes": ""},
   "processing": {

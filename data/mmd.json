@@ -1723,6 +1723,175 @@
     "source_file": "conventional_ct.json"
   },
   {
+    "id": "conv-nodular-cast-iron-crack-closure-dvc",
+    "title": "In situ synchrotron CT + DVC of 3D fatigue crack propagation and closure in nodular graphite cast iron",
+    "material_class": "Cast iron",
+    "material": "Nodular (spheroidal graphite) cast iron",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": "Grade not verified"
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "Two small-size specimens",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Synchrotron CT"
+    ],
+    "acquisition": {
+      "facility": "ESRF (beamline unverified)",
+      "voxel_size_um": null,
+      "volume_dimensions": null,
+      "in_situ": true,
+      "notes": "Graphite nodules used as natural DVC markers"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "phases",
+        "cracks",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Ferritic/pearlitic matrix + graphite nodules (matrix not verified)"
+    },
+    "defects": {
+      "types": [
+        "cracks",
+        "graphite nodules"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": true,
+      "test_type": "crack growth",
+      "loading": "In situ fatigue crack propagation",
+      "results": "SIFs extracted from DVC displacement fields agree with literature; non-uniform closure along front causes asymmetric arrest/growth",
+      "crack_initiation": "Growth study (closure); not initiation",
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Paper only (figures)",
+      "repository": null,
+      "url": "https://hal.science/hal-00453971",
+      "doi": null,
+      "size": null,
+      "format": null,
+      "license": null
+    },
+    "references": [
+      {
+        "citation": "Limodin N., Rethore J., Buffiere J.-Y., Hild F., Roux S., Ludwig W., Rannou J., Gravouil A., Influence of closure on the 3D propagation of fatigue cracks in a nodular cast iron investigated by X-ray tomography and 3D volume correlation, Acta Materialia 58 (2010) 2957-2967",
+        "doi": "10.1016/j.actamat.2010.01.024",
+        "url": "https://hal.science/hal-00453971"
+      }
+    ],
+    "tags": [
+      "in-situ",
+      "DVC",
+      "cast-iron",
+      "crack-closure"
+    ],
+    "fatigue_initiation_relevance": "Medium",
+    "notes": "material_class 'Other' = cast iron. Follow-up: Liu & Hild, Eng. Fract. Mech. 296 (2024) 109824, doi 10.1016/j.engfracmech.2023.109824.",
+    "source_file": "conventional_ct.json"
+  },
+  {
+    "id": "conv-ggg40-nodular-cast-iron-microct-zenodo",
+    "title": "Nodular cast iron GGG40 lab micro-CT at 1, 3 and 11 um voxel (raw projections + reconstructions)",
+    "material_class": "Cast iron",
+    "material": "Nodular cast iron GGG40 (EN-GJS-400)",
+    "chemistry": {
+      "basis": "nominal",
+      "composition": {},
+      "notes": ""
+    },
+    "processing": {
+      "route": "Cast",
+      "parameters": "",
+      "heat_treatment": null,
+      "surface_condition": null
+    },
+    "techniques": [
+      "Micro-CT"
+    ],
+    "acquisition": {
+      "facility": "Zeiss Xradia Versa 510, UFF micro-CT facility (Brazil)",
+      "voxel_size_um": 1.0,
+      "volume_dimensions": "1024^3 reconstructions at 1, 3 and 11 um voxel",
+      "in_situ": false,
+      "notes": "160 kV, 10 W; 1600 projections (1 um) / 3200 projections (3 and 11 um)"
+    },
+    "microstructure": {
+      "features_resolved": [
+        "phases",
+        "pores"
+      ],
+      "grain_size_um": "",
+      "texture": "",
+      "phases": "Graphite nodules in iron matrix"
+    },
+    "defects": {
+      "types": [
+        "graphite nodules",
+        "pores"
+      ],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/records/3858516",
+      "doi": "10.5281/zenodo.3858516",
+      "size": "~25 GB total (8-bit zips ~0.4-0.6 GB each; .txrm/.txm raw)",
+      "format": "8-bit image zips, Zeiss .txrm projections, .txm reconstructions",
+      "license": "CC-BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Pereira A., Anflor C., Betancur A., Leiderman R., ds-uct-001: Cast Iron GGG40: X-Ray micro-CT of a nodular cast iron sample class GGG40, Zenodo (2020)",
+        "doi": "10.5281/zenodo.3858516",
+        "url": "https://zenodo.org/records/3858516"
+      }
+    ],
+    "tags": [
+      "public-data",
+      "cast-iron",
+      "multi-resolution",
+      "machine-learning-ready"
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "notes": "Useful for graphite/pore segmentation and image-based modelling; no fatigue data.",
+    "source_file": "conventional_ct.json"
+  },
+  {
     "id": "repo-nist-cocr-lpbf-xct-pores",
     "title": "High-resolution XCT (2.5 um) of L-PBF cobalt-chrome cores built with varied scan speed/hatch spacing, raw and segmented",
     "material_class": "Co alloy",
@@ -6616,260 +6785,6 @@
     "source_file": "ebsd_3d.json"
   },
   {
-    "chemistry": {
-      "basis": "wt%",
-      "composition": {
-        "Nb": 7.0,
-        "Zr": "bal."
-      },
-      "notes": "Zircaloy-4 base + 7 wt% Nb (model alloy)"
-    },
-    "processing": {
-      "route": "Rolled",
-      "parameters": "Hot rolled at 725 °C to 75% reduction",
-      "heat_treatment": "",
-      "surface_condition": ""
-    },
-    "techniques": [
-      "3D EBSD",
-      "Serial sectioning"
-    ],
-    "acquisition": {
-      "facility": "Thermo Scientific Helios Xe+ PFIB-SEM (Univ. Manchester)",
-      "voxel_size_um": null,
-      "volume_dimensions": "441 sequential slices, 0.1 µm slice thickness",
-      "in_situ": false,
-      "notes": "Custom DREAM.3D pipeline; both alpha and beta indexed."
-    },
-    "microstructure": {
-      "features_resolved": [
-        "grains",
-        "orientations",
-        "phases"
-      ],
-      "grain_size_um": "",
-      "texture": "Rolling texture (co-deformation of alpha/beta)",
-      "phases": "alpha (HCP) + beta (BCC)"
-    },
-    "defects": {
-      "types": [],
-      "statistics": ""
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": false,
-      "test_type": null,
-      "loading": null,
-      "results": null,
-      "crack_initiation": null,
-      "initiation_tracked_in_3d": false
-    },
-    "tags": [
-      "plasma-FIB",
-      "two-phase",
-      "texture"
-    ],
-    "notes": "Not a fatigue study; included as openly downloadable PFIB 3D EBSD of an HCP/BCC two-phase alloy analogous to alpha/beta Ti.",
-    "id": "ebsd-zry4-7nb-pfib-zenodo",
-    "title": "Hot-rolled Zircaloy-4 + 7 wt% Nb: PFIB 3D EBSD of alpha and beta (441 slices, 0.1 µm)",
-    "material_class": "Other",
-    "material": "Model Zircaloy-4 with 7 wt% Nb (Zr alloy)",
-    "data_availability": {
-      "status": "Public download",
-      "repository": "Zenodo",
-      "url": "https://zenodo.org/record/3785085",
-      "doi": "10.5281/zenodo.3785085",
-      "size": "13.8 GB",
-      "format": "CTF, DREAM.3D, images, .oip",
-      "license": "CC BY 4.0"
-    },
-    "references": [
-      {
-        "citation": "Daniel C.S., Garner A., Honniball P.D., Bradley L., Preuss M., Prangnell P.B., Quinta da Fonseca J., Co-deformation and dynamic annealing effects on the texture development during alpha-beta processing of a model Zr-Nb alloy, Acta Materialia 205 (2021) 116538",
-        "doi": "10.1016/j.actamat.2020.116538",
-        "url": "https://zenodo.org/record/3785085"
-      }
-    ],
-    "fatigue_initiation_relevance": "Low",
-    "source_file": "ebsd_3d.json"
-  },
-  {
-    "id": "conv-nodular-cast-iron-crack-closure-dvc",
-    "title": "In situ synchrotron CT + DVC of 3D fatigue crack propagation and closure in nodular graphite cast iron",
-    "material_class": "Other",
-    "material": "Nodular (spheroidal graphite) cast iron",
-    "chemistry": {
-      "basis": "nominal",
-      "composition": {},
-      "notes": "Grade not verified"
-    },
-    "processing": {
-      "route": "Cast",
-      "parameters": "Two small-size specimens",
-      "heat_treatment": null,
-      "surface_condition": null
-    },
-    "techniques": [
-      "Synchrotron CT"
-    ],
-    "acquisition": {
-      "facility": "ESRF (beamline unverified)",
-      "voxel_size_um": null,
-      "volume_dimensions": null,
-      "in_situ": true,
-      "notes": "Graphite nodules used as natural DVC markers"
-    },
-    "microstructure": {
-      "features_resolved": [
-        "phases",
-        "cracks",
-        "pores"
-      ],
-      "grain_size_um": "",
-      "texture": "",
-      "phases": "Ferritic/pearlitic matrix + graphite nodules (matrix not verified)"
-    },
-    "defects": {
-      "types": [
-        "cracks",
-        "graphite nodules"
-      ],
-      "statistics": ""
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": true,
-      "test_type": "crack growth",
-      "loading": "In situ fatigue crack propagation",
-      "results": "SIFs extracted from DVC displacement fields agree with literature; non-uniform closure along front causes asymmetric arrest/growth",
-      "crack_initiation": "Growth study (closure); not initiation",
-      "initiation_tracked_in_3d": false
-    },
-    "data_availability": {
-      "status": "Paper only (figures)",
-      "repository": null,
-      "url": "https://hal.science/hal-00453971",
-      "doi": null,
-      "size": null,
-      "format": null,
-      "license": null
-    },
-    "references": [
-      {
-        "citation": "Limodin N., Rethore J., Buffiere J.-Y., Hild F., Roux S., Ludwig W., Rannou J., Gravouil A., Influence of closure on the 3D propagation of fatigue cracks in a nodular cast iron investigated by X-ray tomography and 3D volume correlation, Acta Materialia 58 (2010) 2957-2967",
-        "doi": "10.1016/j.actamat.2010.01.024",
-        "url": "https://hal.science/hal-00453971"
-      }
-    ],
-    "tags": [
-      "in-situ",
-      "DVC",
-      "cast-iron",
-      "crack-closure"
-    ],
-    "fatigue_initiation_relevance": "Medium",
-    "notes": "material_class 'Other' = cast iron. Follow-up: Liu & Hild, Eng. Fract. Mech. 296 (2024) 109824, doi 10.1016/j.engfracmech.2023.109824.",
-    "source_file": "conventional_ct.json"
-  },
-  {
-    "id": "conv-ggg40-nodular-cast-iron-microct-zenodo",
-    "title": "Nodular cast iron GGG40 lab micro-CT at 1, 3 and 11 um voxel (raw projections + reconstructions)",
-    "material_class": "Other",
-    "material": "Nodular cast iron GGG40 (EN-GJS-400)",
-    "chemistry": {
-      "basis": "nominal",
-      "composition": {},
-      "notes": ""
-    },
-    "processing": {
-      "route": "Cast",
-      "parameters": "",
-      "heat_treatment": null,
-      "surface_condition": null
-    },
-    "techniques": [
-      "Micro-CT"
-    ],
-    "acquisition": {
-      "facility": "Zeiss Xradia Versa 510, UFF micro-CT facility (Brazil)",
-      "voxel_size_um": 1.0,
-      "volume_dimensions": "1024^3 reconstructions at 1, 3 and 11 um voxel",
-      "in_situ": false,
-      "notes": "160 kV, 10 W; 1600 projections (1 um) / 3200 projections (3 and 11 um)"
-    },
-    "microstructure": {
-      "features_resolved": [
-        "phases",
-        "pores"
-      ],
-      "grain_size_um": "",
-      "texture": "",
-      "phases": "Graphite nodules in iron matrix"
-    },
-    "defects": {
-      "types": [
-        "graphite nodules",
-        "pores"
-      ],
-      "statistics": ""
-    },
-    "mechanical_properties": {
-      "yield_strength_MPa": null,
-      "uts_MPa": null,
-      "elongation_pct": null,
-      "hardness": null,
-      "modulus_GPa": null,
-      "other": ""
-    },
-    "fatigue": {
-      "tested": false,
-      "test_type": null,
-      "loading": null,
-      "results": null,
-      "crack_initiation": null,
-      "initiation_tracked_in_3d": false
-    },
-    "data_availability": {
-      "status": "Public download",
-      "repository": "Zenodo",
-      "url": "https://zenodo.org/records/3858516",
-      "doi": "10.5281/zenodo.3858516",
-      "size": "~25 GB total (8-bit zips ~0.4-0.6 GB each; .txrm/.txm raw)",
-      "format": "8-bit image zips, Zeiss .txrm projections, .txm reconstructions",
-      "license": "CC-BY 4.0"
-    },
-    "references": [
-      {
-        "citation": "Pereira A., Anflor C., Betancur A., Leiderman R., ds-uct-001: Cast Iron GGG40: X-Ray micro-CT of a nodular cast iron sample class GGG40, Zenodo (2020)",
-        "doi": "10.5281/zenodo.3858516",
-        "url": "https://zenodo.org/records/3858516"
-      }
-    ],
-    "tags": [
-      "public-data",
-      "cast-iron",
-      "multi-resolution",
-      "machine-learning-ready"
-    ],
-    "fatigue_initiation_relevance": "Low",
-    "notes": "Useful for graphite/pore segmentation and image-based modelling; no fatigue data.",
-    "source_file": "conventional_ct.json"
-  },
-  {
     "id": "repo-esrf-dct-microtexture-hcf-gnn",
     "title": "Ex-situ DCT + phase-contrast tomography before/after fatigue on eight specimens for graph-neural-network HCF damage prediction (ESRF ID11, HC-4983)",
     "material_class": "Other",
@@ -10554,5 +10469,90 @@
     "fatigue_initiation_relevance": "Medium",
     "notes": "",
     "source_file": "repository_sweep.json"
+  },
+  {
+    "chemistry": {
+      "basis": "wt%",
+      "composition": {
+        "Nb": 7.0,
+        "Zr": "bal."
+      },
+      "notes": "Zircaloy-4 base + 7 wt% Nb (model alloy)"
+    },
+    "processing": {
+      "route": "Rolled",
+      "parameters": "Hot rolled at 725 °C to 75% reduction",
+      "heat_treatment": "",
+      "surface_condition": ""
+    },
+    "techniques": [
+      "3D EBSD",
+      "Serial sectioning"
+    ],
+    "acquisition": {
+      "facility": "Thermo Scientific Helios Xe+ PFIB-SEM (Univ. Manchester)",
+      "voxel_size_um": null,
+      "volume_dimensions": "441 sequential slices, 0.1 µm slice thickness",
+      "in_situ": false,
+      "notes": "Custom DREAM.3D pipeline; both alpha and beta indexed."
+    },
+    "microstructure": {
+      "features_resolved": [
+        "grains",
+        "orientations",
+        "phases"
+      ],
+      "grain_size_um": "",
+      "texture": "Rolling texture (co-deformation of alpha/beta)",
+      "phases": "alpha (HCP) + beta (BCC)"
+    },
+    "defects": {
+      "types": [],
+      "statistics": ""
+    },
+    "mechanical_properties": {
+      "yield_strength_MPa": null,
+      "uts_MPa": null,
+      "elongation_pct": null,
+      "hardness": null,
+      "modulus_GPa": null,
+      "other": ""
+    },
+    "fatigue": {
+      "tested": false,
+      "test_type": null,
+      "loading": null,
+      "results": null,
+      "crack_initiation": null,
+      "initiation_tracked_in_3d": false
+    },
+    "tags": [
+      "plasma-FIB",
+      "two-phase",
+      "texture"
+    ],
+    "notes": "Not a fatigue study; included as openly downloadable PFIB 3D EBSD of an HCP/BCC two-phase alloy analogous to alpha/beta Ti.",
+    "id": "ebsd-zry4-7nb-pfib-zenodo",
+    "title": "Hot-rolled Zircaloy-4 + 7 wt% Nb: PFIB 3D EBSD of alpha and beta (441 slices, 0.1 µm)",
+    "material_class": "Zr alloy",
+    "material": "Model Zircaloy-4 with 7 wt% Nb (Zr alloy)",
+    "data_availability": {
+      "status": "Public download",
+      "repository": "Zenodo",
+      "url": "https://zenodo.org/record/3785085",
+      "doi": "10.5281/zenodo.3785085",
+      "size": "13.8 GB",
+      "format": "CTF, DREAM.3D, images, .oip",
+      "license": "CC BY 4.0"
+    },
+    "references": [
+      {
+        "citation": "Daniel C.S., Garner A., Honniball P.D., Bradley L., Preuss M., Prangnell P.B., Quinta da Fonseca J., Co-deformation and dynamic annealing effects on the texture development during alpha-beta processing of a model Zr-Nb alloy, Acta Materialia 205 (2021) 116538",
+        "doi": "10.1016/j.actamat.2020.116538",
+        "url": "https://zenodo.org/record/3785085"
+      }
+    ],
+    "fatigue_initiation_relevance": "Low",
+    "source_file": "ebsd_3d.json"
   }
 ]

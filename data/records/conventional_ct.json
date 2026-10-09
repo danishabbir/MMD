@@ -1376,7 +1376,7 @@
   {
     "id": "conv-nodular-cast-iron-crack-closure-dvc",
     "title": "In situ synchrotron CT + DVC of 3D fatigue crack propagation and closure in nodular graphite cast iron",
-    "material_class": "Other",
+    "material_class": "Cast iron",
     "material": "Nodular (spheroidal graphite) cast iron",
     "chemistry": {
       "basis": "nominal",
@@ -1460,7 +1460,7 @@
   {
     "id": "conv-ggg40-nodular-cast-iron-microct-zenodo",
     "title": "Nodular cast iron GGG40 lab micro-CT at 1, 3 and 11 um voxel (raw projections + reconstructions)",
-    "material_class": "Other",
+    "material_class": "Cast iron",
     "material": "Nodular cast iron GGG40 (EN-GJS-400)",
     "chemistry": {
       "basis": "nominal",
