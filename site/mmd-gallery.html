@@ -1,0 +1,450 @@
+<title>Material Microstructure Dataset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: specimen-catalogue tool — filter rail on the left, specimen cards right, detail sheet slides over. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #15202b;
+  --muted: #5b6876;
+  --rule: #d7dde4;
+  --accent: #1f4fd1;
+  --accent-soft: #e3e9fb;
+  --hot: #b4235a;
+  --hot-soft: #f8e1ea;
+  --ok: #1d7a4c;
+  --ok-soft: #dff1e7;
+  --warn: #8a5a00;
+  --warn-soft: #f6ecd4;
+  --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f151b; --surface: #17202a; --ink: #e4eaf0; --muted: #94a3b2; --rule: #2a3643;
+    --accent: #86a6ff; --accent-soft: #1d2a4d; --hot: #f07aa6; --hot-soft: #3d1a29;
+    --ok: #6fd3a0; --ok-soft: #133024; --warn: #e6b65c; --warn-soft: #3a2c10;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f151b; --surface: #17202a; --ink: #e4eaf0; --muted: #94a3b2; --rule: #2a3643;
+  --accent: #86a6ff; --accent-soft: #1d2a4d; --hot: #f07aa6; --hot-soft: #3d1a29;
+  --ok: #6fd3a0; --ok-soft: #133024; --warn: #e6b65c; --warn-soft: #3a2c10;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.wrap { max-width: 1400px; margin: 0 auto; padding-inline: 20px; padding-block: 24px 48px; }
+header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+.brand h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1; letter-spacing: .01em; margin: 0; text-wrap: balance; }
+.brand p { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
+.tally { display: flex; gap: 22px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.tally div { display: grid; }
+.tally b { font-family: var(--font-display); font-size: 28px; line-height: 1; font-weight: 600; }
+.tally span { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+
+.mix { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 16px 0 4px; background: var(--rule); }
+.mix i { display: block; height: 100%; }
+.mix-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--muted); }
+.mix-legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; background: var(--c); }
+
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 28px; margin-top: 22px; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+
+aside.filters { display: grid; gap: 18px; align-content: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+@media (max-width: 860px) { aside.filters { position: static; } }
+#fwrap > summary { display: none; }
+.fbody { display: grid; gap: 18px; }
+@media (max-width: 860px) {
+  #fwrap > summary { display: list-item; cursor: pointer; font-weight: 700; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  #fwrap[open] > summary { margin-bottom: 14px; }
+}
+.fgroup h2 { font-family: var(--font-body); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 7px; }
+#q { width: 100%; padding: 9px 11px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--rule); background: var(--surface); border-radius: 999px; padding: 3px 10px; font-size: 13px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip small { color: inherit; opacity: .65; font-variant-numeric: tabular-nums; margin-left: 3px; }
+.toggle { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.reset { justify-self: start; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; text-decoration: underline; font-size: 13px; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.bar .count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar select { padding: 6px 8px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface); padding: 6px 12px; cursor: pointer; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; cursor: pointer; text-align: left; padding: 0; transition: border-color .15s, transform .15s; }
+.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .card, .card:hover { transition: none; transform: none; } }
+.thumb { position: relative; aspect-ratio: 16 / 7; max-width: 100%; background: var(--rule); }
+.thumb canvas { width: 100%; height: 100%; display: block; }
+.thumb .tech { position: absolute; left: 8px; bottom: 8px; font-family: var(--font-data); font-size: 11px; background: rgba(10, 14, 20, .72); color: #f2f5f8; padding: 2px 7px; border-radius: 3px; }
+.body { padding: 12px 14px 14px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 21px; line-height: 1.1; margin: 0; text-wrap: balance; }
+.card .sub { font-size: 13.5px; color: var(--muted); margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.props { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; font-family: var(--font-data); font-size: 12px; font-variant-numeric: tabular-nums; border-top: 1px solid var(--rule); padding-top: 8px; }
+.props div { display: grid; }
+.props span { font-family: var(--font-body); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.badges { display: flex; flex-wrap: wrap; gap: 5px; }
+.badge { font-size: 11.5px; padding: 1px 8px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.badge.hot { background: var(--hot-soft); color: var(--hot); }
+.badge.ok { background: var(--ok-soft); color: var(--ok); }
+.badge.warn { background: var(--warn-soft); color: var(--warn); }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); position: sticky; top: 0; background: var(--surface); white-space: nowrap; }
+td.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--accent-soft); }
+
+.empty { padding: 40px; text-align: center; color: var(--muted); border: 1px dashed var(--rule); border-radius: 8px; }
+
+/* Detail sheet */
+.sheet-bg { position: fixed; inset: 0; background: rgba(8, 12, 18, .45); z-index: 10; }
+.sheet { position: fixed; top: 0; right: 0; bottom: 0; width: min(760px, 100%); background: var(--bg); z-index: 11; overflow-y: auto; padding: calc(env(safe-area-inset-top, 0px) + 20px) 24px calc(env(safe-area-inset-bottom, 0px) + 40px); box-shadow: -8px 0 30px rgba(0, 0, 0, .2); }
+.sheet .close { float: right; border: 1px solid var(--rule); background: var(--surface); border-radius: 6px; padding: 4px 12px; cursor: pointer; }
+.sheet h2 { font-family: var(--font-display); font-size: 32px; line-height: 1.05; margin: 6px 0 8px; text-wrap: balance; }
+.sheet section { margin-top: 20px; }
+.sheet h4 { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--rule); }
+dl.kv { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr); gap: 6px 16px; margin: 0; }
+dl.kv dt { color: var(--muted); font-size: 13.5px; }
+dl.kv dd { margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) { dl.kv { grid-template-columns: minmax(0, 1fr); } dl.kv dd { margin-bottom: 6px; } }
+.chem { display: flex; flex-wrap: wrap; gap: 6px; font-family: var(--font-data); font-size: 13px; }
+.chem span { border: 1px solid var(--rule); background: var(--surface); padding: 2px 8px; border-radius: 4px; }
+.chem b { font-weight: 500; color: var(--accent); margin-right: 4px; }
+.callout { background: var(--hot-soft); border-radius: 6px; padding: 10px 14px; }
+.callout strong { color: var(--hot); }
+.refs { padding-left: 18px; margin: 0; display: grid; gap: 6px; }
+.note { font-size: 12.5px; color: var(--muted); }
+footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+</style>
+
+<script>window.MMD_DATA = [{"id": "dct-labdct-alcu-grain-growth-sun-2023", "title": "Lab-DCT (ZEISS Xradia 520 Versa LabDCT) time series of grain growth in Al-5wt%Cu", "material_class": "Al alloy", "material": "Al-5wt%Cu (model alloy)", "chemistry": {"basis": "wt%", "composition": {"Cu": 5, "Al": "bal."}, "notes": ""}, "processing": {"route": "", "parameters": "Sample 1.4 mm diameter x 6.5 mm", "heat_treatment": "10 cycles of 15 min anneal at 630 C in muffle furnace, air cool", "surface_condition": ""}, "techniques": ["DCT", "X-ray CT"], "acquisition": {"facility": "Lab ZEISS Xradia 520 Versa with LabDCT Pro", "voxel_size_um": 1.84, "volume_dimensions": "", "in_situ": false, "notes": "Absorption CT 80 kV/7 W, 4X, 1601 projections, 1.84 um voxel; DCT 110 kV/10 W, flat panel, helical phyllotaxis, 2900 projections. 11 time steps."}, "microstructure": {"features_resolved": ["grains", "orientations"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": false, "test_type": "", "loading": "", "results": "", "crack_initiation": "", "initiation_tracked_in_3d": false}, "data_availability": {"status": "Public download", "repository": "Materials Data Facility", "url": "https://doi.org/10.18126/5q8s-3ef9", "doi": "10.18126/5q8s-3ef9", "size": "", "format": ".dream3d", "license": ""}, "references": [{"citation": "J. Sun, J. Oddershede, J. Dake, Grain structure evolution during heat treatment of a Al-5wt%Cu alloy studied with lab-based diffraction contrast tomography (MDF, 2023)", "doi": "10.18126/5q8s-3ef9", "url": "https://doi.org/10.18126/5q8s-3ef9"}], "tags": ["lab-DCT", "grain-scale", "machine-learning-ready", "4D"], "fatigue_initiation_relevance": "Low", "notes": "No fatigue; included as a rare public lab-DCT (Xnovo/Zeiss) grain map series in DREAM.3D format.", "source_file": "diffraction_3d.json"}, {"id": "hedm-al-mg-si-liner-small-crack-spear-2014", "title": "Naturally nucleated microstructurally small fatigue cracks in Al-Mg-Si pressure-vessel liner: post-mortem NF-HEDM + CT + marker-band fractography", "material_class": "Al alloy", "material": "Al-Mg-Si alloy (thin pressure-vessel liner; 6061-type, unverified)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Liner (formed cylinder; processing in cited refs)", "parameters": "Specimens WEDM'd from cylinder, single shallow notch reducing thickness to 500 um, chemically milled + electropolished to 400 +/- 10 um gauge thickness.", "heat_treatment": "", "surface_condition": "Chemically milled and electropolished"}, "techniques": ["HEDM/3DXRD", "Synchrotron CT"], "acquisition": {"facility": "APS 1-ID (absorption tomography + near-field HEDM)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": false, "notes": "1-mm-wide strips containing dominant crack extracted for post-mortem characterization."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "", "texture": "Significant microstructural variation along cylinder", "phases": ""}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "crack growth", "loading": "Pmax 1.0 kN (~1% max principal notch strain), baseline R = 0.5 with programmed marker-band blocks (R = 0.1/0.5)", "results": "S1 failed at 280,000 cycles, S2 at 115,000 cycles (83% life difference). 3D crack growth rates from marker bands + CT showed large variation along fronts.", "crack_initiation": "Natural nucleation; dominant nucleation site identified by fractography; HEDM grain map adjacent to crack surface (Schmid factors) registered with crack.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "A.D. Spear, S.F. Li, J.F. Lind, R.M. Suter, A.R. Ingraffea, Three-dimensional characterization of microstructurally small fatigue-crack evolution using quantitative fractography combined with post-mortem X-ray tomography and high-energy X-ray diffraction microscopy, Acta Materialia 76 (2014) 413-424", "doi": "10.1016/j.actamat.2014.05.021", "url": ""}, {"citation": "A.D. Spear, J.D. Hochhalter, A.R. Cerrone, S.F. Li, J.F. Lind, R.M. Suter, A.R. Ingraffea, A method to generate conformal finite-element meshes from 3D measurements of microstructurally small fatigue-crack propagation, FFEMS 39 (2016) 737-751", "doi": "10.1111/ffe.12449", "url": ""}, {"citation": "A.D. Spear et al., 3D microscale characterization and crystal-plastic FE simulation of fatigue-crack nucleation and propagation in an aluminum alloy, MS&T 2013 proceedings", "doi": "", "url": "https://mmm.mech.utah.edu/wp-content/uploads/2016/07/Spear_etal_MST_proceedings_2013.pdf"}], "tags": ["short-crack", "HEDM", "fatigue-initiation", "grain-scale", "crystal-plasticity"], "fatigue_initiation_relevance": "High", "notes": "Task brief mentioned Al 7075; the verified sources describe an Al-Mg-Si liner alloy instead.", "source_file": "diffraction_3d.json"}, {"id": "dct-elektron21-mg-short-crack-king-2011", "title": "3D in-situ short fatigue crack growth in cast Mg alloy Elektron 21 with DCT grain mapping", "material_class": "Mg alloy", "material": "Elektron 21 (cast Mg-Nd-Gd-Zn-Zr)", "chemistry": {"basis": "nominal", "composition": {}, "notes": "Composition not extracted from the source (unverified)."}, "processing": {"route": "Cast", "parameters": "Miniature fatigue specimen.", "heat_treatment": "", "surface_condition": "FIB notches introduced in selected grains after DCT mapping."}, "techniques": ["DCT", "Synchrotron CT"], "acquisition": {"facility": "ESRF (DCT + synchrotron microtomography)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": "Interrupted in-situ fatigue cycling; notch sites chosen from DCT orientation map."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "", "texture": "", "phases": "hcp Mg"}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "Interrupted in-situ cyclic loading (details in paper)", "results": "Stage I growth predominantly on basal plane at ~4-40 nm/cycle; growth retarded in certain grains and at certain grain boundaries, interpreted with Schmid factors and Zhai-Wilkinson tilt-twist model.", "crack_initiation": "FIB notches placed in selected grains; subsequent crack-microstructure interaction resolved in 3D.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "A. King, W. Ludwig, M. Herbig, J.-Y. Buffiere, A.A. Khan, N. Stevens, T.J. Marrow, Three-dimensional in situ observations of short fatigue crack growth in magnesium, Acta Materialia 59 (2011) 6761-6771", "doi": "10.1016/j.actamat.2011.07.034", "url": "https://research.manchester.ac.uk/en/publications/three-dimensional-in-situ-observations-of-short-fatigue-crack-gro/"}], "tags": ["grain-scale", "in-situ", "short-crack", "DCT", "magnesium"], "fatigue_initiation_relevance": "High", "notes": "", "source_file": "diffraction_3d.json"}, {"id": "hedm-we43-mg-ultrasonic-crack-path-greeley-2024", "title": "3D crystallographic short-crack paths in Mg WE43 (ultrasonic VHCF) from NF-HEDM grain maps + CT fracture surfaces", "material_class": "Mg alloy", "material": "WE43 (Mg-Y-Nd-Gd-Zr), underaged", "chemistry": {"basis": "wt%", "composition": {"Y": 3.74, "Nd": 2.1, "Gd": 0.52, "Zr": 0.45, "Zn": 0.016, "Mg": "bal."}, "notes": "Supplied by Magnesium Elektron."}, "processing": {"route": "Rolled (hot rolled 26 mm plate, T5)", "parameters": "Cylindrical specimens 4 mm gauge diameter x 7.5 mm, axis // RD; foil dogbones 150 um thick.", "heat_treatment": "As-received T5 (48 h at 204 C); then solution 525 C/8 h + underaged 250 C/4 h (UA).", "surface_condition": "Electropolished; FIB notches 100 x 6 x 50 um in large high-basal-SF grains"}, "techniques": ["HEDM/3DXRD", "Synchrotron CT"], "acquisition": {"facility": "APS 1-ID (NF-HEDM 55.618 keV, 1.48 um pixel detector; FF-HEDM 200 um pixel detector; X-ray CT)", "voxel_size_um": null, "volume_dimensions": "Matchstick mounts 1 x 1 mm and 1 x 0.3 mm around fracture paths", "in_situ": false, "notes": "Post-mortem; top and bottom fracture halves co-mounted."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks", "precipitates"], "grain_size_um": "115 +/- 52", "texture": "Weak rolled basal texture (max ~2.7 MRD)", "phases": "alpha-Mg + beta', beta1, grain-boundary precipitates"}, "defects": {"types": ["cracks"], "statistics": "81 crack-grain-boundary intersections analysed across 6 crack paths."}, "mechanical_properties": {"yield_strength_MPa": 139, "uts_MPa": 235, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": "Fatigue strength at 1e9 cycles 65 MPa"}, "fatigue": {"tested": true, "test_type": "ultrasonic", "loading": "20 kHz ultrasonic; cylinders 85 MPa amplitude (fully reversed per extracted text, unverified sign), foils 60 MPa at R = 0.1; 200/9000 ms pulse/pause", "results": "Crack path character (basal intragranular, non-basal intragranular, intergranular) correlated to crystallographic/geometric parameters; dimensionality reduction improves crack path prediction.", "crack_initiation": "Controlled initiation at FIB notches in selected grains; short-crack path vs 3D grain boundaries resolved.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "On request", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "D.A. Greeley, J.F. Adams, P. Kenesei, A.D. Spear, J.E. Allison, Quantitative analysis of three-dimensional fatigue crack path selection in Mg alloy WE43 using high-energy X-ray diffraction microscopy, Fatigue & Fracture of Engineering Materials & Structures (2024)", "doi": "10.1111/ffe.14217", "url": "https://par.nsf.gov/servlets/purl/10531851"}], "tags": ["short-crack", "HEDM", "magnesium", "VHCF", "grain-scale"], "fatigue_initiation_relevance": "High", "notes": "Data availability: 'available from the corresponding author upon reasonable request'.", "source_file": "diffraction_3d.json"}, {"id": "hedm-afrl-am-challenge4-in625", "title": "AFRL AM Modeling Challenge 4: in-situ tensile NF/FF-HEDM + micro-CT of L-PBF IN625 with serial-sectioning ground truth", "material_class": "Ni superalloy", "material": "Inconel 625 (L-PBF)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "L-PBF + HIP", "parameters": "EOS M280, gas-atomized IN625 powder; parameters proprietary.", "heat_treatment": "Stress relief, HIP, then additional anneal (proprietary details).", "surface_condition": "Gold fiducials; Pt lines added after experiment"}, "techniques": ["HEDM/3DXRD", "Micro-CT", "Synchrotron CT", "Serial sectioning", "3D EBSD"], "acquisition": {"facility": "APS 1-ID-E; 71.68 keV (Re K-edge); NF detector 1.48 um pixel; FF GE detectors 200 um pixel; CT 1.172 um pixel", "voxel_size_um": 2.0, "volume_dimensions": "~540 um along tensile axis characterised; serial-sectioning data downsampled to 2 um", "in_situ": true, "notes": "Six load states; FF strain precision ~1e-4, orientation <0.05 deg; NF spatial ~2 um. Serial sectioning at ~1 um resolution (optical, BSE, EBSD)."}, "microstructure": {"features_resolved": ["grains", "orientations", "twins"], "grain_size_um": "", "texture": "", "phases": "gamma (fcc)"}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": "Tested to ~0.7% plastic strain; macroscopic stress-strain via DIC."}, "fatigue": {"tested": false, "test_type": "", "loading": "Uniaxial tension, displacement control", "results": "28 grains' grain-averaged elastic strain tensors used as modeling challenge targets.", "crack_initiation": "", "initiation_tracked_in_3d": false}, "data_availability": {"status": "Public download", "repository": "Materials Data Facility", "url": "https://doi.org/10.18126/k5r2-32iu", "doi": "10.18126/k5r2-32iu", "size": "", "format": "HEDM reductions, CT, serial-sectioning reconstructions (DREAM.3D/HDF5, unverified)", "license": ""}, "references": [{"citation": "D.B. Menasche, W.D. Musinski, M. Obstalecki, M.N. Shah, S.P. Donegan, J.V. Bernier, P. Kenesei, J.-S. Park, P.A. Shade, AFRL Additive Manufacturing Modeling Series: Challenge 4, In situ mechanical test of an IN625 sample with concurrent HEDM characterization, IMMI (2021)", "doi": "10.1007/s40192-021-00218-3", "url": "https://www.osti.gov/biblio/1839935"}, {"citation": "M.G. Chapman et al., AFRL AM Modeling Series: Challenge 4, 3D reconstruction of an IN625 HEDM sample using multi-modal serial sectioning, IMMI (2021)", "doi": "10.1007/s40192-021-00212-9", "url": ""}], "tags": ["additive-manufacturing", "HEDM", "benchmark", "machine-learning-ready", "AFRL", "grain-scale"], "fatigue_initiation_relevance": "Low", "notes": "Not a fatigue test but a key public AM HEDM validation dataset.", "source_file": "diffraction_3d.json"}, {"id": "dct-in718-twin-boundary-crack-jimenez-2019", "title": "Forged IN718 HCF crack initiation at coherent twin boundaries and short-crack slip transfer, in-situ DCT + PCT at ESRF ID11", "material_class": "Ni superalloy", "material": "Inconel 718 (forged, polycrystalline)", "chemistry": {"basis": "nominal", "composition": {}, "notes": "Composition not given in source."}, "processing": {"route": "Forged", "parameters": "Specimen EDM-cut, gauge length 1 mm, cross-section 0.36 mm2 (~600 um side), rotative electropolished to remove surface carbides and sharp corners.", "heat_treatment": "Precipitation strengthened (gamma', gamma'') - details not given in source.", "surface_condition": "Electropolished"}, "techniques": ["DCT", "Phase-contrast CT", "Synchrotron CT"], "acquisition": {"facility": "ESRF ID11 (Nanox in-situ fatigue rig)", "voxel_size_um": null, "volume_dimensions": "Three DCT scans covering 600 um height; ~80% of sample volume indexed", "in_situ": true, "notes": "PCT every 20,000 cycles until fracture."}, "microstructure": {"features_resolved": ["grains", "orientations", "twins", "cracks"], "grain_size_um": "100 (average)", "texture": "random (equiaxed)", "phases": "gamma + gamma'/gamma'' + carbides (~2 um) + delta"}, "defects": {"types": ["cracks", "inclusions"], "statistics": "Carbides avg ~2 um"}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": "Max stress 700 MPa stated as ~2/3 of yield stress."}, "fatigue": {"tested": true, "test_type": "HCF", "loading": "Constant strain amplitude giving sigma_max = 700 MPa, R = 0.1, 25 Hz", "results": "3 surface cracks nucleated before 40,000 cycles; two merged; fracture after 108,000 cycles.", "crack_initiation": "Cracks nucleated along the longest coherent twin boundaries at the surface that were well oriented for slip and had large elastic incompatibility; short-crack paths followed easy slip-transfer paths across grain boundaries. Initiation sites located in the 3D DCT map.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "M. Jimenez, W. Ludwig, D. Gonzalez, J.M. Molina-Aldareguia, The role of slip transfer at grain boundaries in the propagation of microstructurally short fatigue cracks in Ni-based superalloys, Scripta Materialia (2019)", "doi": "10.1016/j.scriptamat.2018.11.008", "url": "https://arxiv.org/abs/1811.10540"}], "tags": ["fatigue-initiation", "twin-boundary", "grain-scale", "in-situ", "DCT", "short-crack"], "fatigue_initiation_relevance": "High", "notes": "", "source_file": "diffraction_3d.json"}, {"id": "hedm-am-in718-crack-closure-ravi-2021", "title": "AM IN718 naturally occurring small fatigue crack: crack closure resolved grain-by-grain with in-situ HEDM", "material_class": "Ni superalloy", "material": "Inconel 718, additively manufactured", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Additive manufacturing (process not verified)", "parameters": "", "heat_treatment": "", "surface_condition": ""}, "techniques": ["HEDM/3DXRD", "Synchrotron CT"], "acquisition": {"facility": "Advanced Photon Source (beamline unverified)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": ""}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "crack growth", "loading": "In-situ cyclic loading, scans through load cycle", "results": "Crack closure spatially heterogeneous; governed by local stress state (compression-to-tension reversal) of 12 crack-tip grains; Mode I normal stress correlated with earlier opening; diffraction spot spreading quantified lattice distortion.", "crack_initiation": "Naturally occurring tortuous 3D microstructurally small crack.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "P. Ravi, D. Naragani, P. Kenesei, J.-S. Park, M.D. Sangid, Direct observations and characterization of crack closure during microstructurally small fatigue crack growth via in-situ high-energy X-ray characterization, Acta Materialia 205 (2021) 116564", "doi": "10.1016/j.actamat.2020.116564", "url": "https://www.osti.gov/biblio/1777368"}], "tags": ["short-crack", "additive-manufacturing", "HEDM", "crack-closure", "in-situ"], "fatigue_initiation_relevance": "Medium", "notes": "", "source_file": "diffraction_3d.json"}, {"id": "hedm-am-in718-crack-initiation-prithivirajan-2021", "title": "AM IN718: crack-initiation site from in-situ HEDM/tomography compared one-to-one with CPFE predictions", "material_class": "Ni superalloy", "material": "Inconel 718, additively manufactured", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Additive manufacturing (L-PBF, unverified)", "parameters": "", "heat_treatment": "", "surface_condition": ""}, "techniques": ["HEDM/3DXRD", "Synchrotron CT"], "acquisition": {"facility": "High-energy synchrotron (APS, unverified)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": ""}, "microstructure": {"features_resolved": ["grains", "orientations", "twins", "cracks"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "In-situ cyclic loading (details in paper)", "results": "CPFE failure metrics (plastic strain accumulation, plastic strain energy density) extreme values matched observed crack-initiation location one-to-one for models with statistical twin instantiations.", "crack_initiation": "Experimentally observed microstructure-sensitive crack initiation site located in 3D and compared to simulation; twins important.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "V. Prithivirajan, P. Ravi, D. Naragani, M.D. Sangid, Direct comparison of microstructure-sensitive fatigue crack initiation via crystal plasticity simulations and in situ high-energy X-ray experiments, Materials & Design 197 (2021) 109216", "doi": "10.1016/j.matdes.2020.109216", "url": "https://doi.org/10.1016/j.matdes.2020.109216"}], "tags": ["fatigue-initiation", "additive-manufacturing", "HEDM", "twin-boundary", "crystal-plasticity"], "fatigue_initiation_relevance": "High", "notes": "Open access (Elsevier). Possibly same experimental campaign as Ravi et al. 2021 (unverified).", "source_file": "diffraction_3d.json"}, {"id": "hedm-lshr-fib-notch-small-crack-afrl-menasche", "title": "AFRL LSHR 4D microstructurally small crack growth from FIB notch: NF/FF-HEDM + micro-CT with U-Net crack segmentation", "material_class": "Ni superalloy", "material": "LSHR (low solvus, high refractory) Ni-base superalloy", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Powder metallurgy (LSHR; unverified for this specimen)", "parameters": "", "heat_treatment": "", "surface_condition": "FIB notch 80 um long x 40 um deep"}, "techniques": ["HEDM/3DXRD", "Micro-CT", "Synchrotron CT"], "acquisition": {"facility": "Advanced Photon Source 1-ID (unverified)", "voxel_size_um": null, "volume_dimensions": "Specimen cross-section 1 mm x 1 mm", "in_situ": true, "notes": "Micro-CT at cycle counts up to 9500 segmented with U-Net CNN; NF- and FF-HEDM co-registered with CT in common 3D frame."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "Stress controlled, R = 0.05, sigma_max = 1000 MPa, room temperature", "results": "Crack initiated from notch after ~3000 cycles; tracked to 9500 cycles. Initial correlation of faster growth on {111}, not generalizable; sub-grain deformation domains from NF-HEDM reorientation; CPFE model validated.", "crack_initiation": "From FIB notch; sub-grain crack path, crack plane crystallography and local growth rate mapped in 3D.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "D.B. Menasche, P.A. Shade, P. Kenesei, J.-S. Park, W.D. Musinski, Four-dimensional microstructurally small fatigue crack growth in cyclically loaded nickel superalloy specimen, International Journal of Fatigue (2023) 107920", "doi": "10.1016/j.ijfatigue.2023.107920", "url": ""}, {"citation": "D.B. Menasche, P.A. Shade, S. Safriet, P. Kenesei, J.-S. Park, W.D. Musinski, Deep learning approaches to semantic segmentation of fatigue cracking within cyclically loaded nickel superalloy, Computational Materials Science 198 (2021) 110683", "doi": "10.1016/j.commatsci.2021.110683", "url": ""}, {"citation": "W. Musinski, D. Menasche, P. Shade, Examining sub-grain driving forces for small crack growth, ICF15 extended abstract (2023)", "doi": "", "url": "https://icf15.gatech.edu/wp-content/uploads/wpforms/15-49a16528d8ee19b9952d40c7c036ea38/ICF15_Ext-Abs_Musinski-98418180441d64db64ec48ac64c924dd.pdf"}], "tags": ["short-crack", "HEDM", "in-situ", "machine-learning-ready", "grain-scale", "AFRL"], "fatigue_initiation_relevance": "High", "notes": "Experimental details from ICF15 extended abstract; that the IJF 2023 and CMS 2021 papers describe the same specimen is likely but (unverified).", "source_file": "diffraction_3d.json"}, {"id": "hedm-dct-dfxm-lshr-twin-boundary-gustafson-2020", "title": "Multi-scale X-ray (NF/FF-HEDM, DCT, DFXM) quantification of stress gradients at a twin boundary in cyclically loaded LSHR", "material_class": "Ni superalloy", "material": "LSHR (low solvus, high refractory) powder-metallurgy Ni-base superalloy", "chemistry": {"basis": "nominal", "composition": {}, "notes": "13-element alloy; composition not tabulated in extracted text."}, "processing": {"route": "Powder metallurgy + isothermal forging", "parameters": "mm-sized EDM specimen; afterwards a column (radius 50 um, height 200 um) extracted by FIB around the grain of interest for ESRF measurements.", "heat_treatment": "Supersolvus 1 h at 1171 C; aged 855 C/4 h + 775 C/8 h; air cooled.", "surface_condition": ""}, "techniques": ["HEDM/3DXRD", "DCT", "DFXM"], "acquisition": {"facility": "CHESS F2 (NF/FF-HEDM, 61.332 keV, RAMS2 load frame) + ESRF ID06 (DCT 1.24 um pixel; DFXM 33 keV)", "voxel_size_um": 2.0, "volume_dimensions": "", "in_situ": true, "notes": "NF-HEDM 2 um voxel spacing, <0.1 deg angular resolution; FF-HEDM orientation +/-0.01 deg, strain +/-1e-4; DFXM voxel 94 nm x 300 nm x 1 um, orientation 0.0057 deg, strain 1e-4."}, "microstructure": {"features_resolved": ["grains", "orientations", "twins"], "grain_size_um": "~65 (average)", "texture": "little to no texture", "phases": "gamma + gamma'"}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "LCF", "loading": "Pre-strained to 1% then displacement-controlled cycling at RT for 1000 cycles; data at cycles 1, 10, 1000.", "results": "Residual stress gradient ~400 MPa over 30 um on (220) planes near a coherent twin boundary; CP-FFT reproduced gradient only when twin included.", "crack_initiation": "Pre-initiation study: identified via HEDM a grain with strong plastic localization adjacent to a coherent twin boundary (precursor to fatigue crack initiation); no crack observed.", "initiation_tracked_in_3d": false}, "data_availability": {"status": "On request", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "S. Gustafson, W. Ludwig, P. Shade, D. Naragani, D. Pagan, P. Cook, C. Yildirim, C. Detlefs, M.D. Sangid, Quantifying microscale drivers for fatigue failure via coupled synchrotron X-ray characterization and simulations, Nature Communications 11 (2020) 3189", "doi": "10.1038/s41467-020-16894-2", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7314802"}, {"citation": "CHESS science highlight: X-rays quantify stress gradients at twin boundaries", "doi": "", "url": "https://www.chess.cornell.edu/node/1300"}], "tags": ["twin-boundary", "grain-scale", "in-situ", "HEDM", "DFXM", "DCT", "fatigue-initiation"], "fatigue_initiation_relevance": "High", "notes": "Data availability statement: 'available upon reasonable request to the corresponding author'. HEXRD software at https://github.com/HEXRD.", "source_file": "diffraction_3d.json"}, {"id": "hedm-lshr-hedm-serial-sectioning-sparks-2024", "title": "LSHR Ni superalloy HEDM volume with multi-modal serial-sectioning (EBSD, profilometry) ground truth", "material_class": "Ni superalloy", "material": "LSHR (undeformed)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "", "parameters": "", "heat_treatment": "", "surface_condition": ""}, "techniques": ["HEDM/3DXRD", "Serial sectioning", "3D EBSD"], "acquisition": {"facility": "APS (HEDM; beamline unverified) + AFRL serial sectioning", "voxel_size_um": null, "volume_dimensions": "", "in_situ": false, "notes": ""}, "microstructure": {"features_resolved": ["grains", "orientations", "twins"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": false, "test_type": "", "loading": "", "results": "", "crack_initiation": "", "initiation_tracked_in_3d": false}, "data_availability": {"status": "Public download", "repository": "Materials Data Facility", "url": "https://doi.org/10.18126/4y0p-v604", "doi": "10.18126/4y0p-v604", "size": "", "format": "Raw and processed HEDM and serial-sectioning data", "license": "CC-BY 4.0"}, "references": [{"citation": "G. Sparks, S. Mason, M.G. Chapman, J.-S. Park, H. Sharma, P. Kenesei, S.R. Niezgoda, M.J. Mills, M.D. Uchic, P.A. Shade, M. Obstalecki, Data set for '3D Reconstruction of a High-Energy Diffraction Microscopy Sample Using Multi-Modal Serial Sectioning with High-Precision EBSD and Surface Profilometry' (MDF, 2024)", "doi": "10.18126/4y0p-v604", "url": "https://doi.org/10.18126/4y0p-v604"}], "tags": ["HEDM", "benchmark", "AFRL", "machine-learning-ready", "twins"], "fatigue_initiation_relevance": "Low", "notes": "Useful for assessing HEDM fidelity on twinned superalloy microstructures (same alloy family as AFRL LSHR fatigue studies).", "source_file": "diffraction_3d.json"}, {"id": "hedm-ni-superalloy-small-crack-naragani-2019", "title": "Micromechanical state ahead of a propagating small fatigue crack in a Ni superalloy (NF/FF-HEDM + absorption CT)", "material_class": "Ni superalloy", "material": "Ni-base superalloy (designation not verified)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "", "parameters": "", "heat_treatment": "", "surface_condition": ""}, "techniques": ["HEDM/3DXRD", "Synchrotron CT"], "acquisition": {"facility": "Advanced Photon Source (beamline not verified; 1-ID likely)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": "Initial NF-HEDM grain map; cyclic loading periodically interrupted for FF-HEDM; absorption tomography for 3D crack morphology; reciprocal-space analysis of plasticizing grains."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "crack growth", "loading": "In-situ cyclic loading (details in paper)", "results": "Most active slip system (max RSS) in a grain aligns with crack growth direction; degree of microplasticity ahead of crack tip helps identify growth direction/rate.", "crack_initiation": "Nucleated crack tracked as it propagates through bulk; crack front registered with 3D grain map.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "D.P. Naragani, P.A. Shade, P. Kenesei, H. Sharma, M.D. Sangid, X-ray characterization of the micromechanical response ahead of a propagating small fatigue crack in a Ni-based superalloy, Acta Materialia 179 (2019) 342-359", "doi": "10.1016/j.actamat.2019.08.005", "url": "https://www.osti.gov/biblio/1563914"}], "tags": ["short-crack", "HEDM", "in-situ", "grain-scale"], "fatigue_initiation_relevance": "High", "notes": "", "source_file": "diffraction_3d.json"}, {"id": "dct-ni-superalloy-fib-notch-messe-2014", "title": "Fatigue crack propagation from FIB notch in a Ni superalloy studied with DCT and PCT", "material_class": "Ni superalloy", "material": "Nickel-base superalloy (designation not given in abstract)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "", "parameters": "", "heat_treatment": "", "surface_condition": "FIB-milled notch"}, "techniques": ["DCT", "Phase-contrast CT"], "acquisition": {"facility": "Synchrotron (high-energy X-rays; facility not stated in abstract - ESRF likely, unverified)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": ""}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "HCF", "loading": "Room temperature (details in paper)", "results": "Crack evolution and interaction with microstructure tracked in 4D; post-mortem work corroborated tomography.", "crack_initiation": "Crack initiated from FIB-milled notch; environment characterised in 3D.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "O.M.D.M. Messe, J. Lachambre, A. King, J.-Y. Buffiere, C.M.F. Rae, Investigation of fatigue crack propagation in nickel superalloy using diffraction contrast tomography and phase contrast tomography, Advanced Materials Research 891-892 (2014) 923-928", "doi": "10.4028/www.scientific.net/amr.891-892.923", "url": ""}], "tags": ["DCT", "short-crack", "in-situ", "grain-scale"], "fatigue_initiation_relevance": "Medium", "notes": "Only abstract-level details verified.", "source_file": "diffraction_3d.json"}, {"id": "hedm-pm-ni-inclusion-initiation-naragani-2017", "title": "Fatigue crack initiation at a seeded non-metallic inclusion in PM Ni superalloy via micro-CT + far-field HEDM", "material_class": "Ni superalloy", "material": "Powder-metallurgy Ni-base superalloy seeded with a non-metallic inclusion (designation not verified)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Powder metallurgy", "parameters": "Seeded with non-metallic inclusion.", "heat_treatment": "", "surface_condition": ""}, "techniques": ["HEDM/3DXRD", "Micro-CT", "Synchrotron CT"], "acquisition": {"facility": "Advanced Photon Source, Argonne (1-ID, unverified)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": "Scans at peak and zero applied stress during cyclic loading."}, "microstructure": {"features_resolved": ["grains", "orientations", "inclusions", "cracks"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": ["inclusions", "cracks"], "statistics": "Single seeded inclusion; morphology and position from micro-CT."}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "In-situ cyclic loading (details in paper)", "results": "Grain-averaged lattice strains of grains around the inclusion stabilise within a few cycles; EVP-FFT simulations compared.", "crack_initiation": "Crack initiation onset and location at inclusion detected by micro-CT; attributed to stress gradients from inclusion residual stress and local inclusion-matrix bonding.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "D. Naragani, M.D. Sangid, P.A. Shade, J.C. Schuren, H. Sharma, J.-S. Park, P. Kenesei, J.V. Bernier, T.J. Turner, I. Parr, Investigation of fatigue crack initiation from a non-metallic inclusion via high energy x-ray diffraction microscopy, Acta Materialia 137 (2017) 71-84", "doi": "10.1016/j.actamat.2017.07.027", "url": "https://www.osti.gov/biblio/1392597"}], "tags": ["fatigue-initiation", "inclusion", "HEDM", "in-situ", "grain-scale"], "fatigue_initiation_relevance": "High", "notes": "", "source_file": "diffraction_3d.json"}, {"id": "dct-austenitic-ss-spring8-nakai-2018", "title": "Fatigue damage (grain misorientation) and crack initiation in austenitic stainless steel tracked by DCT at SPring-8", "material_class": "Steel", "material": "Austenitic stainless steel (grade not specified in source)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Wrought (unverified)", "parameters": "Rectangular gauge 0.3 mm x 0.3 mm.", "heat_treatment": "1373 K for 0.5 h, furnace cooled", "surface_condition": ""}, "techniques": ["DCT", "Synchrotron CT"], "acquisition": {"facility": "SPring-8 BL19B2 (37 keV, Si 111 DCM; 2.7 um effective pixel; 10 mm sample-detector distance; 0.06 deg steps over 180 deg; beam 1x1 mm)", "voxel_size_um": 2.7, "volume_dimensions": "", "in_situ": true, "notes": "PZT-driven inline fatigue machine mounted on rotation stage; dual-camera DCT/absorption CT."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "55 (average)", "texture": "", "phases": "austenite (fcc)"}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": 278, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": "0.2% proof stress 278 MPa"}, "fatigue": {"tested": true, "test_type": "HCF", "loading": "R = -1, 20 Hz, interrupted for DCT", "results": "Average total misorientation of {111} spots increased with cycles (e.g. 0.159 -> 0.305 deg after 5,000 cycles); largest change on planes with highest Schmid factor.", "crack_initiation": "First crack initiated in the grain showing the greatest change of total misorientation (Delta beta max); initiation site located with absorption CT on same specimen.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "Y. Nakai, D. Shiozawa, N. Asakawa, K. Nonaka, S. Kikuchi, Fatigue damage evaluation by diffraction contrast tomography using ultra-bright synchrotron radiation, Proceedings 2(8) (2018) 380 (ICEM18)", "doi": "10.3390/ICEM18-05210", "url": "https://hdl.handle.net/20.500.14094/90006282"}, {"citation": "D. Shiozawa, Y. Nakai, R. Miura, S. Matsuda, Evaluation of fatigue damage by diffraction contrast tomography using synchrotron radiation, Materials Science Forum 783-786 (2014) 2359-2364", "doi": "10.4028/www.scientific.net/msf.783-786.2359", "url": ""}], "tags": ["fatigue-initiation", "DCT", "grain-scale", "in-situ", "dislocation-density"], "fatigue_initiation_relevance": "High", "notes": "Open access (CC-BY 4.0) proceedings paper.", "source_file": "diffraction_3d.json"}, {"id": "dct-harmonic-structured-ss-nakai-2023", "title": "Grain misorientation evolution in fatigue of harmonic-structured austenitic stainless steel by synchrotron DCT", "material_class": "Steel", "material": "Austenitic stainless steel with bimodal harmonic structure (fine-grain shell network around coarse-grain core)", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "Powder metallurgy (harmonic structure; unverified)", "parameters": "", "heat_treatment": "", "surface_condition": ""}, "techniques": ["DCT"], "acquisition": {"facility": "Ultrabright synchrotron (SPring-8, unverified)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": null, "notes": ""}, "microstructure": {"features_resolved": ["grains", "orientations"], "grain_size_um": "", "texture": "", "phases": "austenite"}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "HCF", "loading": "", "results": "Change of excess dislocation density (from DCT spot spread) depends on diffraction plane, Schmid factor and grain size; smaller in harmonic structure than conventional material.", "crack_initiation": "Delta rho of grains unrelated to crack initiation increased continuously, while that around the crack initiation site decreased upon crack initiation.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "Y. Nakai, D. Shiozawa, S. Kikuchi, I. Mishima, M. Kawabata, K. Ameyama, Misorientation of grains in fatigue of harmonic structured steel observed by diffraction contrast tomography using ultrabright synchrotron radiation, Materials Science Forum (2023)", "doi": "10.4028/p-e0mc23", "url": ""}], "tags": ["DCT", "fatigue-initiation", "grain-scale", "harmonic-structure"], "fatigue_initiation_relevance": "Medium", "notes": "Only abstract-level details verified.", "source_file": "diffraction_3d.json"}, {"id": "dct-304ss-igscc-grain-mapped-king-2008", "title": "Intergranular stress corrosion crack grown through a DCT grain-mapped sensitized austenitic stainless steel", "material_class": "Steel", "material": "Sensitized austenitic stainless steel", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "", "parameters": "", "heat_treatment": "Sensitized (details in paper)", "surface_condition": ""}, "techniques": ["DCT", "Synchrotron CT"], "acquisition": {"facility": "ESRF (DCT + in-situ synchrotron tomography)", "voxel_size_um": null, "volume_dimensions": "", "in_situ": true, "notes": ""}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks", "twins"], "grain_size_um": "", "texture": "", "phases": "austenite"}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": false, "test_type": "", "loading": "Stress corrosion cracking (not fatigue)", "results": "Several sensitization-resistant crack-bridging boundaries identified; they have special geometric properties but are not the twin-variant boundaries usually maximised by grain-boundary engineering.", "crack_initiation": "IGSCC crack path vs 3D grain-boundary network resolved.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "A. King, G. Johnson, D. Engelberg, W. Ludwig, J. Marrow, Observations of intergranular stress corrosion cracking in a grain-mapped polycrystal, Science 321 (2008) 382-385", "doi": "10.1126/science.1156211", "url": "https://hal.science/hal-00433962"}, {"citation": "A. King, W. Ludwig, D. Engelberg, T.J. Marrow, Diffraction contrast tomography for the study of polycrystalline stainless steel microstructures and stress corrosion cracking, Revue de Metallurgie (2011)", "doi": "10.1051/metal/2011042", "url": ""}], "tags": ["DCT", "grain-boundary", "stress-corrosion", "in-situ"], "fatigue_initiation_relevance": "Low", "notes": "Environmental cracking rather than fatigue; included as a canonical DCT + in-situ crack/grain-boundary dataset in a structural steel.", "source_file": "diffraction_3d.json"}, {"id": "dct-ti21s-short-fatigue-crack-herbig-2011", "title": "Short fatigue crack growth in metastable beta Ti21S imaged by combined DCT and phase-contrast tomography (ESRF)", "material_class": "Ti alloy", "material": "Ti-21S (Timet beta-21S, metastable beta titanium)", "chemistry": {"basis": "nominal", "composition": {"Mo": 15, "Nb": 3, "Al": 3, "Si": 0.2, "Ti": "bal."}, "notes": "Given in paper as Ti-15Mo-3Nb-3Al-0.2Si; basis not stated (wt% assumed, unverified)."}, "processing": {"route": "Rolled (1.6 mm sheet, Timet)", "parameters": "Fatigue sample with 2 mm gauge length, 600 um diameter, spark-erosion cut.", "heat_treatment": "2 h at 850 C in evacuated quartz tube, water quench (fully beta, metastable).", "surface_condition": "Gauge mechanically polished (2400 grit SiC + 17 um SiC paste); FIB wedge notch 150 um wide x 2 um high x 40 um deep."}, "techniques": ["DCT", "Synchrotron CT", "Phase-contrast CT"], "acquisition": {"facility": "ESRF ID11 (DCT, 40 keV, 2048x2048 detector, 1.4 um effective pixel, 7200 images over 360 deg, 20 h) + ESRF ID19 (PCT, 38 keV, 0.7 um voxel)", "voxel_size_um": 0.7, "volume_dimensions": "DCT: 560 um high sub-volume of 600 um diameter sample; ~1000 grains characterized, ~800 fully contained", "in_situ": true, "notes": "26 PCT propagation stages between 45k and 75.5k cycles, scans under maximum load; DCT grain-boundary positional error ~2-3 um validated against alpha-decorated grain boundaries imaged by PCT."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "55 (average, from DCT)", "texture": "", "phases": "metastable bcc beta"}, "defects": {"types": ["cracks"], "statistics": "Single FIB-notch-initiated crack; local growth rate varies 6-82 nm/cycle among ~10 grains along the front at late stages."}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "Axial tension-tension, 10-320 MPa (R = 0.03), 25 Hz, room temperature, interrupted in-situ fatigue machine", "results": "First growth detected at notch root at ~45k cycles; tracked to 75.5k cycles. Per-grain average crack growth rates mapped; grain boundaries and some grains delayed growth.", "crack_initiation": "Forced at FIB notch; 3D crack front, fracture-surface crystallography and local da/dN correlated with DCT grain map.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "M. Herbig, A. King, P. Reischig, H. Proudhon, E.M. Lauridsen, J. Marrow, J.-Y. Buffiere, W. Ludwig, 3-D growth of a short fatigue crack within a polycrystalline microstructure studied using combined diffraction and phase-contrast X-ray tomography, Acta Materialia 59 (2011) 590-601", "doi": "10.1016/j.actamat.2010.09.063", "url": "https://hereon.de/imperia/md/content/gkss/zentrale_einrichtungen/bibliothek/journals/2010/Herbig-actmat.pdf"}], "tags": ["grain-scale", "in-situ", "short-crack", "DCT", "synchrotron", "crack-growth"], "fatigue_initiation_relevance": "High", "notes": "Seminal DCT+PCT 4D short-crack dataset. Supplementary animation of crack growth published with the article.", "source_file": "diffraction_3d.json"}, {"id": "dct-ti55531-short-crack-ml-rovinelli-2018", "title": "Short fatigue crack in beta-metastable Ti-55531 with DCT grain map and in-situ PCT, used for ML crack-driving-force study", "material_class": "Ti alloy", "material": "Ti-55531 (Ti-5Al-5Mo-5V-3Cr-1Zr nominal designation)", "chemistry": {"basis": "nominal", "composition": {}, "notes": "Composition not given in the source beyond the alloy designation."}, "processing": {"route": "Wrought (unverified)", "parameters": "", "heat_treatment": "Annealed to obtain a full beta microstructure.", "surface_condition": "FIB notch 2 um high x 140 um wide x 25 um deep."}, "techniques": ["DCT", "Phase-contrast CT", "Synchrotron CT"], "acquisition": {"facility": "ESRF ID19", "voxel_size_um": 1.4, "volume_dimensions": "", "in_situ": true, "notes": "Crack front located to +/-1-2 voxels (+/-1.4-2.8 um). PCT scans at maximum load every 1000 cycles; DCT before loading."}, "microstructure": {"features_resolved": ["grains", "orientations", "cracks"], "grain_size_um": "65", "texture": "", "phases": "beta (bcc)"}, "defects": {"types": ["cracks"], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": 1000, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": "Yield stress of 1000 MPa used in the paper's model (as stated)."}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "Stress controlled, 10-320 MPa (R = 0.03), interrupted every 1000 cycles", "results": "Crack fronts analysed at e.g. 56k and 112k cycles; crystal-plasticity FFT simulations per crack geometry feed a Bayesian network; analytical crack-direction and growth-rate metrics derived.", "crack_initiation": "From FIB notch; crack path deflections relative to grain boundaries resolved in 3D.", "initiation_tracked_in_3d": true}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "A. Rovinelli, M.D. Sangid, H. Proudhon, W. Ludwig, Using machine learning and a data-driven approach to identify the small fatigue crack driving force in polycrystalline materials, npj Computational Materials 4 (2018) 35", "doi": "10.1038/s41524-018-0094-7", "url": "https://www.nature.com/articles/s41524-018-0094-7"}, {"citation": "H. Proudhon, J. Li, W. Ludwig, A. Roos, S. Forest, Simulation of short fatigue crack propagation in a 3D experimental microstructure, Advanced Engineering Materials 19 (2017) 1600721", "doi": "10.1002/adem.201600721", "url": ""}], "tags": ["grain-scale", "in-situ", "short-crack", "DCT", "machine-learning-ready", "crystal-plasticity"], "fatigue_initiation_relevance": "High", "notes": "Proudhon et al. 2017 (AEM) performed CPFE crack-growth simulation in a DCT-measured microstructure of several hundred grains; whether it is the same Ti-55531 specimen is (unverified).", "source_file": "diffraction_3d.json"}, {"id": "hedm-ti7al-midas-benchmark-sharma-2026", "title": "Multi-distance NF/FF-HEDM raw reference dataset of Ti-7Al (APS 1-ID-E) for benchmarking reconstruction", "material_class": "Ti alloy", "material": "Ti-7Al", "chemistry": {"basis": "nominal", "composition": {}, "notes": ""}, "processing": {"route": "", "parameters": "", "heat_treatment": "", "surface_condition": ""}, "techniques": ["HEDM/3DXRD"], "acquisition": {"facility": "APS 1-ID-E, 65.351 keV (Hf K-edge); FF GE-41RT 2048x2048 200 um pixel at ~940 mm; NF 5 distances 4.5-8.5 mm, 0.25 deg steps", "voxel_size_um": null, "volume_dimensions": "1 x 1 mm2 cross-section", "in_situ": false, "notes": "90 NF acquisitions (129,600 TIFFs) + FF .ge3 scans with CeO2/Au calibrations; RAMS mount."}, "microstructure": {"features_resolved": ["grains", "orientations"], "grain_size_um": "", "texture": "", "phases": ""}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": false, "test_type": "", "loading": "", "results": "", "crack_initiation": "", "initiation_tracked_in_3d": false}, "data_availability": {"status": "Public download", "repository": "Materials Data Facility", "url": "https://doi.org/10.18126/8487-hd29", "doi": "10.18126/8487-hd29", "size": "", "format": "GE .ge3 (FF), TIFF (NF)", "license": ""}, "references": [{"citation": "H. Sharma, J.-S. Park, P. Kenesei, Multi-distance Far-Field and Near-Field HEDM Reference Dataset of Ti-7Al for Benchmarking 3D Crystallographic Reconstruction Algorithms (MDF, 2026); accompanies MIDAS Part II, Acta Cryst. A", "doi": "10.18126/8487-hd29", "url": "https://github.com/marinerhemant/MIDAS"}], "tags": ["HEDM", "benchmark", "raw-data", "machine-learning-ready"], "fatigue_initiation_relevance": "Low", "notes": "Raw data only; reconstructions regenerable with MIDAS commit 0915604f.", "source_file": "diffraction_3d.json"}, {"id": "hedm-ti7al-cyclic-grain-reorientation-lim-2022", "title": "Ti-7Al cyclically loaded below yield (200 cycles) with grain-resolved FF-HEDM at CHESS", "material_class": "Ti alloy", "material": "Ti-7Al (single-phase alpha)", "chemistry": {"basis": "nominal", "composition": {"Al": 7, "Ti": "bal."}, "notes": ""}, "processing": {"route": "Cast + HIP + extruded", "parameters": "", "heat_treatment": "962 C for 24 h, air cooled (large equiaxed grains)", "surface_condition": "EDM-cut (surface residual strains noted)"}, "techniques": ["HEDM/3DXRD"], "acquisition": {"facility": "CHESS F2 (RAMS2 load frame), 61.3 keV, GE 2048x2048 200 um pixel detector", "voxel_size_um": null, "volume_dimensions": "1 mm x 1 mm cross-section, 8 mm gauge; 1 mm tall probed volume; 773 grains indexed, 502 retained after filtering", "in_situ": true, "notes": "FF-HEDM at peak (held at 505 MPa) and unloaded states at cycles 1,2,5,10,20,30 and every 10 to 200."}, "microstructure": {"features_resolved": ["grains", "orientations"], "grain_size_um": "", "texture": "", "phases": "alpha (hcp)"}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": ""}, "fatigue": {"tested": true, "test_type": "in-situ", "loading": "Tension cycles R = 0 to 585 MPa (~90% of yield), load control, 200 cycles", "results": "Continuous evolution of von Mises stress and grain orientation; tension texture begins to develop; 'hard' grains retain more residual resolved stress; surface grains yield on first cycle.", "crack_initiation": "No crack; plasticity accumulation precursor study.", "initiation_tracked_in_3d": false}, "data_availability": {"status": "Paper only (figures)", "repository": "", "url": "", "doi": "", "size": "", "format": "", "license": ""}, "references": [{"citation": "R.E. Lim, D.C. Pagan, J.V. Bernier, P.A. Shade, A.D. Rollett, Grain reorientation and stress-state evolution during cyclic loading of an alpha-Ti alloy below the elastic limit, International Journal of Fatigue (2022) 106614", "doi": "10.1016/j.ijfatigue.2021.106614", "url": "https://arxiv.org/abs/2010.00111"}], "tags": ["HEDM", "grain-scale", "in-situ", "cyclic-plasticity", "AFRL"], "fatigue_initiation_relevance": "Medium", "notes": "", "source_file": "diffraction_3d.json"}, {"id": "hedm-ti7al-nf-ff-tensile-turner-2016", "title": "Combined NF/FF-HEDM dataset for Ti-7Al tensile specimen elastically loaded in situ (APS 1-ID-E, RAMS)", "material_class": "Ti alloy", "material": "Ti-7Al (single-phase alpha)", "chemistry": {"basis": "nominal", "composition": {"Al": 7, "Ti": "bal."}, "notes": "wt% assumed (unverified)."}, "processing": {"route": "Cast + HIP + extruded + rolled", "parameters": "75 mm ingot, HIP, extruded to 30 mm bar, unidirectionally rolled at 955 C to 7.5 mm.", "heat_treatment": "Recrystallized 955 C for 24 h, furnace cooled.", "surface_condition": "Gold-foil fiducial markers on gauge"}, "techniques": ["HEDM/3DXRD"], "acquisition": {"facility": "APS 1-ID-E (RAMS load frame)", "voxel_size_um": null, "volume_dimensions": "Gauge 8 mm, ~1 mm2 cross-section; FF volume 600 um tall (605 grains); NF 53 slices at 4 um over ~200 um (240 grains)", "in_situ": true, "notes": "FF-HEDM at Load 0 (23 MPa) and 180.9, 339.8, 495.9 MPa (below yield); FE mesh supplied."}, "microstructure": {"features_resolved": ["grains", "orientations"], "grain_size_um": "~100", "texture": "", "phases": "alpha (hcp)"}, "defects": {"types": [], "statistics": ""}, "mechanical_properties": {"yield_strength_MPa": null, "uts_MPa": null, "elongation_pct": null, "hardness": null, "modulus_GPa": null, "other": "All loads nominally below macroscopic yield."}, "fatigue": {"tested": false, "test_type": "", "loading": "Monotonic elastic tension", "results": "", "crack_initiation": "", "initiation_tracked_in_3d": false}, "data_availability": {"status": "Public download", "repository": "NIST Materials Data Repository / Materials Data Facility (mdr_item_1027)", "url": "https://hdl.handle.net/11256/599", "doi": "", "size": "", "format": "HEDM reconstructions (NF orientation maps, FF grain tables), FE mesh", "license": "CC0 1.0"}, "references": [{"citation": "T.J. Turner, P.A. Shade, J.V. Bernier, S.F. Li, J.C. Schuren, J.F. Lind, U. Lienert, P. Kenesei, R.M. Suter, B. Blank, J. Almer, Combined near- and far-field high-energy diffraction microscopy dataset for Ti-7Al tensile specimen elastically loaded in situ, Integrating Materials and Manufacturing Innovation (2016)", "doi": "10.1186/s40192-016-0048-1", "url": ""}, {"citation": "T.J. Turner et al., Crystal plasticity model validation using combined high-energy diffraction microscopy data for a Ti-7Al specimen, Metall. Mater. Trans. A (2016)", "doi": "10.1007/s11661-016-3868-x", "url": "https://www.osti.gov/biblio/1390797"}], "tags": ["HEDM", "grain-scale", "in-situ", "benchmark", "AFRL", "machine-learning-ready"], "fatigue_initiation_relevance": "Low", "notes": "Not fatigue; widely used AFRL benchmark for CPFE validation (39 interior grains compared). Material supplied by A. Pilchak (AFRL).", "source_file": "diffraction_3d.json"}];</script>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Material Microstructure Dataset</h1>
+      <p>3D reconstructions of structural materials (CT, DCT, HEDM, 3D EBSD) with chemistry, processing, mechanical properties and fatigue crack initiation data, collected from the literature.</p>
+    </div>
+    <div class="tally" id="tally"></div>
+  </header>
+  <div class="mix" id="mix" role="img" aria-label="Records by material class"></div>
+  <div class="mix-legend" id="mixLegend"></div>
+
+  <div class="layout">
+    <aside class="filters" aria-label="Filters"><details id="fwrap" open><summary>Filters</summary><div class="fbody">
+      <div class="fgroup">
+        <h2><label for="q">Search</label></h2>
+        <input id="q" type="search" placeholder="alloy, author, beamline, defect…" autocomplete="off">
+      </div>
+      <div class="fgroup"><h2>Material class</h2><div class="chips" id="fClass"></div></div>
+      <div class="fgroup"><h2>Technique</h2><div class="chips" id="fTech"></div></div>
+      <div class="fgroup"><h2>Processing route</h2><div class="chips" id="fRoute"></div></div>
+      <div class="fgroup"><h2>Fatigue initiation relevance</h2><div class="chips" id="fRel"></div></div>
+      <div class="fgroup" style="display:grid;gap:6px">
+        <h2>Must have</h2>
+        <label class="toggle"><input type="checkbox" id="fPublic"> Downloadable 3D data</label>
+        <label class="toggle"><input type="checkbox" id="fFatigue"> Fatigue tested</label>
+        <label class="toggle"><input type="checkbox" id="fTracked"> Initiation tracked in 3D</label>
+        <label class="toggle"><input type="checkbox" id="fInsitu"> In-situ loading</label>
+      </div>
+      <button class="reset" id="reset" type="button">Clear all filters</button>
+    </div></details></aside>
+
+    <main>
+      <div class="bar">
+        <span class="count" id="count"></span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <label for="sort" class="count">Sort</label>
+          <select id="sort">
+            <option value="relevance">Fatigue relevance</option>
+            <option value="material">Material</option>
+            <option value="uts">UTS (high to low)</option>
+            <option value="voxel">Voxel size (fine first)</option>
+          </select>
+          <div class="seg" role="group" aria-label="View">
+            <button type="button" id="vGrid" aria-pressed="true">Cards</button>
+            <button type="button" id="vTable" aria-pressed="false">Table</button>
+          </div>
+        </div>
+      </div>
+      <div id="results"></div>
+    </main>
+  </div>
+  <footer>
+    Card thumbnails are schematic renderings keyed to each record's technique and defect types, not images of the actual data. Values come from the cited papers and dataset pages; check the original source before using any number.
+  </footer>
+</div>
+
+<div class="sheet-bg" id="sheetBg" hidden></div>
+<aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle"></aside>
+
+<script>
+(function () {
+  const DATA = (window.MMD_DATA || []).slice();
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const CLASS_COLORS = {
+    "Ti alloy": "#4f7cac", "Ni superalloy": "#b0533c", "Steel": "#5c6670", "Al alloy": "#5aa0a8",
+    "Mg alloy": "#9b8a3c", "Cu alloy": "#c07a3a", "Co alloy": "#6b5fa8", "HEA/MPEA": "#a05a8c",
+    "Composite": "#3f8a5a", "Other": "#8a8a8a",
+  };
+
+  // Group raw technique strings into filter families.
+  function techFamily(t) {
+    const s = t.toLowerCase();
+    if (/dct|diffraction contrast/.test(s)) return "DCT";
+    if (/hedm|3dxrd|daxm|dark-field|diffraction/.test(s)) return "HEDM / 3DXRD";
+    if (/ebsd|tkd/.test(s)) return "3D EBSD";
+    if (/serial|robo-met|tribeam|fib/.test(s)) return "Serial sectioning";
+    if (/laminograph/.test(s)) return "Laminography";
+    if (/synchrotron|phase-contrast|pct/.test(s)) return "Synchrotron CT";
+    if (/nano/.test(s)) return "Nano-CT";
+    if (/ct|tomograph/.test(s)) return "X-ray / Micro-CT";
+    return "Other";
+  }
+  function routeFamily(r) {
+    const s = (r || "").toLowerCase();
+    if (/l-pbf|lpbf|slm|selective laser|laser powder/.test(s)) return "L-PBF";
+    if (/ebm|electron beam melt|eb-pbf|pbf-eb/.test(s)) return "EBM";
+    if (/ded|directed energy|wire arc|waam|lens/.test(s)) return "DED / WAAM";
+    if (/cast/.test(s)) return "Cast";
+    if (/weld|friction stir/.test(s)) return "Weld";
+    if (/autoclave|prepreg|rtm|infusion|layup|cure|composite/.test(s)) return "Composite layup";
+    if (/wrought|rolled|forg|extru|drawn|plate|bar/.test(s)) return "Wrought";
+    if (/powder|sinter|hip/.test(s)) return "Powder / HIP";
+    return r ? "Other" : "Unknown";
+  }
+  const num = (v) => (typeof v === "number" && isFinite(v) ? v : (typeof v === "string" && /^\s*[\d.]+\s*$/.test(v) ? parseFloat(v) : null));
+  const relRank = { High: 0, Medium: 1, Low: 2 };
+
+  DATA.forEach((r) => {
+    r._tech = [...new Set((r.techniques || []).map(techFamily))];
+    r._route = routeFamily(r.processing && r.processing.route);
+    const da = r.data_availability || {};
+    r._public = /public|partial/i.test(da.status || "") && !/paper only/i.test(da.status || "");
+    const f = r.fatigue || {};
+    r._fatigue = f.tested === true;
+    r._tracked = f.initiation_tracked_in_3d === true;
+    r._insitu = (r.acquisition || {}).in_situ === true;
+    r._uts = num((r.mechanical_properties || {}).uts_MPa);
+    r._ys = num((r.mechanical_properties || {}).yield_strength_MPa);
+    r._el = num((r.mechanical_properties || {}).elongation_pct);
+    r._vox = num((r.acquisition || {}).voxel_size_um);
+    r._text = JSON.stringify(r).toLowerCase();
+  });
+
+  const state = { q: "", cls: new Set(), tech: new Set(), route: new Set(), rel: new Set(), view: "grid", sort: "relevance" };
+  try { const v = localStorage.getItem("mmd-view"); if (v) state.view = v; } catch (e) {}
+
+  function counts(key) {
+    const m = new Map();
+    DATA.forEach((r) => [].concat(r[key]).forEach((v) => v && m.set(v, (m.get(v) || 0) + 1)));
+    return [...m.entries()].sort((a, b) => b[1] - a[1]);
+  }
+  function chips(el, entries, set) {
+    el.innerHTML = entries.map(([k, n]) => `<button type="button" class="chip" aria-pressed="false" data-k="${esc(k)}">${esc(k)}<small>${n}</small></button>`).join("");
+    el.addEventListener("click", (e) => {
+      const b = e.target.closest(".chip"); if (!b) return;
+      const k = b.dataset.k; set.has(k) ? set.delete(k) : set.add(k);
+      b.setAttribute("aria-pressed", set.has(k)); render();
+    });
+  }
+  DATA.forEach((r) => { r._cls = r.material_class || "Other"; r._rel = r.fatigue_initiation_relevance || "Unrated"; });
+  chips($("fClass"), counts("_cls"), state.cls);
+  chips($("fTech"), counts("_tech"), state.tech);
+  chips($("fRoute"), counts("_route"), state.route);
+  chips($("fRel"), counts("_rel").sort((a, b) => (relRank[a[0]] ?? 9) - (relRank[b[0]] ?? 9)), state.rel);
+
+  // Header summary
+  const nPublic = DATA.filter((r) => r._public).length, nFat = DATA.filter((r) => r._fatigue).length, nTr = DATA.filter((r) => r._tracked).length;
+  $("tally").innerHTML = [[DATA.length, "datasets"], [nPublic, "downloadable"], [nFat, "fatigue tested"], [nTr, "initiation in 3D"]]
+    .map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join("");
+  const cc = counts("_cls");
+  $("mix").innerHTML = cc.map(([k, n]) => `<i style="width:${(100 * n) / DATA.length}%;background:${CLASS_COLORS[k] || "#888"}" title="${esc(k)}: ${n}"></i>`).join("");
+  $("mixLegend").innerHTML = cc.map(([k, n]) => `<span style="--c:${CLASS_COLORS[k] || "#888"}">${esc(k)} ${n}</span>`).join("");
+
+  function filtered() {
+    const q = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let out = DATA.filter((r) =>
+      (!state.cls.size || state.cls.has(r._cls)) &&
+      (!state.tech.size || r._tech.some((t) => state.tech.has(t))) &&
+      (!state.route.size || state.route.has(r._route)) &&
+      (!state.rel.size || state.rel.has(r._rel)) &&
+      (!$("fPublic").checked || r._public) && (!$("fFatigue").checked || r._fatigue) &&
+      (!$("fTracked").checked || r._tracked) && (!$("fInsitu").checked || r._insitu) &&
+      q.every((w) => r._text.includes(w)));
+    const s = state.sort;
+    out.sort((a, b) => {
+      if (s === "uts") return (b._uts ?? -1) - (a._uts ?? -1);
+      if (s === "voxel") return (a._vox ?? 1e9) - (b._vox ?? 1e9);
+      if (s === "material") return (a.material || "").localeCompare(b.material || "");
+      return (relRank[a._rel] ?? 9) - (relRank[b._rel] ?? 9) || (b._tracked - a._tracked) || (b._public - a._public);
+    });
+    return out;
+  }
+
+  // Deterministic schematic thumbnail: grain map for diffraction/EBSD, grey CT slice with pores otherwise.
+  function seeded(str) { let h = 2166136261; for (const c of str) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; }
+  function drawThumb(cv, r) {
+    const W = 320, H = 140; cv.width = W; cv.height = H;
+    const g = cv.getContext("2d"), rnd = seeded(r.id);
+    const grainy = r._tech.some((t) => /DCT|HEDM|EBSD|Serial/.test(t));
+    if (grainy) {
+      const n = 26 + Math.floor(rnd() * 30), pts = [];
+      for (let i = 0; i < n; i++) {
+        const a = rnd(), b = rnd(), c = rnd(), s = a + b + c; // IPF-like RGB triple
+        pts.push([rnd() * W, rnd() * H, `rgb(${60 + 190 * a / s * 1.4 | 0},${60 + 190 * b / s * 1.4 | 0},${60 + 190 * c / s * 1.4 | 0})`]);
+      }
+      const img = g.createImageData(W, H);
+      for (let y = 0; y < H; y += 2) for (let x = 0; x < W; x += 2) {
+        let best = 0, bd = 1e12, sec = 1e12;
+        for (let i = 0; i < n; i++) { const d = (pts[i][0] - x) ** 2 + (pts[i][1] - y) ** 2; if (d < bd) { sec = bd; bd = d; best = i; } else if (d < sec) sec = d; }
+        const m = pts[best][2].match(/\d+/g).map(Number), edge = Math.sqrt(sec) - Math.sqrt(bd) < 1.6;
+        for (let dy = 0; dy < 2; dy++) for (let dx = 0; dx < 2; dx++) {
+          const o = ((y + dy) * W + x + dx) * 4;
+          img.data[o] = edge ? 25 : m[0]; img.data[o + 1] = edge ? 25 : m[1]; img.data[o + 2] = edge ? 30 : m[2]; img.data[o + 3] = 255;
+        }
+      }
+      g.putImageData(img, 0, 0);
+    } else {
+      const comp = r._cls === "Composite";
+      g.fillStyle = "#3a3f45"; g.fillRect(0, 0, W, H);
+      if (comp) {
+        for (let i = 0; i < 900; i++) { g.fillStyle = `rgba(200,205,210,${.35 + rnd() * .4})`; g.beginPath(); g.arc(rnd() * W, rnd() * H, 2.2, 0, 7); g.fill(); }
+      } else {
+        for (let i = 0; i < 2600; i++) { const v = 120 + rnd() * 60 | 0; g.fillStyle = `rgb(${v},${v},${v + 4})`; g.fillRect(rnd() * W, rnd() * H, 3, 3); }
+        g.fillStyle = "rgba(150,152,158,.55)"; g.fillRect(0, 0, W, H);
+      }
+      const defects = JSON.stringify(r.defects || {}).toLowerCase();
+      const lof = /lack|lof|irregular|void|delamin|shrink/.test(defects);
+      const np = 6 + Math.floor(rnd() * 22);
+      g.fillStyle = "#101418";
+      for (let i = 0; i < np; i++) {
+        const x = rnd() * W, y = rnd() * H, rad = 1.5 + rnd() * (lof ? 9 : 5);
+        g.beginPath();
+        if (lof && rnd() > .4) g.ellipse(x, y, rad * 2.2, rad * .6, rnd() * 3, 0, 7); else g.arc(x, y, rad, 0, 7);
+        g.fill();
+      }
+      if (r._fatigue) { g.strokeStyle = "#ff5c8a"; g.lineWidth = 1.5; g.beginPath(); let x = W * .3, y = H * .5; g.moveTo(x, y); for (let i = 0; i < 9; i++) { x += 8 + rnd() * 6; y += (rnd() - .5) * 12; g.lineTo(x, y); } g.stroke(); }
+    }
+  }
+
+  const fmt = (v, u) => (v == null ? "—" : `${v}${u || ""}`);
+  function card(r) {
+    const rel = r._rel;
+    const badges = [
+      rel !== "Unrated" ? `<span class="badge ${rel === "High" ? "hot" : ""}">${esc(rel)} relevance</span>` : "",
+      r._public ? `<span class="badge ok">Data public</span>` : `<span class="badge warn">${esc((r.data_availability || {}).status || "Availability unknown")}</span>`,
+      r._tracked ? `<span class="badge hot">Initiation in 3D</span>` : "",
+      r._insitu ? `<span class="badge">In-situ</span>` : "",
+    ].join("");
+    return `<button type="button" class="card" data-id="${esc(r.id)}">
+      <div class="thumb"><canvas aria-hidden="true"></canvas><span class="tech">${esc(r._tech.join(" · "))}</span></div>
+      <div class="body">
+        <div class="eyebrow"><span>${esc(r._cls)}</span><span>${esc(r._route)}</span></div>
+        <h3>${esc(r.material)}</h3>
+        <p class="sub">${esc(r.title)}</p>
+        <div class="props">
+          <div><span>YS</span>${fmt(r._ys, " MPa")}</div>
+          <div><span>UTS</span>${fmt(r._uts, " MPa")}</div>
+          <div><span>Voxel</span>${fmt(r._vox, " µm")}</div>
+        </div>
+        <div class="badges">${badges}</div>
+      </div></button>`;
+  }
+  function table(rows) {
+    return `<div class="tablewrap"><table><thead><tr>
+      <th>Material</th><th>Class</th><th>Route</th><th>Technique</th><th>Voxel µm</th><th>YS MPa</th><th>UTS MPa</th><th>El. %</th><th>Fatigue</th><th>Init. 3D</th><th>Data</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr data-id="${esc(r.id)}"><td><strong>${esc(r.material)}</strong><br><span class="note">${esc(r.title)}</span></td>
+        <td>${esc(r._cls)}</td><td>${esc(r._route)}</td><td>${esc(r._tech.join(", "))}</td>
+        <td class="num">${fmt(r._vox)}</td><td class="num">${fmt(r._ys)}</td><td class="num">${fmt(r._uts)}</td><td class="num">${fmt(r._el)}</td>
+        <td>${r._fatigue ? esc((r.fatigue || {}).test_type || "yes") : "—"}</td><td>${r._tracked ? "yes" : "—"}</td>
+        <td>${r._public ? "public" : esc((r.data_availability || {}).status || "—")}</td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  function render() {
+    const rows = filtered();
+    $("count").textContent = `${rows.length} of ${DATA.length} datasets`;
+    $("vGrid").setAttribute("aria-pressed", state.view === "grid");
+    $("vTable").setAttribute("aria-pressed", state.view === "table");
+    const res = $("results");
+    if (!rows.length) { res.innerHTML = `<div class="empty">No datasets match these filters. Clear a filter or broaden the search.</div>`; return; }
+    if (state.view === "table") { res.innerHTML = table(rows); return; }
+    res.innerHTML = `<div class="grid">${rows.map(card).join("")}</div>`;
+    res.querySelectorAll(".card").forEach((el) => drawThumb(el.querySelector("canvas"), DATA.find((r) => r.id === el.dataset.id)));
+  }
+
+  // Detail sheet
+  function kv(pairs) {
+    const items = pairs.filter(([, v]) => v != null && v !== "" && !(Array.isArray(v) && !v.length));
+    if (!items.length) return `<p class="note">Not reported.</p>`;
+    return `<dl class="kv">${items.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${Array.isArray(v) ? esc(v.join(", ")) : typeof v === "boolean" ? (v ? "Yes" : "No") : esc(v)}</dd>`).join("")}</dl>`;
+  }
+  const link = (u) => (u && /^https?:/.test(u) ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>` : esc(u || ""));
+  const doiLink = (d) => (d ? link(/^https?:/.test(d) ? d : `https://doi.org/${d}`) : "");
+  function openSheet(id) {
+    const r = DATA.find((x) => x.id === id); if (!r) return;
+    const c = r.chemistry || {}, p = r.processing || {}, a = r.acquisition || {}, m = r.microstructure || {}, d = r.defects || {}, mp = r.mechanical_properties || {}, f = r.fatigue || {}, da = r.data_availability || {};
+    const comp = c.composition || {};
+    $("sheet").innerHTML = `
+      <button class="close" id="closeSheet" type="button">Close</button>
+      <div class="eyebrow"><span>${esc(r._cls)} · ${esc(r.material)}</span></div>
+      <h2 id="sheetTitle">${esc(r.title)}</h2>
+      <div class="badges">${(r.tags || []).map((t) => `<span class="badge">${esc(t)}</span>`).join("")}</div>
+      ${f.crack_initiation ? `<section><div class="callout"><strong>Crack initiation.</strong> ${esc(f.crack_initiation)}</div></section>` : ""}
+      <section><h4>Chemistry ${c.basis ? `(${esc(c.basis)})` : ""}</h4>
+        ${Object.keys(comp).length ? `<div class="chem">${Object.entries(comp).map(([k, v]) => `<span><b>${esc(k)}</b>${esc(typeof v === "object" ? JSON.stringify(v) : v)}</span>`).join("")}</div>` : `<p class="note">Not reported.</p>`}
+        ${c.notes ? `<p class="note">${esc(c.notes)}</p>` : ""}</section>
+      <section><h4>Processing</h4>${kv([["Route", p.route], ["Parameters", p.parameters], ["Heat treatment", p.heat_treatment], ["Surface", p.surface_condition]])}</section>
+      <section><h4>3D acquisition</h4>${kv([["Techniques", r.techniques], ["Facility", a.facility], ["Voxel size (µm)", a.voxel_size_um], ["Volume", a.volume_dimensions], ["In-situ", a.in_situ], ["Notes", a.notes]])}</section>
+      <section><h4>Microstructure</h4>${kv([["Features resolved", m.features_resolved], ["Grain size", m.grain_size_um], ["Texture", m.texture], ["Phases", m.phases]])}</section>
+      <section><h4>Defects</h4>${kv([["Types", d.types], ["Statistics", d.statistics]])}</section>
+      <section><h4>Mechanical properties</h4>${kv([["Yield strength (MPa)", mp.yield_strength_MPa], ["UTS (MPa)", mp.uts_MPa], ["Elongation (%)", mp.elongation_pct], ["Hardness", mp.hardness], ["Modulus (GPa)", mp.modulus_GPa], ["Other", mp.other]])}</section>
+      <section><h4>Fatigue</h4>${kv([["Tested", f.tested], ["Test type", f.test_type], ["Loading", f.loading], ["Results", f.results], ["Initiation tracked in 3D", f.initiation_tracked_in_3d]])}</section>
+      <section><h4>Data availability</h4>${kv([["Status", da.status], ["Repository", da.repository], ["Size", da.size], ["Format", da.format], ["License", da.license]])}
+        ${da.url ? `<p>${link(da.url)}</p>` : ""}${da.doi ? `<p>Dataset DOI: ${doiLink(da.doi)}</p>` : ""}</section>
+      <section><h4>References</h4><ol class="refs">${(r.references || []).map((x) => `<li>${esc(x.citation)}${x.doi ? `<br>${doiLink(x.doi)}` : x.url ? `<br>${link(x.url)}` : ""}</li>`).join("")}</ol></section>
+      ${r.notes ? `<section><h4>Notes</h4><p>${esc(r.notes)}</p></section>` : ""}
+      <p class="note">Record id <code>${esc(r.id)}</code></p>`;
+    $("sheet").hidden = false; $("sheetBg").hidden = false;
+    $("sheet").scrollTop = 0; $("closeSheet").focus();
+  }
+  function closeSheet() { $("sheet").hidden = true; $("sheetBg").hidden = true; }
+
+  $("results").addEventListener("click", (e) => { const el = e.target.closest("[data-id]"); if (el) openSheet(el.dataset.id); });
+  $("sheetBg").addEventListener("click", closeSheet);
+  $("sheet").addEventListener("click", (e) => { if (e.target.id === "closeSheet") closeSheet(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
+  $("q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+  $("sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
+  ["fPublic", "fFatigue", "fTracked", "fInsitu"].forEach((id) => $(id).addEventListener("change", render));
+  const setView = (v) => { state.view = v; try { localStorage.setItem("mmd-view", v); } catch (e) {} render(); };
+  $("vGrid").addEventListener("click", () => setView("grid"));
+  $("vTable").addEventListener("click", () => setView("table"));
+  $("reset").addEventListener("click", () => {
+    [state.cls, state.tech, state.route, state.rel].forEach((s) => s.clear());
+    document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
+    ["fPublic", "fFatigue", "fTracked", "fInsitu"].forEach((id) => ($(id).checked = false));
+    $("q").value = ""; state.q = ""; render();
+  });
+  if (window.matchMedia("(max-width: 860px)").matches) $("fwrap").open = false;
+  render();
+})();
+</script>
